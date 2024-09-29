@@ -8,13 +8,13 @@ description: スクリプトの構成方法について理解する
 
 システムコードはECMAScriptモジュールを使用しているため、すべてのモジュールはモジュール名と同じフォルダにまとめられています。 `System` フォルダを確認してください：
 
-![](../.gitbook/assets/system-modules.png)
+![System Modules](../.gitbook/assets/system-modules.png)
 
 以下はモジュールの説明です：
 
 * `Common`：主に静的プロパティとメソッドを取得するために使用されるすべての静的クラス (Mathf, Paths...)
 * `Core`：ゲームの実行で直接使用されるすべてのコアクラス (Autotiles, WindowBox...)
-*   `Datas`：JSONゲームファイルを読み取るすべてのシステムクラスをグループ化するすべてのデータクラス
+* `Datas`：JSONゲームファイルを読み取るすべてのシステムクラスをグループ化するすべてのデータクラス
 
     &#x20;(Heroes, Systems...)
 * `EventCommand`：リアクションで解釈できるすべてのイベントコマンド (ShowText, Wait...)
@@ -27,36 +27,36 @@ description: スクリプトの構成方法について理解する
 
 各 `*.js` ファイルには、 `*.d.ts` も付属しています。
 
-![](../.gitbook/assets/system-example.png)
+![System Example](../.gitbook/assets/system-example.png)
 
 `*.d.ts` については気にする必要はありません。これらのファイルは、Visual Studio Codeがオートコンプリートを正しく入力できるようにするために用意されています。
 
 {% hint style="info" %}
-実際、RPGツクールMVの元のコードはTypeScriptで書かれています。TypeScriptはJavaScriptですが、型指定の制限があります。TypeScriptコードはJavaScript Standardコードにコンパイルされ、これらの `*.d.ts` も提供されます。
+実際、RPG Paper Makerの元のコードはTypeScriptで書かれています。TypeScriptはJavaScriptですが、型指定の制限があります。TypeScriptコードはJavaScript Standardコードにコンパイルされ、これらの `*.d.ts` も提供されます。
 {% endhint %}
 
 ## シェーダー
 
 `Shaders` フォルダには、3Dで使用されるすべてのシェーダーが含まれています。簡単に言うと、シェーダーはCPUではなくグラフィックカードで実行される小さなプログラムです。後ほど、どのように使用されるかを見ていきます。
 
-![](../.gitbook/assets/shaders-example.png)
+![Shader Expample](../.gitbook/assets/shaders-example.png)
 
 ## ライブラリ
 
-`Libs` フォルダには、RPGツクールMVで使用されるすべての外部ライブラリが含まれています。
+`Libs` フォルダには、RPG Paper Makerで使用されるすべての外部ライブラリが含まれています。
 
-![](../.gitbook/assets/libs-example.png)
+![Libs Example](../.gitbook/assets/libs-example.png)
 
 以下を使用しています。
 
 * `howler.js`：すべての曲を非常に簡単に再生管理するライブラリです。
-* `three.js`：最も重要なライブラリです。WebGL（3D）を非常に簡単に扱うための多くの関数とクラスを提供しています。私たちのコードでは、これらをたくさん目にすることになります。ドキュメントはこちらで確認できます：[https://threejs.org/docs/](https://threejs.org/docs/) RPGツクールMVでの使用方法を簡単に理解することができます。
+* `three.js`：最も重要なライブラリです。WebGL（3D）を非常に簡単に扱うための多くの関数とクラスを提供しています。私たちのコードでは、これらをたくさん目にすることになります。ドキュメントはこちらで確認できます：[https://threejs.org/docs/](https://threejs.org/docs/) RPG Paper Makerでの使用方法を簡単に理解することができます。
 
 ## プラグイン
 
 将来作成するすべてのプラグインは、この `Plugins` フォルダに入ります。
 
-![](../.gitbook/assets/plugins-example.png)
+![Plugin Example](../.gitbook/assets/plugins-example.png)
 
 後ほど、どのように管理されるかを見ていきます。
 

@@ -4,23 +4,20 @@ description: 新しいプラグインを作成する手順を紹介します。
 
 # プラグインの作成方法
 
-独自のプラグインを作成するための準備が整いましたので、早速始めましょう！
-
+独自のプラグインを作成するための準備が整いましたので、早速始めましょう。
 スクリプトマネージャーを開きます。
 
-![](../.gitbook/assets/script-manager.png)
-
+![Script Manager](../.gitbook/assets/script-manager.png)
 {% hint style="info" %}
-別のタブで、System、Libs、Shadersフォルダー内のファイルを確認することもできます。
+別のタブで、System、Libs、Shadersフォルダー内のファイルを確認できます。
 {% endhint %}
 
 それでは、最初のプラグインを作成してみましょう。空のプラグインをダブルクリックして、空のプラグインを作成します。
 
-![](../.gitbook/assets/create-plugin.png)
-
+![Create Plugin](../.gitbook/assets/create-plugin.png)
 `Edit`タブでは、いくつかのオプションにアクセスできます。
 
-![](../.gitbook/assets/plugin-edit.png)
+![Plugin Edit](../.gitbook/assets/plugin-edit.png)
 
 * `Name`：プラグイン名。プロジェクト内で一意である必要があります。
 * `Author`：ここに自分の名前を入力できます。
@@ -38,12 +35,10 @@ description: 新しいプラグインを作成する手順を紹介します。
 
 Visual Studio Codeの代わりにエンジン内で直接プラグインコードを編集したい場合は、`Code`タブにアクセスすることもできます。
 
-![](../.gitbook/assets/plugin-code.png)
-
+![Plugin Code](../.gitbook/assets/plugin-code.png)
 Visual Studio Codeで確認すると、`Plugins`フォルダー内に新しいフォルダーが作成されていることがわかります。
 
-![](../.gitbook/assets/plugins-folder.png)
-
+![Plugins folder](../.gitbook/assets/plugins-folder.png)
 新しいプラグインを作成するたびに、プラグイン名と同じ名前のフォルダーが作成されます。このフォルダーには、次のものが含まれます。
 
 * `code.js`：プラグインコードを含むJSファイル。
@@ -62,8 +57,7 @@ console.log("Hello world!");
 
 これでプレイテストができます。コンソールを表示するには、`CTRL + ALT + I`キーを押します。
 
-![](../.gitbook/assets/console-hello-world.png)
-
+![Console output showing "Hello world!"](../.gitbook/assets/console-hello-world.png)
 `RPM`モジュールをインポートすることで、RPG Paper Makerのデータにアクセスすることもできます。
 
 ```javascript
@@ -81,8 +75,7 @@ const inject = RPM.Manager.Plugins.inject;
 console.log("Hello world: " + RPM.Core.MapObject.SPEED_NORMAL);
 ```
 
-![](../.gitbook/assets/console-rpm.png)
-
+![Console output showing "Hello world: 0.004"](../.gitbook/assets/console-rpm.png)
 素晴らしい！うまくいきました！
 
 ## アプリへのコードの挿入
@@ -150,7 +143,7 @@ inject(MyClass, "myFunction", function() {
         console.log("this is my class :)");
     } else {
         this.super(); // 一部の条件では上書きされません
-    }    
+    }
 }, false, true, false); // 上書きを使用
 
 inject(MyClass, "myFunction2", function() {
@@ -190,7 +183,7 @@ inject(RPM.Scene.TitleScreen,"drawHUD", function() {
 
 これでうまくいきました！
 
-![](../.gitbook/assets/plugin-icon.png)
+![Plugin Icon](../.gitbook/assets/plugin-icon.png)
 
 ## 静的関数/変数
 
@@ -214,7 +207,7 @@ inject(myClass,"myStaticFunctions", function() {
 
 タイトル画面にアイコンを表示する前の例に戻りましょう。ユーザー（このプラグインを使用する人）が表示するアイコンIDを選択できるようにしたいとします。ここでパラメータを使用できます！
 
-![](../.gitbook/assets/plugin-parameter.png)
+![Plugin Parameter](../.gitbook/assets/plugin-parameter.png)
 
 コード側では、iconIDパラメータを取得するようにload関数を編集する必要があります。パラメータ値を取得するには、`getParameter(pluginName, parameterName)`を使用します。
 
@@ -226,13 +219,13 @@ inject(RPM.Scene.TitleScreen, "load", async function() {
 
 これで、プラグインユーザーは次のようにパラメータ値を変更できます。
 
-![](../.gitbook/assets/plugin-parameter-user.png)
+![User Plugin Parameter](../.gitbook/assets/plugin-parameter-user.png)
 
 ## コマンド
 
 プラグインをカスタムイベントコマンドに関連付けることもできます！素晴らしい！非常に簡単な例を作成してみましょう。`print`という名前のコマンドを作成し、コンソールに必要なテキストを出力します。ここでは、エディター側で作成します。
 
-![](../.gitbook/assets/plugin-create-command.png)
+![Plugin Create Command](../.gitbook/assets/plugin-create-command.png)
 
 作成したので、コマンドアクションを登録するためにプラグインコードを再度編集しましょう。`registerCommand(pluginName, commandName, commandFunction)`を使用して定義する必要があります。
 
@@ -244,17 +237,17 @@ RPM.Manager.Plugins.registerCommand(pluginName, "console", (text) => {
 
 このコマンドを使用するには、イベントコマンド`Plugin...`を作成し、プラグインとコマンドを選択します。
 
-![](../.gitbook/assets/plugin-command.png)
+![Plugin Command](../.gitbook/assets/plugin-command.png)
 
 トリガーすると、コンソールにテキストが出力されます！
 
-![](../.gitbook/assets/plugin-command-render.png)
+![Plugin COmmand Render](../.gitbook/assets/plugin-command-render.png)
 
 ## 複雑なパラメータ
 
 パラメータに、より複雑な値を指定することもできます。1つ目は`Custom structure`で、JavaScriptの`Object`に似ています。
 
-![](../.gitbook/assets/plugin-parameter-custom-structure.png)
+![Plugin Parameter Custom Structure](../.gitbook/assets/plugin-parameter-custom-structure.png)
 
 {% hint style="warning" %}
 返されるパラメータは、深いパラメータ検索の後、`System.DynamicValue`になることに注意してください。そのため、`x`の値を取得する場合は、`RPM.Manager.Plugins.getParameter(pluginName, "Size").x.getValue()`を実行する必要があります。
@@ -262,7 +255,7 @@ RPM.Manager.Plugins.registerCommand(pluginName, "console", (text) => {
 
 もう1つは`Custom list`です。JavaScriptの`Array`に似ています。
 
-![](../.gitbook/assets/plugin-parameter-custom-list.png)
+![Plugin Parameter Custom List](../.gitbook/assets/plugin-parameter-custom-list.png)
 
 {% hint style="warning" %}
 カスタムリストについても、動的な値を取得することを忘れないでください！この例では、`RPM.Manager.Plugins.getParameter(pluginName, "Size")[0].getValue()`を使用して、最初のリスト値を取得できます。
@@ -273,5 +266,3 @@ RPM.Manager.Plugins.registerCommand(pluginName, "console", (text) => {
 ## プラグインのエクスポート（オンライン提出）
 
 オンラインプラグインを提出するには、GitHub wikiの次のガイドに従ってください。[https://github.com/RPG-Paper-Maker/RPG-Paper-Maker/wiki/Online-plugins-submission](https://github.com/RPG-Paper-Maker/RPG-Paper-Maker/wiki/Online-plugins-submission).
-
-

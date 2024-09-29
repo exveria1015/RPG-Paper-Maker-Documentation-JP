@@ -1,1 +1,7 @@
 site
+node_modules
+yarn.lock
+*.textlintrc
+*.markdownlint-cli2.jsonc
+package-lock.json
+package.json
