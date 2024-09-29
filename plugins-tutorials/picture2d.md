@@ -1,4 +1,3 @@
 # Picture2D
 
-Work in progress.
-
+開発中です。 

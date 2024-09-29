@@ -1,235 +1,237 @@
 ---
-description: Give life for your game.
+description: ゲームに命を吹き込みましょう。
 ---
 
-# Objects & Events
+# オブジェクトとイベント
 
-You know how to create beautiful maps, but you want to make it be alive by adding NPCs, treasures, etc. These elements are called `objects`. These objects will also react to `events` \(hero action, chronometer, attack, etc.\). Objects and events are here to galvanize your maps and create your game stories!
+美しいマップを作成する方法がわかったところで、NPC、宝箱などを追加してマップに命を吹き込みましょう。これらの要素は「オブジェクト」と呼ばれます。これらのオブジェクトは、「イベント」（ヒーローのアクション、クロノメーター、攻撃など）にも反応します。オブジェクトとイベントは、マップを活性化し、ゲームのストーリーを作成するためのものです！
 
-## Events <a id="events"></a>
+## イベント <a id="events"></a>
 
-**/! Events in RPG Paper Maker are a different notion than in RM classic series.**
+**/！ RPG Paper Maker のイベントは、RPGツクールクラシックシリーズのイベントとは異なる概念です。**
 
-You can access to events in `Systems manager > Events / States`.
+`システムマネージャー` > `イベント/ステート` でイベントにアクセスできます。
 
 ![](.gitbook/assets/systems-manager-events-states.png)
 
-Events represent the fact that something important just happened and the objects in the map can react or not to it. An event can be for example the fact that your hero pressed the action button, or even the fact that a rain tempest just started. These events are sent to objects by other objects. There are two types of events:
+イベントは、何か重要なことが起こったという事実を表し、マップ内のオブジェクトはそれに反応したり、しなかったりします。イベントとは、たとえば、ヒーローがアクションボタンを押したという事実や、暴風雨がちょうど始まったという事実などです。これらのイベントは、他のオブジェクトによってオブジェクトに送信されます。イベントには2つのタイプがあります。
 
-* **System events** \(time, keyboard pressure, etc.\) that are not sent by objects in the map, but by the game system itself.
-* **User events** \(quest completed, sword hit\) that you can be created by yourself and sent thanks to local objects.
+* **システムイベント**（時間、キーボードの押下など）。これは、マップ内のオブジェクトではなく、ゲームシステム自体によって送信されます。
+* **ユーザーイベント**（クエスト完了、剣による攻撃）。これは自分で作成し、ローカルオブジェクトを介して送信できます。
 
-An event also takes some `parameters`. For example, if you want to play a sound each three seconds in the background, you can use the time event with the parameter time = 3000 \(milliseconds\) and repeat = ON. Imagine such amazing things you can do with parameters \(a sword hit event taking a power parameter for example\). You can choose the default value of a parameter when editing parameters of an event.
+イベントはまた、いくつかの `パラメータ` を取ります。たとえば、バックグラウンドで3秒ごとにサウンドを再生したい場合は、パラメータ time = 3000（ミリ秒）、repeat = ON を指定して時間イベントを使用できます。パラメータを使ってできる素晴らしいことを想像してみてください（たとえば、剣の攻撃イベントにパワーパラメータを設定するなど）。イベントのパラメータを編集するときに、パラメータのデフォルト値を選択できます。
 
-**/! Don't confuse physics and events. You should not use events for wind animations or gravity, etc.**
+**/！ 物理とイベントを混同しないでください。風のアニメーションや重力などにイベントを使用しないでください。**
 
-## Reactions <a id="reactions"></a>
+## リアクション <a id="reactions"></a>
 
-Reactions are a tree of commands that will be executed one by one. For example a command can be to display text on screen or to move specific objects in the map. Here is an example of reaction:
+リアクションは、順番に実行されるコマンドのツリーです。たとえば、コマンドは、画面にテキストを表示したり、マップ内の特定のオブジェクトを移動したりすることができます。リアクションの例を次に示します。
 
-![Reactions](https://rpg-paper-maker.github.io/basics/img/example-reaction.png)
+![リアクション](https://rpg-paper-maker.github.io/basics/img/example-reaction.png)
 
-This reaction will check if the variable myValue is equal to 2. If it's OK, this will display the message "It's OK!". If not, this will display the message "Go back later.".
+このリアクションは、変数 myValue が 2 と等しいかどうかをチェックします。OK の場合、「OKです！」というメッセージが表示されます。そうでない場合は、「後で戻ってきてください。」というメッセージが表示されます。
 
-To edit / add a new command in a reaction, `Double click` on a corresponding node. This will open this window containing a large list of commands:
+リアクションに新しいコマンドを編集/追加するには、対応するノードを `ダブルクリック` します。これにより、コマンドの大きなリストを含むこのウィンドウが開きます。
 
-![Commands](https://rpg-paper-maker.github.io/basics/img/event-commands.png)
+![コマンド](https://rpg-paper-maker.github.io/basics/img/event-commands.png)
 
-We will see later all these commands details one by one.
+これらのコマンドの詳細については、後で1つずつ見ていきます。
 
-There is also a way to find your commands faster with keyboard search:
+キーボード検索を使用してコマンドをすばやく見つける方法もあります。
 
 ![](https://rpg-paper-maker.github.io/basics/img/commands-keyboard.png)
 
-You can also copy / paste / delete by `Right-clicking` on the corresponding command node.
+また、対応するコマンドノードを `右クリック` することで、コピー/貼り付け/削除を行うこともできます。
 
-## Common reactions <a id="common-reactions"></a>
+## 共通リアクション <a id="common-reactions"></a>
 
-If you see that you are often copying the same set of commands a lot of time maybe you should consider creating a common reaction. You can access to these in `Systems manager > Common reactions`.
+同じコマンドセットを何度もコピーしていることに気付いたら、共通リアクションの作成を検討する必要があるかもしれません。これらには、`システムマネージャー` > `共通リアクション` からアクセスできます。
 
-![Common reactions](https://rpg-paper-maker.github.io/basics/img/common-reactions.png)
+![共通リアクション](https://rpg-paper-maker.github.io/basics/img/common-reactions.png)
 
-This way you will be able to call this common reaction instead of always copying it. It's even taking parameters if you have some variations in your reaction.
+このようにして、常にコピーするのではなく、この共通リアクションを呼び出すことができます。リアクションにバリエーションがある場合は、パラメータも取ります。
 
-* `Block hero when reaction`: If checked, the hero will not be able to move until the reaction is finished.
+* `リアクション時にヒーローをブロック`: チェックを入れると、リアクションが終了するまでヒーローは移動できなくなります。
 
-## Objects <a id="objects"></a>
+## オブジェクト <a id="objects"></a>
 
-An object is something that can move or/and react to some events in a map. So basically a tree is not an object \(except if you can cut it so it would have a reaction to an axe hit\) but only a static element. It can be a NPC, a monster, or anything else. Note that your hero is an object itself so you can perfectly program its reactions.
+オブジェクトとは、マップ内で移動したり、イベントに反応したりできるものです。したがって、基本的に木はオブジェクトではありません（切ることができ、斧による攻撃に反応する場合を除く）。それは単なる静的な要素です。NPC、モンスター、その他何でもかまいません。ヒーロー自身もオブジェクトであるため、そのリアクションを完全にプログラムできます。
 
-To add an object in a map, select the `Object` map editor section. Point on a map square and `Double click` or press `Enter` after clicking on the square. This will open a new window.
+マップにオブジェクトを追加するには、`オブジェクト` マップエディターセクションを選択します。マップのマスをポイントし、`ダブルクリック` するか、マスをクリックした後に `Enter` キーを押します。これにより、新しいウィンドウが開きます。
 
-![Objects](https://rpg-paper-maker.github.io/basics/img/object-map.png)
+![オブジェクト](https://rpg-paper-maker.github.io/basics/img/object-map.png)
 
-* `Name`: Choose a name for your objects. This can help later if you want to execute actions on this object externally.
-* `Only one event per frame`: We will see what are events, if checked the object will have only one reaction per frame and not several in the same time.
-* `Model`: Choose a model for this object. We will see later how to configure models.
+* `名前`: オブジェクトの名前を選択します。これは、後でこのオブジェクトに対して外部からアクションを実行したい場合に役立ちます。
+* `フレームごとに1つのイベントのみ`: イベントについては後述しますが、チェックを入れると、オブジェクトはフレームごとに1つのリアクションのみを持ち、同時に複数のリアクションを持つことはありません。
+* `モデル`: このオブジェクトのモデルを選択します。モデルの構成方法については、後で説明します。
 
-### Events <a id="events_1"></a>
+### イベント <a id="events_1"></a>
 
-You can configure which event the object can react to in the `Events` section. `Double click` on a node:
+`イベント` セクションで、オブジェクトが反応できるイベントを構成できます。ノードを `ダブルクリック` します。
 
-![Event](https://rpg-paper-maker.github.io/basics/img/event.png)
+![イベント](https://rpg-paper-maker.github.io/basics/img/event.png)
 
-You can select if you want a user or system event and change parameters value:
+ユーザーイベントとシステムイベントのどちらにするかを選択し、パラメータ値を変更できます。
 
-![Parameter values](https://rpg-paper-maker.github.io/basics/img/event-parameters.png)
+![パラメータ値](https://rpg-paper-maker.github.io/basics/img/event-parameters.png)
 
-System events are the following:
+システムイベントは次のとおりです。
 
-* `Time`: Event sent when time interval is cleared.
-  * **Interval** \(default: 0\): Time to wait in milliseconds.
-  * **Repeat** \(default: ON\): Send the event after each interval or once.
-* `Chronometer`: _Not available yet._
-* `KeyPress`: Event sent when pressing a key on keyboard.
-  * **ID** \(default: anything\): The ID of the key.
-  * **Repeat** \(default: OFF\): If ON, this event will be sent as long as you press the key with a small offset at the first pressure.
-  * **Immediate repeat** \(default: OFF\): If ON, this event will be sent as long as you press the key without any offset.
-* `KeyRelease`: Event sent when releasing a key on keyboard.
-  * **ID** \(default: anything\): The ID of the key.
+* `時間`: 時間間隔がクリアされると送信されるイベント。
+  * **間隔**（デフォルト: 0）: 待機時間（ミリ秒単位）。
+  * **繰り返し**（デフォルト: ON）: 各間隔の後、または1回だけイベントを送信します。
+* `クロノメーター`: _まだ使用できません。_
+* `キー押下`: キーボードのキーを押すと送信されるイベント。
+  * **ID**（デフォルト: 任意）: キーのID。
+  * **繰り返し**（デフォルト: OFF）: ONの場合、このイベントは、最初に押したときにわずかなオフセットを置いて、キーを押している限り送信されます。
+  * **即時繰り返し**（デフォルト: OFF）: ONの場合、このイベントは、オフセットなしでキーを押している限り送信されます。
+* `キー解放`: キーボードのキーを離すと送信されるイベント。
+  * **ID**（デフォルト: 任意）: キーのID。
 
-### States <a id="states"></a>
+### ステート <a id="states"></a>
 
-An object has a set of `States`. For example, the hero can be in a normal state, or poisoned / vulnerable. Note that an object can be in several states at the same time.
+オブジェクトには、一連の `ステート` があります。たとえば、ヒーローは通常の状態、または毒/脆弱な状態になる可能性があります。オブジェクトは同時に複数の状態になる可能性があることに注意してください。
 
-You can add a new state on this list. There also is a `Update complete list...` button if you want to create new common states.
+このリストに新しいステートを追加できます。また、新しい共通ステートを作成する場合は、`完全なリストを更新...` ボタンがあります。
 
-![States](https://rpg-paper-maker.github.io/basics/img/object-state-second.png)
+![ステート](https://rpg-paper-maker.github.io/basics/img/object-state-second.png)
 
-For each state, you have to choose different reactions to specific events. You can copy / paste reactions through states by using `Copy reaction` and `Paste reaction` buttons. These different options are also available for each state:
+ステートごとに、特定のイベントに対する異なるリアクションを選択する必要があります。`リアクションのコピー` ボタンと `リアクションの貼り付け` ボタンを使用して、ステート間でリアクションをコピー/貼り付けできます。これらの異なるオプションは、各ステートでも使用できます。
 
-![Setting reactions for a state](https://rpg-paper-maker.github.io/basics/img/state-options.png)
+![ステートのリアクションの設定](https://rpg-paper-maker.github.io/basics/img/state-options.png)
 
-* `Graphics`: Select the object graphics here \(character picture\). Choose below the kind of element \(Sprite etc.\).
-* `Moving`: Options linked to the object moves when there is no reaction.
+* `グラフィック`: ここでオブジェクトのグラフィック（キャラクター画像）を選択します。以下で、要素の種類（スプライトなど）を選択します。
+* `移動`: リアクションがない場合のオブジェクトの移動にリンクされたオプション。
 
-  * `Type`: The type of moving.
-    * `Fix`: The object will not move at all.
-    * `Random`: The object will move randomly in the map.
-    * `Route`: The object will loop on a route that you can edit with the `Edit route...` button. Check out move object command documentation [here](event-commands.md#move-object) that is exactly the same.
+  * `タイプ`: 移動のタイプ。
+    * `固定`: オブジェクトはまったく移動しません。
+    * `ランダム`: オブジェクトはマップ内をランダムに移動します。
+    * `ルート`: オブジェクトは、`ルートの編集...` ボタンで編集できるルートをループします。移動オブジェクトコマンドのドキュメント[こちら](event-commands.md#move-object)をご覧ください。まったく同じです。
 
   \`\`
 
-  * `Speed`: The speed value when the object is moving. This value is multiplied with the traveled distance with equal time. This also is multiplying the frame duration. Default value is 1.
-  * `Freq`: The frequency value when the object is moving. This value is changing the time in second\(s\) to wait before executing the next move. Default value is 0 \(second\(s\)\).
+  * `速度`: オブジェクトが移動しているときの速度値。この値は、移動距離に等しい時間で乗算されます。これはフレームの長さにも乗算されます。デフォルト値は1です。
+  * `頻度`: オブジェクトが移動しているときの頻度値。この値は、次の移動を実行するまでに待機する時間を秒単位で変更します。デフォルト値は0（秒）です。
 
 
 
-  NOTE: You can edit speed and frequency list in `Systems manager > System`:
+  注意: 速度と頻度のリストは、`システムマネージャー` > `システム` で編集できます。
 
 ![](.gitbook/assets/speeds.png)
 
 ![](.gitbook/assets/frequencies.png)
 
-* `Name`: The name of the speed / frequency.
-* `Value`: The value of the speed / frequency \(can only be a number\).
-* `Move animation`: If checked, all the frames of the character will be drawn for move animation. If not, this will only draw the first frame of the character animation.
-* `Stop animation`: _\(not available yet\)_ If checked, all the frames of the character will be drawn for stopped animation. If not, this will only draw the first frame of the character animation.
-* `Climb animation`: _\(not available yet\)_ If checked, all the frames of the character will be drawn for climbing animation. If not, this will only draw the first frame of the character animation.
-* `Direction fix`: _\(not available yet\)_ If checked, the graphics will not change direction to look at the hero. If not, it will look at the hero.
-* `Set with camera`: If checked, the graphics will update orientation according to the camera orientation. If not, the camera orientation changes nothing.
-* `Pixel offset`: If checked, the move animation will go 1px down after two frames. This adds an interesting effect.
-* `Keep position`: _\(not available yet\)_ If checked, the object always keep its position after moving, even after loading save or changing map. If not, the object position is reinitialized after loading save or changing map.
+* `名前`: 速度/頻度の名前。
+* `値`: 速度/頻度の値（数値のみ）。
+* `移動アニメーション`: チェックを入れると、移動アニメーションのためにキャラクターのすべてのフレームが描画されます。チェックを外すと、キャラクターアニメーションの最初のフレームのみが描画されます。
+* `停止アニメーション`: _（まだ使用できません）_ チェックを入れると、停止アニメーションのためにキャラクターのすべてのフレームが描画されます。チェックを外すと、キャラクターアニメーションの最初のフレームのみが描画されます。
+* `登攀アニメーション`: _（まだ使用できません）_ チェックを入れると、登攀アニメーションのためにキャラクターのすべてのフレームが描画されます。チェックを外すと、キャラクターアニメーションの最初のフレームのみが描画されます。
+* `方向固定`: _（まだ使用できません）_ チェックを入れると、ヒーローを見るためにグラフィックの方向が変わりません。チェックを外すと、ヒーローの方を向きます。
+* `カメラに合わせて設定`: チェックを入れると、カメラの向きに応じてグラフィックの向きが更新されます。チェックを外すと、カメラの向きは何も変更しません。
+* `ピクセルオフセット`: チェックを入れると、2フレーム後に移動アニメーションが1ピクセル下に移動します。これは興味深い効果を追加します。
+* `位置の保持`: _（まだ使用できません）_ チェックを入れると、セーブのロードやマップの変更後も、オブジェクトは常にその位置を保持します。チェックを外すと、セーブのロードやマップの変更後、オブジェクトの位置は再初期化されます。
 
 ![](https://rpg-paper-maker.github.io/basics/img/object-state-detection.png)
 
-* `Detection`: A detection to select for sending an event each frames.
+* `検出`: 各フレームでイベントを送信するために選択する検出。
 
-### Properties <a id="properties"></a>
+### プロパティ <a id="properties"></a>
 
-The object also has a set of properties. It can be HPs, age, gender, etc. It all depends on what you need and your type of game.
+オブジェクトには、一連のプロパティもあります。HP、年齢、性別などがあります。それはすべて、ゲームの種類や必要なものによって異なります。
 
-![Set property](https://rpg-paper-maker.github.io/basics/img/object-properties.png)
+![プロパティの設定](https://rpg-paper-maker.github.io/basics/img/object-properties.png)
 
-* `Name`: The property name.
-* `Initial value`: The initial value of the property when the object is loaded for the first time.
+* `名前`: プロパティ名。
+* `初期値`: オブジェクトが初めてロードされたときのプロパティの初期値。
 
-## Example: create a chest <a id="example-create-a-chest"></a>
+## 例: 宝箱を作成する <a id="example-create-a-chest"></a>
 
-Here is a simple way to produce a chest:
+宝箱を作成する簡単な方法を次に示します。
 
-* Be sure to have a state for the chest in the systems manager when it is opened:
+* システムマネージャーで、宝箱が開かれた状態のステートがあることを確認します。
 
-![Screenshot](https://rpg-paper-maker.github.io/basics/img/states-opened.png)
+![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/states-opened.png)
 
-* Complete reactions for each state and don't forget to replace state at the end of the normal state:
+* 各ステートのリアクションを完了し、通常ステートの最後にステートを置き換えることを忘れないでください。
 
 ![](https://rpg-paper-maker.github.io/basics/img/state-1.png)
 
 ![](https://rpg-paper-maker.github.io/basics/img/state-2.png)
 
-## Edit / Copy / Paste / Delete an existing object <a id="edit-copy-paste-delete-an-existing-object"></a>
+## 既存のオブジェクトの編集/コピー/貼り付け/削除 <a id="edit-copy-paste-delete-an-existing-object"></a>
 
-You can open a context menu by `Right clicking` on an object:
+オブジェクトを `右クリック` することで、コンテキストメニューを開くことができます。
 
-![Editing an object](https://rpg-paper-maker.github.io/basics/img/object-context-menu.png)
+![オブジェクトの編集](https://rpg-paper-maker.github.io/basics/img/object-context-menu.png)
 
-## Models <a id="models"></a>
+## モデル <a id="models"></a>
 
-Models are objects that can be commonly used. You can have models list in `Systems manager > Models`.
+モデルは、一般的に使用できるオブジェクトです。`システムマネージャー` > `モデル` にモデルリストがあります。
 
-![Models](https://rpg-paper-maker.github.io/basics/img/object-hero.png)
+![モデル](https://rpg-paper-maker.github.io/basics/img/object-hero.png)
 
-For example, if you want to add flowers that can be picked in your maps, you can create a model "Flower", and use this model for an empty object in your map:
+たとえば、マップで摘むことができる花を追加する場合は、「花」というモデルを作成し、マップ内の空のオブジェクトにこのモデルを使用できます。
 
-* Create model:
+* モデルを作成する:
 
-![Create model](https://rpg-paper-maker.github.io/basics/img/model-flower.png)
+![モデルを作成する](https://rpg-paper-maker.github.io/basics/img/model-flower.png)
 
-* Use model flower for a map object:
+* マップオブジェクトにモデルフラワーを使用する:
 
-![Using model](https://rpg-paper-maker.github.io/basics/img/object-model-flower.png)
+![モデルの使用](https://rpg-paper-maker.github.io/basics/img/object-model-flower.png)
 
-### Default model <a id="default-model"></a>
+### デフォルトモデル <a id="default-model"></a>
 
-The model with ID 1 is the default model when you create a new object. You can change here the default information to have in an object creation.
+ID 1のモデルは、新しいオブジェクトを作成するときのデフォルトモデルです。ここでデフォルト情報を変更して、オブジェクト作成に含めることができます。
 
-### Hero model <a id="hero-model"></a>
+### ヒーローモデル <a id="hero-model"></a>
 
-The hero is also an object and reacts to a lot of systems events:
+ヒーローもオブジェクトであり、多くのシステムイベントに反応します。
 
-* `KeyPress > Up, Down, Left, Right Hero`: Move the object hero to the pressed directions thanks to move object command.
-* `KeyPress > Left, Right Camera`: Change the camera orientation thanks to move camera command.
-* `KeyPress > Action`: Send the custom event `HeroAction` to the facing square objects thanks to the send event command.
-* `KeyPress > MainMenu`: Open the main menu thanks to the open main menu command.
+* `キー押下` > `上、下、左、右ヒーロー`: 移動オブジェクトコマンドを使用して、オブジェクトヒーローを押された方向に移動します。
+* `キー押下` > `左、右カメラ`: 移動カメラコマンドを使用して、カメラの向きを変更します。
+* `キー押下` > `アクション`: イベント送信コマンドを使用して、カスタムイベント `HeroAction` を向かい合っているマスのオブジェクトに送信します。
+* `キー押下` > `メインメニュー`: メインメニューを開くコマンドを使用して、メインメニューを開きます。
 
-### Inheritance <a id="inheritance"></a>
+### 継承 <a id="inheritance"></a>
 
-If an object uses a model but also has content, this new content will replace some of the model content. Models themselves can have models.
+オブジェクトがモデルを使用しているが、コンテンツも持っている場合、この新しいコンテンツはモデルコンテンツの一部を置き換えます。モデル自体がモデルを持つことができます。
 
-* **State**: If there is a state with the same ID, the model reactions for this state ID will be replaced by the current content.
-* **Property**: If there is a property with the same name, the model reactions for this property name will be replaced by the current content.
-* **Event**: This has no influence.
+* **ステート**: 同じIDのステートが存在する場合、このステートIDのモデルリアクションは現在のコンテンツに置き換えられます。
+* **プロパティ**: 同じ名前のプロパティが存在する場合、このプロパティ名のモデルリアクションは現在のコンテンツに置き換えられます。
+* **イベント**: これは影響しません。
 
-## Map startup reactions <a id="map-startup-reactions"></a>
+## マップ起動時のリアクション <a id="map-startup-reactions"></a>
 
-In map properties, you can see this section:
+マッププロパティで、このセクションを見ることができます。
 
-![Map start up reactions](https://rpg-paper-maker.github.io/basics/img/map-startup-reactions.png)
+![マップ起動時のリアクション](https://rpg-paper-maker.github.io/basics/img/map-startup-reactions.png)
 
-This simply is an invisible object that will be useful for kinematics when entering a new map, for example. This is invisible, so there are no state graphics. By default, it is reacting to the event `Time` with 0 for interval parameter and OFF for repeat parameter. That means that these reactions will be executed in high priority when entering the map. This can be used for kinematics and some other stuff.
+これは単に、新しいマップに入ったときのキネマティクスなどに役立つ、非表示のオブジェクトです。これは非表示であるため、ステートグラフィックはありません。デフォルトでは、間隔パラメータに0、繰り返しパラメータにOFFを指定した `時間` イベントに反応します。つまり、これらのリアクションは、マップに入ったときに優先的に実行されます。これは、キネマティクスやその他のことに使用できます。
 
-## Detection <a id="detections"></a>
+## 検出 <a id="detections"></a>
 
-It is important to use detection with objects. In fact, you are already using it when you react to `Hero Action` event. `Hero Action` event is an event that is sent by the hero itself to the objects that are in front of him. In order to determine where the events are sent, we use what we call `detection`.
+オブジェクトで検出を使用することは重要です。実際、`ヒーローアクション` イベントに反応するときには、すでに使用しています。`ヒーローアクション` イベントは、ヒーロー自身が目の前のオブジェクトに送信するイベントです。イベントの送信先を決定するために、`検出` と呼ばれるものを使用します。
 
-You can access to detection list in `Systems manager > System`:
+`システムマネージャー` > `システム` で検出リストにアクセスできます。
 
-![Setting detection](https://rpg-paper-maker.github.io/basics/img/detections.png)
+![検出の設定](https://rpg-paper-maker.github.io/basics/img/detections.png)
 
-And here is the front detection! You clearly see here that your event can be sent in front. There is an arrow indicating the square position of the object sending the event, and also the orientation. You can add detection boxes by using `left click` and `right click` to delete existing detection boxes.
+そして、これが正面検出です！ここでは、イベントを正面に送信できることがはっきりとわかります。イベントを送信するオブジェクトのマスの位置と向きを示す矢印があります。`左クリック` で検出ボックスを追加し、`右クリック` で既存の検出ボックスを削除できます。
 
-* `Name`: The detection name.
-* `Field`: The detection field that you can increase/decrease.
-  * `Left`: Number of squares on the left side of the object sending the event.
-  * `Right`: Number of squares on the right side of the object sending the event.
-  * `Top`: Number of squares on the top side of the object sending the event.
-  * `Bot`: Number of squares on the bot side of the object sending the event.
-* `New box height`: The height that will be applied on the next boxes.
-  * `Square(s)`: Number of squares for detection box height.
-  * `Pixel(s)`: Number of pixels in addition for detection box height.
-* `Automatic`: A way to automatically generate detection boxes adding.
-  * `Circle`: Draw a circle with given `radius`.
-  * `Rectangle`: Draw a rectangle with given `length` and `width`.
-  * `Generate`: Clicking on this button will generate the selected form and options.
+* `名前`: 検出名。
+* `フィールド`: 増減できる検出フィールド。
+  * `左`: イベントを送信するオブジェクトの左側にあるマスの数。
+  * `右`: イベントを送信するオブジェクトの右側にあるマスの数。
+  * `上`: イベントを送信するオブジェクトの上側にあるマスの数。
+  * `下`: イベントを送信するオブジェクトの下側にあるマスの数。
+* `新しいボックスの高さ`: 次のボックスに適用される高さ。
+  * `マス`: 検出ボックスの高さのマス数。
+  * `ピクセル`: 検出ボックスの高さに追加するピクセル数。
+* `自動`: 検出ボックスの追加を自動的に生成する方法。
+  * `円`: 指定された `半径` の円を描画します。
+  * `長方形`: 指定された `長さ` と `幅` の長方形を描画します。
+  * `生成`: このボタンをクリックすると、選択したフォームとオプションが生成されます。
+
+
 

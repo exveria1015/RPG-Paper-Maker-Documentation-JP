@@ -1,73 +1,73 @@
 ---
-description: Understanding how the scripts are organized.
+description: スクリプトの構成方法について理解する
 ---
 
-# Scripts organization
+# スクリプト構成
 
-## System
+## システム
 
-The System code is using ECMAScript modules, so every modules are packed into a folder with the module name. Checkout the `System` folder:
+システムコードはECMAScriptモジュールを使用しているため、すべてのモジュールはモジュール名と同じフォルダにまとめられています。 `System` フォルダを確認してください：
 
 ![](../.gitbook/assets/system-modules.png)
 
-Here are the following modules:
+以下はモジュールの説明です：
 
-* `Common`: Every static classes mainly used to get static properties and methods (Mathf, Paths...)
-* `Core`: Every core classes that will be directly used in the game run (Autotiles, WindowBox...)
-*   `Datas`: Every datas classes grouping every System classes that will read JSON game files
+* `Common`：主に静的プロパティとメソッドを取得するために使用されるすべての静的クラス (Mathf, Paths...)
+* `Core`：ゲームの実行で直接使用されるすべてのコアクラス (Autotiles, WindowBox...)
+*   `Datas`：JSONゲームファイルを読み取るすべてのシステムクラスをグループ化するすべてのデータクラス
 
     &#x20;(Heroes, Systems...)
-* `EventCommand`: Every event commands that can be interpreted in reactions (ShowText, Wait...)
-* `Graphic`: Every graphic classes that are used to be drawn inside WindowBox classes (Text, Player...)
-* `Manager`: Every manager classes used to manage specific game events (Collisions, Plugins...)
-* `Scene`: Every scenes classes where everything is drawn (Map, Menu...)
-* `System`: Every systems classes that will read JSON from datas (Color, Monster...)
+* `EventCommand`：リアクションで解釈できるすべてのイベントコマンド (ShowText, Wait...)
+* `Graphic`：WindowBoxクラス内に描画するために使用されるすべてのグラフィッククラス (Text, Player...)
+* `Manager`：特定のゲームイベントを管理するために使用されるすべてのマネージャークラス (Collisions, Plugins...)
+* `Scene`：すべてが描画されるすべてのシーンクラス (Map, Menu...)
+* `System`：データからJSONを読み取るすべてのシステムクラス (Color, Monster...)
 
-We will gradually see how these modules are used in this tutorial.
+これらのモジュールがどのように使用されるかは、このチュートリアルで徐々に見ていきます。
 
-Each file `*.js` also comes with a `*.d.ts` :
+各 `*.js` ファイルには、 `*.d.ts` も付属しています。
 
 ![](../.gitbook/assets/system-example.png)
 
-You don't need to care about the `*.d.ts`. These files are just here to help Visual Studio Code to correctly type your auto completion.
+`*.d.ts` については気にする必要はありません。これらのファイルは、Visual Studio Codeがオートコンプリートを正しく入力できるようにするために用意されています。
 
 {% hint style="info" %}
-In fact, the original RPG Paper Maker code is in TypeScript, which is JavaScript but with typing restrictions. The TypeScript code is compiled to JavaScript Standard code and also provide these `*.d.ts`.
+実際、RPGツクールMVの元のコードはTypeScriptで書かれています。TypeScriptはJavaScriptですが、型指定の制限があります。TypeScriptコードはJavaScript Standardコードにコンパイルされ、これらの `*.d.ts` も提供されます。
 {% endhint %}
 
-## Shaders
+## シェーダー
 
-The `Shaders` folder contains all the shaders used by for 3D. To keep it simple, shaders are small programs executed in the graphic card instead of CPU. We will see later how it's used.
+`Shaders` フォルダには、3Dで使用されるすべてのシェーダーが含まれています。簡単に言うと、シェーダーはCPUではなくグラフィックカードで実行される小さなプログラムです。後ほど、どのように使用されるかを見ていきます。
 
 ![](../.gitbook/assets/shaders-example.png)
 
-## Libs
+## ライブラリ
 
-The `Libs` folder contains every external libraries used by RPG Paper Maker.
+`Libs` フォルダには、RPGツクールMVで使用されるすべての外部ライブラリが含まれています。
 
 ![](../.gitbook/assets/libs-example.png)
 
-We are using he following:
+以下を使用しています。
 
-* `howler.js`: It's a library managing every songs playing very easily.
-* `three.js`: The most important library. It provides a lot of functions and classes to handle webGL (3D) very easily. We will see it a lot in our code. You can check out the doc here: [https://threejs.org/docs/](https://threejs.org/docs/) and easily understand the RPG Paper Maker use.
+* `howler.js`：すべての曲を非常に簡単に再生管理するライブラリです。
+* `three.js`：最も重要なライブラリです。WebGL（3D）を非常に簡単に扱うための多くの関数とクラスを提供しています。私たちのコードでは、これらをたくさん目にすることになります。ドキュメントはこちらで確認できます：[https://threejs.org/docs/](https://threejs.org/docs/) RPGツクールMVでの使用方法を簡単に理解することができます。
 
-## Plugins
+## プラグイン
 
-All your future plugins will be in this `Plugins` folder:
+将来作成するすべてのプラグインは、この `Plugins` フォルダに入ります。
 
 ![](../.gitbook/assets/plugins-example.png)
 
-We'll see later how it's managed.
+後ほど、どのように管理されるかを見ていきます。
 
-## Where does the code start?
+## コードはどこから始まるのか？
 
-Now the question is: where does all the code start? It's in `System/main.js`. Let's quickly see what's happening inside it.
+さて、ここで疑問が出てきます。すべてのコードはどこから始まるのでしょうか？それは `System/main.js` にあります。中身で何が起こっているのか、簡単に見てみましょう。
 
 ```javascript
 let loaded = false;
 /**
- *  Initialize the game stack and datas.
+ *  ゲームスタックとデータを初期化する。
  */
 async function initialize() {
     await Manager.Plugins.load();
@@ -78,11 +78,11 @@ async function initialize() {
 }
 ```
 
-First, we define the `initialize` function. The first thing it does is to load the plugins, and then it initialize some managers (`Manager.Stack` and `Manager.Songs`) and then load the datas (that are inside the game JSON) thanks to this `load` function:
+まず、 `initialize` 関数を定義しています。最初にプラグインを読み込み、次にいくつかのマネージャー (`Manager.Stack` と `Manager.Songs`) を初期化し、 `load` 関数を使用してデータ（ゲームJSON内のデータ）を読み込みます。
 
 ```javascript
 /**
- *  Load the game stack and datas.
+ *  ゲームスタックとデータを読み込む。
  */
 async function load() {
     await Datas.Settings.read();
@@ -118,15 +118,15 @@ async function load() {
 }
 ```
 
-When everything is loaded, the title screen scene is initialized and we notify that the loading is finished. The game main loop is the `loop` function:
+すべてが読み込まれると、タイトル画面のシーンが初期化され、読み込みが完了したことが通知されます。ゲームのメインループは `loop` 関数です。
 
 ```javascript
 /**
- *  Main loop of the game.
+ *  ゲームのメインループ。
  */
 function loop() {
     requestAnimationFrame(loop);
-    // Update if everything is loaded
+    // すべてが読み込まれている場合に更新
     if (loaded) {
         if (!Manager.Stack.isLoading()) {
             Manager.Stack.update();
@@ -136,7 +136,7 @@ function loop() {
         }
     }
     Manager.Stack.drawHUD();
-    // Elapsed time
+    // 経過時間
     Manager.Stack.elapsedTime = new Date().getTime() - Manager.Stack
         .lastUpdateTime;
     Manager.Stack.averageElapsedTime = (Manager.Stack.averageElapsedTime +
@@ -145,23 +145,23 @@ function loop() {
 }
 ```
 
-It is called thanks to:
+これは、以下によって呼び出されます。
 
 ```javascript
 // -------------------------------------------------------
 //
-// START LOOP
+// ループ開始
 //
 // -------------------------------------------------------
 requestAnimationFrame(loop);
 ```
 
-It's basically updating and drawing the current scene (when starting, it's `Scene.TitleScreen`).
+これは基本的に、現在のシーン（開始時は `Scene.TitleScreen`）を更新して描画しています。
 
-Finally, inputs are managed thanks to:
+最後に、入力は以下によって管理されます。
 
 ```javascript
 Inputs.initialize();
 ```
 
-We will see in the next tutorial how the `Manager.Stack` is handled.
+次のチュートリアルでは、 `Manager.Stack` がどのように処理されるかを見ていきます。

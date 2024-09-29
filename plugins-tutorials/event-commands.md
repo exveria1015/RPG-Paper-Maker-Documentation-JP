@@ -1,12 +1,13 @@
+
 ---
-description: Event commands handling.
+description: イベントコマンドの処理
 ---
 
-# Event commands
+# イベントコマンド
 
-The folder `EventCommand` contains every Event command class. Those classes are interpreted thanks to `Core.ReactionInterpreter`. The Manager.Events will be the one sending events to objects. Then, when receiving the event, the object will instanciate a new `Core.ReactionInterpreter`.
+`EventCommand` フォルダには、すべてのイベントコマンドクラスが含まれています。これらのクラスは `Core.ReactionInterpreter` によって解釈されます。 Manager.Events はオブジェクトにイベントを送信します。そして、イベントを受信すると、オブジェクトは新しい `Core.ReactionInterpreter` をインスタンス化します。
 
-An `EventCommand` class will contain these methods:
+`EventCommand` クラスには、以下のメソッドが含まれます。
 
 ```javascript
 initialize() {
@@ -35,5 +36,5 @@ drawHUD(currentState) {
 }
 ```
 
-The `initialize` method is the Object that will be named `currentState` in the other methods parameters. In the update method, you need to return the number of node that will be added to the current node position in the reaction. So if you return 0, you won't move and keep updating this command. If you return 1, you'll go to the next command after the current one.
+`initialize` メソッドは、他のメソッドのパラメータで `currentState` という名前で参照されるオブジェクトです。 `update` メソッドでは、リアクションにおいて現在のノード位置に追加されるノードの数を返す必要があります。0 を返すと、移動せず、このコマンドの更新を続けます。1 を返すと、現在のコマンドの次のコマンドに進みます。
 

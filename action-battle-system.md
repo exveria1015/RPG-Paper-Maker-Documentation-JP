@@ -1,86 +1,85 @@
 ---
-description: Wow! Learn how to set your game action to the next level.
+description: すごい！ ゲームアクションを次のレベルに引き上げる方法を学びましょう。
 ---
 
-# Action battle system
+# アクションバトルシステム
 
-**/! Be aware that this tutorial will be updated constantly with new coming updates for having the best representation of the engine possibilities. Currently there are only basic possibilities so this won't look really attractive in the first place \(no animations etc.\).**
+**/！ このチュートリアルは、エンジンの可能性を最大限に表現するために、今後のアップデートに合わせて常に更新されます。現時点では基本的な機能しか搭載されていないため、最初はあまり魅力的ではないかもしれません（アニメーションなどはありません）。**
 
-Also, be aware that you will need to have a look on the [Objects & Events tutorial](objects-and-events.md) before reading this.
+また、これを読む前に、[オブジェクトとイベントのチュートリアル](objects-and-events.md) を参照する必要があることに注意してください。
 
-## What is an Action Battle System? <a id="what-is-an-action-battle-system"></a>
+## アクションバトルシステムとは？ <a id="what-is-an-action-battle-system"></a>
 
-An Action Battle System is the type of battle used for Action-RPG or simple Action games. One example is **Zelda** series, except for Zelda 2 which is a platformer, which is using a battle system with sword attack, bombs, arrows, etc.
+アクションバトルシステムとは、アクションRPGやシンプルなアクションゲームで使用されるバトルの種類です。一例としては、プラットフォームゲームであるゼルダ2を除く**ゼルダの伝説**シリーズがあり、剣攻撃、爆弾、矢などを駆使したバトルシステムを採用しています。
 
-![Example: TLOZ: Minish Cap](https://rpg-paper-maker.github.io/advanced/img/zelda.png)
+![例：ゼルダの伝説 ふしぎのぼうし](https://rpg-paper-maker.github.io/advanced/img/zelda.png)
 
-## How to create my hero and enemies characteristics <a id="how-to-create-my-hero-and-enemies-characteristics"></a>
+## 主人公と敵の特性を作成する方法 <a id="how-to-create-my-hero-and-enemies-characteristics"></a>
 
-We will start with one basic characteristic: HP \(health points\). There is actually not the command to be able to set statistics values, but there is another way to do: use properties. Go to `Systems manager > Models` and select `Hero` model. You can add a property `HP` this way:
+まずは基本的な特性であるHP（ヒットポイント）から始めます。実際には統計値を設定するためのコマンドはありませんが、別の方法があります。プロパティを使用します。 `システムマネージャー > モデル` に移動し、`主人公` モデルを選択します。次のように、プロパティ `HP` を追加できます。
 
-![Systems manager &amp;gt; Models &amp;gt; Set property](https://rpg-paper-maker.github.io/advanced/img/abs-prop.png)
+![システムマネージャー > モデル > プロパティの設定](https://rpg-paper-maker.github.io/advanced/img/abs-prop.png)
 
-You can do the same things with enemies in your maps:
+マップ内の敵にも同じことができます。
 
 ![](https://rpg-paper-maker.github.io/advanced/img/abs-enemies.png)
 
-NOTE: We strongly recommend to use models here!
+注意：ここではモデルを使用することを強くお勧めします！
 
-## How to create sword attacks <a id="how-to-create-sword-attacks"></a>
+## 剣攻撃を作成する方法 <a id="how-to-create-sword-attacks"></a>
 
-Now, let's say that the Action key will use your sword. We need three things:
+ここでは、アクションキーで剣を使うとしましょう。必要なものは3つです。
 
-* Create an event sword attack that will be sent to nearby enemies. Go to `Systems manager > Events / States` and add a new event named `Sword attack` with a parameter `Power` that can be anything as default value. This parameter will be useful to change attack swords power.
+* 近くの敵に送信されるイベントソードアタックを作成します。 `システムマネージャー > イベント/ステート` に移動し、デフォルト値として任意の値を設定できるパラメーター `威力` を持つ `剣攻撃` という名前の新しいイベントを追加します。このパラメーターは、攻撃剣の威力を変更するのに役立ちます。
 
-![System manager &amp;gt; Events / States](https://rpg-paper-maker.github.io/advanced/img/abs-event-sword.png)
+![システムマネージャー > イベント/ステート](https://rpg-paper-maker.github.io/advanced/img/abs-event-sword.png)
 
-* Create a dead state so the enemy won't be displayed after he got 0 HP. Go to `Systems manager > Events / States` and simply add a new state named `Dead`.
+* 敵がHP0になると表示されなくなるように、死亡ステートを作成します。 `システムマネージャー > イベント/ステート` に移動し、`死亡` という名前の新しいステートを追加します。
 
-![States](https://rpg-paper-maker.github.io/advanced/img/abs-state-dead.png)
+![ステート](https://rpg-paper-maker.github.io/advanced/img/abs-state-dead.png)
 
-* Create a detection for sword that will indicate the area where your sword attack will be effective. Go to `Systems manager > System` and add a new detection named `Sword` that is like that:
+* 剣攻撃が有効な範囲を示す剣の検出を作成します。 `システムマネージャー > システム` に移動し、次のような `剣` という名前の新しい検出を追加します。
 
-![Setting detection](https://rpg-paper-maker.github.io/advanced/img/abs-detection-sword.png)
+![検出の設定](https://rpg-paper-maker.github.io/advanced/img/abs-detection-sword.png)
 
-Now, go back to your `Hero` model. The event Action keypress is already used for sending Hero action event, but we can use it to send sword event too. Let's do a reaction to this so the Hero will send the event Sword attack with power 5 to enemies that are in the detection sword area:
+それでは、`主人公` モデルに戻りましょう。イベントアクションキー押下はすでに主人公のアクションイベントの送信に使用されていますが、剣イベントの送信にも使用できます。主人公が検出剣エリア内にいる敵に威力5の剣攻撃イベントを送信するように、これに対するリアクションを設定しましょう。
 
-![Commands &amp;gt; Send event Command](https://rpg-paper-maker.github.io/advanced/img/abs-sword-command.png)
+![コマンド > イベント送信コマンド](https://rpg-paper-maker.github.io/advanced/img/abs-sword-command.png)
 
-Done. Now, the enemy should be able to react to sword attack if we want to have something to happen. Let's make him react to sword attack event with any power value by losing HP and dying if HP is lesser than or equal to 0:
+完了です。これで、何かが起こるようにしたい場合は、敵が剣攻撃に反応できるはずです。任意の威力値の剣攻撃イベントに対して、HPを失い、HPが0以下になったら死亡するように設定しましょう。
 
-![Commands &amp;gt; Change property Command](https://rpg-paper-maker.github.io/advanced/img/abs-sword-enemy.png)
+![コマンド > プロパティ変更コマンド](https://rpg-paper-maker.github.io/advanced/img/abs-sword-enemy.png)
 
 ![](https://rpg-paper-maker.github.io/advanced/img/abs-enemy-text-command.png)
 
-The dead state is simply an empty object without graphics, but it could have been a dead asset too. So there it is, you have your sword attack!
+死亡ステートは、グラフィックのない単なる空のオブジェクトですが、死亡アセットにすることもできます。これで剣攻撃が完成しました！
 
-## How to create loots left by enemies in map <a id="how-to-create-loots-left-by-enemies-in-map"></a>
+## マップ内の敵が残した戦利品を作成する方法 <a id="how-to-create-loots-left-by-enemies-in-map"></a>
 
-What you can do instead of having the enemies instantly dead is replacing them by loots that they could have dropped! Just add a state loot that will react to hero touch and replace dead state by loot state:
+敵が即座に死亡するのではなく、ドロップした可能性のある戦利品に置き換えることができます！主人公のタッチに反応し、死亡ステートを戦利品ステートに置き換える戦利品ステートを追加するだけです。
 
-![Defining loots](https://rpg-paper-maker.github.io/advanced/img/abs-loot.png)
+![戦利品の定義](https://rpg-paper-maker.github.io/advanced/img/abs-loot.png)
 
-You can even add random effect with 80% of chance to having a loot for example:
+例えば、80%の確率で戦利品が出現するランダム効果を追加することもできます。
 
-![Defining loots](https://rpg-paper-maker.github.io/advanced/img/abs-loot-rand.png)
+![戦利品の定義](https://rpg-paper-maker.github.io/advanced/img/abs-loot-rand.png)
 
-Result:
+結果：
 
-![Samples](https://rpg-paper-maker.github.io/advanced/img/abs-sword-loot.gif)
+![サンプル](https://rpg-paper-maker.github.io/advanced/img/abs-sword-loot.gif)
 
-## How to create projectiles \(bullets, arrows\) <a id="how-to-create-projectiles-bullets-arrows"></a>
+## 投射物（弾丸、矢）を作成する方法 <a id="how-to-create-projectiles-bullets-arrows"></a>
 
-_Not available now \(requires create / delete objects in map command\)_
+_現在利用できません（マップコマンドでオブジェクトの作成/削除が必要です）_
 
-## How to create bombs <a id="how-to-create-bombs"></a>
+## 爆弾を作成する方法 <a id="how-to-create-bombs"></a>
 
-_Not available now \(requires create / delete objects in map command\)_
+_現在利用できません（マップコマンドでオブジェクトの作成/削除が必要です）_
 
-## How to create an AI <a id="how-to-create-an-ai"></a>
+## AIを作成する方法 <a id="how-to-create-an-ai"></a>
 
-_Not available now \(requires more move command\(pathfinding\)\)_
+_現在利用できません（より多くの移動コマンド（パスファインディング）が必要です）_
 
-## How to create an intrusion system <a id="how-to-create-an-intrusion-system"></a>
+## 侵入システムを作成する方法 <a id="how-to-create-an-intrusion-system"></a>
 
-_Not available now \(requires send detection to a specific object command for better use\)_
-
+_現在利用できません（より効果的に使用するには、特定のオブジェクトコマンドに検出を送信する必要があります）_

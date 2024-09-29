@@ -1,444 +1,328 @@
-# Tilesets & Collisions
+<h1>タイルセットと衝突</h1>
 
-## -- Overview
+## -- 概要
 
-This section will explain how to setup your tiles and the collisions that determine where objects can go within your maps. Along with some of the basics of how objects can interact with each other.&#x20;
+このセクションでは、タイルの設定方法と、マップ内でオブジェクトが移動できる場所を決定する衝突について説明します。さらに、オブジェクト同士がどのように相互作用するかについての基本もいくつか紹介します。&#x20;
 
-## -- Tilesets <a href="#tilesets" id="tilesets"></a>
+## -- タイルセット <a href="#tilesets" id="tilesets"></a>
 
-A tileset is the file that contains all the individual tiles that are available to draw on each map. You can have as many tilesets as you want, but you can only select one tileset per map. The tileset your map uses can be changed with a command mid-game.&#x20;
+タイルセットは、各マップに描画できる個々のタイルをすべて含むファイルです。タイルセットはいくつでも持つことができますが、マップごとに選択できるタイルセットは1つだけです。マップが使用するタイルセットは、ゲーム中にコマンドで変更できます。&#x20;
 
-The database entry allows you to set various properties of those tiles. You can use the same tileset for more than one entry and set different properties for each one.&#x20;
+データベースエントリでは、これらのタイルのさまざまなプロパティを設定できます。複数のエントリに同じタイルセットを使用し、それぞれに異なるプロパティを設定できます。&#x20;
 
-Tileset files must be placed in the project folder under /images/textures/tilesets.
+タイルセットファイルは、プロジェクトフォルダ内の /images/textures/tilesets に配置する必要があります。
 
-### Add a new tileset
+### 新しいタイルセットを追加する
 
-Open the Data Manager and click the Tilesets tab
+データマネージャーを開き、「タイルセット」タブをクリックします。
 
 <figure><img src="../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-As with all data lists, click the + to create a new entry.&#x20;
+すべてのデータリストと同様に、+ をクリックして新しいエントリを作成します。&#x20;
 
 <figure><img src="../.gitbook/assets/tileset3.png" alt=""><figcaption></figcaption></figure>
 
-Then click the Picture button to select your tileset file.&#x20;
+次に、「画像」ボタンをクリックしてタイルセットファイルを選択します。&#x20;
 
 <figure><img src="../.gitbook/assets/tileset4.png" alt=""><figcaption></figcaption></figure>
 
-Make sure the file you want to use is on the left side and that it is highlighted before clicking OK.&#x20;
+使用するファイルが左側にあることと、[OK] をクリックする前にハイライトされていることを確認してください。&#x20;
 
-<figure><img src="../.gitbook/assets/tileset5.png" alt=""><figcaption><p>Files on the right are in your project folder. If you don't see them, click the checkbox "Show available content".</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/tileset5.png" alt=""><figcaption><p>右側のファイルはプロジェクトフォルダにあります。表示されない場合は、「利用可能なコンテンツを表示」チェックボックスをオンにします。</p></figcaption></figure>
 
-### Tileset Properties
+### タイルセットのプロパティ
 
-Now that you have a new tileset entry, it's time to set it's properties. If you don't, the player will be able to walk over/through everything.&#x20;
+これで新しいタイルセットエントリができたので、プロパティを設定します。設定しないと、プレイヤーはすべての上/中を歩くことができます。&#x20;
 
-### - Battle Map
+### - バトルマップ
 
-The Battle Map setting lets you choose which map/position is used by default when you allow random battles on the map (Located in the Map Properties>Battles tab).
+「バトルマップ」設定では、マップでランダムバトルを許可した場合にデフォルトで使用されるマップ/位置を選択できます（マッププロパティ> バトルタブにあります）。
 
-<figure><img src="../.gitbook/assets/tileset6.png" alt=""><figcaption><p>These are created on the Systems>Battle Systems tab.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/tileset6.png" alt=""><figcaption><p>これらは、システム> バトルシステムタブで作成されます。</p></figcaption></figure>
 
-It's not required to set this option on the tileset. You can set it in the Map Properties as well.&#x20;
+タイルセットでこのオプションを設定する必要はありません。マッププロパティでも設定できます。&#x20;
 
-### - Practicable&#x20;
+### - 通行可能&#x20;
 
-This tab allows you to set collisions that will be applied only when the tile is used as a Sprite. This setting has no effect on floor tiles.&#x20;
+このタブでは、タイルがスプライトとして使用される場合にのみ適用される衝突を設定できます。この設定は、床タイルには影響しません。&#x20;
 
 <figure><img src="../.gitbook/assets/tileset7.png" alt=""><figcaption></figcaption></figure>
 
-Start by clicking on a tile to create a dotted square. Then you can resize the square by dragging the edges. Larger objects require you to click multiple tiles.&#x20;
+タイルをクリックして、点線の正方形を作成します。次に、エッジをドラッグして正方形のサイズを変更できます。大きなオブジェクトの場合は、複数のタイルをクリックする必要があります。&#x20;
 
-You can right click and choose edit to use specific numbers for more accurate squares.&#x20;
+右クリックして「編集」を選択すると、特定の数値を使用してより正確な正方形を使用できます。&#x20;
 
 <figure><img src="../.gitbook/assets/tileset8.png" alt=""><figcaption></figcaption></figure>
 
-To delete a square you can click on it to highlight it in purple, then press Delete on your keyboard. Or you can right click a square and choose Delete.&#x20;
+正方形を削除するには、正方形をクリックして紫色でハイライトしてから、キーボードの Delete キーを押します。または、正方形を右クリックして「削除」を選択することもできます。&#x20;
 
-### - Directions&#x20;
+### - 方向&#x20;
 
-This tab controls how an object can walk over a tile when it's used as a Floor tile.&#x20;
+このタブは、タイルが床タイルとして使用される場合に、オブジェクトがタイル上をどのように歩くことができるかを制御します。&#x20;
 
 <figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
-Each tile has 4 arrows that determine which side of the tile the player can walk through.&#x20;
+各タイルには、プレイヤーがタイルのどちら側から歩くことができるかを決定する4つの矢印があります。&#x20;
 
-An arrow means you CAN walk through that side.&#x20;
+矢印は、その側から歩くことができることを意味します。&#x20;
 
-A square means you CAN'T.
+正方形は、歩くことができないことを意味します。
 
-You can click each individual arrow to make change. If you click the square in the middle it toggles each one. Arrows become squares and squares become arrows.&#x20;
+個々の矢印をクリックして変更できます。中央の正方形をクリックすると、それぞれが切り替わります。矢印は正方形になり、正方形は矢印になります。&#x20;
 
-Here are some common uses, with red lines indicating where you can't walk:
+一般的な使用例を次に示します。赤い線は歩くことができない場所を示しています。
 
 <figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
-1. A tile that can only be entered from the north side
-2. A tile that can't be walked on at all
-3. A tile that only allows north-south
-4. A tile that only allows east-west
+1. 北側からしか入れないタイル
+2. まったく歩くことができないタイル
+3. 南北方向のみに移動を許可するタイル
+4. 東西方向のみに移動を許可するタイル
 
-### - Terrain
+### - 地形
 
-This tab allows you to assign ID numbers to each tile which can be used in your code to identify what tile an object is standing on. This can have many uses like making the object slow down, take damage, or checking if they can jump onto that tile.&#x20;
+このタブでは、各タイルにID番号を割り当てることができます。このID番号は、コード内でオブジェクトが立っているタイルを識別するために使用できます。これにより、オブジェクトの速度を遅くしたり、ダメージを与えたり、そのタイルにジャンプできるかどうかを確認したりするなど、さまざまな用途に使用できます。&#x20;
 
 <figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
-Left click to increase the number and right click to decrease it.
+左クリックすると数値が増加し、右クリックすると数値が減少します。
 
-To make use of Terrain ID, start by using the Set Variable command:
+地形IDを使用するには、まず「変数を設定」コマンドを使用します。
 
 <figure><img src="../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
-It will check which tile the object is standing on and write the Terrain ID into a variable. You can then use a Condition to decide what happens when a certain ID is found:
+オブジェクトが立っているタイルを確認し、地形IDを変数に書き込みます。次に、「条件」を使用して、特定のIDが見つかった場合に何が起こるかを決定できます。
 
 <figure><img src="../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
-### - Climbing
+### - 登攀
 
-This tab lets you set a tile to be climbable when it's used as a Sprite. When enabled, an object that walks into it will automatically climb up one side and down the other.&#x20;
+このタブでは、スプライトとして使用される場合に、タイルに登ることができるかどうかを設定できます。有効にすると、オブジェクトがタイルにぶつかると、自動的に片側を登り、反対側を降ります。&#x20;
 
 <figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
-An O means it CAN be climbed.
+O は、登ることができることを意味します。
 
-An X means it CAN'T.
+X は、登ることができないことを意味します。
 
-When the player first starts climbing, whatever direction they are holding will be "forward". Pressing the opposite direction will be "back", allowing them go back the way they came.&#x20;
+プレイヤーが最初に登り始めると、どちらの方向を向いていても、その方向が「前方」になります。反対方向を押すと「後方」になり、来た道を戻ることができます。
 
-When you reach the top, it has a small area that is treated as a floor tile. You can walk around normally until you touch an edge, then you will start to climb down whatever side you touch.
+頂上に達すると、床タイルとして扱われる小さなエリアがあります。端に接触するまでは普通に歩き回ることができ、端に接触すると、接触した側から降り始めます。
 
-This is a new feature and can be a little buggy. Placement of your sprite is very important when used as a ladder. The top needs to be placed close to the edge of the floor tile for you to be able to transition from the top of the ladder to the higher ground.&#x20;
+これは新しい機能であり、少しバグが発生する可能性があります。はしごとして使用する場合、スプライトの配置は非常に重要です。はしごの上部からより高い地面に移動できるように、上部は床タイルの端に近づけて配置する必要があります。&#x20;
 
-There is a setting that determines climbing speed on the Systems>System tab:
+システム> システムタブに、登攀速度を決定する設定があります。
 
-<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>You can use a variable to adjust it mid-game</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>変数を使用してゲーム中に調整できます</p></figcaption></figure>
 
 
 
-Some of these tabs allow you to change the zoom.
+これらのタブのいくつかでは、ズームを変更できます。
 
 <figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
-## -- Other types
+## -- その他の種類
 
-There are several other types of special tiles that can be placed on your maps. They each have their own drawing tool in the editor and method for importing.&#x20;
+マップに配置できる特別なタイルには、他にもいくつか種類があります。それらにはそれぞれ、エディタに独自の描画ツールとインポート方法があります。&#x20;
 
-Currently all these are linked to the tileset. When you make a new tileset you will have to import them all over again to have them show up in the list.&#x20;
+現在、これらはすべてタイルセットにリンクされています。新しいタイルセットを作成する場合、リストに表示するには、それらをすべて再度インポートする必要があります。&#x20;
 
-If you want to keep them, you can copy a tileset entry so it includes all these. However you will have to adjust all the Practicable, Direction, Terrain, and Climbable settings.&#x20;
+保持したい場合は、タイルセットエントリをコピーして、これらすべてを含めることができます。ただし、「通行可能」、「方向」、「地形」、「登攀」の各設定をすべて調整する必要があります。&#x20;
 
-Staring with version 3.0, these will no longer be linked to a tileset. So all of them will always be available, no matter which tileset you use.&#x20;
+バージョン3.0以降、これらはタイルセットにリンクされなくなります。そのため、使用するタイルセットに関係なく、すべてが常に利用可能になります。&#x20;
 
-### - Autotiles&#x20;
+### - オートタイル&#x20;
 
-These are special floor tiles that will change shape when you draw the same tile next to it. It takes pieces of a few preset tiles to form continuous shapes. Often used for things like roads or water.&#x20;
+これらは、同じタイルを隣に描画すると形状が変化する特別な床タイルです。いくつかのプリセットタイルの一部を使用して、連続した形状を形成します。道路や水などの表現によく使用されます。&#x20;
 
-Autotile files must be placed in the project folder under /images/textures/autotiles.
+オートタイルファイルは、プロジェクトフォルダ内の /images/textures/autotiles に配置する必要があります。
 
 <figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
-Here is an example of how the graphic file is laid out:
+グラフィックファイルのレイアウトの例を次に示します。
 
-<figure><img src="../.gitbook/assets/image (52).png" alt=""><figcaption><p>is this out of date?</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (52).png" alt=""><figcaption><p>これは古い情報ですか？</p></figcaption></figure>
 
-The first square is used when you draw a single tile. Next to that is the square containing the pieces that will be used for corners. And below that are the squares used for long lines and inverse corners. The engine will use 1/4 or 1/2 of these tiles to create the whole shapes.&#x20;
+最初の正方形は、単一のタイルを描画するときに使用されます。その隣は、角に使用されるパーツを含む正方形です。その下は、長い線と反転した角に使用される正方形です。エンジンはこれらのタイルの 1/4 または 1/2 を使用して、形状全体を作成します。&#x20;
 
-To add a new one, click the Autotiles icon:
+新しいものを追加するには、「オートタイル」アイコンをクリックします。
 
 <figure><img src="../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
 
-Click the + to add a new entry, then the texture button to choose the file for that entry:
++ をクリックして新しいエントリを追加し、「テクスチャ」ボタンをクリックしてそのエントリのファイルを選択します。
 
-<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption><p>On this screen, each Autotile is represented by a single square, which is how it will appear in the editor</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption><p>この画面では、各オートタイルは単一の正方形で表され、エディタではこのように表示されます。</p></figcaption></figure>
 
-When choosing a texture file you can have multiple Autotiles in a single file. It will look like this:
+テクスチャファイルを選択するとき、1つのファイルに複数のオートタイルを含めることができます。次のようになります。
 
 <figure><img src="../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
-An animated Autotile has its frames organized from left to right, and will look like this:
+アニメーション化されたオートタイルは、フレームが左から右に編成されており、次のようになります。
 
 <figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
-You must check the box for "Animated" to designate an entire file as animated tiles. Therefore you can't mix animated and non-animated Autotiles in the same file.&#x20;
+ファイル全体をアニメーションタイルとして指定するには、「アニメーション」のチェックボックスをオンにする必要があります。したがって、同じファイル内にアニメーションタイルと非アニメーションタイルを混在させることはできません。&#x20;
 
-When you check the box for Animated it assumes all frames on the top row are for the same Autotile. All frames on that row will be grouped together. To add more Autotiles, they must be placed below and not to the side.&#x20;
+「アニメーション」のチェックボックスをオンにすると、一番上の行のすべてのフレームが同じオートタイルのものであると想定されます。その行のすべてのフレームがグループ化されます。オートタイルをさらに追加するには、横ではなく下に配置する必要があります。&#x20;
 
-The number of frames and speed of an Autotile is set in the Systems Manager:
+オートタイルのフレーム数と速度は、システムマネージャーで設定します。
 
 <figure><img src="../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
-Once you have imported all the files, you must add them to the list. First choose the Autotile drawing tool:
+すべてのファイルをインポートしたら、リストに追加する必要があります。最初に、「オートタイル」描画ツールを選択します。
 
 <figure><img src="../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
 
-Then on the left, click on Update List:
+次に、左側の「リストの更新」をクリックします。
 
-<figure><img src="../.gitbook/assets/image (61).png" alt=""><figcaption><p>This step may not be required after version 3.0</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (61).png" alt=""><figcaption><p>この手順は、バージョン3.0以降は必要ない場合があります。</p></figcaption></figure>
 
-Move them to the left so they can be used:
+使用できるように、左に移動します。
 
 <figure><img src="../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
-### - Walls
+### - 壁
 
-These are special sprites that can be drawn as vertical walls of any length. They can only be drawn in straight lines, from point A to point B.
+これらは、任意の長さの垂直な壁として描画できる特別なスプライトです。点Aから点Bまで、直線でしか描画できません。
 
-Wall files must be placed in the project folder under /images/textures/walls.
+壁ファイルは、プロジェクトフォルダ内の /images/textures/walls に配置する必要があります。
 
-Click the Walls icon to add new ones to the list:
+「壁」アイコンをクリックして、リストに新しいものを追加します。
 
 <figure><img src="../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
-Move them to the left side to make them available when using the Walls draw tool.&#x20;
+「壁」描画ツールを使用するときに使用できるように、左側に移動します。&#x20;
 
 <figure><img src="../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
-You will see a white line indicating the starting point of the wall.&#x20;
+壁の開始点を示す白い線が表示されます。&#x20;
 
 <figure><img src="../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
-Click and drag with the left mouse button to see your wall extend. Release the button to finish.&#x20;
+マウスの左ボタンをクリックしてドラッグすると、壁が延長されます。ボタンを離すと終了します。&#x20;
 
 <figure><img src="../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
 
-If you do not create a straight line, the wall will disappear and show red lines. Meaning you can't draw it like that. Releasing the mouse button like this will cancel the attempt.&#x20;
+直線を作成しないと、壁が消えて赤い線が表示されます。つまり、そのように描画することはできません。このようにマウスボタンを離すと、試行はキャンセルされます。&#x20;
 
 <figure><img src="../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
 
-To delete a wall, right click any part of the wall and drag your mouse. When you release, it will delete that section of the wall.&#x20;
+壁を削除するには、壁の任意の部分を右クリックしてマウスをドラッグします。離すと、壁のその部分が削除されます。&#x20;
 
 <figure><img src="../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
 
-### - 3D Objects
+### - 3Dオブジェクト
 
-These are special objects with more details and options available. They can be pre-made in external programs like Blender or made from wrapping an image texture around a box.&#x20;
+これらは、より多くの詳細とオプションが利用可能な特別なオブジェクトです。Blenderなどの外部プログラムで事前に作成したり、画像テクスチャをボックスに巻き付けて作成したりできます。&#x20;
 
-3D Object files must be placed in the project folder under /images/textures/objects3D.
+3Dオブジェクトファイルは、プロジェクトフォルダ内の /images/textures/objects3D に配置する必要があります。
 
-See the 3D Objects section for further information.
+詳細については、「3Dオブジェクト」セクションを参照してください。
 
 [3d-objects.md](3d-objects.md "mention")
 
-### - Mountains
+### - 山
 
-These are special textures that are used to form cubes or shapes of various size and shape. They are mainly used as mountain but can be used creatively for other purposes like stairs and doors.&#x20;
+これらは、さまざまなサイズと形状の立方体または形状を形成するために使用される特別なテクスチャです。主に山として使用されますが、階段やドアなどの他の目的にも創造的に使用できます。&#x20;
 
-Mountain files must be placed in the project folder under /images/textures/mountains.
+山ファイルは、プロジェクトフォルダ内の /images/textures/mountains に配置する必要があります。
 
-Click the Mountains icon to add them to the list:
+「山」アイコンをクリックして、リストに追加します。
 
 <figure><img src="../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
 
-Move them to the left side to make them available when using the Mountain draw tool.
+「山」描画ツールを使用するときに使用できるように、左側に移動します。
 
 <figure><img src="../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
 
-Choose which texture you want to use, then adjust the Settings to select the size and shape.
+使用するテクスチャを選択し、「設定」を調整してサイズと形状を選択します。
 
-These default settings create a cube that is 1 tile x 1 tile. The actual size in px depends on your system setting for Square Size. Mountain collision height and angle will affect how objects interact with them.
+これらのデフォルト設定では、1タイル×1タイルの立方体が作成されます。px単位の実際のサイズは、システム設定の「正方形のサイズ」によって異なります。山の衝突の高さ角度は、オブジェクトが山とどのように相互作用するかに影響します。
 
 <figure><img src="../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
-Adjust the Border Height to make a cube that is taller or shorter. You must increase the pixel setting before setting the square setting to 0.&#x20;
+「境界線の高さ」を調整して、立方体を高くしたり低くしたりします。正方形の設定を0に設定する前に、ピクセル設定を増やす必要があります。&#x20;
 
-If the Border Height in px is equal to or lower than the Mountain collision height setting, the object will climb over it.&#x20;
+px単位の境界線の高さが山の衝突の高さ設定以下の場合、オブジェクトは山を登ります。&#x20;
 
-For example, this mountain size will allow the player to walk on top of it because the Mountain collision height setting is currently on 4.&#x20;
+たとえば、この山のサイズは、山の衝突の高さ設定が現在4であるため、プレイヤーが山の上を歩くことができます。
 
 <figure><img src="../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
-1 square of the border height is equal to the square size setting. So using the defaults, you would need to set the Mountain collision height setting to 16 to allow objects to climb over a mountain with a border height of 1 square.&#x20;
+境界線の高さの1正方形は、正方形のサイズ設定と同じです。したがって、デフォルト設定を使用する場合、境界線の高さが1正方形の山にオブジェクトが登ることができるようにするには、山の衝突の高さ設定を16に設定する必要があります。&#x20;
 
-When drawing mountains you can stack single cubes on top of each other, or change the border height. Each method will create a different looking mountain.&#x20;
+山を描画するときは、単一の立方体を互いの上に積み重ねたり、境界線の高さを変更したりできます。方法によって、見た目の異なる山が作成されます。&#x20;
 
 <figure><img src="../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
-By drawing the same texture next to it, the engine will combine them and create a continuous wall. It will not merge different textures.&#x20;
+同じテクスチャを隣に描画すると、エンジンによってそれらが結合され、連続した壁が作成されます。異なるテクスチャは結合されません。&#x20;
 
 <figure><img src="../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
-When you adjust the Border Width, it will change from a cube to a cube with angled sides.&#x20;
+「境界線の幅」を調整すると、立方体から斜辺を持つ立方体に変化します。&#x20;
 
 <figure><img src="../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
-The Angle listed corresponds to the Mountain collision angle setting. If the angle is equal to or less than the setting, the player will be able to walk up the slope.&#x20;
+リストされている角度は、山の衝突の角度設定に対応しています。角度が設定以下の場合、プレイヤーは斜面を上ることができます。&#x20;
 
-Both of the Mountain collision settings can be variables and changed mid-game.
+山の衝突設定はどちらも変数にすることができ、ゲーム中に変更できます。
 
-The engine doesn't offer single tile slopes yet, but you can create them by using border width and height of 1. Then placing cubes to cover the angled sides.&#x20;
+エンジンはまだ単一タイルの斜面を提供していませんが、「境界線の幅」と「境界線の高さ」を1に設定して作成できます。次に、斜辺を覆うように立方体を配置します。&#x20;
 
-<figure><img src="../.gitbook/assets/image (30) (1).png" alt=""><figcaption><p>You might want to make it 2 tiles wide for easy access</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (30) (1).png" alt=""><figcaption><p>アクセスしやすいように、幅を2タイルにすることをお勧めします。</p></figcaption></figure>
 
-## -- Collisions <a href="#collisions" id="collisions"></a>
+## -- 衝突 <a href="#collisions" id="collisions"></a>
 
-Collisions control how objects interact with each other and the environment. When you import new resources they will not have a collision. YOU MUST ALWAYS set a collision for anything that should be solid, otherwise you may have bugs. Like your hero walking through walls.&#x20;
+衝突は、オブジェクトが互いに、および環境とどのように相互作用するかを制御します。新しいリソースをインポートするとき、それらには衝突がありません。必ず、固体にするものすべてに衝突を設定する必要があります。そうしないと、バグが発生する可能性があります。たとえば、ヒーローが壁の中を歩いてしまうなどです。&#x20;
 
-These bounding boxes are red and determine where an object can/can't walk. The above settings for tiles and characters use red ones.&#x20;
+これらのバウンディングボックスは赤色で、オブジェクトが歩くことができる/できない場所を決定します。タイルとキャラクターの上記の設定では、赤色のバウンディングボックスを使用しています。&#x20;
 
-There is another type of box that is blue and is used for other interactions, like talking and attacking. The Send Event command uses blue ones. More on this below.&#x20;
+他に青色のボックスがあり、これは会話や攻撃など、他のインタラクションに使用されます。「イベントを送信」コマンドは、青色のバウンディングボックスを使用します。これについては、以下で詳しく説明します。
 
-### Bounding boxes <a href="#bounding-boxes" id="bounding-boxes"></a>
+### バウンディングボックス <a href="#bounding-boxes" id="bounding-boxes"></a>
 
-A Bounding Box is a simple geometric shape that is used to check for an interaction between 2 objects. When you set a square collision, it is automatically turned into a cube that is placed around the sprite.&#x20;
+バウンディングボックスは、2つのオブジェクト間のインタラクションをチェックするために使用される単純な幾何学的形状です。正方形の衝突を設定すると、自動的にスプライトの周りに配置される立方体に変換されます。&#x20;
 
-<figure><img src="../.gitbook/assets/image (33) (1).png" alt=""><figcaption><p>A cylinder requires more processing, so cubes are used to increase performance</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (33) (1).png" alt=""><figcaption><p>円柱は処理に時間がかかるため、立方体を使用してパフォーマンスを向上させています。</p></figcaption></figure>
 
-When an object with a collision moves, the engine will check if it's red bounding box touches another red bounding box and stop it from moving. This is why if there is no collision, it will walk through everything.
+衝突を持つオブジェクトが移動すると、エンジンはその赤いバウンディングボックスが別の赤いバウンディングボックスに接触するかどうかをチェックし、移動を停止します。これが、衝突がない場合に、すべての中を歩いてしまう理由です。
 
-For object interactions, like getting hurt when you touch an enemy, the Send Event command is used to create a new collision/bounding box. Then you can choose what happens when that collides with something. More on this below.
+敵に触れたときにダメージを受けるなど、オブジェクトのインタラクションについては、「イベントを送信」コマンドを使用して、新しい衝突/バウンディングボックスを作成します。次に、それが何かに衝突したときに何が起こるかを選択できます。これについては、以下で詳しく説明します。
 
-To see the bounding boxes as you play, you can enable it from the editor. This can be useful for debugging or just to understand how things work.
+再生中にバウンディングボックスを表示するには、エディタから有効にします。これは、デバッグや、動作を理解するのに役立ちます。
 
-Check the following option:
+次のオプションをオンにします。
 
 <figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption><p>This can cause lag on low-end computers</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption><p>これは、ローエンドのコンピュータではラグが発生する可能性があります。</p></figcaption></figure>
 
-When the camera is facing N, E, S, or W the red bounding box will appear as a diamond.&#x20;
+カメラが北、東、南、または西を向いている場合、赤いバウンディングボックスはひし形として表示されます。&#x20;
 
-When the camera is facing in between, like NE or SW, the red bounding box will appear as a square.&#x20;
+カメラが北東や南西など、間の方向を向いている場合、赤いバウンディングボックスは正方形として表示されます。&#x20;
 
-<figure><img src="../.gitbook/assets/image (34) (1).png" alt=""><figcaption><p>Other boxes turn as well, but it can possibly change how 2 boxes interact</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34) (1).png" alt=""><figcaption><p>他のボックスも回転しますが、2つのボックスの相互作用方法が変わる可能性があります。</p></figcaption></figure>
 
-The different shapes will affect how your object moves in the game world. Floor tiles will be square and your hero is a diamond. So if even the tip of the diamond touches the floor tile, you won't be able to pass.&#x20;
+形状によって、ゲームの世界でオブジェクトがどのように移動するかが異なります。床タイルは正方形になり、ヒーローはひし形になります。したがって、ひし形の先端だけが床タイルに触れていても、通過することはできません。&#x20;
 
 <figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
-The tip of the diamond extends below the visual appearance of the sprite, so it can take a while for players to adjust. They might think the collision is only the yellow line, but it also includes the red triangle.&#x20;
+ひし形の先端はスプライトの外観の下まで伸びているため、プレイヤーが調整するのに時間がかかる場合があります。衝突は黄色の線だけだと思うかもしれませんが、赤い三角形も含まれています。&#x20;
 
-The edges of the bounding box determine when an interaction is triggered, not when they overlap. Assuming you have a tile size of 16 px, if your bounding box is 16 px tall you will not be able to walk under a 1 tile high space like this:&#x20;
+バウンディングボックスのエッジは、インタラクションがトリガーされるタイミングを決定します。重なっているタイミングではありません。タイルサイズが16pxの場合、バウンディングボックスの高さが16pxの場合、次のように1タイルの高さの空間の下を歩くことはできません。
 
 <figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
-Because the top edge of your box touches the bottom edge of the tile above and won't let you pass. You need to change the height of your box to 15 px to pass under. You may or may not want this behavior, it's your choice.&#x20;
+ボックスの上端が上のタイルの下端に接触し、通過できないためです。通過できるようにするには、ボックスの高さを15pxに変更する必要があります。この動作が必要かどうかは、状況に応じて判断してください。&#x20;
 
-### Different shapes <a href="#simple-boxes-and-oriented-boxes" id="simple-boxes-and-oriented-boxes"></a>
+### さまざまな形状 <a href="#simple-boxes-and-oriented-boxes" id="simple-boxes-and-oriented-boxes"></a>
 
-Depending on which sprite you are using, bounding boxes can be various shapes:
+使用するスプライトに応じて、バウンディングボックスはさまざまな形状にすることができます。
 
-![Sprites](../.gitbook/assets/collision-boxes.png)
+![スプライト](../.gitbook/assets/collision-boxes.png)
 
-Fix sprites are flat. The player will be able to walk closer to them.
+固定スプライトは平坦です。プレイヤーはより近くに歩くことができます。
 
-Other types of sprites will have a full diamond like the player. The player will have to walk further north/south in order to pass by. &#x20;
-
-<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption><p>Floor tiles</p></figcaption></figure>
-
-Floor tiles that are set to block the hero, like the dark square, don't show a bounding box. However, you can imagine something like this flat red bounding box in it's place. In this scenario, the hero is unable to walk directly S or W because the tips of it's diamond are hitting the blocked floor tile.&#x20;
-
-Autotiles work the same way as floor tiles.
-
-Mountains have a few options:
-
-<figure><img src="../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
-
-* The default is going to be the most common. This will make the collision match the size and shape of the mountain.&#x20;
-* Force Always (not sure, needs more specific data)
-* Force Never would be used to allow an object to pass through. One example, using a mountain tile as a door.&#x20;
-
-Walls work similar to sprites, in that they will have Practicable and Climbable tabs.&#x20;
-
-3D Objects have their own special options for collisions, however it is not fully implemented. There are 2 places to set collisions for these:
-
-1. Collisions icon > 3D Objects tab
-
-<figure><img src="../.gitbook/assets/image (17) (1).png" alt=""><figcaption><p>3D Objects</p></figcaption></figure>
-
-You are limited to NONE, or SIMPLIFIED. Which likely uses the basic shape/size of the object as it's collision. Needs more data.&#x20;
-
-2. 3D Objects icon
-
-<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption><p>3D Objects</p></figcaption></figure>
-
-It provides the same options, just in a different place. Changing it in one place, also changes it in the other.&#x20;
-
-## -- How to set collisions <a href="#how-can-i-change-collisions" id="how-can-i-change-collisions"></a>
-
-The best place to adjust your collisions will be the Collisions Manager since it combines all collision types in one place. This is the only place to set collisions for Characters, but all others have a second place to set them.&#x20;
-
-<figure><img src="../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
-
-It's good practice to set collisions when you import the graphics, like in the Tileset or Autotiles windows.  But if you need to adjust them later, Collisions will be your central location.&#x20;
-
-### - Characters <a href="#characters" id="characters"></a>
-
-To set collisions for your characters, click the Collision icon and choose the Character tab. Remember this is the only place to set them and you must set them every time you import a new character that should have a collision.&#x20;
-
-Since characters are animated, you can set a different collision for each frame. This would be useful for a character that drastically changes shape as it animates.
-
-In general, it's easier to manage when all frames share the same collision. By checking the box for Repeat, all frames will use the collision from the first frame.&#x20;
-
-![](../.gitbook/assets/collision-character.png)
-
-The size and shape of this collision may vary, but generally you will make the width no larger than the square size. If it is larger, the object will not be able to pass through narrow spaces. Then you will have to tailor your maps to fit the larger collisions.
-
-<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption><p>One way to get around this is to walk NE or NW into this passage, instead of trying to walk directly N through it </p></figcaption></figure>
-
-If the player collision is exactly the size of 1 square, it can be difficult for the player to walk into those narrow spaces. Since they have to be perfectly aligned to do so. By shrinking the collision by 1 or 2 px, it makes that easier. Keep in mind that if you make it too small, the edges of your sprite will appear inside walls.
-
-### - Objects
-
-Objects will use whatever collision is set for the sprite you choose.
-
-<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
-
-This will apply the collision of that hero. If you choose no sprite, then it will have no red bounding box to block other objects. However, it can still be interacted with using blue bounding boxes like those used by the Hero Action event.&#x20;
-
-### - Send Events
-
-The Send Event command is used to create special bounding boxes that allow you to create a wide range of actions. This lets you choose the size and shape of the box along with the action that is triggered when it interacts with another object.&#x20;
-
-This is one of the most useful commands available in RPM.&#x20;
-
-The first step to using this command is to make a Detection in the Systems Manager:
-
-<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
-
-You can make a bounding box that will be placed at the location of the object that runs the Send Event command. The size and shape will depend on what you want to do, so how you complete this step will vary.&#x20;
-
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
-
-The arrow indicates the object that runs the command, so you can position as needed (in front, behind, to the side, etc). Let's look at the Hero Action example. This will be programmed into your Hero model by default in your new project.&#x20;
-
-You can find it in Systems > Model tab > Hero > Keypress \[Action] Event:
-
-<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
-
-Under Target, by choosing a Detection ID, you can select the bounding box you want to appear. This action uses "Front".&#x20;
-
-Under Event, you choose what Event will be triggered if another object it is hit by the bounding box. This action uses "Hero Action".
-
-When you press the Accept button, this small bounding box appears in front of the hero.&#x20;
-
-<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
-
-On it's own this does nothing. If you walk up to this empty sign object and talk to it, nothing happens.&#x20;
-
-The most important part of this equation is the Event on the object that this bounding box touches. By adding a Hero Action Event, you have a place to put code that will run when the Hero Action bounding box touches it.&#x20;
-
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
-
-Now if you talk to the sign, it will display a message. This is the most basic example that most users might already be somewhat familiar with.&#x20;
-
-This command will be explained further in it's own section.
-
-There is also a Detection option in the bottom of the object window:
-
-<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
-
-This will act like a Send Event command running on repeat, however the specific details on how it works will require more data.&#x20;
-
-## -- Conclusion
-
-These settings are some of the most important ones in creating a functional game world. How you set them up will depend on the size and shape of your resources. Do some testing early on to figure out the best settings before you start making a lot of maps to avoid unexpected behavior later on.&#x20;
-
-
-
-
-
-&#x20;                                                 Written by KevinOfNine
+他のタイプの

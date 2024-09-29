@@ -1,442 +1,442 @@
-# Battle system
+# バトルシステム
 
-If you want to create to create a RPG, you may need a battle system. Here, we will see all the features linked to the battle implementation.
+RPG を作成する場合、バトルシステムが必要になる場合があります。ここでは、バトルの実装に関連するすべての機能を見ていきます。
 
 ![](../.gitbook/assets/battle-demo.gif)
 
-_Note: if you want to do an action RPG (battles directly on maps), you can do it through object & events_
+_注意: アクション RPG（マップ上で直接バトルを行う）を作成する場合は、オブジェクトとイベントを使用して行うことができます。_
 
-## Battle system datas <a href="#battle-system-datas" id="battle-system-datas"></a>
+## バトルシステムデータ <a href="#battle-system-datas" id="battle-system-datas"></a>
 
-A lot of battle system datas can be found in `Systems Manager > Battle System:`
+多くのバトルシステムデータは、`システムマネージャー> バトルシステム` にあります。
 
 ![](<../.gitbook/assets/battle-system (1).png>)
 
-## Elements <a href="#elements" id="elements"></a>
+## 属性 <a href="#elements" id="elements"></a>
 
 ![](../.gitbook/assets/elements.png)
 
-You can manage here all the elements that you want to have in your game for influencing your damages effects.
+ここでは、ダメージ効果に影響を与えるためにゲームに持たせたいすべての属性を管理できます。
 
-* `Name`: Name displayed in game UI.
-* `Icon`: Icon displayed in game UI.
-* **Efficiency**: You can edit here how efficient is the current element against all the other existing elements. This is pretty usefull when the element is assigned to a class. By default, it's x1.0 (normal effect).
+* `名前`: ゲーム UI に表示される名前。
+* `アイコン`: ゲーム UI に表示されるアイコン。
+* **効率性**: ここでは、現在の属性が他のすべての既存の属性に対してどの程度効果的であるかを編集できます。これは、属性がクラスに割り当てられている場合に非常に役立ちます。デフォルトでは、x1.0（通常の効果）です。
 
-## Common statistics <a href="#common-statistics" id="common-statistics"></a>
+## 共通ステータス <a href="#common-statistics" id="common-statistics"></a>
 
 ![](../.gitbook/assets/battle-statistic.png)
 
-You can manage here all the statistics that you want to have in your game for influencing your battles (HPs, lvl, strength, etc.).
+ここでは、バトルに影響を与えるためにゲームに持たせたいすべてのステータス（HP、レベル、強さなど）を管理できます。
 
-* `Name`: Name displayed in game UI.
-* `Script abbreviation`: Choose here an abbreviation. This will be used for game scripts, choose something without capital letter if possible.
-* **Properties**:
-  * `Fix`: If checked, this statistic would be a fix value (not a bar).
-  * `Bar`: If checked, this statistic would be a bar value (an actual value + max value).
+* `名前`: ゲーム UI に表示される名前。
+* `スクリプトの省略形`: ここで省略形を選択します。これはゲームスクリプトに使用されます。可能な場合は、大文字を使用しないようにしてください。
+* **プロパティ**:
+  * `固定値`: チェックを入れると、このステータスは固定値（バーではない）になります。
+  * `バー`: チェックを入れると、このステータスはバー値（実際の値+最大値）になります。
 
-## Common battle commands <a href="#common-battle-commands" id="common-battle-commands"></a>
+## 共通バトルコマンド <a href="#common-battle-commands" id="common-battle-commands"></a>
 
 ![](../.gitbook/assets/battle-commands.png)
 
-Choose which battle commands you want to have after selecting a hero to do something.
+ヒーローを選択して何かを実行した後に、どのバトルコマンドを使用するかを選択します。
 
-* `Skill`: Choose the corresponding skill.
+* `スキル`: 対応するスキルを選択します。
 
-Render in game:
+ゲームでのレンダリング:
 
 ![](../.gitbook/assets/battle-commands-preview.png)
 
-## Common equipment <a href="#common-equipment" id="common-equipment"></a>
+## 共通装備 <a href="#common-equipment" id="common-equipment"></a>
 
-Choose the name of common equipment so you will be able to equip weapons / armors on these equipment slots.
+共通装備の名前を選択して、これらの装備スロットに武器/防具を装備できるようにします。
 
-## Weapons / Armors kind <a href="#weapons-armors-kind" id="weapons-armors-kind"></a>
+## 武器/防具の種類 <a href="#weapons-armors-kind" id="weapons-armors-kind"></a>
 
 ![](../.gitbook/assets/battle-weapon-armor-kind.png)
 
-Create a weapon / armor kind and also choose on which equipment you can assign it.
+武器/防具の種類を作成し、どの装備に割り当てることができるかを選択します。
 
-* `Name`: Name for this kind of weapon / armor.
-* Selection of equipment you can assign.
+* `名前`: この種類の武器/防具の名前。
+* 割り当てることができる装備の選択。
 
-## Battle maps <a href="#battle-maps" id="battle-maps"></a>
+## バトルマップ <a href="#battle-maps" id="battle-maps"></a>
 
 ![](../.gitbook/assets/battle-maps.png)
 
-Battle maps are in fact maps associated with a specific position (representing the center point of the battle). Select a map (by default in the `Battle Maps` folder in the map selector) and a position to add a new battle map.
+バトルマップは、実際には、特定の位置（バトルの中心点を表す）に関連付けられたマップです。マップ（デフォルトではマップセレクターの `Battle Maps` フォルダー内）と位置を選択して、新しいバトルマップを追加します。
 
-## Statistics associations <a href="#statistics-associations" id="statistics-associations"></a>
+## ステータス関連付け <a href="#statistics-associations" id="statistics-associations"></a>
 
-* `Statistic associated to level`: Choose one of your fix statistic to associate with level. Level is a statistic that is increasing for the character evolution: leveling up will increase other statistics.
-* `Statistic associated to exp`: Choose one of your bar statistic to associate with experience. Experience is something earned generally after finishing a battle. Once experience goes to its maximum value, the character is leveling up and the map experience bar increases too.
+* `レベルに関連付けられたステータス`: レベルに関連付ける固定ステータスのいずれかを選択します。レベルは、キャラクターの進化に伴って増加するステータスです。レベルアップすると、他のステータスも増加します。
+* `経験値に関連付けられたステータス`: 経験値に関連付けるバーステータスのいずれかを選択します。経験値は、一般的にバトル終了後に獲得されます。経験値が最大値に達すると、キャラクターはレベルアップし、マップの経験値バーも増加します。
 
-## Formulas <a href="#formulas" id="formulas"></a>
+## 式 <a href="#formulas" id="formulas"></a>
 
-* `Is dead`: Formula in JavaScript defining conditions to consider that a character is dead. `u` corresponds to the character.
-* `Critical influence`: Formula in JavaScript defining the new damages value after having a critical hit. `damage` corresponds to the damages done without critical influence.
-* `Heroes battlers center offset:` Formula in JavaScript defining the position of heroes battlers according to the center of the map battle.
-* `Heroes battlers offset:` Formula in JavaScript defining the position of heroes battlers according to other heroes position (where `i` is the hero index).
-* `Troops battlers center offset:` Formula in JavaScript defining the position of troops battlers according to the center of the map battle.
-* `Troops battlers offset:` Formula in JavaScript defining the position of troops battlers according to other enemies position (where `i` is the enemy index).
+* `死亡`: キャラクターが死亡したとみなす条件を定義する JavaScript の式。`u` はキャラクターに対応します。
+* `クリティカルの影響`: クリティカルヒットが発生した後、新しいダメージ値を定義する JavaScript の式。`damage` は、クリティカルの影響を受けないダメージに対応します。
+* `ヒーローのバトラーの中心からのオフセット`: マップバトルの中心に対するヒーローのバトラーの位置を定義する JavaScript の式。
+* `ヒーローのバトラーのオフセット`: 他のヒーローの位置に対するヒーローのバトラーの位置を定義する JavaScript の式（`i` はヒーローのインデックス）。
+* `敵のバトラーの中心からのオフセット`: マップバトルの中心に対する敵のバトラーの位置を定義する JavaScript の式。
+* `敵のバトラーのオフセット`: 他の敵の位置に対する敵のバトラーの位置を定義する JavaScript の式（`i` は敵のインデックス）。
 
-## Battle musics <a href="#battle-musics" id="battle-musics"></a>
+## バトル音楽 <a href="#battle-musics" id="battle-musics"></a>
 
-* `Battle`: Battle music used during the battle.
-* `Level up`: Sound used when a hero is leveling up.
-* `Victory`: Music used during the victory end battle phase.
+* `バトル`: バトル中に使用されるバトル音楽。
+* `レベルアップ`: ヒーローがレベルアップしたときに使用されるサウンド。
+* `勝利`: 勝利のバトル終了フェーズで使用される音楽。
 
-## Currencies <a href="#currencies" id="currencies"></a>
+## 通貨 <a href="#currencies" id="currencies"></a>
 
-Go to `Systems Manager > System`.
+`システムマネージャー> システム` に移動します。
 
 ![](<../.gitbook/assets/currencies (1).png>)
 
-Currencies can be used in the game for trading with NPCs or any other way.
+通貨は、NPC との取引など、ゲーム内で使用できます。
 
-* `Name`: Name of the currency.
-* `Icon`: Icon associated with the currency.
+* `名前`: 通貨の名前。
+* `アイコン`: 通貨に関連付けられたアイコン。
 
-## Skills / Items / Weapons / Armors <a href="#skills-items-weapons-armors" id="skills-items-weapons-armors"></a>
+## スキル/アイテム/武器/防具 <a href="#skills-items-weapons-armors" id="skills-items-weapons-armors"></a>
 
-Go to `Datas Manager`.
+`データマネージャー` に移動します。
 
-In `Skills` tab:
+`スキル` タブ:
 
 ![](<../.gitbook/assets/skills (2).png>)
 
-In `Items` tab:
+`アイテム` タブ:
 
 ![](../.gitbook/assets/items.png)
 
-In `Weapons` tab:
+`武器` タブ:
 
 ![](../.gitbook/assets/weapons.png)
 
-In `Armors` tab:
+`防具` タブ:
 
 ![](../.gitbook/assets/armors.png)
 
-These four data have common properties:
+これらの4つのデータには、共通のプロパティがあります。
 
-* `Name`: Name of the data.
-* `Type`: Select the type of item / armor / weapon.
-* `Consumable`: If checked, the data will disappear after using the data.
-* `One hand`: _Not available yet._
-* `Icon`: Icon associated with the data.
-* `Description`: Description of the data that will be displayed in game.
-* `Conditions formula`: The conditions to be able to equip or use the skill / item / weapon / armor
-* `Target`: Target for applying associated effects.
-  * `None`: No target selection.
-  * `The user`: Select the user only.
-  * `An enemy`: Only select one ennemy.
-  * `An ally`: Only select one ally.
-  * `All enemies`: Select all enemies.
-  * `All allies`: Select all allies.
-* `Target conditions formula`: The conditions to be able to use the skill / item / weapon / armor according to the target
-* `Available`: Available kind of the data.
-  * `Battle only`: The data can be used only in battle.
-  * `Main menu only`: The data can be used only in main menu.
-  * `Always`: The data can be used in battle and main menu.
-  * `Never`: The data can never be used.
-* `Sound (main menu)`: The sound to play when using it in the main menu.
-* `User animation ID`: The animation ID to display on the user before attacking.
-* `Target animation ID`: The animation ID to display on the target(s) when attacking.
-* `Can be sold`: Indicate if the item can be sold in a shop
-* `Battle message`: The message to display on the top bar when using a skill or item. `[item]` will display the item name, and `[skill]` will display the skill name.
-* `Price`: Price of the data when it can be bought / sold in a shop menu.
+* `名前`: データの名前。
+* `種類`: アイテム/防具/武器の種類を選択します。
+* `消耗品`: チェックを入れると、データを使用した後にデータが消えます。
+* `片手`: _まだ利用できません。_
+* `アイコン`: データに関連付けられたアイコン。
+* `説明`: ゲーム内に表示されるデータの説明。
+* `条件式`: スキル/アイテム/武器/防具を装備または使用できるようにするための条件。
+* `対象`: 関連する効果を適用する対象。
+  * `なし`: 対象を選択しません。
+  * `使用者`: 使用者のみを選択します。
+  * `敵1体`: 敵を1体だけ選択します。
+  * `味方1体`: 味方を1体だけ選択します。
+  * `敵全体`: すべての敵を選択します。
+  * `味方全体`: すべての味方を選択します。
+* `対象条件式`: 対象に応じてスキル/アイテム/武器/防具を使用できるようにするための条件。
+* `使用可能`: データの使用可能な種類。
+  * `バトルのみ`: データはバトルでのみ使用できます。
+  * `メインメニューのみ`: データはメインメニューでのみ使用できます。
+  * `常に`: データはバトルとメインメニューの両方で使用できます。
+  * `使用不可`: データは使用できません。
+* `サウンド（メインメニュー）`: メインメニューで使用するときに再生するサウンド。
+* `使用者アニメーションID`: 攻撃前に使用者に表示するアニメーションID。
+* `対象アニメーションID`: 攻撃時に対象に表示するアニメーションID。
+* `売却可能`: ショップでアイテムを販売できるかどうかを示します。
+* `バトルメッセージ`: スキルまたはアイテムの使用時に上部のバーに表示されるメッセージ。 `[item]` はアイテム名を表示し、`[skill]` はスキル名を表示します。
+* `価格`: ショップメニューで購入/販売できる場合のデータの価格。
 
-There also are three more common properties that can be listed: `Costs`, `Effects`, and `Caracteristics`.
+さらに、`コスト`、`効果`、`特性` の3つの共通プロパティをリストすることができます。
 
-## Costs <a href="#costs" id="costs"></a>
+## コスト <a href="#costs" id="costs"></a>
 
 ![](../.gitbook/assets/battle-costs.png)
 
-Choose the cost of using a skill. This is generally used for HP, MP, and TP statistic. A character will not be able to use a skill if he doesn't have enough for the use cost.
+スキルの使用コストを選択します。これは一般的に、HP、MP、TPのステータスに使用されます。キャラクターは、使用コストに十分な値を持っていない場合、スキルを使用できません。
 
-* `Apply cost on`: Select which data will be influenced after using the skill. It can be a `statistic`, a `currency`, or a `variable`.
-  * `with value`: Select the value required for the selected data.
+* `コストの適用対象`: スキルを使用した後に影響を受けるデータを選択します。 `ステータス`、`通貨`、または `変数` を選択できます。
+  * `値`: 選択したデータに必要な値を選択します。
 
-## Effects <a href="#effects" id="effects"></a>
+## 効果 <a href="#effects" id="effects"></a>
 
 ![](../.gitbook/assets/effects.png)
 
-Choose the effects done for the target(s) data.
+対象のデータに対して行われる効果を選択します。
 
-* `Damages on`: Select which data will be damaged. It can be a `statistic`, a `currency`, or a `variable`.
-  * `with formula`: Select the value damage for the selected data.
-  * `Minimum`: Minimum value that can have final damages.
-  * `Maximum`: Maximum value that can have final damages
-  * `Element ID`: Element applied for these damages.
-  * `Variance`: The variance damages in percent. This adds random on your damages. For example, if you choose 20% variance, your damages range would be : \[damage - (20 \* damage / 100) | damage + (20 \* damage / 100)]. If not checked, there is no variance (= 0).
-  * `Critical`: The critical hit chance in percent. If not checked, there is no chance to do critical hit (= 0).
-  * `Precision`: The precision hit in percent. If not checked, you have 100% chance to hit.
-  * `Stock value in`: You can stock the damages value in a variable. This can for example be used for a next effect.
-* `Status Add / Remove`: Add or remove a status to the target
-* `Skill Add / Remove`: Add or remove a skill to the target (learn or forget)
-* `Perform skill`: Execute another skill to the target
-* `Call common reaction`: Call a common reaction
-* `Special action`: Execute one of the following special actions:
-  * `Apply weapon(s) effects and properties`: This will use all the effects of the currently equipped weapon. If the is no weapon equipped, this will apply the next effects following this one.
-  * `Open skills choice`: Open the skills choice for battle command.
-  * `Open items choice`: Open the items choice for battle command.
-  * `Escape`: Escape from the battel.
-  * `End turn`: End the team turn.
-* `Script`: Execute a script
-* `Temporarily change target`: You can temporarily change the target for this effect only. You have to return an array of battlers. Example: `[u.battler]` will be the user of the item/skill/weapon.
+* `ダメージ対象`: ダメージを与えるデータを選択します。 `ステータス`、`通貨`、または `変数` を選択できます。
+  * `式`: 選択したデータのダメージ値を選択します。
+  * `最小値`: 最終的なダメージの最小値。
+  * `最大値`: 最終的なダメージの最大値
+  * `属性ID`: このダメージに適用される属性。
+  * `分散`: ダメージの分散（パーセント）。これはダメージにランダム性を追加します。たとえば、20％の分散を選択した場合、ダメージの範囲は次のようになります。\[ダメージ - （20 \* ダメージ / 100）| ダメージ + （20 \* ダメージ / 100）]。チェックを外すと、分散はありません（= 0）。
+  * `クリティカル`: クリティカルヒットの確率（パーセント）。チェックを外すと、クリティカルヒットの確率はありません（= 0）。
+  * `命中率`: 命中率（パーセント）。チェックを外すと、100％の確率で命中します。
+  * `値の保存先`: ダメージ値を変数に保存できます。これは、たとえば、次の効果に使用できます。
+* `ステータスの追加/削除`: 対象にステータスを追加または削除します。
+* `スキルの追加/削除`: 対象にスキルを追加または削除します（習得または忘却）。
+* `スキルの実行`: 対象に別のスキルを実行します。
+* `共通リアクションの呼び出し`: 共通リアクションを呼び出します。
+* `特殊行動`: 次の特殊行動のいずれかを実行します。
+  * `武器の効果とプロパティを適用する`: 現在装備している武器のすべての効果を使用します。装備している武器がない場合は、この効果に続く次の効果が適用されます。
+  * `スキル選択を開く`: バトルコマンドのスキル選択を開きます。
+  * `アイテム選択を開く`: バトルコマンドのアイテム選択を開きます。
+  * `逃げる`: バトルから逃げます。
+  * `ターン終了`: チームのターンを終了します。
+* `スクリプト`: スクリプトを実行します。
+* `一時的に対象を変更する`: この効果に対してのみ、対象を一時的に変更できます。バトラーの配列を返す必要があります。例： `[u.battler]` はアイテム/スキル/武器の使用者になります。
 
-## Characteristics <a href="#characteristics" id="characteristics"></a>
+## 特性 <a href="#characteristics" id="characteristics"></a>
 
-Choose the characteristics added to the character when equipped.
+装備時にキャラクターに追加される特性を選択します。
 
 ![](../.gitbook/assets/battle-characteristic-buff.png)
 
-*   `Buff increase / decrease`: Select which data will be influenced. This can be:
+*   `バフの増加/減少`: 影響を受けるデータを選択します。これは次のとおりです。
 
-    * `Statistic value`: Select a statistic. If bar statistic, this will increase the max value.
-    * `Element resistance`: Select an element to apply resistance on it.
-    * `Status resistance`: Select a status to apply resistance on it.
-    * `Experience gain`: Change experience gain after each battle.
-    * `Currency gain`: Change currency gain after each battle.
-    * `Skill cost`: Select a skill to apply skill cost change.
+    * `ステータス値`: ステータスを選択します。バーステータスの場合、これは最大値を増加させます。
+    * `属性耐性`: 耐性を適用する属性を選択します。
+    * `ステータス耐性`: 耐性を適用するステータスを選択します。
+    * `経験値獲得率`: 各バトル後の経験値の獲得量を変更します。
+    * `通貨獲得量`: 各バトル後の通貨の獲得量を変更します。
+    * `スキルコスト`: スキルコストの変更を適用するスキルを選択します。
 
-    After selecting the data influence, you can choose how this is influenced according to the base value:
+    データの影響を選択した後、ベース値に応じてこれがどのように影響を受けるかを選択できます。
 
-    * `* / +`: Choose operation by multiplying by or adding a value.
-    * `% / Fix`: Choose unit value.
+    * `* / +`: 値を乗算するか加算するかを選択して演算を選択します。
+    * `% / 固定値`: 単位値を選択します。
 
 ![](../.gitbook/assets/battle-characteristic-character-specific.png)
 
-* `Equip`: Choose to allow or forbid a weapon or armor to be equipped
-* `Change equipment`: Choose to allow or forbid an equipment slot to be editable
-* `Begin equipment`:  Choose a begin equipment (when the player is instancied)
+* `装備`: 武器または防具を装備することを許可または禁止することを選択します。
+* `装備の変更`: 装備スロットを編集可能にすることを許可または禁止することを選択します。
+* `初期装備`: 初期装備（プレイヤーがインスタンス化されたとき）を選択します。
 
 ![](../.gitbook/assets/battle-caracteristics-other.png)
 
-* `Script`: Execute a script
+* `スクリプト`: スクリプトを実行します。
 
-## Classes <a href="#classes" id="classes"></a>
+## クラス <a href="#classes" id="classes"></a>
 
 ![](../.gitbook/assets/battle-classes.png)
 
-Each character has a class. The class defines a lot of attributes that a character can have.
+各キャラクターはクラスを持っています。クラスは、キャラクターが持つことができる多くの属性を定義します。
 
-* **Experience**: Define experience progression according to level. Note that you can edit the experience column manually by `double clicking` on the cell.
-  * `To next level`: The table indicates the number of experience to gain for going to the next level.
-  * `Total`: The table indicates the total number of experience that should be accumulated for going to the next level.
-  * `Initial level`: The initial level possible.
-  * `Max level`: The maximum level possible.
-  * `Base`: The number of experience to have at initial level.
-  * `Inflation`: Inflation value changing experience progression according to base and level.
-  * `Reset`: Reset to default values.
-* **Statistics progression**: Change the statistics progression for level ups.
-  * **Informations**:
-    * `Statistic`: Select one of the system statistic.
-    * `Maximum value`: The maximum possible value. This doesn't always corresponds to the final value because items could add bonus values.
-  * **Fix**:
-    * `Initial value`: The initial value at initial level.
-    * `Final value`: The final value at max level.
-    * `Slider progression`:
-      * `Slow`: The experience increases slowly at the begining and increase faster at te end.
-      * `Linear`: The experience increases constantly.
-      * `Fast`: The experience increases fast at the begining and increase slowly at te end.
-    * `Random variation`: The variance applied on the progression function. Note that this will always lead to the max value.
-  * **Formula**: Use a formula to define the value. `u` corresponds to the character.
-* **Characteristics**: Defines the class characteristics
-* **Skills to learn**: Defines the list of skills that can be learned according to levels.
-  * `Skill`: The corresponding skill to learn.
-  * `Level`: The level for learning this skill.
+* **経験値**: レベルに応じた経験値の進行を定義します。セルを `ダブルクリック` することで、経験値列を手動で編集できることに注意してください。
+  * `次のレベルまで`: テーブルは、次のレベルに進むために獲得する必要がある経験値の数を示しています。
+  * `合計`: テーブルは、次のレベルに進むために蓄積する必要がある経験値の合計数を示しています。
+  * `初期レベル`: 可能な初期レベル。
+  * `最大レベル`: 可能な最大レベル。
+  * `ベース`: 初期レベルで持つ必要がある経験値の数。
+  * `インフレーション`: ベースとレベルに応じて経験値の進行を変更するインフレーション値。
+  * `リセット`: デフォルト値にリセットします。
+* **ステータスの進行**: レベルアップ時のステータスの進行を変更します。
+  * **情報**:
+    * `ステータス`: システムステータスのいずれかを選択します。
+    * `最大値`: 可能な最大値。アイテムによってボーナス値が追加される可能性があるため、これは必ずしも最終値に対応するわけではありません。
+  * **固定値**:
+    * `初期値`: 初期レベルでの初期値。
+    * `最終値`: 最大レベルでの最終値。
+    * `スライダーによる進行`:
+      * `遅い`: 経験値は最初はゆっくりと増加し、最後は速く増加します。
+      * `線形`: 経験値は一定に増加します。
+      * `速い`: 経験値は最初は速く増加し、最後はゆっくりと増加します。
+    * `ランダムな変動`: 進行関数に適用される分散。これは常に最大値につながることに注意してください。
+  * **式**: 式を使用して値を定義します。`u` はキャラクターに対応します。
+* **特性**: クラスの特性を定義します。
+* **習得するスキル**: レベルに応じて習得できるスキルのリストを定義します。
+  * `スキル`: 習得する対応するスキル。
+  * `レベル`: このスキルを習得するレベル。
 
-## Heroes <a href="#heroes" id="heroes"></a>
+## ヒーロー <a href="#heroes" id="heroes"></a>
 
 ![](../.gitbook/assets/heroes.png)
 
-* `Class`: Select an existing class.
-* `Description`: A description that will be displayed in the state menu ingame.
-* `Faceset`: Select a faceset for battles.
-* `Battler`: Select a battler for battles.
+* `クラス`: 既存のクラスを選択します。
+* `説明`: ゲーム内のステータスメニューに表示される説明。
+* `顔グラフィック`: バトル用の顔グラフィックを選択します。
+* `バトラー`: バトル用のバトラーを選択します。
 
-All the other properties inherits from the class properties. For `Experience`, the values by default are the class values. The `Set to class values` button updates the values to the class values. For `Statistics progression` list, you can add additional progressions. If the statistic already existed, the progression would be replaced. For `Skills to learn` list, you can add additional skills to learn. If the skill already existed, the level would be replaced.
+他のすべてのプロパティは、クラスのプロパティを継承します。 `経験値` については、デフォルト値はクラスの値です。 `クラスの値に設定` ボタンを押すと、値がクラスの値に更新されます。 `ステータスの進行` リストには、進行を追加できます。ステータスがすでに存在する場合、進行は置き換えられます。 `習得するスキル` リストには、習得するスキルを追加できます。スキルがすでに存在する場合、レベルは置き換えられます。
 
-## Monsters <a href="#monsters" id="monsters"></a>
+## モンスター <a href="#monsters" id="monsters"></a>
 
 ![](../.gitbook/assets/battle-monsters.png)
 
-Monsters are exactly like heroes but with extra information for battles:
+モンスターはヒーローとまったく同じですが、バトルに関する追加情報があります。
 
-* **Rewards**:
+* **報酬**:
 
 ![](../.gitbook/assets/battle-monsters-rewards.png)
 
-* `Experience`: Choose experience progression that your team can get at the end of a battle.
-* `Currencies`: Choose currencies progression that your team can get at the end of a battle.
-*   `Loots`: The loots that your team can get at the end of a battle.
+* `経験値`: バトル終了時にチームが獲得できる経験値を選択します。
+* `通貨`: バトル終了時にチームが獲得できる通貨を選択します。
+*   `戦利品`: バトル終了時にチームが獲得できる戦利品。
 
-    * `Number`: The number of items to loot.
-    * `Probability`: The probability to loot.
-    * `Level between`: Choose range level of loot availability.
-    * `Loot`: Select `Item`, `Weapon`, and `Armor`.
+    * `数`: 戦利品として入手できるアイテムの数。
+    * `確率`: 戦利品として入手できる確率。
+    * `レベル範囲`: 戦利品として入手できるレベルの範囲を選択します。
+    * `戦利品`: `アイテム`、`武器`、`防具` を選択します。
 
 
-* **Actions**:
+* **行動**:
 
-You can manage your monster's AI here. You can specify monster actions with these following options:
+ここで、モンスターのAIを管理できます。次のオプションを使用して、モンスターの行動を指定できます。
 
 ![](../.gitbook/assets/monster-action.png)
 
-* `Priority`: The priority of the action. You can see `Probability` below that will give you the percent chance of the actions according to all the other actions priorities. Warning: Il you put a priority as a variable a `?` will be displayed.
-* `Target`:
-  * `Random`: Will attack on random target without any AI.
-  * `Weak enemies`: Will attack targets with lower HPs. Warning: do not remove or change hp abbreviation in common statistics to have this working.
-* **Action**:
-  * `Use skill ID`: The monster will use the selected skill.
-  * `Use item ID`: The monster will use the selected item.
-  * `Number max`: The number max of item that can be used by the monster. If < 0, will be infinite.
-  * `Do nothing`: The monster will do nothing.
-* **Conditions**:
-  * `Turn value`: This action can be done according to the current value of turns in the battle.
-  * `Statistic ID`: This action can be done according to the specified statistic percentage. Note: this should be only bars (with max value).
-  * `Variable`: This action can be done according to the current value of a variable.
-  * `Is under effect of status ID`: Not available yet.
-  * `Script`: This action can be done according to the script return.
+* `優先度`: 行動の優先度。`確率` を見ると、他のすべてのアクションの優先度に対するアクションの発生確率（パーセント）が表示されます。警告：変数として優先度を設定すると、 `?` が表示されます。
+* `対象`:
+  * `ランダム`: AIなしでランダムな対象を攻撃します。
+  * `弱い敵`: HPの低い対象を攻撃します。警告：これが機能するようにするには、共通ステータスでHPの省略形を削除または変更しないでください。
+* **行動**:
+  * `スキルIDを使用`: モンスターは選択したスキルを使用します。
+  * `アイテムIDを使用`: モンスターは選択したアイテムを使用します。
+  * `最大数`: モンスターが使用できるアイテムの最大数。0未満の場合、無限になります。
+  * `何もしない`: モンスターは何もしません。
+* **条件**:
+  * `ターン値`: この行動は、バトルの現在のターン数に応じて実行できます。
+  * `ステータスID`: この行動は、指定されたステータスの割合に応じて実行できます。注：これはバー（最大値あり）のみである必要があります。
+  * `変数`: この行動は、変数の現在の値に応じて実行できます。
+  * `ステータスIDの効果を受けている`: まだ利用できません。
+  * `スクリプト`: この行動は、スクリプトの戻り値に応じて実行できます。
 
-## Troops <a href="#troops" id="troops"></a>
+## 部隊 <a href="#troops" id="troops"></a>
 
 ![](../.gitbook/assets/troops.png)
 
-Troops correspond to a monsters group and some states with reactions.
+部隊は、モンスターのグループと、リアクションを伴ういくつかの状態に対応します。
 
-* **Test button**: You can test a troop battle at any moment with the test button. It will open a small window when you can choose a team fighting this troop. When it's done, just press ok and it will open a game battle with the selected troop.
+* **テストボタン**: テストボタンを使用して、いつでも部隊の戦いをテストできます。この部隊と戦うチームを選択できる小さなウィンドウが開きます。完了したら、[OK]を押すと、選択した部隊とのゲームバトルが開きます。
 
 ![](../.gitbook/assets/troop-test.png)
 
-* **Monsters list**:
-  * `Monster`: The monster in the group.
-  * `Level`: The level of the monster.
-* **Reactions:** a list of reactions to trigger in this battle troop
-  * `Name`: The reaction name (only to help for ordering everything)
-  * `Conditions`: The condition(s) to validate to trigger the reaction:
+* **モンスターリスト**:
+  * `モンスター`: グループ内のモンスター。
+  * `レベル`: モンスターのレベル。
+* **リアクション**: このバトル部隊でトリガーするリアクションのリスト。
+  * `名前`: リアクションの名前（すべてを整理するためにのみ使用）。
+  * `条件`: リアクションをトリガーするために検証する条件:
 
 ![](../.gitbook/assets/troops-reactions.png)
 
 *
-  * `Number of turns + x` : The turn number. The first turn is turn 1. The (`+`) turn is the fix base turn, and the (`x`) is the number of time it's trigerred. `1 + 2 x` will for example be triggered in turn 1, 3, 5... etc.
-  *   `The heroes/monsters all players/none of the players/at least one player/the player with instance ID`:
+  * `ターン数 + x`: ターン数。最初のターンはターン1です。（+）ターンは固定ベースターンであり、（x）はトリガーされる回数です。たとえば、 `1 + 2 x` はターン1、3、5 ...などでトリガーされます。
+  *   `ヒーロー/モンスター全員/プレイヤーなし/少なくとも1人のプレイヤー/インスタンスIDを持つプレイヤー`:
 
-      * `Are under effect of status ID`: Check if the status is applied
-      * `Have the statistic ID`: Compare a statistic value
+      * `ステータスIDの効果を受けている`: ステータスが適用されているかどうかを確認します。
+      * `ステータスIDを持っている`: ステータス値を比較します。
 
 
-* `Frequency`: The frequency of trigerring
-  * `One time`: Only triggered one time in the beginning of the first turn
-  * `Each turn (begin)`: Triggered in the beggining of each turn
-  * `Each turn (end)`: Triggered in the end of each turn
-  * `Always`: Triggered in each frames
+* `頻度`: トリガーの頻度。
+  * `1回`: 最初のターンの開始時に1回だけトリガーされます。
+  * `毎ターン（開始時）`: 各ターンの開始時にトリガーされます。
+  * `毎ターン（終了時）`: 各ターンの終了時にトリガーされます。
+  * `常に`: 各フレームでトリガーされます。
 
-## Status <a href="#status" id="status"></a>
+## ステータス <a href="#status" id="status"></a>
 
 ![](../.gitbook/assets/status.png)
 
-Status can be applied after using particular skills or items. This can be KO, poisonned, paralized, etc.
+ステータスは、特定のスキルやアイテムを使用した後に適用できます。これは、KO、毒、麻痺などです。
 
-* `Animation ID`: Select an animation to display with a loop when the player is affected by this status. Since you can't display more than one animation on a player if there is several status, the `priority` will decide which one to display.
-* `Restrictions`: You can add restrictions for the player when it is affected by the status. It can be:
-  * `Can't do anything`: The player will pass their turn everytime
-  * `Can't use skills`: The player won't be able to open skills menu
-  * `Can't use items`: The player won't be able to open items menu
-  * `Can't escape`: The player won't be able to escape
-  * `Attack random target`: The player will use a random attack to attack a random target (ally or enemy)
-  * `Attack random ally`: The player will use a random attack to attack a random ally
-  * `Attack random enemy`: The player will use a random attack to attack a random enemy
-* `Priority`: Defines which `Animation ID` and `Battler position` to display. If you have several status, the one with higher priority will be displayed.
-* `Battler position`: The column to display in Battler picture when the player is affected by the status
-* **Release conditions**: Defines all the status release conditions
-  * `Release at the end of battle`: The status will disappear after the end of a battle
-  * `Release with X% chance after being attacked`: The status will disappear with X% chance after being attacked (receiving positive damages)
-  * `Release at the start of turn`: The status will disappear at the start of a turn according to a list of conditions depending on a chance according to the turn number.
-* **Messages**: Defines messages to display according to the status situation
-  * `Ally affected`
-  * `Enemy affected`
-  * `Status healed`
-  * `Status still affected`
-* **Effects**: The effects to apply at the beginning of a turn if the player is still affected by the status
-* **Characteristics**: The characteristics (buffs etc) to apply when the player is affected by the status
+* `アニメーションID`: プレイヤーがこのステータスの影響を受けているときにループで表示するアニメーションを選択します。複数のステータスがある場合、プレイヤーに複数のアニメーションを表示することはできないため、 `優先度` によって表示するアニメーションが決まります。
+* `制限`: ステータスの影響を受けているプレイヤーに制限を追加できます。これは次のとおりです。
+  * `何もできない`: プレイヤーは毎回ターンをパスします。
+  * `スキルを使用できない`: プレイヤーはスキルメニューを開くことができません。
+  * `アイテムを使用できない`: プレイヤーはアイテムメニューを開くことができません。
+  * `逃げられない`: プレイヤーは逃げることはできません。
+  * `ランダムな対象を攻撃する`: プレイヤーはランダムな攻撃を使用して、ランダムな対象（味方または敵）を攻撃します。
+  * `ランダムな味方を攻撃する`: プレイヤーはランダムな攻撃を使用して、ランダムな味方を攻撃します。
+  * `ランダムな敵を攻撃する`: プレイヤーはランダムな攻撃を使用して、ランダムな敵を攻撃します。
+* `優先度`: 表示する `アニメーションID` と `バトラーの位置` を定義します。複数のステータスがある場合、優先度の高い方が表示されます。
+* `バトラーの位置`: プレイヤーがステータスの影響を受けているときに、バトラーの画像に表示する列。
+* **解除条件**: すべてのステータス解除条件を定義します。
+  * `バトル終了時に解除`: ステータスはバトル終了後に消えます。
+  * `攻撃を受けた後、X％の確率で解除`: ステータスは攻撃を受けた後（正のダメージを受けた後）、X％の確率で消えます。
+  * `ターン開始時に解除`: ステータスは、ターン数に応じた確率に依存する一連の条件に従って、ターン開始時に消えます。
+* **メッセージ**: ステータスの状況に応じて表示するメッセージを定義します。
+  * `味方が影響を受けた`
+  * `敵が影響を受けた`
+  * `ステータスが回復した`
+  * `ステータスはまだ影響を受けている`
+* **効果**: プレイヤーがまだステータスの影響を受けている場合に、ターン開始時に適用される効果。
+* **特性**: プレイヤーがステータスの影響を受けているときに適用される特性（バフなど）。
 
-## Animations <a href="#animations" id="animations"></a>
+## アニメーション <a href="#animations" id="animations"></a>
 
 ![](../.gitbook/assets/battle-animations.png)
 
-Animations are used for: weapons, skills, items, and event command display an animation. You can customize these 2D animations with several different options.
+アニメーションは、武器、スキル、アイテム、およびイベントコマンドのアニメーションを表示するために使用されます。これらの2Dアニメーションは、いくつかの異なるオプションを使用してカスタマイズできます。
 
-* `Picture`: The texture used for the entire animation.
-* `Position`: Choose the origin position. You have an indicator of this position with the battler example drawn in the panel.
-* **Frames**: List of different frames of the animation.
-  * **Graphics**: You can add elements in the panel by left clicking:
+* `画像`: アニメーション全体に使用されるテクスチャ。
+* `位置`: 原点の位置を選択します。パネルに描画されたバトラーの例を使用して、この位置のインジケーターが表示されます。
+* **フレーム**: アニメーションのさまざまなフレームのリスト。
+  * **グラフィック**: 左クリックして、パネルに要素を追加できます。
 
 ![](../.gitbook/assets/widget-animation.png)
 
-You can right-click and click on `Edit...` to edit properties of an element:
+右クリックして `編集...` をクリックすると、要素のプロパティを編集できます。
 
 ![](../.gitbook/assets/widget-animation-element-properties.png)
 
-* `Index`: The index of the element. An element is always drawn on top of other elements that have lower index.
-* `X`: The x position center of the element.
-* `Y`: The y position center of the element.
-* `Zoom`: The zoom % the element.
-* `Angle`: The angle ° of the element.
-* `Flip vertically`: If checked, the element will be flipped vertically.
-*   `Opacity`: The opcaity % of the element.
+* `インデックス`: 要素のインデックス。要素は常に、インデックスの低い他の要素の上に描画されます。
+* `X`: 要素の中心のx位置。
+* `Y`: 要素の中心のy位置。
+* `ズーム`: 要素のズーム％。
+* `角度`: 要素の角度°。
+* `垂直方向に反転`: チェックを入れると、要素が垂直方向に反転します。
+*   `不透明度`: 要素の不透明度％。
 
-    Before left clicking, you can choose the texture thanks to this selector:
+    左クリックする前に、このセレクターを使用してテクスチャを選択できます。
 
 ![](../.gitbook/assets/widget-animation-texture.png)
 
-*   **Options**:
+*   **オプション**:
 
-    * `Change battler`: Change the battler to display in the panel.
-    * `Copy frames...`: Copy frames with the following options.
-
-
-
-    ![Screenshot](../.gitbook/assets/animation-copy-frames.png)
+    * `バトラーの変更`: パネルに表示するバトラーを変更します。
+    * `フレームのコピー...`: 次のオプションを使用してフレームをコピーします。
 
 
 
-    * **Frames to copy**: Select all the frames to copy.
-    * `Paste from frame`: Paste from this frame.
-    * `Clear frames...`: Clear frames with the following options.
+    ![スクリーンショット](../.gitbook/assets/animation-copy-frames.png)
 
 
 
-    ![Screenshot](../.gitbook/assets/animation-clear-frames.png)
+    * **コピーするフレーム**: コピーするすべてのフレームを選択します。
+    * `貼り付け開始フレーム`: このフレームから貼り付けます。
+    * `フレームのクリア...`: 次のオプションを使用してフレームをクリアします。
 
 
 
-    * `Create transition...`: Create a transition on several frames with the following options.
+    ![スクリーンショット](../.gitbook/assets/animation-clear-frames.png)
 
 
 
-    ![Screenshot](../.gitbook/assets/animation-create-transition.png)
+    * `トランジションの作成...`: 次のオプションを使用して、複数のフレームにトランジションを作成します。
 
 
 
-    * **Frames**: The frames begin and end transition.
-    * **Elements index**: The elements index to apply transition.
-    * `X`, `Y`, `Zoom`, `Angle`, `Opacity`: The optional values at the end of the transition. You can use the progress slider to choose how fast is the transition.
-    * `Apply texture`: Apply the selected texture to the selected element.
-    * `Play hit`: Test the animation when hit.
-    * `Play miss`: Test the animation when miss.
-    * `Play crit`: Test the animation when critical.
-    * `Rows`: The number of rows to split the texture animation. Default value is 5.
-    * `Columns`: The number of columns to split the texture animation. Default value is 5.
-* **Sound effects / Flashs**: You can add a list of effects (sound effects or flashs) here:
+    ![スクリーンショット](../.gitbook/assets/animation-create-transition.png)
 
-![Screenshot](../.gitbook/assets/animation-effects.png)
 
-* **Effect**:
-  * `Sound effect`: Select a sound to play at this frame.
-  * `Flash`: _Not available yet._
-* `Condition`: Select a condition for playing this sound or displaying this flash:
-  * `None`: No condition.
-  * `Hit`: When hitting an attack.
-  * `Miss`: When missing an attack.
-  * `Critical`: When doing a critical attack.
+
+    * **フレーム**: トランジションの開始フレームと終了フレーム。
+    * **要素インデックス**: トランジションを適用する要素のインデックス。
+    * `X`、`Y`、`ズーム`、`角度`、`不透明度`: トランジション終了時のオプションの値。プログレススライダーを使用して、トランジションの速度を選択できます。
+    * `テクスチャの適用`: 選択したテクスチャを選択した要素に適用します。
+    * `ヒット時に再生`: ヒット時のアニメーションをテストします。
+    * `ミス時に再生`: ミス時のアニメーションをテストします。
+    * `クリティカル時に再生`: クリティカルヒット時のアニメーションをテストします。
+    * `行`: テクスチャアニメーションを分割する行の数。デフォルト値は5です。
+    * `列`: テクスチャアニメーションを分割する列の数。デフォルト値は5です。
+* **効果音/フラッシュ**: ここに効果（効果音またはフラッシュ）のリストを追加できます。
+
+![スクリーンショット](../.gitbook/assets/animation-effects.png)
+
+* **効果**:
+  * `効果音`: このフレームで再生するサウンドを選択します。
+  * `フラッシュ`: _まだ利用できません。_
+* `条件`: このサウンドを再生したり、このフラッシュを表示したりするための条件を選択します。
+  * `なし`: 条件はありません。
+  * `ヒット`: 攻撃がヒットしたとき。
+  * `ミス`: 攻撃がミスしたとき。
+  * `クリティカル`: クリティカルヒットが発生したとき。

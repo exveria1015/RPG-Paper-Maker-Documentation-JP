@@ -1,32 +1,34 @@
 ---
-description: See how to work with variables
+description: 変数の使用方法を確認する
 ---
 
-# Variables overview
+# 変数の概要
 
-Variables are important to understand if you want to have a dynamic game. Here is an overview on the subject.
+ダイナミックなゲームを作成したい場合は、変数を理解することが重要です。ここでは、変数の概要について説明します。
 
-## What is a variable? <a id="what-is-a-variable"></a>
+## 変数とは？ <a id="what-is-a-variable"></a>
 
-A variable is a value that can change when you are playing in your game. There are three possible type of variables:
+変数とは、ゲームのプレイ中に変化する可能性のある値のことです。変数には、次の3つのタイプがあります。
 
-* `Numbers`: number with or without decimals.
-* `Switches`: ON or OFF.
-* `Messages`: Any type of message.
+* `数値`: 小数点以下を含む、または含まない数値。
+* `スイッチ`: ON または OFF。
+* `メッセージ`: あらゆる種類のメッセージ。
 
-You have access to a large number of variables. By default, when you launch a new game all the variables are equals to `0`.
+多数の変数にアクセスできます。デフォルトでは、新しいゲームを起動すると、すべての変数が `0` に等しくなります。
 
-## Variables manager <a id="variables-manager"></a>
+## 変数マネージャー <a id="variables-manager"></a>
 
-Open the variables manager by clicking here on the main toolbar:
+メインツールバーのこちらをクリックして、変数マネージャーを開きます。
 
 ![Variable manager](https://rpg-paper-maker.github.io/basics/img/variables-manager.png)
 
-You can only manage the number and names of variables here. You cannot change the values. We will see later how to modify the values in-game.
+ここでは、変数の数と名前のみを管理できます。値を変更することはできません。ゲーム内で値を変更する方法については、後で説明します。
 
-## Using example <a id="using-example"></a>
+## 使用例 <a id="using-example"></a>
 
-Imagine that you want to create a feature that allows the player to change the music volume. You can use variables here! The engine propose to use fix numbers or variables:
+プレイヤーが音楽の音量を変更できる機能を作成したいとします。ここでは変数を使用できます！エンジンは、固定数値または変数を使用することを提案します。
 
 ![Screenshot](https://rpg-paper-maker.github.io/basics/img/volume-variable.png)
+
+
 

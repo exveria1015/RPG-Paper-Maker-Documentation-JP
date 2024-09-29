@@ -1,35 +1,34 @@
-# Multi languages
+# 複数言語対応
 
-RPG Paper Maker contains a languages manager, so you can have several possible translations in your game.
+RPG Paper Makerには言語マネージャーが搭載されており、ゲーム内で複数の言語に対応した翻訳を提供することができます。
 
-## Languages manager
+## 言語マネージャー
 
-You can open the languages manager in the tool bar by clicking on `Languages`:
+ツールバーの`Languages`をクリックすると、言語マネージャーを開くことができます。
 
 ![](../.gitbook/assets/languages-manager.png)
 
-* **Languages**: Edit the list of available languages:
-  * `Name`: The language name \(for inside the engine\)
-  * `Type`: The language type, that can be any available language in the engine, or a custom one
+* **言語**: 利用可能な言語のリストを編集します。
+  * `名前`: エンジン内で使用される言語名
+  * `種類`: エンジンで利用可能な言語、またはカスタム言語を設定できます。
 
-## Edit a translatable name
+## 翻訳可能な名前の編集
 
-You can then edit a translatable name according to your created languages. Example with a class name:
+作成した言語に合わせて、翻訳可能な名前を編集できます。クラス名を例に説明します。
 
 ![](../.gitbook/assets/edit-translatable-name.png)
 
-* `Name`: Edit the main language translation directly
-* _Language button_: Edit specific languages translation:
-  * `All`: Edit for all the languages
-  * ... and then use the tabs for editing for a specific language
+* `名前`: メイン言語の翻訳を直接編集します。
+* _言語ボタン_: 特定の言語の翻訳を編集します。
+  * `すべて`: すべての言語の翻訳を編集します。
+  * ... 特定の言語の編集には、タブを使用します。
 
-## Title screen setting option
+## タイトル画面設定オプション
 
-You can enable or disable languages change ingame in title screen settings in `Systems Manager > Title screen / Game over`:
+`システムマネージャー > タイトル画面 / ゲームオーバー`のタイトル画面設定で、ゲーム内での言語変更を有効または無効にすることができます。
 
 ![](../.gitbook/assets/languages-title-setting.png)
 
-Render in game:
+ゲーム内での表示：
 
 ![](../.gitbook/assets/render-languages.png)
-

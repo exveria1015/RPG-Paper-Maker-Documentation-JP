@@ -1,45 +1,45 @@
-# 3D Objects
+# 3Dオブジェクト
 
-You can manage the 3D objects list by clicking here on the main toolbar:
+メインツールバーのここをクリックすると、3Dオブジェクトのリストを管理できます。
 
 ![](../.gitbook/assets/objects-3d-tileset.png)
 
-The options for your 3D objects are different according to the `shape` you choose.
+3Dオブジェクトのオプションは、選択した`形状`によって異なります。
 
-*   `Box`: A simple box.
+*   `ボックス`: 単純なボックス。
 
-    * `Texture`: The box texture. Box textures have a specific template. You can check it at any time in the Basic Ressource:
+    * `テクスチャ`: ボックスのテクスチャ。ボックスのテクスチャには特定のテンプレートがあります。基本リソースでいつでも確認できます。
 
-    ![Screenshot](https://rpg-paper-maker.github.io/basics/img/box-template.png)
+    ![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/box-template.png)
 
-    * `Collisions`: Choose the kind of collision you want to have with that box.
-      * `None`: No collision.
-      * `Perfect`: Perfect collision with the box faces.
-    * `Size`: The size of the box. You can choose by number of squares and additionnal pixels.
-      * `Width`: The box width.
-      * `Height`: The box height.
-      * `Depth`: The box depth.
-      * `Texture`: Select the texture application kind:
-        * `Stretch`: Stretch your texture. You can use it if you follow the template with a different size that doesn't take account of size proportions.
-        * `Perfect size`: Use it if you want to always respect pixels proportions. See the cupboard example which is 2x2x1 size:
+    * `衝突`: そのボックスに適用する衝突の種類を選択します。
+      * `なし`: 衝突なし。
+      * `完全`: ボックスの面との完全な衝突。
+    * `サイズ`: ボックスのサイズ。正方形の数と追加のピクセル数で選択できます。
+      * `幅`: ボックスの幅。
+      * `高さ`: ボックスの高さ。
+      * `奥行き`: ボックスの奥行き。
+      * `テクスチャ`: テクスチャの適用方法を選択します。
+        * `ストレッチ`: テクスチャをストレッチします。サイズの比率を考慮しない異なるサイズでテンプレートに従う場合に使用できます。
+        * `完全なサイズ`: 常にピクセルの比率を尊重したい場合に使用します。サイズが2x2x1の食器棚の例を参照してください。
 
 ![](../.gitbook/assets/box-template.png)
 
-* `Sphere` **(not available yet)**
-* `Cylinder` **(not available yet)**
-* `Cone` **(not available yet)**
-* `Capsule` **(not available yet)**
-* `Custom`: Import your own 3D objects models (with `.obj`).
-  * `Object`: Select your associated `.obj`.
-  * `MTL` **(not available yet)**
-  * `Texture`: Choose the texture corresponding to the object UVs mapping.
-  * `Collisions`: Choose the kind of collision you want to have with that custom object.
-    * `None`: No collision.
-    * `Simplified`: Simplified bounding box collision for the object. The collision will represent a single box which is the smallest possible that can contains all the 3D object vertices.
-  * `Scale`: The scale size to multiply with. By default, the value is `1.0` so the multiplying has no effect on the 3D object size.
+* `球` **(まだ利用できません)**
+* `円柱` **(まだ利用できません)**
+* `円錐` **(まだ利用できません)**
+* `カプセル` **(まだ利用できません)**
+* `カスタム`: 独自の3Dオブジェクトモデル（`.obj`を使用）をインポートします。
+  * `オブジェクト`: 関連付けられた`.obj`を選択します。
+  * `MTL` **(まだ利用できません)**
+  * `テクスチャ`: オブジェクトのUVマッピングに対応するテクスチャを選択します。
+  * `衝突`: そのカスタムオブジェクトに適用する衝突の種類を選択します。
+    * `なし`: 衝突なし。
+    * `簡略化`: オブジェクトの簡略化されたバウンディングボックスの衝突。衝突は、すべての3Dオブジェクトの頂点を含めることができる最小の単一のボックスを表します。
+  * `スケール`: 乗算するスケールサイズ。デフォルト値は`1.0`であるため、乗算は3Dオブジェクトのサイズに影響を与えません。
 
-Don't forget to add your objects in the tileset:
+タイルセットにオブジェクトを追加することを忘れないでください。
 
 ![](<../.gitbook/assets/objects-3d-tileset (1).png>)
 
-(or use the texture selector)
+（またはテクスチャセレクターを使用します）

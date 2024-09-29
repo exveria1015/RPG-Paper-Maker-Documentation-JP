@@ -1,27 +1,27 @@
 ---
-description: How to have windows in scenes.
+description: シーンにウィンドウを表示する方法
 ---
 
-# WindowBox & WindowChoices
+# WindowBox と WindowChoices
 
 ## WindowBox
 
-You can use the `WindowBox` class in `Core` module to draw window boxes with specific content. You'll be able to draw stuff like that:
+`Core` モジュールの `WindowBox` クラスを使用して、特定のコンテンツを持つウィンドウボックスを描画できます。以下のようなものを描画できます。
 
 ![](../.gitbook/assets/windowbox.png)
 
-Here is an example of window box declaration in a scene:
+シーンでのウィンドウボックス宣言の例を次に示します。
 
 ```javascript
-this.exampleWindow = new RPM.Core.WindowBox(x, y, w, h, { 
-    // The following options are optional
-    content: new Graphic.Text("myText"), // The content is a Graphic.Base
-    padding: [0, 0, 0, 0], // [x, y, x, h] for box padding
-    limitContent: true // If checked, the content will be cut according to padding
+this.exampleWindow = new RPM.Core.WindowBox(x, y, w, h, {
+    // 以下のオプションは任意です
+    content: new Graphic.Text("myText"), // コンテンツは Graphic.Base です
+    padding: [0, 0, 0, h], // ボックスのパディング [x, y, x, h]
+    limitContent: true // チェックされている場合、コンテンツはパディングに合わせてカットされます
 });
 ```
 
-And then you can draw this window, in `drawHUD` of the scene:
+そして、シーンの `drawHUD` でこのウィンドウを描画できます。
 
 ```javascript
 drawHUD() {
@@ -31,26 +31,26 @@ drawHUD() {
 
 ## WindowChoices
 
-You can also use `WindowChoices` class in `Core` module for displaying several `WindowBox` as a choice.
+`Core` モジュールの `WindowChoices` クラスを使用して、複数の `WindowBox` を選択肢として表示することもできます。
 
 ![](../.gitbook/assets/windowchoices.png)
 
-Here is an example of window choice use in a scene:
+シーンでの選択肢ウィンドウの使用例を次に示します。
 
 ```javascript
-this.exampleChoices = new RPM.Core.WindowChoices(x, y, w, h, [new Graphic.Text("A"), new Graphic.Text("B")], { 
-    // The following options are optional
-    listCallbacks: [myfunction1, myFunction2], // List of all the callback functions to excecute when pressed.
-    orientation: OrientationWindow.Vertical, // The orientation of the window (horizontal or vertical)
-    nbItemsMax: 2, // Max number of items to display on the choice box
-    padding: WindowBox.SMALL_SLOT_PADDING, // Padding of the box
-    space: 0, // Space between each choice in the box
-    currentSelectedIndex: 0, // The current selected index position in the choice box
-    bordersInsideVisible: true // If checked, each choice will have an individual window box
+this.exampleChoices = new RPM.Core.WindowChoices(x, y, w, h, [new Graphic.Text("A"), new Graphic.Text("B")], {
+    // 以下のオプションは任意です
+    listCallbacks: [myfunction1, myFunction2], // 押されたときに実行されるすべてのコールバック関数のリスト
+    orientation: OrientationWindow.Vertical, // ウィンドウの向き（水平または垂直）
+    nbItemsMax: 2, // 選択肢ボックスに表示する最大項目数
+    padding: WindowBox.SMALL_SLOT_PADDING, // ボックスのパディング
+    space: 0, // ボックス内の各選択肢間のスペース
+    currentSelectedIndex: 0, // 選択肢ボックス内の現在選択されているインデックスの位置
+    bordersInsideVisible: true // チェックされている場合、各選択肢に個別のウィンドウボックスが表示されます
 });
 ```
 
-Handle the inputs:
+入力を処理します。
 
 ```javascript
 onKeyPressed(key) {
@@ -62,9 +62,9 @@ onKeyPressedAndRepeat(key) {
 }
 ```
 
-`onKeyPressed` is for handling callbacks (functions) when pressing enter in a choice. The 2nd argument here is `this` but you can replace it by whatever you want to repalce the `this` inside the callback. `onKeyPressedAndRepeat` is for handling move keys to switch between choices.
+`onKeyPressed` は、選択肢でEnterキーを押したときのコールバック（関数）を処理するためのものです。ここでの2番目の引数は `this` ですが、コールバック内の `this` を置き換える任意のものに置き換えることができます。 `onKeyPressedAndRepeat` は、選択肢を切り替えるための移動キーを処理するためのものです。
 
-And then you can draw the choices, in `drawHUD` of the scene:
+そして、シーンの `drawHUD` で選択肢を描画できます。
 
 ```javascript
 drawHUD() {
@@ -72,47 +72,47 @@ drawHUD() {
 }
 ```
 
-## Graphics
+## グラフィックス
 
-In the examples for `WindowBox` and `WindowChoices`, we are using `Graphic.Text` class. In fact there's a lot of classes in the `Graphic` module. Here are the most interesting.
+`WindowBox` と `WindowChoices` の例では、`Graphic.Text` クラスを使用しています。実際には、`Graphic` モジュールには多くのクラスがあります。最も興味深いものを以下に示します。
 
 ### Graphic.Text
 
-Display a simple text.
+単純なテキストを表示します。
 
 ```javascript
-new Graphic.Text('mytext', { 
-    x: 0, 
-    y: 0, 
-    w: 0, 
-    h: 0, 
-    align: Align.Left, 
-    fontSize: Utils.defaultValue(Datas.Systems.dbOptions.v_tSize, Constants.DEFAULT_FONT_SIZE), 
-    fontName: Utils.defaultValue(Datas.Systems.dbOptions.v_tFont, Constants.DEFAULT_FONT_NAME), 
-    verticalAlign: AlignVertical.Center, 
-    color: Utils.defaultValue(Datas.Systems.dbOptions.v_tcText, System.Color.WHITE), 
-    bold: false, 
-    italic: false, 
-    backColor: Utils.defaultValue(Datas.Systems.dbOptions.v_tcBackground, null), 
+new Graphic.Text('mytext', {
+    x: 0,
+    y: 0,
+    w: 0,
+    h: 0,
+    align: Align.Left,
+    fontSize: Utils.defaultValue(Datas.Systems.dbOptions.v_tSize, Constants.DEFAULT_FONT_SIZE),
+    fontName: Utils.defaultValue(Datas.Systems.dbOptions.v_tFont, Constants.DEFAULT_FONT_NAME),
+    verticalAlign: AlignVertical.Center,
+    color: Utils.defaultValue(Datas.Systems.dbOptions.v_tcText, System.Color.WHITE),
+    bold: false,
+    italic: false,
+    backColor: Utils.defaultValue(Datas.Systems.dbOptions.v_tcBackground, null),
     strokeColor: Utils.defaultValue(Datas.Systems.dbOptions.tOutline, false) ? Utils.defaultValue(Datas.Systems.dbOptions.v_tcOutline, null) : null
 });
 ```
 
 ### Graphic.TextIcon
 
-Display a simple text with an icon.
+アイコン付きの単純なテキストを表示します。
 
 ```javascript
-new Graphic.TextIcon("myText", iconID, { 
-    side: Align.Left, 
-    align: Align.Left, 
+new Graphic.TextIcon("myText", iconID, {
+    side: Align.Left,
+    align: Align.Left,
     space: Constants.MEDIUM_SPACE
 });
 ```
 
 ### Graphic.Message
 
-Display a complex text with tags. It's used in ShowText command.
+タグ付きの複雑なテキストを表示します。ShowTextコマンドで使用されます。
 
 ```javascript
 new Graphic.Message("<b>myText</b>", facesetID);
@@ -120,7 +120,7 @@ new Graphic.Message("<b>myText</b>", facesetID);
 
 ### Graphic.Player
 
-Drawing the player in choice box like in the main menu or drawing the player informations like in battles.
+メインメニューのように選択肢ボックスにプレイヤーを描画したり、戦闘のようにプレイヤーの情報を描画したりします。
 
 ```javascript
 new Graphic.Player(player, reverse);
@@ -128,7 +128,7 @@ new Graphic.Player(player, reverse);
 
 ### Graphic.PlayerDescription
 
-Drawing the player in choice box or drawing the player description.
+選択肢ボックスにプレイヤーを描画したり、プレイヤーの説明を描画したりします。
 
 ```javascript
 new Graphic.PlayerDescription(player);

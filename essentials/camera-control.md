@@ -1,86 +1,86 @@
-# Camera control
+# カメラ制御
 
-In your 2D games, you are limited to screen moves for adding dynamism to your important scenes. A 3D camera offers a lot of opportunities for your scenes (moves, rotations, zooms...) and you need to know some easy basics to use it correctly.
+2Dゲームでは、重要なシーンに躍動感を加えるために、画面の動きに制限されています。3Dカメラは、シーンに多くの可能性（移動、回転、ズームなど）を提供します。カメラを正しく使用するには、いくつかの基本的な知識が必要です。
 
 <figure><img src="../.gitbook/assets/camera.gif" alt=""><figcaption></figcaption></figure>
 
-## The camera <a href="#the-camera" id="the-camera"></a>
+## カメラ <a href="#the-camera" id="the-camera"></a>
 
-First, you should know what is a camera. Just imagine that you are a cameraman for a great movie. The first two things required for filming a scene are:
+まず、カメラとは何かを知る必要があります。素晴らしい映画のカメラマンになったと思ってください。シーンを撮影するために最初に必要な2つのことは次のとおりです。
 
-* **The camera position**
-* **The target position** (= where the camera is looking at)
+* **カメラの位置**
+* **ターゲットの位置**（= カメラが見ている場所）
 
-Thanks to the scripts, these two positions are always calculated thanks to algorithms. These positions will be calculated according to:
+スクリプトのおかげで、これらの2つの位置は常にアルゴリズムによって計算されます。これらの位置は、以下に従って計算されます。
 
-* The **target position** and a potential **offset**
-* The **distance** between the camera and the target
-* The **horizontal angle** between the camera and the target
-* The **vertical angle** between the camera and the target
+* **ターゲットの位置**と潜在的な**オフセット**
+* カメラとターゲット間の**距離**
+* カメラとターゲット間の**水平角度**
+* カメラとターゲット間の**垂直角度**
 
-## The distance <a href="#the-distance" id="the-distance"></a>
+## 距離 <a href="#the-distance" id="the-distance"></a>
 
 ![](../.gitbook/assets/camera-distance.png)
 
-The distance is simply a positive value indicating the distance between the camera and the target. This should take account of the three axis. This will be used for zooms. The default value is 125.
+距離とは、カメラとターゲット間の距離を示す単純な正の値です。これは、3つの軸すべてを考慮する必要があります。これはズームに使用されます。デフォルト値は125です。
 
-## The horizontal angle <a href="#the-horizontal-angle" id="the-horizontal-angle"></a>
+## 水平角度 <a href="#the-horizontal-angle" id="the-horizontal-angle"></a>
 
 ![](../.gitbook/assets/camera-h.png)
 
-The horizontal angle is only applied to the X and Z axis. For example, if you want to turn around your target horizontally, you will have to change this value. The default value is -90°.
+水平角度は、X軸とZ軸にのみ適用されます。たとえば、ターゲットを水平方向に回転させたい場合は、この値を変更する必要があります。デフォルト値は-90°です。
 
-## The vertical angle <a href="#the-vertical-angle" id="the-vertical-angle"></a>
+## 垂直角度 <a href="#the-vertical-angle" id="the-vertical-angle"></a>
 
 ![](../.gitbook/assets/camera-v.png)
 
-Same as the vertical angle but only applied to the Y axis. For example, if you want to turn around your target vertically, you will have to change this value (to go down you have to increment the value, and to go up you have to decrease the value). The default value is 55°.
+垂直角度と同じですが、Y軸にのみ適用されます。たとえば、ターゲットを垂直方向に回転させたい場合は、この値を変更する必要があります（下に移動するには値を増やし、上に移動するには値を減らす必要があります）。デフォルト値は55°です。
 
-## The move camera command <a href="#the-move-camera-command" id="the-move-camera-command"></a>
+## カメラ移動コマンド <a href="#the-move-camera-command" id="the-move-camera-command"></a>
 
-Here we are, now that you know a bit more about the camera properties we can see how to dynamically move it. The Move Camera event command is here for it!
+ここまでで、カメラのプロパティについて少し理解できたので、カメラを動的に移動する方法を見ていきましょう。カメラ移動イベントコマンドの出番です。
 
 ![](../.gitbook/assets/command-move-camera.png)
 
-* **Camera target**: By default, the camera is always looking at the hero.
-  * `Unchanged`: Keep the current camera target.
-  * `Object ID`: If you are selecting a new object ID to focus, the camera will move to its position and will consider it as the new target after it.
-* **Operation**: You can select here the kind of operation you want to apply to the modified values. For example, if you choose (+) and you set distance to 5, if the previous distance value was 125 it will become 125 + 5 = 130.
-* **Move**: You can modify here the camera position on the three axis (you can choose squares by squares or pixel by pixel).
-  * `Target offset`: if this option is checked, you will move the camera and the target offset positions at the same time. In 2D games, it's like if you only wanted to move the screen and ignore the hero position.
+* **カメラターゲット**: デフォルトでは、カメラは常にヒーローを見ています。
+  * `変更なし`: 現在のカメラターゲットを維持します。
+  * `オブジェクトID`: フォーカスする新しいオブジェクトIDを選択すると、カメラはその位置に移動し、それを新しいターゲットと見なします。
+* **操作**: ここで、変更された値に適用する操作の種類を選択できます。たとえば、(+)を選択し、距離を5に設定した場合、以前の距離値が125であれば、125 + 5 = 130になります。
+* **移動**: ここで、3つの軸上のカメラの位置を変更できます（正方形単位またはピクセル単位で選択できます）。
+  * `ターゲットオフセット`: このオプションがオンの場合、カメラとターゲットオフセットの位置を同時に移動します。2Dゲームでは、ヒーローの位置を無視して画面だけを移動したい場合と同じです。
 
-![Moving X+10 squares with target offset OFF](../.gitbook/assets/camera-move-off.gif)
+![ターゲットオフセットOFFでX+10マス移動](../.gitbook/assets/camera-move-off.gif)
 
-![Moving X+10 squares with target offset ON](../.gitbook/assets/camera-move-on.gif)
+![ターゲットオフセットONでX+10マス移動](../.gitbook/assets/camera-move-on.gif)
 
-* `Take account of camera orientation`: _(not available yet)_ This is simply considering that the axis are modified according to the camera position (see the same option for [Move Object command](event-commands.md#move-object)).
-* **Rotation**: You can here modify the horizontal and the vertical angle of the camera in order to apply rotations.
-  * `Target offset`: Same as for moves. This time, the target will turn around the camera.
+* `カメラの向きを考慮する`: _(未実装)_ これは、軸がカメラの位置に応じて変更されることを考慮しているだけです（[オブジェクト移動コマンド](event-commands.md#move-object)の同じオプションを参照）。
+* **回転**: ここで、カメラの水平角度と垂直角度を変更して回転を適用できます。
+  * `ターゲットオフセット`: 移動の場合と同じです。今回は、ターゲットがカメラを中心に回転します。
 
-![Adding 360° to the horizontal angle with target offset OFF](../.gitbook/assets/camera-h-r-off.gif)
+![ターゲットオフセットOFFで水平角度に360°加算](../.gitbook/assets/camera-h-r-off.gif)
 
-![Adding 360° to the horizontal angle with target offset ON](../.gitbook/assets/camera-h-r-on.gif)
+![ターゲットオフセットONで水平角度に360°加算](../.gitbook/assets/camera-h-r-on.gif)
 
-![Adding 360° to the vertical angle with target offset OFF](../.gitbook/assets/camera-v-r-off.gif)
+![ターゲットオフセットOFFで垂直角度に360°加算](../.gitbook/assets/camera-v-r-off.gif)
 
-![Adding 360° to the vertical angle with target offset ON](../.gitbook/assets/camera-v-r-on.gif)
+![ターゲットオフセットONで垂直角度に360°加算](../.gitbook/assets/camera-v-r-on.gif)
 
-* **Zoom**: You can set the distance between the camera and the target to create a zoom effect.
-  * `Distance`: The distance to update in pixels.
-* `Wait the end of the move before the next command`: Wait the end of the move before the next command (same as for the [move object command](event-commands.md#move-object)). It can be used to execute commands while the camera is moving (display texts, sounds...).
-* `Time`: Indicate here the time in seconds for the camera to move to its final position. If 0, the move will be immediate.
+* **ズーム**: カメラとターゲット間の距離を設定して、ズーム効果を作成できます。
+  * `距離`: 更新する距離（ピクセル単位）。
+* `次のコマンドの前に移動の終了を待つ`: 次のコマンドの前に移動の終了を待ちます（[オブジェクト移動コマンド](event-commands.md#move-object)と同じ）。カメラの移動中にコマンドを実行するために使用できます（テキストの表示、サウンドなど）。
+* `時間`: ここで、カメラが最終位置に移動するまでの時間を秒単位で指定します。0の場合、移動は即座に行われます。
 
-## Camera properties <a href="#camera-properties" id="camera-properties"></a>
+## カメラのプロパティ <a href="#camera-properties" id="camera-properties"></a>
 
-You can control the default properties of the camera when you are going into a new map. You can set the camera ID in `map properties`. You also have access to the camera properties list in `Systems manager > System`:
+新しいマップに移動するときのカメラのデフォルトのプロパティを制御できます。`マップのプロパティ`でカメラIDを設定できます。また、`システムマネージャー > システム`でカメラのプロパティリストにアクセスすることもできます。
 
 ![](../.gitbook/assets/camera-properties.png)
 
-* `Name`: The name of the camera properties.
-* `Distance`: The distance between the camera and the hero.
-* `Horizontal angle`: The horizontal angle between the camera and the hero.
-* `Vertical angle`: The vertical angle between the camera and the hero.
-* `Target offset`: A position on every axes for adding an offset to the target position.
-* `Field of fiew`: The angle used to determine the angle vision limit of the camera. We recommend to keep the default value.
-* `Near`: Min distance between camera and elements for being drawn. We recommend to keep the default value.
-* `Far`: Max distance between camera and elements for being drawn. We recommend to keep the default value.
+* `名前`: カメラのプロパティの名前。
+* `距離`: カメラとヒーロー間の距離。
+* `水平角度`: カメラとヒーロー間の水平角度。
+* `垂直角度`: カメラとヒーロー間の垂直角度。
+* `ターゲットオフセット`: 各軸上の位置。ターゲットの位置にオフセットを追加するために使用します。
+* `視野角`: カメラの視野角の制限を決定するために使用される角度。デフォルト値を維持することをお勧めします。
+* `ニア`: カメラと要素間の最小距離。この距離より近い要素は描画されます。デフォルト値を維持することをお勧めします。
+* `ファー`: カメラと要素間の最大距離。この距離より遠い要素は描画されません。デフォルト値を維持することをお勧めします。

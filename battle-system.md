@@ -1,392 +1,379 @@
 ---
-description: Time to some action.
+description: 何かアクションを起こす時間です。
 ---
 
-# Battle system
+# バトルシステム
 
-If you want to create to create a RPG, you may need a battle system. Here, we will see all the features linked to the battle implementation.
+RPG を作成したい場合は、バトルシステムが必要になることがあります。ここでは、バトルの実装に関連するすべての機能を見ていきます。
 
-![Battle system sample](https://rpg-paper-maker.github.io/basics/img/battle-demo.gif)
+![バトルシステムのサンプル](https://rpg-paper-maker.github.io/basics/img/battle-demo.gif)
 
-_Note: if you want to do an action RPG \(battles directly on maps\), you can do it through object & events_
+_注: アクション RPG（マップ上で直接戦闘を行う）を作成したい場合は、オブジェクトとイベントを使用して行うことができます_
 
-## Battle system datas <a id="battle-system-datas"></a>
+## バトルシステムデータ <a id="battle-system-datas"></a>
 
-A lot of battle system datas can be found in `Systems Manager > Battle System:`
+バトルシステムデータの多くは、`システムマネージャー > バトルシステム` にあります。
 
 ![](.gitbook/assets/battle-system.png)
 
-## Elements <a id="elements"></a>
+## 属性 <a id="elements"></a>
 
 ![](.gitbook/assets/elements.png)
 
-You can manage here all the elements that you want to have in your game for influencing your damages effects.
+ここでは、ダメージ効果に影響を与えるためにゲームに持たせたいすべての属性を管理できます。
 
-* `Name`: Name displayed in game UI.
-* `Icon`: Icon displayed in game UI.
-* **Efficiency**: You can edit here how efficient is the current element against all the other existing elements. This is pretty usefull when the element is assigned to a class. By default, it's x1.0 \(normal effect\).
+* `名前`: ゲーム UI に表示される名前。
+* `アイコン`: ゲーム UI に表示されるアイコン。
+* **効率**: ここでは、現在の属性が他のすべての既存の属性に対してどれだけ効果的かを編集できます。これは、属性がクラスに割り当てられている場合に非常に役立ちます。デフォルトでは、x1.0（通常効果）です。
 
-## Common statistics <a id="common-statistics"></a>
+## 共通ステータス <a id="common-statistics"></a>
 
-![Statistic tool](https://rpg-paper-maker.github.io/basics/img/battle-statistic.png)
+![ステータスパネル](https://rpg-paper-maker.github.io/basics/img/battle-statistic.png)
 
-You can manage here all the statistics that you want to have in your game for influencing your battles \(HPs, lvl, strength, etc.\).
+ここでは、バトルに影響を与えるためにゲームに持たせたいすべてのステータス（HP、レベル、強さなど）を管理できます。
 
-* `Name`: Name displayed in game UI.
-* `Script abbreviation`: Choose here an abbreviation. This will be used for game scripts, choose something without capital letter if possible.
-* **Properties**:
-  * `Fix`: If checked, this statistic would be a fix value \(not a bar\).
-  * `Bar`: If checked, this statistic would be a bar value \(an actual value + max value\).
+* `名前`: ゲーム UI に表示される名前。
+* `スクリプトの省略形`: ここで省略形を選択します。これはゲームスクリプトに使用されます。可能な場合は大文字を使用しないでください。
+* **プロパティ**:
+  * `固定`: チェックを入れると、このステータスは固定値（バーではない）になります。
+  * `バー`: チェックを入れると、このステータスはバー値（実際の値 + 最大値）になります。
 
-## Common battle commands <a id="common-battle-commands"></a>
+## 共通バトルコマンド <a id="common-battle-commands"></a>
 
-![Battle Command](https://rpg-paper-maker.github.io/basics/img/battle-commands.png)
+![バトルコマンド](https://rpg-paper-maker.github.io/basics/img/battle-commands.png)
 
-Choose which battle commands you want to have after selecting a hero to do something.
+ヒーローを選択して何かを実行した後、どのバトルコマンドを使用するかを選択します。
 
-* `Skill`: Choose the corresponding skill.
+* `スキル`: 対応するスキルを選択します。
 
-Render in game:
+ゲームでのレンダリング:
 
-![Battle in-game menu](https://rpg-paper-maker.github.io/basics/img/battle-commands-preview.png)
+![ゲーム内メニューでのバトル](https://rpg-paper-maker.github.io/basics/img/battle-commands-preview.png)
 
-## Common equipment <a id="common-equipment"></a>
+## 共通装備 <a id="common-equipment"></a>
 
-Choose the name of common equipment so you will be able to equip weapons / armors on these equipment slots.
+共通装備の名前を選択すると、これらの装備スロットに武器/防具を装備できるようになります。
 
-## Weapons / Armors kind <a id="weapons-armors-kind"></a>
+## 武器/防具の種類 <a id="weapons-armors-kind"></a>
 
-![Weapons / Armor kind](https://rpg-paper-maker.github.io/basics/img/battle-weapon-armor-kind.png)
+![武器/防具の種類](https://rpg-paper-maker.github.io/basics/img/battle-weapon-armor-kind.png)
 
-Create a weapon / armor kind and also choose on which equipment you can assign it.
+武器/防具の種類を作成し、どの装備に割り当てるかを選択します。
 
-* `Name`: Name for this kind of weapon / armor.
-* Selection of equipment you can assign.
+* `名前`: この種類の武器/防具の名前。
+* 割り当てることができる装備の選択。
 
-## Battle maps <a id="battle-maps"></a>
+## バトルマップ <a id="battle-maps"></a>
 
-![Battle maps](https://rpg-paper-maker.github.io/basics/img/battle-maps.png)
+![バトルマップ](https://rpg-paper-maker.github.io/basics/img/battle-maps.png)
 
-Battle maps are in fact maps associated with a specific position \(representing the center point of the battle\). Select a map \(by default in the `Battle Maps` folder in the map selector\) and a position to add a new battle map.
+バトルマップは、実際には特定の位置（バトルの中心点を表す）に関連付けられたマップです。マップ（デフォルトではマップセレクターの `Battle Maps` フォルダー内）と位置を選択して、新しいバトルマップを追加します。
 
-## Statistics associations <a id="statistics-associations"></a>
+## ステータス関連付け <a id="statistics-associations"></a>
 
-* `Statistic associated to level`: Choose one of your fix statistic to associate with level. Level is a statistic that is increasing for the character evolution: leveling up will increase other statistics.
-* `Statistic associated to exp`: Choose one of your bar statistic to associate with experience. Experience is something earned generally after finishing a battle. Once experience goes to its maximum value, the character is leveling up and the map experience bar increases too.
+* `レベルに関連付けられたステータス`: レベルに関連付ける固定ステータスのいずれかを選択します。レベルは、キャラクターの進化に伴って増加するステータスです。レベルアップすると、他のステータスも増加します。
+* `経験値に関連付けられたステータス`: 経験値に関連付けるバー統計のいずれかを選択します。経験値は、一般的にバトルの終了後に獲得されるものです。経験値が最大値に達すると、キャラクターはレベルアップし、マップの経験値バーも増加します。
 
-## Formulas <a id="formulas"></a>
+## 式 <a id="formulas"></a>
 
-* `Is dead`: Formula in JavaScript defining conditions to consider that a character is dead. `u` corresponds to the character.
-* `Critical influence`: Formula in JavaScript defining the new damages value after having a critical hit. `damage` corresponds to the damages done without critical influence.
+* `死亡`: キャラクターが死亡したとみなす条件を定義する JavaScript の式。`u` はキャラクターに対応します。
+* `クリティカルの影響`: クリティカルヒットが発生した後、新しいダメージ値を定義する JavaScript の式。`damage` は、クリティカルの影響を受けないダメージに対応します。
 
-## Battle musics <a id="battle-musics"></a>
+## バトルミュージック <a id="battle-musics"></a>
 
-* `Battle`: Battle music used during the battle.
-* `Level up`: Sound used when a hero is leveling up.
-* `Victory`: Music used during the victory end battle phase.
+* `バトル`: バトル中に使用されるバトルミュージック。
+* `レベルアップ`: ヒーローがレベルアップしたときに使用されるサウンド。
+* `勝利`: 勝利のエンディングバトルフェーズで使用されるミュージック。
 
-## Currencies <a id="currencies"></a>
+## 通貨 <a id="currencies"></a>
 
-Go to `Systems Manager > System`.
+`システムマネージャー > システム` に移動します。
 
-![Currencies system](https://rpg-paper-maker.github.io/basics/img/currencies.png)
+![通貨システム](https://rpg-paper-maker.github.io/basics/img/currencies.png)
 
-Currencies can be used in the game for trading with NPCs or any other way.
+通貨は、ゲーム内で NPC との取引やその他の方法で使用できます。
 
-* `Name`: Name of the currency.
-* `Icon`: Icon associated with the currency.
+* `名前`: 通貨の名前。
+* `アイコン`: 通貨に関連付けられたアイコン。
 
-## Skills / Items / Weapons / Armors <a id="skills-items-weapons-armors"></a>
+## スキル/アイテム/武器/防具 <a id="skills-items-weapons-armors"></a>
 
-Go to `Datas Manager`.
+`データマネージャー` に移動します。
 
-In `Skills` tab:
+`スキル` タブ:
 
 ![](.gitbook/assets/battle-skills.png)
 
-In `Items` tab:
+`アイテム` タブ:
 
 ![](.gitbook/assets/battle-items.png)
 
-In `Weapons` tab:
+`武器` タブ:
 
 ![](.gitbook/assets/battle-weapons.png)
 
-In `Armors` tab:
+`防具` タブ:
 
 ![](https://rpg-paper-maker.github.io/basics/img/battle-armors.png)
 
-These four data have common properties:
+これらの 4 つのデータには、共通のプロパティがあります。
 
-* `Name`: Name of the data.
-* `Type`: Select the type of item / armor / weapon.
-* `Consumable`: If checked, the data will disappear after using the data.
-* `One hand`: _Not available yet._
-* `Icon`: Icon associated with the data.
-* `Description`: Description of the data that will be displayed in game.
-* `Conditions formula`: _Not available yet._
-* `Target`: Target for applying associated effects.
-  * `None`: No target selection.
-  * `The user`: Select the user only.
-  * `An enemy`: Only select one ennemy.
-  * `An ally`: Only select one ally.
-  * `All enemies`: Select all enemies.
-  * `All allies`: Select all allies.
-* `Target conditions formula`: _Not available yet._
-* `Available`: Available kind of the data.
-  * `Battle only`: The data can be used only in battle.
-  * `Main menu only`: The data can be used only in main menu.
-  * `Always`: The data can be used in battle and main menu.
-  * `Never`: The data can never be used.
-* `Sound (main menu)`: The sound to play when using it in the main menu.
-* `User animation ID`: The animation ID to display on the user before attacking.
-* `Target animation ID`: The animation ID to display on the target\(s\) when attacking.
-* `Price`: Price of the data when it can be bought / sold in a shop menu.
+* `名前`: データの名前。
+* `種類`: アイテム/防具/武器の種類を選択します。
+* `消耗品`: チェックを入れると、データを使用した後にデータが消えます。
+* `片手`: _まだ利用できません。_
+* `アイコン`: データに関連付けられたアイコン。
+* `説明`: ゲーム内に表示されるデータの説明。
+* `条件式`: _まだ利用できません。_
+* `対象`: 関連する効果を適用する対象。
+  * `なし`: 対象を選択しません。
+  * `使用者`: 使用者のみを選択します。
+  * `敵`: 敵を 1 人だけ選択します。
+  * `味方`: 味方を 1 人だけ選択します。
+  * `すべての敵`: すべての敵を選択します。
+  * `すべての味方`: すべての味方を選択します。
+* `対象条件式`: _まだ利用できません。_
+* `使用可能`: データの使用可能な種類。
+  * `バトルのみ`: データはバトルでのみ使用できます。
+  * `メインメニューのみ`: データはメインメニューでのみ使用できます。
+  * `常に`: データはバトルとメインメニューの両方で使用できます。
+  * `使用不可`: データは使用できません。
+* `サウンド（メインメニュー）`: メインメニューで使用したときに再生されるサウンド。
+* `使用者アニメーションID`: 攻撃前に使用者に表示されるアニメーションID。
+* `対象アニメーションID`: 攻撃時に対象に表示されるアニメーションID。
+* `価格`: ショップメニューで購入/販売できる場合のデータの価格。
 
-There also are three more common properties that can be listed: `Costs`, `Effects`, and `Caracteristics`.
+また、`コスト`、`効果`、`特性` の 3 つの共通プロパティをリストアップすることもできます。
 
-## Costs <a id="costs"></a>
+## コスト <a id="costs"></a>
 
-![Costs tool](https://rpg-paper-maker.github.io/basics/img/battle-costs.png)
+![コストパネル](https://rpg-paper-maker.github.io/basics/img/battle-costs.png)
 
-Choose the cost of using a skill. This is generally used for HP, MP, and TP statistic. A character will not be able to use a skill if he doesn't have enough for the use cost.
+スキルの使用コストを選択します。これは一般的に、HP、MP、TP のステータスに使用されます。キャラクターは、使用コストが足りない場合、スキルを使用できません。
 
-* `Apply cost on`: Select which data will be influenced after using the skill. It can be a `statistic`, a `currency`, or a `variable`.
-  * `with value`: Select the value required for the selected data.
+* `コストを適用`: スキルを使用した後に影響を受けるデータを選択します。`ステータス`、`通貨`、`変数` のいずれかを選択できます。
+  * `値`: 選択したデータに必要な値を選択します。
 
-## Effects <a id="effects"></a>
+## 効果 <a id="effects"></a>
 
 ![](.gitbook/assets/battle-effects.png)
 
-Choose the effects done for the target\(s\) data.
+対象のデータに対して行われる効果を選択します。
 
-* `Damages on`: Select which data will be damaged. It can be a `statistic`, a `currency`, or a `variable`.
-  * `with formula`: Select the value damage for the selected data.
-  * `Minimum`: Minimum value that can have final damages.
-  * `Maximum`: Maximum value that can have final damages
-  * `Element ID`: Element applied for these damages.
-  * `Variance`: The variance damages in percent. This adds random on your damages. For example, if you choose 20% variance, your damages range would be : \[damage - \(20 \* damage / 100\) \| damage + \(20 \* damage / 100\)\]. If not checked, there is no variance \(= 0\).
-  * `Critical`: The critical hit chance in percent. If not checked, there is no chance to do critical hit \(= 0\).
-  * `Precision`: The precision hit in percent. If not checked, you have 100% chance to hit.
-  * `Stock value in`: You can stock the damages value in a variable. This can for example be used for a next effect.
-* `Status Add / Remove`: _Not available yet._
-* `Skill Add / Remove`: _Not available yet._
-* `Perform skill`: _Not available yet._
-* `Call common reaction`: _Not available yet._
-* `Special action`: Execute one of the following special actions:
-  * `Apply weapon(s) effects and properties`: This will use all the effects of the currently equipped weapon. If the is no weapon equipped, this will apply the next effects following this one.
-  * `Open skills choice`: Open the skills choice for battle command.
-  * `Open items choice`: Open the items choice for battle command.
-  * `Escape`: Escape from the battel.
-  * `End turn`: End the team turn.
-* `Script`: _Not available yet._
-* `Temporarily change target`: You can temporarily change the target for this effect only. You have to return an array of battlers. Example: `[u.battler]` will be the user of the item/skill/weapon.
+* `ダメージ`: ダメージを与えるデータを選択します。`ステータス`、`通貨`、`変数` のいずれかを選択できます。
+  * `式`: 選択したデータのダメージ値を選択します。
+  * `最小`: 最終的なダメージの最小値。
+  * `最大`: 最終的なダメージの最大値。
+  * `属性ID`: このダメージに適用される属性。
+  * `分散`: ダメージの分散（パーセント）。これはダメージにランダム性を加えます。たとえば、20% の分散を選択した場合、ダメージの範囲は次のようになります。\[ダメージ - (20 * ダメージ / 100) \| ダメージ + (20 * ダメージ / 100)\]。チェックを外した場合、分散はありません（= 0）。
+  * `クリティカル`: クリティカルヒットの確率（パーセント）。チェックを外した場合、クリティカルヒットの確率はありません（= 0）。
+  * `命中`: 命中率（パーセント）。チェックを外した場合、100% 命中します。
+  * `値をストック`: ダメージ値を変数にストックできます。これは、たとえば次の効果に使用できます。
+* `ステータスの追加/削除`: _まだ利用できません。_
+* `スキルの追加/削除`: _まだ利用できません。_
+* `スキルを実行`: _まだ利用できません。_
+* `共通リアクションを呼び出す`: _まだ利用できません。_
+* `特殊アクション`: 次の特殊アクションのいずれかを実行します。
+  * `武器の効果と特性を適用`: 現在装備している武器のすべての効果を使用します。装備している武器がない場合は、この効果に続く次の効果が適用されます。
+  * `スキル選択を開く`: バトルコマンドのスキル選択を開きます。
+  * `アイテム選択を開く`: バトルコマンドのアイテム選択を開きます。
+  * `逃げる`: バトルから逃げます。
+  * `ターン終了`: チームのターンを終了します。
+* `スクリプト`: _まだ利用できません。_
+* `一時的に対象を変更`: この効果の対象のみを一時的に変更できます。バトラーの配列を返す必要があります。例: `[u.battler]` はアイテム/スキル/武器の使用者になります。
 
-## Characteristics <a id="characteristics"></a>
+## 特性 <a id="characteristics"></a>
 
-Choose the characteristics added to the character when equipped.
+装備時にキャラクターに追加される特性を選択します。
 
-![Characteristics tool](https://rpg-paper-maker.github.io/basics/img/battle-caracteristics-buff.png)
+![特性パネル](https://rpg-paper-maker.github.io/basics/img/battle-caracteristics-buff.png)
 
-* `Buff increase / decrease`: Select which data will be influenced. This can be:
+* `バフの増加/減少`: 影響を受けるデータを選択します。次のいずれかを選択できます。
 
-  * `Statistic value`: Select a statistic. If bar statistic, this will increase the max value.
-  * `Element resistance`: Select an element to apply resistance on it.
-  * `Status resistance`: _Not available yet._
-  * `Experience gain`: _Not available yet._
-  * `Currency gain`: _Not available yet._
-  * `Skill cost`: _Not available yet._
-  * `Variable`: _Not available yet._
+  * `ステータス値`: ステータスを選択します。バー統計の場合、最大値が増加します。
+  * `属性耐性`: 耐性を適用する属性を選択します。
+  * `状態異常耐性`: _まだ利用できません。_
+  * `経験値獲得`: _まだ利用できません。_
+  * `通貨獲得`: _まだ利用できません。_
+  * `スキルコスト`: _まだ利用できません。_
+  * `変数`: _まだ利用できません。_
 
-  After selecting the data influence, you can choose how this is influenced according to the base value:
+  データの影響を選択した後、ベース値に応じてどのように影響を与えるかを選択できます。
 
-  * `* / +`: Choose operation by multiplying by or adding a value.
-  * `% / Fix`: Choose unit value.
+  * `* / +`: 乗算または加算する値を選択して演算を選択します。
+  * `% / 固定`: 単位値を選択します。
 
-![Characteristics tool](https://rpg-paper-maker.github.io/basics/img/battle-caracteristics-character.png)
+![特性パネル](https://rpg-paper-maker.github.io/basics/img/battle-caracteristics-character.png)
 
-_Not available yet._
+_まだ利用できません。_
 
-![Characteristics tool](https://rpg-paper-maker.github.io/basics/img/battle-caracteristics-other.png)
+![特性パネル](https://rpg-paper-maker.github.io/basics/img/battle-caracteristics-other.png)
 
-_Not available yet._
+_まだ利用できません。_
 
-## Classes <a id="classes"></a>
+## クラス <a id="classes"></a>
 
-![Data Manager &amp;gt; Armors tab](https://rpg-paper-maker.github.io/basics/img/battle-classes.png)
+![データマネージャー > 防具タブ](https://rpg-paper-maker.github.io/basics/img/battle-classes.png)
 
-Each character has a class. The class defines a lot of attributes that a character can have.
+各キャラクターにはクラスがあります。クラスは、キャラクターが持つことができる多くの属性を定義します。
 
-* **Experience**: Define experience progression according to level. Note that you can edit the experience column manually by `double clicking` on the cell.
-  * `To next level`: The table indicates the number of experience to gain for going to the next level.
-  * `Total`: The table indicates the total number of experience that should be accumulated for going to the next level.
-  * `Initial level`: The initial level possible.
-  * `Max level`: The maximum level possible.
-  * `Base`: The number of experience to have at initial level.
-  * `Inflation`: Inflation value changing experience progression according to base and level.
-  * `Reset`: Reset to default values.
-* **Statistics progression**: Change the statistics progression for level ups.
-  * **Informations**:
-    * `Statistic`: Select one of the system statistic.
-    * `Maximum value`: The maximum possible value. This doesn't always corresponds to the final value because items could add bonus values.
-  * **Fix**:
-    * `Initial value`: The initial value at initial level.
-    * `Final value`: The final value at max level.
-    * `Slider progression`:
-      * `Slow`: The experience increases slowly at the begining and increase faster at te end.
-      * `Linear`: The experience increases constantly.
-      * `Fast`: The experience increases fast at the begining and increase slowly at te end.
-    * `Random variation`: The variance applied on the progression function. Note that this will always lead to the max value.
-  * **Formula**: Use a formula to define the value. `u` corresponds to the character.
-* **Caracteristics**: _Not available yet._
-* **Skills to learn**: Defines the list of skills that can be learned according to levels.
-  * `Skill`: The corresponding skill to learn.
-  * `Level`: The level for learning this skill.
+* **経験値**: レベルに応じた経験値の進行状況を定義します。セルを `ダブルクリック` することで、経験値の列を手動で編集できることに注意してください。
+  * `次のレベルまで`: テーブルは、次のレベルに進むために獲得する必要がある経験値の数を示しています。
+  * `合計`: テーブルは、次のレベルに進むために蓄積する必要がある経験値の合計数を示しています。
+  * `初期レベル`: 可能な初期レベル。
+  * `最大レベル`: 可能な最大レベル。
+  * `ベース`: 初期レベルで持つ必要がある経験値の数。
+  * `インフレーション`: ベースとレベルに応じて経験値の進行状況を変更するインフレーション値。
+  * `リセット`: デフォルト値にリセットします。
+* **ステータスの進行状況**: レベルアップ時のステータスの進行状況を変更します。
+  * **情報**:
+    * `ステータス`: システムステータスのいずれかを選択します。
+    * `最大値`: 可能な最大値。アイテムによってボーナス値が追加される可能性があるため、これは必ずしも最終値と一致するわけではありません。
+  * **固定**:
+    * `初期値`: 初期レベルでの初期値。
+    * `最終値`: 最大レベルでの最終値。
+    * `スライダーの進行状況`:
+      * `遅い`: 経験値は最初はゆっくりと増加し、最後は速く増加します。
+      * `線形`: 経験値は一定の速度で増加します。
+      * `速い`: 経験値は最初は速く増加し、最後はゆっくりと増加します。
+    * `ランダムな変動`: 進行状況関数に適用される分散。これは常に最大値につながることに注意してください。
+  * **式**: 式を使用して値を定義します。`u` はキャラクターに対応します。
+* **特性**: _まだ利用できません。_
+* **習得するスキル**: レベルに応じて習得できるスキルのリストを定義します。
+  * `スキル`: 習得する対応するスキル。
+  * `レベル`: このスキルを習得するレベル。
 
-## Heroes <a id="heroes"></a>
+## ヒーロー <a id="heroes"></a>
 
-![Data Manager &amp;gt; Heroes tab](https://rpg-paper-maker.github.io/basics/img/battle-heroes.png)
+![データマネージャー > ヒーロータブ](https://rpg-paper-maker.github.io/basics/img/battle-heroes.png)
 
-* `Class`: Select an existing class.
-* `Faceset`: Select a faceset for battles.
-* `Battler`: Select a battler for battles.
+* `クラス`: 既存のクラスを選択します。
+* `顔グラフィック`: バトル用の顔グラフィックを選択します。
+* `バトラー`: バトル用のバトラーを選択します。
 
-All the other properties inherits from the class properties. For `Experience`, the values by default are the class values. The `Set to class values` button updates the values to the class values. For `Statistics progression` list, you can add additional progressions. If the statistic already existed, the progression would be replaced. For `Skills to learn` list, you can add additional skills to learn. If the skill already existed, the level would be replaced.
+他のすべてのプロパティは、クラスのプロパティを継承します。`経験値` については、デフォルト値はクラスの値です。`クラスの値に設定` ボタンをクリックすると、値がクラスの値に更新されます。`ステータスの進行状況` リストには、追加の進行状況を追加できます。ステータスがすでに存在する場合、進行状況は置き換えられます。`習得するスキル` リストには、習得するスキルを追加できます。スキルがすでに存在する場合、レベルは置き換えられます。
 
-## Monsters <a id="monsters"></a>
+## モンスター <a id="monsters"></a>
 
-![Data Manager &amp;gt; Monster tab](https://rpg-paper-maker.github.io/basics/img/battle-monsters.png)
+![データマネージャー > モンスタータブ](https://rpg-paper-maker.github.io/basics/img/battle-monsters.png)
 
-Monsters are exactly like heroes but with extra information for battles:
+モンスターはヒーローとまったく同じですが、バトルに関する追加情報があります。
 
-* **Rewards**:
+* **報酬**:
 
-  ![Screenshot](https://rpg-paper-maker.github.io/basics/img/battle-monsters-rewards.png)
+  ![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/battle-monsters-rewards.png)
 
-  * `Experience`: Choose experience progression that your team can get at the end of a battle.
-  * `Currencies`: Choose currencies progression that your team can get at the end of a battle.
-  * `Loots`: The loots that your team can get at the end of a battle.
+  * `経験値`: バトルの最後にチームが獲得できる経験値を選択します。
+  * `通貨`: バトルの最後にチームが獲得できる通貨を選択します。
+  * `戦利品`: バトルの最後にチームが獲得できる戦利品です。
 
-    * `Number`: The number of items to loot.
-    * `Probability`: The probability to loot.
-    * `Level between`: Choose range level of loot availability.
-    * `Loot`: Select `Item`, `Weapon`, and `Armor`.
+    * `数`: 戦利品のアイテムの数。
+    * `確率`: 戦利品を獲得できる確率。
+    * `レベル範囲`: 戦利品が利用可能なレベルの範囲を選択します。
+    * `戦利品`: `アイテム`、`武器`、`防具` を選択します。
 
-* **Actions**:
+* **行動**:
 
-You can manage your monster's AI here. You can specify monster actions with these following options:
+ここでは、モンスターの AI を管理できます。次のオプションを使用して、モンスターの行動を指定できます。
 
 ![](.gitbook/assets/monster-action.png)
 
-* `Priority`: The priority of the action. You can see `Probability` below that will give you the percent chance of the actions according to all the other actions priorities. Warning: Il you put a priority as a variable a `?` will be displayed.
-* `Target`:
-  * `Random`: Will attack on random target without any AI.
-  * `Weak enemies`: Will attack targets with lower HPs. Warning: do not remove or change hp abbreviation in common statistics to have this working.
-* **Action**:
-  * `Use skill ID`: The monster will use the selected skill.
-  * `Use item ID`: The monster will use the selected item.
-  * `Number max`: The number max of item that can be used by the monster. If &lt; 0, will be infinite.
-  * `Do nothing`: The monster will do nothing.
-* **Conditions**:
-  * `Turn value`: This action can be done according to the current value of turns in the battle.
-  * `Statistic ID`: This action can be done according to the specified statistic percentage. Note: this should be only bars \(with max value\).
-  * `Variable`: This action can be done according to the current value of a variable.
-  * `Is under effect of status ID`: Not available yet.
-  * `Script`: This action can be done according to the script return.
+* `優先度`: 行動の優先度。他のすべての行動の優先度に応じた行動の確率（パーセント）を示す `確率` が下に表示されます。警告: 変数として優先度を設定すると、`?` が表示されます。
+* `対象`:
+  * `ランダム`: AI を使用せずにランダムな対象を攻撃します。
+  * `弱い敵`: HP の低い対象を攻撃します。警告: これを機能させるには、共通ステータスの HP の省略形を削除または変更しないでください。
+* **行動**:
+  * `スキルIDを使用`: モンスターは選択したスキルを使用します。
+  * `アイテムIDを使用`: モンスターは選択したアイテムを使用します。
+  * `最大数`: モンスターが使用できるアイテムの最大数。0 未満の場合は、無限になります。
+  * `何もしない`: モンスターは何もしません。
+* **条件**:
+  * `ターン値`: この行動は、バトルの現在のターン数に応じて実行できます。
+  * `ステータスID`: この行動は、指定されたステータスの割合に応じて実行できます。注: これはバー（最大値を持つ）のみである必要があります。
+  * `変数`: この行動は、変数の現在の値に応じて実行できます。
+  * `ステータスIDの効果を受けている`: まだ利用できません。
+  * `スクリプト`: この行動は、スクリプトの戻り値に応じて実行できます。
 
-## Troops <a id="troops"></a>
+## 軍団 <a id="troops"></a>
 
-![Data Manager &amp;gt; Troops tab](https://rpg-paper-maker.github.io/basics/img/battle-troops.png)
+![データマネージャー > 軍団タブ](https://rpg-paper-maker.github.io/basics/img/battle-troops.png)
 
-Troops correspond to a monsters group and some states with reactions.
+軍団は、モンスターのグループと、リアクションを持ついくつかの状態に対応します。
 
-* **Monsters list**:
-  * `Monster`: The monster in the group.
-  * `Level`: The level of the monster.
-* **States**: _Not available yet._
+* **モンスターリスト**:
+  * `モンスター`: グループ内のモンスター。
+  * `レベル`: モンスターのレベル。
+* **状態**: _まだ利用できません。_
 
-## Status <a id="status"></a>
+## 状態異常 <a id="status"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Animations <a id="animations"></a>
+## アニメーション <a id="animations"></a>
 
 ![](.gitbook/assets/battle-animations.png)
 
-Animations are used for: weapons, skills, items, and event command display an animation. You can customize these 2D animations with several different options.
+アニメーションは、武器、スキル、アイテム、イベントコマンドのアニメーション表示に使用されます。これらの 2D アニメーションは、いくつかの異なるオプションを使用してカスタマイズできます。
 
-* `Picture`: The texture used for the entire animation.
-* `Position`: Choose the origin position. You have an indicator of this position with the battler example drawn in the panel.
-* **Frames**: List of different frames of the animation.
-  * **Graphics**: You can add elements in the panel by left clicking:
+* `画像`: アニメーション全体に使用されるテクスチャ。
+* `位置`: 原点の位置を選択します。パネルに描画されたバトラーの例を使用して、この位置のインジケーターが表示されます。
+* **フレーム**: アニメーションのさまざまなフレームのリスト。
+  * **グラフィック**: 左クリックでパネルに要素を追加できます。
 
 ![](.gitbook/assets/widget-animation.png)
 
-You can right-click and click on `Edit...` to edit properties of an element:
+右クリックして `編集...` をクリックすると、要素のプロパティを編集できます。
 
 ![](.gitbook/assets/widget-animation-element-properties.png)
 
-* `Index`: The index of the element. An element is always drawn on top of other elements that have lower index.
-* `X`: The x position center of the element.
-* `Y`: The y position center of the element.
-* `Zoom`: The zoom % the element.
-* `Angle`: The angle ° of the element.
-* `Flip vertically`: If checked, the element will be flipped vertically.
-* `Opacity`: The opcaity % of the element.
+* `インデックス`: 要素のインデックス。要素は常に、インデックスの低い他の要素の上に描画されます。
+* `X`: 要素の中心の x 座標。
+* `Y`: 要素の中心の y 座標。
+* `ズーム`: 要素のズーム（%）。
+* `角度`: 要素の角度（°）。
+* `垂直方向に反転`: チェックを入れると、要素は垂直方向に反転します。
+* `不透明度`: 要素の不透明度（%）。
 
-  Before left clicking, you can choose the texture thanks to this selector:
+  左クリックする前に、このセレクターを使用してテクスチャを選択できます。
 
 ![](.gitbook/assets/widget-animation-texture.png)
 
-* **Options**:
+* **オプション**:
 
-  * `Change battler`: Change the battler to display in the panel.
-  * `Copy frames...`: Copy frames with the following options.
+  * `バトラーを変更`: パネルに表示するバトラーを変更します。
+  * `フレームをコピー...`: 次のオプションを使用してフレームをコピーします。
 
+  ![スクリーンショット](.gitbook/assets/animation-copy-frames.png)
 
+  * **コピーするフレーム**: コピーするすべてのフレームを選択します。
+  * `貼り付け元のフレーム`: このフレームから貼り付けます。
+  * `フレームをクリア...`: 次のオプションを使用してフレームをクリアします。
 
-  ![Screenshot](.gitbook/assets/animation-copy-frames.png)
+  ![スクリーンショット](.gitbook/assets/animation-clear-frames.png)
 
-  \*\*\*\*
+  * `トランジションを作成...`: 次のオプションを使用して、複数のフレームにトランジションを作成します。
 
-  * **Frames to copy**: Select all the frames to copy.
-  * `Paste from frame`: Paste from this frame.
-  * `Clear frames...`: Clear frames with the following options.
+  ![スクリーンショット](.gitbook/assets/animation-create-transition.png)
 
+  * **フレーム**: トランジションの開始フレームと終了フレーム。
+  * **要素のインデックス**: トランジションを適用する要素のインデックス。
+  * `X`、`Y`、`ズーム`、`角度`、`不透明度`: トランジションの終了時のオプションの値。プログレススライダーを使用して、トランジションの速度を選択できます。
+  * `テクスチャを適用`: 選択した要素に選択したテクスチャを適用します。
+  * `ヒットを再生`: ヒット時のアニメーションをテストします。
+  * `ミスを再生`: ミス時のアニメーションをテストします。
+  * `クリティカルを再生`: クリティカル時のアニメーションをテストします。
+  * `行`: テクスチャアニメーションを分割する行数。デフォルト値は 5 です。
+  * `列`: テクスチャアニメーションを分割する列数。デフォルト値は 5 です。
 
+* **効果音/フラッシュ**: ここに効果（効果音またはフラッシュ）のリストを追加できます。
 
-  ![Screenshot](.gitbook/assets/animation-clear-frames.png)
+![スクリーンショット](.gitbook/assets/animation-effects.png)
 
-  \`\`
-
-  * `Create transition...`: Create a transition on several frames with the following options.
-
-
-
-  ![Screenshot](.gitbook/assets/animation-create-transition.png)
-
-  \*\*\*\*
-
-  * **Frames**: The frames begin and end transition.
-  * **Elements index**: The elements index to apply transition.
-  * `X`, `Y`, `Zoom`, `Angle`, `Opacity`: The optional values at the end of the transition. You can use the progress slider to choose how fast is the transition.
-  * `Apply texture`: Apply the selected texture to the selected element.
-  * `Play hit`: Test the animation when hit.
-  * `Play miss`: Test the animation when miss.
-  * `Play crit`: Test the animation when critical.
-  * `Rows`: The number of rows to split the texture animation. Default value is 5.
-  * `Columns`: The number of columns to split the texture animation. Default value is 5.
-
-* **Sound effects / Flashs**: You can add a list of effects \(sound effects or flashs\) here:
-
-![Screenshot](.gitbook/assets/animation-effects.png)
-
-* **Effect**:
-  * `Sound effect`: Select a sound to play at this frame.
-  * `Flash`: _Not available yet._
-* `Condition`: Select a condition for playing this sound or displaying this flash:
-  * `None`: No condition.
-  * `Hit`: When hitting an attack.
-  * `Miss`: When missing an attack.
-  * `Critical`: When doing a critical attack.
-
+* **効果**:
+  * `効果音`: このフレームで再生するサウンドを選択します。
+  * `フラッシュ`: _まだ利用できません。_
+* `条件`: このサウンドを再生するか、このフラッシュを表示するための条件を選択します。
+  * `なし`: 条件はありません。
+  * `ヒット`: 攻撃がヒットしたとき。
+  * `ミス`: 攻撃がミスしたとき。
+  * `クリティカル`: クリティカル攻撃が発生したとき。

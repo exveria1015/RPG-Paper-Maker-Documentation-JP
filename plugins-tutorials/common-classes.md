@@ -1,46 +1,45 @@
 ---
-description: How are used the Common classes in Common folder.
+description: Commonフォルダ内の共通クラスの使用方法について説明します。
 ---
 
-# Common classes
+# 共通クラス
 
 ## Constants
 
-This countains only static properties. It's used to get very general constants.
+これは静的プロパティのみを含みます。非常に一般的な定数を取得するために使用されます。
 
 ## Enum
 
-This contains every Enumeration classes.
+これはすべての列挙型クラスを含みます。
 
 ## Interpreter
 
-The interpreter used to evaluate formulas. This only contains the `evaluate` method.
+数式を評価するために使用されるインタプリタ。これは`evaluate`メソッドのみを含みます。
 
 ## IO
 
-This contains every methods linked to file readding/writting.
+これは、ファイルの読み込み/書き込みに関連するすべてのメソッドを含みます。
 
 ## KeyEvent
 
-This class is used to replace the Web KeyEvent class. We can use it to convert Qt keys \(Qt is the framework used for RPG Paper Maker engine\) to JavaScript keys.
+このクラスは、Web KeyEventクラスを置き換えるために使用されます。Qtキー（QtはRPG Paper Makerエンジンのフレームワーク）をJavaScriptキーに変換するために使用できます。
 
 ## Mathf
 
-This contains every methods related to math calculation.
+これは、数学的計算に関連するすべてのメソッドを含みます。
 
 ## Paths
 
-This contains every paths values and especially JSON files paths.
+これは、すべてのパス値、特にJSONファイルのパスを含みます。
 
 ## Platform
 
-This class is specific to the platform \(desktop, web, android, iOS\). This contains properties and methods very specific to the platform you are currently using.
+このクラスは、プラットフォーム（デスクトップ、Web、Android、iOS）に固有のものです。現在使用しているプラットフォームに非常に固有のプロパティとメソッドを含みます。
 
 ## ScreenResolution
 
-By default, the screen resolution is `640x480`. So when the screen resolution is different, we need to recalculate the elements size. For that we are mainly using `getScreenX` and `getScreenY`.
+デフォルトでは、画面解像度は`640x480`です。したがって、画面解像度が異なる場合は、要素のサイズを再計算する必要があります。そのためには、主に`getScreenX`と`getScreenY`を使用します。
 
 ## Utils
 
-This contains a lot of general utilities methods.
-
+これは、多くの一般的なユーティリティメソッドを含みます。

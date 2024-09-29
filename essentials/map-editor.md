@@ -1,332 +1,326 @@
-# Map editor
+<h1>マップエディタ</h1>
 
-## -- Overview
+## -- 概要
 
-This section will explain the basics of each aspect of the map editor. It will include what each section is used for, how to interact with it, what each button/menu does, and the keyboard controls for map editing.&#x20;
+このセクションでは、マップエディタの各機能の基本について説明します。 各セクションの用途、操作方法、各ボタン/メニューの機能、マップ編集用のキーボードコントロールについて説明します。
 
-For more in depth explanations and usage look at the ADVANCED section about mapping.&#x20;
+詳細な説明と使用方法については、マッピングに関する**高度なセクション**を参照してください。
 
-## -- Meet the Editor
+## -- エディタの概要
 
-After opening a project, you will be brought to what we can consider the home screen of our project- The Map Editor. From here you have access to every feature the engine has to offer.&#x20;
+プロジェクトを開くと、プロジェクトのホーム画面と見なせる**マップエディタ**が表示されます。 ここから、エンジンが提供するすべての機能にアクセスできます。
 
-Let's look at each individual section.&#x20;
+個々のセクションを見ていきましょう。
 
 <figure><img src="../.gitbook/assets/editor_marked (1).png" alt=""><figcaption></figcaption></figure>
 
-### (1) The Map Selector
+### (1) マップセレクタ
 
-A.K.A the map tree, this is where you create and organize the maps that make up your game. You can create folders and drag items around at any time(this won't affect your code, like teleport commands, so it's safe to do).
+マップツリーとも呼ばれるこの場所では、ゲームを構成するマップを作成および整理します。 フォルダを作成し、いつでもアイテムをドラッグできます（テレポートコマンドのようにコードに影響を与えることはありませんので、安全に実行できます）。
 
-Click on the map you want to appear on the right side (5) for editing. Clicking on a folder displays no data in the other sections.&#x20;
+編集するマップをクリックして、右側（5）に表示します。 フォルダをクリックすると、他のセクションにデータは表示されません。
 
-It is recommended that you use folders to categorize your maps. There are different approaches to naming conventions like area names, level numbers, story elements, etc.&#x20;
+フォルダを使用してマップを分類することをお勧めします。 エリア名、レベル番号、ストーリー要素など、命名規則にはさまざまなアプローチがあります。
 
 <figure><img src="../.gitbook/assets/editor_foldernames.png" alt=""><figcaption></figcaption></figure>
 
-You can use folders inside of folders to further categorize things. Whatever works best for you.&#x20;
+フォルダ内にフォルダを使用して、さらに分類することもできます。自分に合った方法で作業してください。
 
-In the default RPG battle system regular maps are used as the backdrop. So by default there is a folder called "Battle maps" which is used to store these maps. This isn't required but is highly recommended to keep them separate from normal maps the hero will walk on. Although for some games you might just use normal maps for battle.&#x20;
+デフォルトのRPGバトルシステムでは、通常のマップが背景として使用されます。 したがって、デフォルトでは、「バトルマップ」というフォルダがあり、これらのマップを格納するために使用されます。 これは必須ではありませんが、ヒーローが歩く通常のマップとは別に保管することを強くお勧めします。 ただし、ゲームによっては、バトルに通常のマップを使用する場合もあります。
 
-To make a new map you have to right click on a folder. Maps can't exist outside of at least one folder. By default each project starts with a top folder called "Maps". You can't even delete everything from the map tree, there will always be one folder present.&#x20;
+新しいマップを作成するには、フォルダを右クリックする必要があります。 マップは、少なくとも1つのフォルダの外側に存在することはできません。 デフォルトでは、各プロジェクトは「マップ」と呼ばれるトップフォルダから始まります。 マップツリーからすべてを削除することはできません。常に1つのフォルダが存在します。
 
-You can right click on a map for the usual options like edit, copy, delete.&#x20;
+マップを右クリックすると、編集、コピー、削除などの通常のオプションが表示されます。
 
-If you right click on a folder you get similar options for that folder. When you copy a folder it can only be pasted on another folder or an open space under the list.
+フォルダを右クリックすると、そのフォルダに対して同様のオプションが表示されます。 フォルダをコピーする場合、別のフォルダまたはリストの下の空き領域にのみ貼り付けることができます。
 
-When you create or edit a map, you will get this window:
+マップを作成または編集すると、次のウィンドウが表示されます。
 
 <figure><img src="../.gitbook/assets/editor_newmap.png" alt=""><figcaption></figcaption></figure>
 
-* `Name`: Label for your map that appears in the map tree.
-* `Tileset`: This determines what tiles you have available to draw onto this map.
-*   **Size**:
+*   `名前`: マップツリーに表示されるマップのラベル。
+*   `タイルセット`: これにより、このマップに描画できるタイルが決まります。
+*   **サイズ**:
 
-    * `Length`: The map length in number of squares (X axis, left to right).
-    * `Width`: The map width in number of squares (Z axis, front to back).
-    * `Height`: The map height above 0 in number of squares (Y axis, floor to sky).
-    * `Depth`: The map depth below 0 in number of squares (Y axis, floor to seabed).
+    *   `長さ`: マスの数におけるマップの長さ（X軸、左から右）。
+    *   `幅`: マスの数におけるマップの幅（Z軸、前から後ろ）。
+    *   `高さ`: 0を超えるマップの高さ（マス数）（Y軸、床から空へ）。
+    *   `深さ`: 0を下回るマップの深さ（マス数）（Y軸、床から海底まで）。
 
-    \*Depth isn't always needed if you plan your maps ahead of time. But if you suddenly want to add lower levels to a map you can increase the depth to be able to draw lower in the Y axis.
-* `Music`: The music played in the background while on this map.
-* `Background sound`: This is like a second sound channel that lets you play a repeating sound file alongside the music. Common uses would be wind/rain, birds chirping, etc.
-* `Camera prop. ID`: The settings for the camera that are applied when entering the map. Any previous changes to the camera are lost.
-* **Sky**: (the area around or behind your map tiles)
-  * `Color ID`: Use a solid color for the entire sky.
-  * `Picture`: Use a picture for the entire sky. It doesn't rotate with the camera.
-  * `Skybox ID`: Uses 6 images to form a cube around the map. This does rotate with the camera.
+    \*事前にマップを計画していれば、深さは必ずしも必要ではありません。 ただし、マップに突然低いレベルを追加する場合は、深さを増やしてY軸でより低い位置に描画できるようにすることができます。
+*   `音楽`: このマップにいる間にバックグラウンドで再生される音楽。
+*   `背景音`: これは、音楽と一緒に繰り返されるサウンドファイルを再生できる2番目のサウンドチャンネルのようなものです。 一般的な用途は、風/雨、鳥のさえずりなどです。
+*   `カメラプロパティID`: マップに入るときに適用されるカメラの設定。 カメラに対する以前の変更はすべて失われます。
+*   **空**: （マップタイルの周囲または背後の領域）
+    *   `カラーID`: 空全体に単色を使用します。
+    *   `画像`: 空全体に画像を使用します。 カメラと一緒に回転しません。
+    *   `スカイボックスID`: 6つの画像を使用して、マップの周りに立方体を形成します。 これはカメラと一緒に回転します。
 
-**There are 2 tabs on the right side:**
+**右側には2つのタブがあります。**
 
-* **Map startup reactions**: Like objects on your map you can add code here. By default it's set up to run this code only once, each time you enter the map. However you can adjust the STATES/EVENTS however you'd like.
-* **Battles:** This lets you enable random battles on the selected map. &#x20;
+*   **マップスタートアップリアクション**: マップ上のオブジェクトと同様に、ここにコードを追加できます。 デフォルトでは、マップに入るたびに1回だけこのコードを実行するように設定されています。 ただし、状態/イベントは必要に応じて調整できます。
+*   **バトル**: これにより、選択したマップでランダムバトルを有効にすることができます。
 
 ![](../.gitbook/assets/map-properties-battles.png)
 
-* `Battle map ID`: This determines what map the fight will take place on. You can use a variable for this.
-* **Random battles**: Create a list of possible enemy troops to battle.\
-  \*Double click an empty space or right click to add to the list\
-  (see below image for that dialogue box)
-* Number of steps after next battle: Determines how many steps are required to trigger a battle. (1 square = 3-4 steps)
-* Variance (%): Provides variation to the above number so it's not the same number of steps each time. (It's a percentage)\
-  \*300 steps with 20 variance = 240-360 steps between battles
+*   `バトルマップID`: 戦闘が行われるマップを決定します。 これに変数を使用できます。
+*   **ランダムバトル**: 戦闘する可能性のある敵軍のリストを作成します。\
+    \*空のスペースをダブルクリックするか、右クリックしてリストに追加します\
+    （そのダイアログボックスについては、下の画像を参照）
+*   次の戦闘までのステップ数：戦闘の発生に必要なステップ数を決定します。 （1マス= 3〜4ステップ）
+*   変動（％）：上記の数が毎回同じにならないように、変動を提供します。 （パーセンテージです）\
+    \*20の分散で300ステップ=バトル間の240-360ステップ
 
 ![](../.gitbook/assets/random-battle.png)
 
-* `Troop ID`: The group of enemies to fight.
-* `Priority`: Determines how often this troop will be picked to fight. Higher number gets picked more often.
-* `Probability`: The calculated probability of this troop getting picked, based on the priorities of all troops in the list. (Since there is only one troop it's showing 100%. It changes as you add more.)
-* `Terrain`: Determines which parts of the map can trigger this fight.
-  * `Entire map` : You can trigger this battle from anywhere on the map.
-  * `Terrain`: Choose a number and only tiles with that assigned number will trigger this fight. You can add multiple numbers.
+*   `軍隊ID`: 戦闘する敵のグループ。
+*   `優先度`: この軍隊が戦闘に選ばれる頻度を決定します。 数値が高いほど、選ばれる頻度が高くなります。
+*   `確率`: リスト内のすべての軍隊の優先度に基づいて計算された、この軍隊が選ばれる確率。 （軍隊は1つしかないため、100％と表示されています。追加するにつれて変化します。）
+*   `地形`: マップのどの部分でこの戦いが発生するかを決定します。
+    *   `マップ全体`: マップ上のどこからでもこの戦いを開始できます。
+    *   `地形`: 数字を選択し、その番号が割り当てられたタイルのみがこの戦いを開始します。 複数の番号を追加できます。
 
-### (2) The Tile Selector
+### (2) タイルセレクタ
 
-This is where you see all the tiles available to draw with. These tiles can also be used by objects in place of a full character sprite sheet.&#x20;
+これは、描画に使用できるすべてのタイルが表示される場所です。 これらのタイルは、完全なキャラクタースプライトシートの代わりにオブジェクトで使用することもできます。
 
-Only 1 tileset can be selected per map, however there is no limit to how large a tileset can be. So you can put all your game's tiles on one tileset and use it for every map. Or you can use different files for different maps. (I prefer one large tileset)
+マップごとに選択できるタイルセットは1つだけですが、タイルセットのサイズに制限はありません。 したがって、ゲームのすべてのタイルを1つのタイルセットに配置し、すべてのマップに使用できます。 または、マップごとに異なるファイルを使用することもできます。 （私は1つの大きなタイルセットを好みます）
 
-There are really only 2 functions here:
+ここには実際には2つの機能しかありません。
 
-* Left Mouse Click - Select a single tile. This will be used with whatever draw tool you select.
-* Left Mouse Click and Drag - Use this to select more than one tile. Useful for drawing large objects like trees or houses. It's alignment with the grid changes between odd and even number of tiles selected. If your 3 tile wide tree isn't matching up, try drawing it 1 or 2 tiles at a time.&#x20;
+*   マウスの左クリック-単一のタイルを選択します。 これは、選択した描画ツールで使用されます。
+*   マウスの左クリックとドラッグ-これを使用して、複数のタイルを選択します。 木や家などの大きなオブジェクトを描画する場合に便利です。 グリッドとの配置は、選択したタイルの数が奇数か偶数かによって異なります。 幅3タイルの木が一致しない場合は、1タイルまたは2タイルずつ描画してみてください。
 
-The map and tile selector boxes are connected.&#x20;
+マップとタイルセレクタボックスは接続されています。
 
-* You can drag the horizontal separator up and down to see more of one or the other. It's useful to see more of the tiles when drawing maps.&#x20;
-* You can also move the vertical separator left and right to hide or show more of both sections. It's wise to limit your tileset in width, so you don't have to make this box too wide in order to see everything.&#x20;
+*   水平区切り線を上下にドラッグして、一方または他方をより多く表示できます。 マップを描画するときは、タイルをより多く表示すると便利です。
+*   垂直区切り線を左右に移動して、両方のセクションを非表示にしたり、より多く表示したりすることもできます。 すべてを表示するためにこのボックスを大きくする必要がないように、タイルセットの幅を制限することをお勧めします。
 
 ![](../.gitbook/assets/editor\_resize.png)
 
-### (3) Drawing types
+### (3) 描画タイプ
 
-There various types of terrain and each one works differently. You will be switching between these on a regular basis. The currently selected type that you will be drawing with is always highlighted.
+さまざまな種類の地形があり、それぞれ動作が異なります。 これらを定期的に切り替えます。 現在選択されている描画タイプは常に強調表示されます。
 
-Each type has sub types. The word you see is the subtype selected. When you hover your mouse over that type you will see a list of subtypes. Click one and that word is now showing, which tells you what kind of tile you are about to draw. If that type is highlighted, of course. Click the words directly to switch types without changing the subtype.&#x20;
+各タイプにはサブタイプがあります。 表示される単語は、選択されているサブタイプです。 マウスをそのタイプの上に置くと、サブタイプのリストが表示されます。 1つをクリックすると、その単語が表示されます。これは、描画しようとしているタイルの種類を示しています。 もちろん、そのタイプが強調表示されている場合。 サブタイプを変更せずにタイプを切り替えるには、単語を直接クリックします。
 
-Land - These tiles are laid flat and make up what the player will walk on.
+**地面**-これらのタイルは平らに配置され、プレイヤーが歩く場所を構成します。
 
-* Floor - Draw tiles from the tileset to make up a floor.&#x20;
-* Autotile - These use unique resource files. They can be animated and have special properties. These resource files have to be imported to a list before they appear in the tile selector. (More on this in the next chapter)
+*   **床**-タイルセットからタイルを描画して、床を作成します。
+*   **オートタイル**-これらは、独自のソースファイルを使用します。 アニメーション化したり、特別なプロパティを持たせたりできます。 これらのソースファイルは、タイルセレクタに表示される前に、リストにインポートする必要があります。 （これについては次の章で詳しく説明します）
 
-Sprites - These tiles are drawn standing up, like the hero.&#x20;
+**スプライト**-これらのタイルは、ヒーローのように直立して描画されます。
 
 *
 
     ![](../.gitbook/assets/sprites.png)
-* Face Sprite - Draws tiles from the tileset that always turn with the camera to "face" the viewer.
-* Fix Sprite - Draws tiles from the tileset that don't turn with the camera. They remain "fixed" in their orientation
-* Double Sprite - Same as Fix Sprite, except 2 copies of the tile are crossed together. They don't turn with the camera, but never appear flat when seen from any side.
-* Quadra Sprite - Same as Double Sprite, except 4 copies to appear more full.
+*   **フェイススプライト**-カメラと一緒に回転して常に視聴者の方を「向く」タイルセットからタイルを描画します。
+*   **フィックススプライト**-カメラと一緒に回転しないタイルセットからタイルを描画します。 それらは、それらの向きで「固定された」ままです
+*   **ダブルスプライト**-フィックススプライトと同じですが、タイルの2つのコピーが互いに交差しています。 それらはカメラと一緒に回転しませんが、どの側から見ても平らに見えることはありません。
+*   **クアッドラスプライト**-ダブルスプライトと同じですが、4つのコピーがより完全に見えます。
 
 ![](../.gitbook/assets/sprites-preview.png)
 
-* Wall - These use unique resource files and are drawn using their own unique method. They can only be drawn by choosing a starting point and an end point in a straight line. Then the graphic fills in a wall in between. You can't single click to delete a wall. You have to right click a starting point then right click an end point and it will erase everything in between. You need to be on the correct Y axis for this.&#x20;
+*   **壁**-これらは独自のソースファイルを使用し、独自のユニークな方法で描画されます。 直線で始点と終点を選択することによってのみ描画できます。 次に、グラフィックは壁の間を塗りつぶします。 シングルクリックで壁を削除することはできません。 始点を右クリックしてから終点を右クリックする必要があり、その間のすべてが消去されます。 これには、正しいY軸上にいる必要があります。
 
-These resource files have to be imported to a list before they appear in the tile selector. (More on this in the next chapter)
+これらのソースファイルは、タイルセレクタに表示される前に、リストにインポートする必要があります。 （これについては次の章で詳しく説明します）
 
 ![](../.gitbook/assets/walls-preview.png)
 
-Mountains - These are squares and slopes that give a 3D feel to any map.&#x20;
+**山岳**-これらは正方形と斜面であり、どのマップにも3Dの雰囲気を与えます。
 
-* Mountain - These use unique resource files that are used to create squares, with FLOOR tiles used on top. By changing some options you can create slopes of various sizes instead.&#x20;
+*   **山岳**-これらは、上部に**床**タイルを使用して正方形を作成するために使用される独自のソースファイルを使用します。 一部のオプションを変更すると、代わりにさまざまなサイズの勾配を作成できます。
 
-These resource files have to be imported to a list before they appear in the tile selector. (More on this in the next chapter)
+これらのソースファイルは、タイルセレクタに表示される前に、リストにインポートする必要があります。 （これについては次の章で詳しく説明します）
 
 ![](../.gitbook/assets/mountains-preview.png)
 
-3D Objects - These use pre-rendered models of any shape and size as static scenery.
+**3Dオブジェクト**-これらは、あらゆる形状とサイズの事前にレンダリングされたモデルを静的な風景として使用します。
 
-* 3D Object - Lets you place and drag around your 3D objects on the map.
+*   **3Dオブジェクト**-マップ上に3Dオブジェクトを配置してドラッグできます。
 
 ![](../.gitbook/assets/objects-3d-texture.png)
 
-Object - These are used for the hero, npcs, interactive items, or to simply add code to a map. They use 2D sprites for a graphic in either fixed or face orientation. You can use 3D objects but that feature is not fully functional (as of Dec 2022).
+**オブジェクト**-これらは、ヒーロー、NPC、インタラクティブアイテムに使用されるか、単にマップにコードを追加するために使用されます。 固定方向または面方向のグラフィックに2Dスプライトを使用します。 3Dオブジェクトを使用できますが、その機能は完全には機能していません（2022年12月現在）。
 
-* Object - Lets you create and drag around objects on the map.
+*   **オブジェクト**-マップ上にオブジェクトを作成してドラッグできます。
 
-View - This is for viewing the map.
+**ビュー**-これはマップを表示するためのものです。
 
-* View - Lets you see things as they will appear in the game.
+*   **ビュー**-ゲームに表示されるように物事を見ることができます。
 
-### (4) Drawing tools
+### (4) 描画ツール
 
-Once you select the type, it's time to choose a tool to draw with. Not all drawing tools are available for all types.&#x20;
+タイプを選択したら、描画に使用するツールを選択します。 すべての描画ツールがすべてのタイプで使用できるわけではありません。
 
-There are 3 groups separated by a vertical line:
+垂直線で区切られた3つのグループがあります。
 
-* Group 1 determines if it will align to the grid or not.
-  * The first icon has an isometric view of a square, to say it will align to the grid and the other squares.
-  * The second icon is just a pixel, to say you can place it on any pixel you want.&#x20;
+*   グループ1は、グリッドに揃えるかどうかを決定します。
+    *   最初のアイコンには、正方形のアイソメトリックビューがあり、グリッドと他の正方形に揃えることを示しています。
+    *   2番目のアイコンはピクセルだけで、好きなピクセルに配置できることを示しています。
 
-Some tiles benefit from being aligned to the grid and it makes it easier overall, especially when working with the Move Object command.&#x20;
+一部のタイルは、グリッドに揃えることでメリットが得られ、特にオブジェクトの移動コマンドを使用する場合に、全体として作業が簡単になります。
 
-Other tiles look better when pixel placed, like scenery, for a more natural look. Trees and flowers, for example.&#x20;
+他のタイルは、風景のように、より自然に見えるようにピクセル配置すると見栄えがよくなります。 たとえば、木や花などです。
 
-*   Group 2 are your basic art tools.
+*   グループ2は、基本的なアートツールです。
 
     ![](../.gitbook/assets/rotate.png)
 
-    * The first icon is the MOVE tool. With it you can move what is already drawn. Click and drag them around.
-    * The second icon is the ROTATION tool. With it you can rotate what is already drawn. In place of the Tile Selector you will see some options. Choose here which axis you want it to rotate on and by how much, then click on something drawn to apply it.
-    * The third icon is the SCALING tool. With it you stretch what is already drawn. Choose which axis to alter, then click and drag something. It will stretch in that direction.&#x20;
-    * The fourth icon is the PENCIL tool. It will draw whatever you have selected from the Tile Selector. Click and drag to draw freehand. Right click will delete whatever the mouse cursor is pointing at, however it can only delete whatever is from the selected Draw Type. (You can't erase sprites while floor is selected)
-    * The fifth icon is the SQUARE tool. It will let you click once to start a square, then drag to the desired size and let go of the mouse button to finish. Using right click instead will delete in the same way.&#x20;
-    * The sixth icon is the PAINT tool. It will fill the area you click on with whatever you have selected from the Tile Selector. Using right click instead will delete in the same way.
-*   Group 3 determines what layer it will draw on.\
-
+    *   最初のアイコンは**移動**ツールです。 それを使って、すでに描かれているものを移動できます。 クリックしてドラッグして動かします。
+    *   2番目のアイコンは**回転**ツールです。 それを使って、すでに描かれているものを回転させることができます。 タイルセレクタの代わりに、いくつかのオプションが表示されます。 ここで、回転させる軸と回転量を選択し、描画したものをクリックして適用します。
+    *   3番目のアイコンは**スケーリング**ツールです。 それを使って、すでに描かれているものを引き伸ばします。 変更する軸を選択し、何かをクリックしてドラッグします。 その方向に伸びます。
+    *   4番目のアイコンは**鉛筆**ツールです。 タイルセレクタから選択したものを描画します。 クリックしてドラッグしてフリーハンドで描画します。 右クリックすると、マウスカーソルが指しているものが削除されますが、選択した描画タイプのものが削除されるだけです。 （床が選択されている間はスプライトを消去できません）
+    *   5番目のアイコンは**正方形**ツールです。 1回クリックして正方形を開始し、目的のサイズまでドラッグしてマウスボタンを離すと終了します。 代わりに右クリックを使用すると、同じ方法で削除されます。
+    *   6番目のアイコンは**ペイント**ツールです。 クリックした領域を、タイルセレクタから選択したもので塗りつぶします。 代わりに右クリックを使用すると、同じ方法で削除されます。
+*   グループ3は、どのレイヤーに描画するかを決定します。
 
     ![](../.gitbook/assets/layers.png)
 
-    * The first icon has an isometric view of a single square, this is the default layer. When you draw there is only one layer. Drawing on an existing spot will remove the previous tile. It will not delete more than one layer under it if many are stacked.
-    * The second icon is an isometric view of a 2nd square on top, to say that this will be drawn as an extra layer on top of whatever you click on. With this enabled you can draw an infinite number of layers on top of already drawn tiles. When you right click to delete it will remove the top layer first. You would have to keep right clicking to remove each layer in a stack.&#x20;
+    *   最初のアイコンには、単一の正方形のアイソメトリックビューがあります。これがデフォルトのレイヤーです。 描画するときは、レイヤーは1つだけです。 既存のスポットに描画すると、前のタイルが削除されます。 複数のレイヤーが積み重ねられている場合でも、その下の複数のレイヤーは削除されません。
+    *   2番目のアイコンは、上にある2番目の正方形のアイソメトリックビューです。これは、クリックしたものの最上部に別のレイヤーとして描画されることを示しています。 これを有効にすると、すでに描画されているタイルの上に無限の数のレイヤーを描画できます。 右クリックして削除すると、まず一番上のレイヤーが削除されます。 スタック内の各レイヤーを削除するには、右クリックを続ける必要があります。
 
-!! IMPORTANT !! - Be careful when using the extra layer tool. When you are done using it always remember to switch back to the default layer. Drawing some things with the extra layer can have undesired consequences, resulting in the need to redraw parts of your map. It's not fun.
+!! 重要 !! - 追加レイヤーの使用には注意してください。 使い終わったら、必ずデフォルトのレイヤーに戻してください。 追加レイヤーを使用して何かを描画すると、望ましくない結果が生じる可能性があり、マップの一部を再描画する必要が生じる場合があります。 楽しくありません。
 
-A common behavior of all drawing tools is that when you click and drag, the cursor is locked to that Y coordinate. You will need to click again to affect any other Y coordinate.&#x20;
+すべての描画ツールの一般的な動作は、クリックしてドラッグすると、カーソルがそのY座標にロックされることです。 他のY座標に影響を与えるには、もう一度クリックする必要があります。
 
-When you are drawing, the camera angle plays a big part in where you can draw. It will always try to place the tile you want to draw on top of anything under your cursor. You may need to turn the map, or change the zoom level, to draw in the exact spot you want to. Turning the camera upside down is sometimes required.\
+描画するときは、カメラアングルが描画できる場所に大きく影響します。 常に、カーソルの下にあるものの最上部に、描画するタイルを配置しようとします。 正確な場所に描画するには、マップを回転させるか、ズームレベルを変更する必要がある場合があります。 カメラを逆さまにする必要がある場合もあります。\
 \
-For example, lets says there is a flat map with a mountain in the middle. If your cursor appears over the mountain, it will automatically draw at the higher Y elevation of that mountain. If your cursor appears over the ground below, it will draw at that lower Y elevation. If you wanted to draw floor tiles under the mountain, you would start drawing on the floor next to the mountain and drag the cursor under the mountain, because the drawing will be locked to that Y value and it will prevent the tile from drawing on top of the mountain.
+たとえば、中央に山がある平面の地図があるとします。 カーソルが山の上に表示されている場合は、その山の高いY標高に自動的に描画されます。 カーソルが下の地面の上に表示されている場合は、その低いY標高に描画されます。 山の下に床タイルを描画したい場合は、描画はそのY値にロックされ、タイルが山の最上部に描画されないようにするため、山の横の床に描画を開始し、山の真下にカーソルをドラッグします。
 
-The Advanced > Mapping section will go into more detail on using these tools effectively.&#x20;
+**高度な>マッピング**セクションでは、これらのツールを効果的に使用する方法について詳しく説明します。
 
-### (5) Drawing space
+### (5) 描画スペース
 
-This is the area for viewing and drawing your maps.&#x20;
+これは、マップを表示および描画するための領域です。
 
-You will see data in the bottom left corner of this section that will help guide you, especially when using the pixel drawing option.
+このセクションの左下隅に、ガイドとなるデータが表示されます。特に、ピクセル描画オプションを使用する場合に役立ちます。
 
 ![](../.gitbook/assets/editor\_cursorinfo.png)
 
-It displays the information where your cursor is. You can hover over a tile to see it's coordinates and other info. This also tells you where it's going to draw/delete when you click, so if it's going to affect a tile on a higher Y value it will tell you here beforehand.
+カーソルがある場所の情報が表示されます。 タイルにカーソルを合わせると、その座標やその他の情報が表示されます。 これにより、クリックしたときにどこが描画/削除されるかもわかるため、Y値が大きいタイルに影響を与える場合は、事前にここで通知されます。
 
-There are 2 numbers in the top left corner of this section. This tells you where on the Y axis you will be drawing(unless your cursor is over a tile with a higher Y value). When you change this value the visible grid moves up and down. This is listed in the menu under Edition>Height up/down. Height moves in full squares, and Height Plus moves in pixels on top of that.&#x20;
+このセクションの左上隅に2つの数字があります。 これは、描画するY軸上の場所を示しています（カーソルがY値が大きいタイルの上にない限り）。 この値を変更すると、表示されるグリッドが上下に移動します。 これは、メニューの[エディション]> [高さのアップ/ダウン]にリストされています。 高さは正方形単位で移動し、高さプラスはその上のピクセル単位で移動します。
 
-Generally left mouse button is for drawing graphics or selecting an object.&#x20;
+通常、マウスの左ボタンは、グラフィックの描画またはオブジェクトの選択に使用されます。
 
-Right click will delete graphics or give a context menu for an object.
+右クリックすると、グラフィックが削除されるか、オブジェクトのコンテキストメニューが表示されます。
 
-If you have a scroll wheel it will change the camera zoom level. You can also click and drag the scroll wheel to turn the camera.
+スクロールホイールが付いている場合は、カメラのズームレベルが変わります。 スクロロールホイールをクリックしてドラッグして、カメラを回転させることもできます。
 
-Keyboard shortcuts are needed to draw at different Y elevations (see below Keyboard Shortcuts/Modifiers).
+異なるY標高で描画するには、キーボードショートカットが必要です（以下のキーボードショートカット/モディファイアを参照）。
 
-### (6) Main Toolbar
+### (6) メインツールバー
 
-This contain icons for the most common functions of the editor.&#x20;
+これには、エディターの最も一般的な機能のアイコンが含まれています。
 
-You can right click anywhere on this toolbar for an option to toggle it on and off. When it's off, you right click anywhere in the main menu section to get it back.
+このツールバーの任意の場所を右クリックすると、オンとオフを切り替えるオプションが表示されます。 オフになっている場合は、メインメニューセクションの任意の場所を右クリックして元に戻します。
 
-When the editor is in windowed mode and not long enough, you will see double arrows on the right hand side of the toolbar. Click this to view the hidden icons.&#x20;
+エディターがウィンドウモードで、長さが足りない場合は、ツールバーの右側に二重矢印が表示されます。 これをクリックして、非表示のアイコンを表示します。
 
-### (7) Main Menu
+### (7) メインメニュー
 
-From here you can access all functions, including what's already visible in the toolbar.&#x20;
+ここから、ツールバーにすでに表示されているものも含め、すべての機能にアクセスできます。
 
-However, there are a few things found only here so I will cover those.
+ただし、ここだけにしかないものがいくつかあるので、それらについて説明します。
 
-* File
-  * Open BR Folder - This opens the location of the default resource files that came with RPM, if you need to examine them for any reason. (BR = Basic Resources)
-  * Export Standalone - To create a copy of your game to publish.
-  * Close Project - This will bring you back to the RPM launch page.&#x20;
-* Edition (A.K.A. Edit)
-  * Shows you some useful keyboard shortcuts, or allows you to trigger those functions with mouse clicks.&#x20;
-* Options
-  * Set BR Path - Lets you choose the location for the engines default resources. Very few people will ever need to change this.
-  * Set DLC Path - Lets you choose the location for the engines DLC resources, if you have any.&#x20;
-  * Debug Options - Remember this for when you have a bug to fix.
-  * General Options - Some options that apply to the editor.
-  * Change Language - Choose the language for the editor. (Doesn't affect the game)
-  * Auto Display Updater - This is a check box to toggle it on/off. When on, it will check for updates every time you start RPM.&#x20;
-*   Display
-
-    * Show / Hide Grid - Toggles the grid visible on your maps. Recommended you leave this on as the grid easily shows you which Y elevation you are currently set to draw on. (You can use the "View" Draw Type to see your map without the grid)
-    * Show / Hide Square Info - Toggles the information where your cursor is pointing. (It's not very obtrusive and extremely helpful, so you might only need this off if you want clean screenshots from the editor)&#x20;
+*   **ファイル**
+    *   **BRフォルダを開く**-何らかの理由でそれらを調べる必要がある場合、RPMに付属のデフォルトのソースファイルの場所を開きます。 （BR =基本リソース）
+    *   **スタンドアロンをエクスポート**-公開するゲームのコピーを作成します。
+    *   **プロジェクトを閉じる**-これにより、RPMの起動ページに戻ります。
+*   **エディション**（別名編集）
+    *   役立つキーボードショートカットを表示するか、マウスをクリックしてそれらの機能をトリガーできるようにします。
+*   **オプション**
+    *   **BRパスの設定**-エンジンのデフォルトリソースの場所を選択できます。 これを変更する必要がある人はほとんどいません。
+    *   **DLCパスの設定**-DLCリソースがある場合は、その場所を選択できます。
+    *   **デバッグオプション**-修正するバグがある場合は、これを覚えておいてください。
+    *   **一般的なオプション**-エディターに適用されるいくつかのオプション。
+    *   **言語の変更**-エディターの言語を選択します。 （ゲームには影響しません）
+    *   **自動表示アップデーター**-これは、オン/オフを切り替えるためのチェックボックスです。 オンの場合、RPMを起動するたびに更新を確認します。
+*   **表示**
+    *   **グリッドの表示/非表示**-マップに表示されるグリッドを切り替えます。 グリッドを使用すると、描画に現在設定されているY標高を簡単に確認できるため、これをオンのままにしておくことをお勧めします（「ビュー」描画タイプを使用すると、グリッドなしでマップを表示できます）。
+    *   **正方形情報の表示/非表示**-カーソルが指している場所の情報を切り替えます。 （これはそれほど邪魔ではなく、非常に便利なので、エディターからきれいなスクリーンショットが必要な場合にのみ、これをオフにする必要があるかもしれません）
 
     ![](<../.gitbook/assets/editor\_cursorinfo (1).png>)
-* Help
-  * About - Check what version of RPM you are currently running.
+*   **ヘルプ**
+    *   **バージョン情報**-現在実行しているRPMのバージョンを確認します。
 
-## -- Keyboard Shortcuts/Modifiers
+## -- キーボードショートカット/モディファイア
 
-When looking in the main menu you can see some of those options have keyboard shortcuts next to the name; CTRL+N, SHIFT+UP, G, etc. You can get by without knowing most of them, although the Height Up/Down(moving Y axis grid) can only be achieved by using the keyboard.&#x20;
+メインメニューを見ると、一部のオプションの名前の横にキーボードショートカットが表示されています。 CTRL + N、SHIFT + UP、Gなど。 高さのアップ/ダウン（Y軸グリッドの移動）はキーボードを使用しないと実行できませんが、ほとんどのショートカットを知らなくても大丈夫です。
 
-There are keys that modify how your mouse behaves when working on your maps and it's not really stated anywhere inside the program (yet).
+マップで作業するときにマウスの動作を変更するキーがありますが、プログラム内ではまだどこにも記載されていません。
 
-* SHIFT - While holding this, you can click and drag to turn the camera. This is helpful if you only have 2 mouse buttons.&#x20;
-* CTRL - While holding this, you can click somewhere on your map and the camera will instantly move there. It also changes the scroll wheel to move the Y axis grid up and down. You will do this often. If you use it temporarily to draw something up in the air, always remember to move the Y axis grid back to normal.
-* SHIFT+CTRL - While holding this, you can move the Y axis grid by pixels, instead of full squares.&#x20;
+*   **SHIFT**-これを押しながらクリックしてドラッグすると、カメラを回転させることができます。 これは、マウスボタンが2つしかない場合に便利です。
+*   **CTRL**-これを押しながらマップ上のどこかをクリックすると、カメラがすぐにそこに移動します。 また、スクロールホイールの機能が変わり、Y軸グリッドが上下に移動します。 これは頻繁に行います。 一時的にそれを使用して空中に何かを描画する場合は、必ずY軸グリッドを通常の状態に戻してください。
+*   **SHIFT + CTRL**-これを押しながら、Y軸グリッドを正方形単位ではなくピクセル単位で移動できます。
 
-As a side note - there are some common OS buttons that can help speed up your work on some objects and menus. You don't have to control everything with the mouse.&#x20;
+補足として、一部のオブジェクトやメニューでの作業を高速化するのに役立つ一般的なOSボタンがいくつかあります。 マウスですべてを制御する必要はありません。
 
-* Arrow keys - These can change the option that is highlighted, like when looking at a list of code or events. Some fields allow you to press up or down to change the value, like choosing a number for a variable or time event. Usually these can also be changed by spinning your scroll wheel.&#x20;
-* Enter - On most windows it will choose/activate the option that is highlighted(although for some options it produces no result). The starting point differs based on what window you opened. There are times when you can press enter more quickly than moving your mouse cursor.&#x20;
+*   **矢印キー**-コードやイベントのリストを見るときなど、強調表示されているオプションを変更できます。 一部のフィールドでは、上下を押して値を変更できます。たとえば、変数や時間イベントに番号を選択する場合などです。 通常、これらはスクロールホイールを回転させることによっても変更できます。
+*   **Enter**-ほとんどのウィンドウでは、強調表示されているオプションが選択/アクティブ化されます（ただし、一部のオプションでは結果は生成されません）。 開始点は、開いたウィンドウによって異なります。 マウスカーソルを移動するよりもEnterキーを押す方が速い場合があります。
 
-\*For example, when you open an object the OK button is highlighted. If you don't need to change anything on the object you can press enter and the window will close. It easy to dismiss it as only saving a small fraction of time compared to moving the mouse to the OK button, but when practiced this can save a lot of time in the long run. However, things are inconsistent across the editor right now so I find it hard to make full use of this.&#x20;
+\*たとえば、オブジェクトを開くと、[OK]ボタンが強調表示されます。 オブジェクトで何も変更する必要がない場合は、Enterキーを押すとウィンドウが閉じます。 マウスを[OK]ボタンに移動することに比べて、ほんのわずかな時間しか節約できないと見なすのは簡単ですが、練習すれば、長期的には多くの時間を節約できます。 ただし、現在、エディター全体で物事が一貫していないため、これを完全に活用するのは難しいと感じています。
 
-* Escape - On some windows it will act like pressing the cancel button. It will close the window without saving any changes.&#x20;
-* Tab - Changes what option is highlighted.&#x20;
+*   **Escape**-一部のウィンドウでは、キャンセルボタンを押すのと同じように機能します。 変更を保存せずにウィンドウを閉じます。
+*   **Tab**-強調表示されているオプションを変更します。
 
-This is common with all Windows programs, so I don't know how it might be in all OS/versions. Pressing Tab allows you to cycle through all the available buttons, check boxes, and text fields in the current window. When it reaches the end it goes back to the first one. SHIFT+TAB cycles in reverse.
+これはすべてのWindowsプログラムで一般的であるため、すべてのOS /バージョンでどのように機能するかはわかりません。 Tabキーを押すと、使用可能なすべてのボタン、チェックボックス、および現在のウィンドウのテキストフィールドを順番に移動できます。 最後に達すると、最初のものに戻ります。 SHIFT + TABキーを押すと、逆の順序で循環します。
 
-\*Normally the fields are cycled in a natural sequence, but in RPM you will see the selection bouncing around the window out of sequence. Hopefully this will get organized in the future.
+\*通常、フィールドは自然な順序で循環されますが、RPMでは、選択がウィンドウの周囲で順序不同に跳ね返るのがわかります。 うまくいけば、これは将来的に整理されるでしょう。
 
-* Spacebar - On some windows it will edit the option that is highlighted. This is commonly used when working on your code. You can right click a line of code and click edit, you can double click that line of code to jump into the edit window, or you can press spacebar to open what is highlighted. (Sometimes Enter will do the same thing)
+*   **スペースバー**-一部のウィンドウでは、強調表示されているオプションが編集されます。 これは、コードの作業中に一般的に使用されます。 コード行を右クリックして[編集]をクリックしたり、そのコード行をダブルクリックして編集ウィンドウにジャンプしたり、スペースバーを押して強調表示されているものを開いたりできます。 （場合によっては、Enterキーを押しても同じことができます）
 
-These keys comes in handy when doing certain kinds of actions, especially mass changing some lines of code.&#x20;
+これらのキーは、特定の種類のアクション、特にコード行の一括変更を行うときに役立ちます。
 
-## -- Cursors <a href="#move-cursor-grid-camera" id="move-cursor-grid-camera"></a>
+## -- カーソル <a href="#move-cursor-grid-camera" id="move-cursor-grid-camera"></a>
 
-There are 2 different cursors you will see on your map.
+マップには2つの異なるカーソルが表示されます。
 
-![](../.gitbook/assets/editor\_cursors.png)&#x20;
+![](../.gitbook/assets/editor\_cursors.png)
 
-The camera always follows the cursor on the left. You control it with keyboard controls. There are no scroll bars so this is the only real way to look around your map. You can't move it outside the boundaries of the map.&#x20;
+カメラは常に左側のカーソルを追跡します。 キーボードコントロールで制御します。 スクロールバーがないため、これがマップを見回す唯一の現実的な方法です。 マップの境界線の外側に移動することはできません。
 
-The cursor on the right is the selector for the OBJECT Draw Type. A mouse click will place this cursor which used for things like pressing SPACEBAR, CTRL+C, CTRL+V, etc.&#x20;
+右側のカーソルは、**オブジェクト**描画タイプのセレクタです。 マウスクリックすると、このカーソルが配置され、スペースバー、CTRL + C、CTRL + Vなどを押すために使用されます。
 
-## -- Undo / Redo <a href="#undo-redo" id="undo-redo"></a>
+## -- 元に戻す/やり直し <a href="#undo-redo" id="undo-redo"></a>
 
-You can use this common feature to rollback changes to your map. You can find it in the main menu, where it shows the keyboard shortcuts.&#x20;
+この一般的な機能を使用して、マップへの変更をロールバックできます。 キーボードショートカットが表示されているメインメニューにあります。
 
-* Undo - CTRL + Z
-* Redo - CTRL + SHIFT + Z
+*   元に戻す-CTRL + Z
+*   やり直し-CTRL + SHIFT + Z
 
-This works for things like drawing/erasing any graphic, creating/deleting objects, writing in a text field, and probably more.
+これは、グラフィックの描画/消去、オブジェクトの作成/削除、テキストフィールドへの書き込みなど、さまざまな作業に役立ちます。
 
-It doesn't work for everything so be careful. A few things that don't work are; changing editor options, creating/deleting maps and folders, creating/deleting lines of code.&#x20;
+すべてに機能するわけではないので注意してください。 機能しないものには、エディターオプションの変更、マップとフォルダの作成/削除、コード行の作成/削除などがあります。
 
-## -- Save your changes <a href="#save-changes" id="save-changes"></a>
+## -- 変更の保存 <a href="#save-changes" id="save-changes"></a>
 
-Don't forget to save often.&#x20;
+こまめに保存することを忘れないでください。
 
-\*Caution - this engine is still in development and sometimes crashes. It gets more stable with each version and it's currently not too bad, but it can happen.&#x20;
+\*注意-このエンジンはまだ開発中であり、クラッシュすることがあります。 バージョンごとに安定性が高まっており、現在はそれほど悪くはありませんが、発生する可能性があります。
 
-To save your changes you can use the main menu or these shortcuts in the main toolbar:
+変更を保存するには、メインメニューを使用するか、メインツールバーの次のショートカットを使用します。
 
 ![](../.gitbook/assets/save.png)
 
-* `Save`: Save the changes only on the currently selected map.
-* `All`: Save the changes on all maps.&#x20;
+*   **保存**: 現在選択されているマップの変更のみを保存します。
+*   **すべて**: すべてのマップの変更を保存します。
 
-When a map has been changed you will see a `*` after its name in the map tree:
+マップが変更されると、マップツリーのその名前の後に`*`が表示されます。
 
 ![](../.gitbook/assets/map-save.png)
 
-When you are in a menu like SYSTEMS and you press OK, those changes are automatically saved. Even if you were to quit without saving, only map changes would be lost. If the engine crashes before you hit OK, you will lose those changes. I assume this works for most other menus.
+**システム**などのメニューで[OK]を押すと、それらの変更は自動的に保存されます。 保存せずに終了した場合でも、マップの変更のみが失われます。 [OK]を押す前にエンジンがクラッシュした場合、それらの変更は失われます。 これは、他のほとんどのメニューでも機能すると想定しています。
 
-### Automatic Backups
+### 自動バックアップ
 
-A recent update introduced an automatic backup feature. Every 30 minutes it creates a backup of the important project files. It doesn't copy all the resources so each backup is only about 5mb. &#x20;
+最近のアップデートで、自動バックアップ機能が導入されました。 30分ごとに、重要なプロジェクトファイルのバックアップが作成されます。 すべてのリソースがコピーされるわけではないため、各バックアップは約5MBです。
 
-How to restore backups is not yet clear, but you probably just make a copy of the main project and drop the backup files in.&#x20;
+バックアップを復元する方法はまだ明確ではありませんが、おそらくメインプロジェクトのコピーを作成し、バックアップファイルをドロップするだけです。
 
-## -- Conclusion
+## -- 結論
 
-It's a very simple layout and is easy to get used to. Drawing maps in 3D takes some getting used to, but everything is harder with a 3rd dimension.&#x20;
+非常にシンプルなレイアウトで、すぐに慣れることができます。 3Dでのマップの描画には少し慣れが必要ですが、3次元を使用するとすべてが難しくなります。
 
-
-
-
-
-&#x20;                                                           Written by KevinOfNine
+                                                           KevinOfNine著

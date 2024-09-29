@@ -1,84 +1,83 @@
 ---
-description: Here you'll find all you need about managing your game resources.
+description: ゲームリソースの管理について知っておくべきことがすべてここにあります。
 ---
 
-# Resources management
+# リソース管理
 
-When you are editing your maps, you are using textures that are proposed by default. You also have, music, interfaces, etc. All this stuff is called **BR \(Basic Resources\)**. It's located to the install folder. You can find the folder location here:
+マップを編集するときは、デフォルトで提案されているテクスチャを使用します。 また、音楽、インターフェースなども用意されています。 これらはすべて **BR（基本リソース）** と呼ばれます。 インストールフォルダにあります。 フォルダの場所は次のとおりです。
 
 ![](https://rpg-paper-maker.github.io/basics/img/br-location.png)
 
-You can also use `Auto` button to automaticaly find the BR folder in the RPG Paper Maker instance you are actually using.
+また、`自動`ボタンを使用して、現在使用しているRPG Paper Makerインスタンス内のBRフォルダを自動的に見つけることもできます。
 
-## Manage pictures <a id="manage-pictures"></a>
+## 画像の管理 <a id="manage-pictures"></a>
 
-Open the pictures manager by clicking here on the main toolbar:
+メインツールバーのここをクリックして、画像マネージャーを開きます。
 
-![Pictures manager](https://rpg-paper-maker.github.io/basics/img/pictures-manager.png)
+![画像マネージャー](https://rpg-paper-maker.github.io/basics/img/pictures-manager.png)
 
-On the left, you have a tree containing all the pictures kind available in your project:
+左側には、プロジェクトで使用できるすべての画像の種類を含むツリーがあります。
 
-* `Bars`: All the graphic bars for specific statistics.
-* `Faceset`: All the face images used in battles when targeting a character.
-* `Icons`: All the icons used in the game.
-* `WindowSkins`: All the information used for windows, arrows, texts, etc.
-* `TitleScreen`: All the graphics for title screen.
-* `Autotiles`: All the autotiles textures.
-* `Battlers`: All the battlers used for battles corresponding to different sprites states.
-* `Character`: All the character sprites with walk animations.
-* `Reliefs`: _Not available yet._
-* `Tilesets`: All the tilesets used for map textures.
-* `Walls`: All the walls textures.
+* `バー`: 特定の統計のすべてのグラフィックバー。
+* `顔画像`: キャラクターをターゲットにしたときに戦闘で使用されるすべての顔画像。
+* `アイコン`: ゲームで使用されるすべてのアイコン。
+* `ウィンドウスキン`: ウィンドウ、矢印、テキストなどに使用されるすべての情報。
+* `タイトル画面`: タイトル画面のすべてのグラフィック。
+* `オートタイル`: すべてのオートタイルテクスチャ。
+* `バトラー`: さまざまなスプライト状態に対応する戦闘に使用されるすべてのバトラー。
+* `キャラクター`: 歩行アニメーションを含むすべてのキャラクタースプライト。
+* `レリーフ`: _まだ利用できません。_
+* `タイルセット`: マップテクスチャに使用されるすべてのタイルセット。
+* `壁`: すべての壁のテクスチャ。
 
-The second list corresponds to all the pictures that you are using in your game \(according to the kind of pictures you selected\). Each picture has an `ID` and a `name`. This system is in place in order to:
+2つ目のリストは、ゲームで使用しているすべての画像に対応しています（選択した画像の種類に応じて）。 各画像には、「ID」と「名前」があります。 このシステムは、次の目的のために配置されています。
 
-* Avoid having useless textures to be loaded
-* Being able to change the names of your resources without problem
+* 無駄なテクスチャの読み込みを回避するため
+* リソースの名前を問題なく変更できるようにするため
 
-If you check the option `Show available content of ...`, this will show the available pictures that are located in the Basic Resources folder.
+`...の利用可能なコンテンツを表示する`オプションをオンにすると、基本リソースフォルダにある利用可能な画像が表示されます。
 
-## Add / Remove pictures <a id="add-remove-pictures"></a>
+## 画像の追加/削除 <a id="add-remove-pictures"></a>
 
-To add pictures in your game list: select a picture in the available content list, and press on the `left arrow` button below \(or `double click`\). To remove a picture in your game list, select one of your used picture and press `Del` on you keyboard.
+ゲームリストに画像を追加するには：利用可能なコンテンツリストで画像を選択し、下の`左矢印`ボタンを押します（または`ダブルクリック`）。 ゲームリストから画像を削除するには、使用済みの画像の1つを選択し、キーボードの`Del`を押します。
 
-## Use my custom pictures <a id="use-my-custom-pictures"></a>
+## カスタム画像の使用 <a id="use-my-custom-pictures"></a>
 
-Click on the `+` button and select one or several pictures. This will add your custom pictures in the available content list. Not that you can distinguish BR and non BR pictures thanks to the bullets colors:
+`+`ボタンをクリックして、1つ以上の画像を選択します。 これにより、カスタム画像が利用可能なコンテンツリストに追加されます。 ブレットの色のおかげで、BR画像と非BR画像を区別できることに注意してください。
 
-![Screenshot](https://rpg-paper-maker.github.io/basics/img/point-r.png) Custom ![Screenshot](https://rpg-paper-maker.github.io/basics/img/point-b.png) BR
+![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/point-r.png) カスタム ![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/point-b.png) BR
 
-If you added your pictures manually inside the project folder, you will need to use the `Refresh` button in order to see your changes in the list.
+プロジェクトフォルダ内に画像を手動で追加した場合は、リストに変更を表示するために`更新`ボタンを使用する必要があります。
 
-Now add your pictures to your game project the same way you did for BR pictures!
+これで、BR画像の場合と同じ方法で、ゲームプロジェクトに画像を追加できます。
 
-## Manage songs <a id="manage-songs"></a>
+## 曲の管理 <a id="manage-songs"></a>
 
-Songs are also a resource proposed in the BR. Open the songs manager by clicking here on the main toolbar:
+曲は、BRで提案されているリソースでもあります。 メインツールバーのここをクリックして、曲マネージャーを開きます。
 
-![Sounds manager](https://rpg-paper-maker.github.io/basics/img/songs-manager.png)
+![サウンドマネージャー](https://rpg-paper-maker.github.io/basics/img/songs-manager.png)
 
-You can manage your songs exactly like pictures. You can also test music options on the right:
+曲は画像とまったく同じように管理できます。 右側で音楽オプションをテストすることもできます。
 
-* `Volume`: The song volume \(in %\).
-* `Start`: The beginning time of the song in seconds.
-* `End`: The end time of the song in seconds.
+* `音量`: 曲の音量（％）。
+* `開始`: 曲の開始時間（秒単位）。
+* `終了`: 曲の終了時間（秒単位）。
 
-Also note that there are four sorts of songs:
+また、曲には4つの種類があることに注意してください。
 
-* `Music`: Music that are looping \(used for maps themes, battle musics, etc.\).
-* `Background sounds`: Sounds that are looping on top of the current played music \(used for rain, wind, etc.\).
-* `Sounds`: Sound played one \(used for cursor, attacks sounds, etc.\).
-* `Music effects`: Short music stopping the currently played music. After the end of this music, the previously played music goes back \(used for object found music, level up music, etc.\).
+* `音楽`: ループする音楽（マップテーマ、戦闘音楽などに使用）。
+* `環境音`: 現在再生されている音楽の上にループするサウンド（雨、風などに使用）。
+* `サウンド`: 1回再生されるサウンド（カーソル、攻撃音などに使用）。
+* `音楽効果`: 現在再生されている音楽を停止する短い音楽。 この音楽の終了後、以前に再生されていた音楽に戻ります（オブジェクト発見音楽、レベルアップ音楽などに使用）。
 
-## Manage shapes <a id="manage-shapes"></a>
+## 形状の管理 <a id="manage-shapes"></a>
 
-You can import your own 3D models in your maps! Open the shapes manager by clicking here on the main toolbar:
+マップに独自の3Dモデルをインポートできます！ メインツールバーのここをクリックして、形状マネージャーを開きます。
 
-![Shapes manager](https://rpg-paper-maker.github.io/basics/img/shapes-manager.png)
+![形状マネージャー](https://rpg-paper-maker.github.io/basics/img/shapes-manager.png)
 
-Again, you can manage your songs exactly like pictures. Here are the different kind of shapes that you can handle:
+繰り返しますが、曲は画像とまったく同じように管理できます。 ここでは、処理できるさまざまな種類の形状を示します。
 
-* `OBJ`: `.obj` files for importing 3D objects models.
-* `MTL` **\(not available yet\)**
-* `Collisions`: **\(not available yet\)**
-
+* `OBJ`: 3Dオブジェクトモデルをインポートするための`.obj`ファイル。
+* `MTL` **（まだ利用できません）**
+* `衝突`: **（まだ利用できません）**

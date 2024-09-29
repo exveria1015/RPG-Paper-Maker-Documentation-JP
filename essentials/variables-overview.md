@@ -1,449 +1,434 @@
-# Variables & Conditions
+# 変数と条件
 
-## -- Overview
+## -- 概要
 
-This section will explain the important commands that store and make use of data throughout your game. These are required in even the most simple games.&#x20;
+このセクションでは、ゲーム全体を通してデータの保存と利用に重要なコマンドについて説明します。これらのコマンドは、最もシンプルなゲームでも必要とされます。
 
-## --Variables
+## -- 変数
 
-Simply put, a variable is a place to store data that you can edit and read throughout your game. There are also Parameters and Properties which function a lot like variables, with different attributes and scope. Those will be explained below.
+簡単に言うと、変数とは、ゲーム全体を通して編集および読み取りが可能なデータを格納する場所です。また、パラメータとプロパティも変数と非常によく似た機能を持ちますが、属性とスコープが異なります。これらについては、以下で説明します。
 
-There are 3 types of data you can store and even more ways to make use of them.&#x20;
+格納できるデータ型は3種類あり、それらを利用する方法はさらに多岐にわたります。
 
-### Data Types
+### データ型
 
-Paper Maker allows the following types of data:
+Paper Makerでは、次のタイプのデータを扱うことができます。
 
-* Number - Both positive and negative.&#x20;
-* Switch - ON or OFF.
-* Message - A string of alphanumeric text.&#x20;
+* 数値 - 正と負の両方。
+* スイッチ - ONまたはOFF。
+* メッセージ - 英数字テキストの文字列。
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>The circle/dot to the left of each field is called a Radio Button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>各フィールドの左側にある円/点はラジオボタンと呼ばれます</p></figcaption></figure>
 
-When writing data into a variable, you can choose the type of data you want to store by selecting one of the above highlighted fields. All other options look at existing data in the database and write that into the variable as a number.&#x20;
+変数にデータを書き込むときは、上記の強調表示されたフィールドのいずれかを選択して、格納するデータのタイプを選択できます。その他のすべてのオプションは、データベース内の既存のデータを参照し、それを数値として変数に書き込みます。
 
-### Entering Data
+### データの入力
 
-There are many different reasons for writing data into a variable. One common use is Hero HP. The variable contains a value for how much HP the Hero has left. Every time you get hit, something is subtracted from that variable. At any point you can check what the value is, to see how much HP is remaining.&#x20;
+変数にデータを書き込む理由はたくさんあります。一般的な用途の1つは、主人公のHPです。変数には、主人公に残っているHPの値が格納されます。攻撃を受けるたびに、その変数から値が引かれます。任意の時点で値を確認して、残りのHPを確認できます。
 
-Let's look at each option available when writing data into a variable.
+変数にデータを書き込む際に利用できる各オプションを見ていきましょう。
 
-### - Selection
+### - 選択
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-First you choose which variable you want to write into. Click the ... button choose a single variable, or use the Range option to write the same data into a group of variables.&#x20;
+最初に、書き込み先の変数を選択します。...ボタンをクリックして単一の変数を選択するか、範囲オプションを使用して、変数のグループに同じデータを書き込みます。
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-On the left you have pages that can be used to help organize your variables. You can rename the pages to things like "Hero Stats" or "Quest Progress".&#x20;
+左側には、変数の整理に使用できるページがあります。ページの名前は、「主人公のステータス」や「クエストの進捗状況」などに変更できます。
 
-It's good practice to group similar variables together instead of simply using the next available space whenever you need a variable. If you are working on something new, skip ahead and make a new page. That way you have space to add similar variables to the same page later on.&#x20;
+変数が必要になるたびに、単に次に利用可能なスペースを使用するのではなく、同様の変数をグループ化することをお勧めします。新しい作業をしている場合は、先に進んで新しいページを作成します。そうすることで、後で同様の変数を同じページに追加するスペースを確保できます。
 
-As with other database lists, you can rearrange the order of these pages by drag and drop. The variable ID numbers won't change and you can further organize your variables.
+他のデータベースリストと同様に、ドラッグアンドドロップでこれらのページの順序を変更できます。変数のID番号は変更されず、変数をさらに整理できます。
 
-Click the page on the left, so that on the right you can choose one of the variables to use for this operation.&#x20;
+左側のページをクリックすると、右側で使用したい変数を1つ選択できます。
 
-It is good practice to always name your variables to fit the usage. Hero HP, Time Remaining, etc. You want to be descriptive without making it too long, so that you can easily read it all in your code.&#x20;
+変数の名前は、用途に合わせて常に分かりやすくすることをお勧めします。主人公のHP、残り時間などです。コード内で簡単にすべてを読み取れるように、長すぎないように記述的にする必要があります。
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-<img src="../.gitbook/assets/mm1.png" alt="" data-size="line"> Protip: By writing some words all in CAPS, it helps them stand out in a full list of variables. &#x20;
+<img src="../.gitbook/assets/mm1.png" alt="" data-size="line"> ヒント：単語をすべて大文字で記述することで、変数の完全なリストの中で目立たせることができます。
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-### - Operation
+### - 操作
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-Next you choose what kind of operation this will be.&#x20;
+次に、どのような操作を行うかを選択します。
 
-Equals - Overwrite the old value with the new one.
+* 等しい - 古い値を新しい値で上書きします。
+* 加算 - 変数に新しい値を追加します。
+* 減算 - 変数から新しい値を引きます。
+* 乗算 - 変数に新しい値を掛けます。
+* 除算 - 変数を新しい値で割ります。
+* 剰余 - 変数を新しい値で割り、余りを切り捨てます。\*
 
-Plus - Add the new value to the variable.&#x20;
+* 等しいは、すべてのデータ型で機能します。
+* 加算\減算は、数値とメッセージで機能します。
+* 残りは数値でのみ機能します。
 
-Minus - Subtract the new value from the variable.&#x20;
+\*この関数（別名Mod）は、ほとんどの人は馴染みがないかもしれませんが、便利です。入力された値で数値を除算し、余りのみを返します。
 
-Times - Multiply the variable by the new value.&#x20;
+たとえば、10を3で割るとします。結果は3.333になります。
 
-Divided by - Divide the variable by the new value.&#x20;
+代わりに10 mod 3を使用すると、結果は1になります。3は10に3回収まり、合計で9になります。余りは1です。
 
-Modulo - Divide the variable by the new value, then get rid of the remainder. \*
+この用途の1つは、小数点以下を削除することです。値が3.333の変数がある場合は、まずそのコピーを作成します。コピーに対してMod 1を実行すると、0.333になります。次に、元の値からコピーを引きます。3.333-0.333 = 3になります。javascriptを使用してこれを行う方法は他にもありますが、この方法はデフォルトのコマンドといくつかの計算で実行できます。
 
-* Equals works for all data types.
-* Plus \ Minus works for Number and Message.
-* The rest only work for Number.
+### - 値
 
-\*This function, a.k.a. Mod, might not be familiar to most people but it can be useful. It divides a number by the value entered, and only gives you the remainder.&#x20;
+このカテゴリには多くのオプションがあります。
 
-Let's say you have 10 divide by 3. You will end up with 3.333.&#x20;
+### -- 数値
 
-If you instead use 10 mod 3, you will end up with 1. Because 3 fits into 10 three times, which is a total of 9. The remainder is 1.
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>一部のフィールドでは小数点を使用できます</p></figcaption></figure>
 
-One possible use for this is to remove decimal points. If you have a variable with a value of 3.333, start by making a copy of it. Do Mod 1 to the copy, which results in 0.333. Then subtract the copy from the original. 3.333 - 0.333 = 3. There are other ways to do this with javascript, but this method can be done with default commands and some math.&#x20;
+最も一般的に使用されるオプションです。ドロップダウンメニューには、次の選択肢があります。
 
-### - Value
+* 数値 - 操作で使用する数値を選択します。
+* 変数 - 操作で選択した変数の値を使用します。
 
-There are many options in this category.&#x20;
-
-### -- Number
-
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Some fields allow decimals</p></figcaption></figure>
-
-The most commonly used option. The drop down menu gives you the following choices:
-
-* Number - Choose a number to be used in the operation.&#x20;
-* Variable - Uses the value of the selected variable in the operation.&#x20;
-
-
-
-### -- Random
+### -- ランダム
 
 <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-Set the range and the engine will pick a number at random between the two values.&#x20;
+範囲を設定すると、エンジンは2つの値の間の乱数を取得します。
 
-### -- Message
+### -- メッセージ
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-Enter some text to be written into the variable. You can use the ADD operation and it will include the new text to the right of the existing message. Remember to add spaces and punctuation when required.&#x20;
+変数に書き込むテキストを入力します。加算操作を使用すると、既存のメッセージの右側に新しいテキストが追加されます。必要に応じてスペースと句読点を追加してください。
 
-### -- Switch
+### -- スイッチ
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-Choose the new state of the switch - ON or OFF.
+スイッチの新しい状態（ONまたはOFF）を選択します。
 
-### -- Inventory
+### -- インベントリ
 
 <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
-Checks how many of a certain item the player is holding and writes that number into a variable.&#x20;
+プレイヤーが特定のアイテムをいくつ持っているかを確認し、その数値を変数に書き込みます。
 
-There is a drop down menu here that gives the following options:
+ここには、次のオプションを提供するドロップダウンメニューがあります。
 
-* Selection - Allows you to choose the item directly from a drop down menu.
-* Number - Allows you to choose a number, which corresponds with the ID of an item in the database. You can see HP potion has an ID of 1.
-* Variable - Allows you to use the value of a variable to choose the ID of the item that is checked.&#x20;
+* 選択 - ドロップダウンメニューから直接アイテムを選択できます。
+* 数値 - 数値を選択できます。これは、データベース内のアイテムのIDに対応しています。HPポーションのIDは1であることがわかります。
+* 変数 - 変数の値を使用して、チェックされるアイテムのIDを選択できます。
 
-### -- Currency
+### -- 通貨
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-The first drop down menu lets you get a number for:
+最初のドロップダウンメニューでは、次の数値を取得できます。
 
-* Owned - How much of the currency you have right now.&#x20;
-* Earned - How much you received since starting the game. Owned + Used.&#x20;
-* Used - How much you spent in stores or had taken away with commands.&#x20;
+* 所有 - 現在所有している通貨の量。
+* 獲得 - ゲーム開始から獲得した金額。所有+使用。
+* 使用 - 店で使った金額、またはコマンドで奪われた金額。
 
-The last drop down menu has you choosing which currency to check, if your game uses more than one.
+最後のドロップダウンメニューでは、ゲームで複数の通貨を使用している場合に、どの通貨を確認するかを選択します。
 
-### -- Statistic
+### -- 統計
 
 <figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-Get the value of a statistic of a Hero or Enemy. Knowing the ID can be difficult. IDs are assigned in sequence as a Hero or Enemy is encountered. Unless your game is extremely linear, there is no direct way to know this unless you manually keep track with variables.&#x20;
+主人公または敵の統計値を取得します。IDを知ることは難しい場合があります。IDは、主人公または敵に遭遇した順に割り当てられます。ゲームが非常に線形でない限り、変数で手動で追跡しない限り、これを知る直接的な方法はありません。
 
-For Heroes, a simple method is to add all the heroes to your party at the start of a New Game. This will secure their IDs starting with 0. Then you can change some of them to be HIDDEN with the Modify Party command, so they are not available to the player. When you want to give them back to the player, move them from HIDDEN to TEAM/RESERVE. This doesn't work if an unlimited number of heroes could be added, such as a Pokemon clone. The other choice is to keep track with variables as the heroes are added.
+主人公の場合、簡単な方法は、新しいゲームの開始時にすべての主人公をパーティに追加することです。これにより、IDは0から順番に確保されます。その後、「パーティの変更」コマンドを使用して、一部の主人公を「非表示」に変更して、プレイヤーが利用できないようにすることができます。プレイヤーに主人公を戻したい場合は、「非表示」から「チーム/控え」に移動します。これは、ポケモンのクローンなど、無制限の数の主人公を追加できる場合は機能しません。もう1つの選択肢は、主人公が追加されたときに変数で追跡することです。
 
-For Enemies, there is an option below that can provide it's ID but it only works inside a troop reactions. You could also keep track with variables.&#x20;
+敵の場合、IDを提供できるオプションが以下にありますが、これは部隊のリアクション内でのみ機能します。変数で追跡することもできます。
 
-### -- Map Characteristic
+### -- マップの特性
 
 <figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
-Allows you to find various map related information about an object.&#x20;
+オブジェクトに関するさまざまなマップ関連情報を見つけることができます。
 
-The drop down allows you to choose This Object, which will be the object that runs this command. The Hero is an available option, too. Followed by a list of all objects on the current map. It's not possible to target objects in a different map.
+ドロップダウンリストでは、「このオブジェクト」を選択できます。これは、このコマンドを実行するオブジェクトになります。主人公も選択可能なオプションです。その後に、現在のマップ上のすべてのオブジェクトのリストが表示されます。別のマップ内のオブジェクトをターゲットにすることはできません。
 
-If you use Number in the first drop down menu, you can then make sure a certain object always has the same Object ID in each map. That way you can refer to it by number in your code and it you know it will target the correct object.&#x20;
+最初のドロップダウンメニューで「数値」を使用すると、各マップで特定のオブジェクトに常に同じオブジェクトIDが割り当てられるようにすることができます。そうすれば、コード内で番号で参照でき、正しいオブジェクトがターゲットになることがわかります。
 
-The last drop down menu gives the following choices:
+最後のドロップダウンメニューには、次の選択肢があります。
 
-* X, Y, and Z square position - This corresponds to the values you see in the editor. 0, 0, 0 is in the NW corner of the map at ground level. Squares will often be more useful, since commands like Move Object and Teleport Object will be measured in squares.&#x20;
+* X、Y、およびZの正方形の位置 - これは、エディターに表示される値に対応しています。0、0、0は、マップの北西の角の地上レベルにあります。オブジェクトの移動やテレポートなどのコマンドは正方形単位で測定されるため、正方形の方が便利な場合が多いです。
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Square = Tile</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>正方形=タイル</p></figcaption></figure>
 
-* X, Y, and Z pixel position - This will depend on your square size. If your square size is 16 px, then a square position of 4 will be a pixel position of 4 x 16 = 64 px.&#x20;
-* Orientation - This gives you what direction the object is facing. It corresponds with the character sheet resources.&#x20;
+* X、Y、およびZのピクセル位置 - これは、正方形のサイズによって異なります。正方形のサイズが16ピクセルの場合、4の正方形の位置は、4 x 16 = 64ピクセルのピクセル位置になります。
+* 向き - オブジェクトがどの方向を向いているかがわかります。これは、キャラクターシートのリソースに対応しています。
 
 <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-* Terrain - This gives you the Terrain ID of the tile below the object.&#x20;
+* 地形 - オブジェクトの下にあるタイルの地形IDがわかります。
 
-### -- Enemy
+### -- 敵
 
 <figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
-If you try to use this option outside of a troop reaction, the drop down list will be empty. As the enemies available will change with each battle. When used inside a troop reaction you will be given a list of the monsters in the troop.&#x20;
+部隊のリアクション以外でこのオプションを使用しようとすると、ドロップダウンリストは空になります。利用可能な敵は戦闘ごとに変わるためです。部隊のリアクション内で使用すると、部隊のモンスターのリストが表示されます。
 
 <figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
-Once you have it's ID, you can then use other commands that target an object by it's ID such as Change Statistic and Transform Battler.&#x20;
+IDがわかったら、統計の変更や戦闘員の変身など、IDでオブジェクトをターゲットとする他のコマンドを使用できます。
 
-The only limit is that you have no command to know which enemy the player is currently targeting. &#x20;
+唯一の制限は、プレイヤーが現在どの敵をターゲットにしているかを知るコマンドがないことです。
 
-### -- Other Characteristics
+### -- その他の特性
 
-Here you can find various game information.&#x20;
+ここでは、さまざまなゲーム情報を見つけることができます。
 
-* Current Map ID - The map the hero is currently on. You can see ID in the Map Properties.
+* 現在のマップID - 主人公が現在いるマップ。マップのプロパティでIDを確認できます。
 
 <figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
-* Number in Team - Gives the number of heroes currently in your party.&#x20;
-* Number in Hidden - Gives the number of heroes currently hidden from your party.&#x20;
-* Number in Reserve - Gives the number of heroes currently placed in reserve.&#x20;
-* Total number of steps - Keeps track of the number of steps walked by the player during the entire game. 1 tile is about 3-4 steps.&#x20;
-* Total number of seconds - Keeps track of total playtime.
-* Total number of saves - Keeps track of how many times you save the game.&#x20;
-* Total number of battles - Keeps track of how many battles the player has entered.
-* Camera Position X, Y, and Z - Gives a number for the current Camera position in pixels.
-* Total Second of Music - Tells you how long the current "Music" song has been playing.&#x20;
-* Total Second of Background Music - Tells you how long the current "Background Music" song has been playing.&#x20;
+* チームの人数 - 現在パーティにいる主人公の人数を返します。
+* 非表示の人数 - 現在パーティから非表示になっている主人公の人数を返します。
+* 控えの人数 - 現在控えに配置されている主人公の人数を返します。
+* 合計歩数 - ゲーム全体でプレイヤーが歩いた歩数を追跡します。1タイルは約3〜4歩です。
+* 合計秒数 - 合計プレイ時間を追跡します。
+* 合計セーブ回数 - ゲームをセーブした回数を追跡します。
+* 合計戦闘回数 - プレイヤーが参加した戦闘の回数を追跡します。
+* カメラの位置X、Y、およびZ - 現在のカメラの位置をピクセル単位で表す数値を返します。
+* 音楽の合計秒数 - 現在の「音楽」曲が再生されている時間を示します。
+* BGMの合計秒数 - 現在の「BGM」曲が再生されている時間を示します。
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption><p>The wording is inconsistent, but Background Sound and Background Music are the same thing</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption><p>表現は一貫していませんが、背景音とBGMは同じものです</p></figcaption></figure>
 
-Specific usage of all these options will be explained further in later sections.&#x20;
+これらのすべてのオプションの具体的な使用方法については、後のセクションで詳しく説明します。
 
-## Parameters & Properties
+## パラメータとプロパティ
 
-Along with Variables, you also have Parameters and Properties. All of them hold data but have different ways of making use of it.&#x20;
+変数とともに、パラメータとプロパティもあります。これらはすべてデータを保持しますが、データの使用方法が異なります。
 
-### - Variables
+### - 変数
 
-Variables are simple to use and global, meaning they can be accessed by all objects and reactions no matter where you place the code.&#x20;
+変数は使い方が簡単でグローバルであり、コードの配置場所に関係なく、すべてのオブジェクトとリアクションからアクセスできます。
 
-To create a variable, click the Variables icon or open the Change Variables command:
+変数を作成するには、変数アイコンをクリックするか、「変数の変更」コマンドを開きます。
 
-<figure><img src="../.gitbook/assets/image (76).png" alt=""><figcaption><p>The rest is explained above</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (76).png" alt=""><figcaption><p>残りは上記で説明されています</p></figcaption></figure>
 
-### - Parameters
+### - パラメータ
 
-Parameters work like variables, but are only available to the area they were created on (Events or Common Reactions). A parameter made in one area is not available to the other.&#x20;
+パラメータは変数のように機能しますが、作成されたエリア（イベントまたはコモンリアクション）でのみ使用できます。あるエリアで作成されたパラメータを別のエリアで使用することはできません。
 
-There are 2 areas that have parameters.
+パラメータを持つエリアは2つあります。
 
-1. Systems Manager > Event/States tab:
+1. システムマネージャー>イベント/ステータスタブ：
 
 <figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
-Double left click or right click the "< >" to create a new entry.
+「<>」をダブルクリックまたは右クリックして、新しいエントリを作成します。
 
-Then you will see it appear in the settings for your Event:
+その後、イベントの設定に表示されます。
 
 <figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
 
-To change a parameter, you have to edit the value from Default to something else.&#x20;
+パラメータを変更するには、値を「デフォルト」から別の値に変更する必要があります。
 
-The commands activated during this event will be using the new value for that parameter.&#x20;
+このイベント中にアクティブ化されるコマンドは、そのパラメータに新しい値を使用します。
 
-2. Systems Manager > Common Reaction tab.&#x20;
+2. システムマネージャー>コモンリアクションタブ。
 
 <figure><img src="../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
-That list will be separate and only show up when calling a Common Reaction.
+そのリストは分離されており、コモンリアクションの呼び出し時にのみ表示されます。
 
 <figure><img src="../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
 
-Your common reaction would then reference the new parameter values in it's commands.&#x20;
+コモンリアクションは、コマンド内で新しいパラメータ値を参照します。
 
 <figure><img src="../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
 
-There is no command to alter a parameter mid-game. You would have to use a variable/property as the value. Then you can change the variable to change the parameter.&#x20;
+ゲーム中にパラメータを変更するコマンドはありません。変数/プロパティを値として使用する必要があります。その後、変数を変更してパラメータを変更できます。
 
 <figure><img src="../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
 
-For some usage it can save you from having to create a variable, keeping your list of variables from getting bloated. Some of the other data types can be useful like Anything, None, or Keyboard, but that will be very specific and suited for advanced users.&#x20;
+用途によっては、変数を作成する手間が省け、変数のリストが肥大化するのを防ぐことができます。その他、Anything、None、Keyboardなどのデータ型も役立ちますが、非常に特殊であり、上級ユーザー向けです。
 
-### - Properties
+### - プロパティ
 
-Properties are local, meaning they can only be accessed by the object they are created on. That also means any conditions that want to read the value have to be on the same object.&#x20;
+プロパティはローカルであるため、作成されたオブジェクトからのみアクセスできます。つまり、値を読み取る条件は、同じオブジェクト上にある必要があります。
 
-To create a property, open an object and create a new entry in the Properties box.
+プロパティを作成するには、オブジェクトを開き、「プロパティ」ボックスに新しいエントリを作成します。
 
-<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption><p>Double left click or right click to create a new entry. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption><p>ダブルクリックまたは右クリックして、新しいエントリを作成します。</p></figcaption></figure>
 
-These are useful because you can have the same property on multiple objects and each one will store it's own value. Any commands using the property have to be on the object itself. This allows you to copy and paste completed objects and they will all function independently.&#x20;
+これらは、複数のオブジェクトに同じプロパティを設定でき、それぞれが独自の値を格納できるため便利です。プロパティを使用するコマンドは、オブジェクト自体に配置する必要があります。これにより、完成したオブジェクトをコピーアンドペーストでき、すべてが独立して機能します。
 
-For example you can give an object a HP property and every time the player attacks it, 1 is subtracted from it's HP. It has no effect on the HP property of other objects. You can't use external objects to check a property, it has to be check on itself.&#x20;
+たとえば、オブジェクトにHPプロパティを付与し、プレイヤーが攻撃するたびにHPから1が引かれるようにすることができます。他のオブジェクトのHPプロパティには影響しません。外部オブジェクトを使用してプロパティを確認することはできません。プロパティ自体で確認する必要があります。
 
-<img src="../.gitbook/assets/mm (1).jpg" alt="" data-size="line"> You **can** make a property be a variable, write a property into a variable and use/edit that value, or write any existing variable into a property.
+<img src="../.gitbook/assets/mm (1).jpg" alt="" data-size="line"> プロパティを変数にする、プロパティを変数に書き込んでその値を使用/編集する、または既存の変数をプロパティに書き込むことができます。
 
-Another example is to create a space for commands that can only happen the first time it is activated. Such as keeping track of when an NPC has been talked to and having it say something extra the first time you talk to it.&#x20;
+別の例として、最初にアクティブ化されたときだけ実行できるコマンドのスペースを作成します。たとえば、NPCに話しかけたときを追跡し、最初に話しかけたときに特別なことを言わせるなどです。
 
 <figure><img src="../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
 
-You can copy and paste this NPC and simply update the text. Each one will keep track of it's own property and only allow the condition to run once per NPC.
+このNPCをコピーアンドペーストして、テキストを更新するだけです。それぞれが独自のプロパティを追跡し、NPCごとに1回だけ条件を実行できるようにします。
 
-Most commands can reference variables, parameters, or properties. They won't show up in this list until they are created. &#x20;
+ほとんどのコマンドは、変数、パラメータ、またはプロパティを参照できます。作成されるまで、このリストには表示されません。
 
 <figure><img src="../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
-## Default Values
+## デフォルト値
 
-There are different defaults for the various types of data.&#x20;
+さまざまなタイプのデータには、それぞれ異なるデフォルト値があります。
 
-* Variables automatically start at 0.
-* Parameters ask you to choose the default value.
-* Properties ask you to choose the default value.
+* 変数は自動的に0から始まります。
+* パラメータは、デフォルト値を選択するように求めます。
+* プロパティは、デフォルト値を選択するように求めます。
 
-If you choose a certain type of data as the default, any type of data can be accepted and it becomes that data type moving forward.&#x20;
+特定のタイプのデータをデフォルトとして選択した場合、どのタイプのデータも受け入れることができ、それ以降は、そのデータ型になります。
 
-## -- Conditions
+## -- 条件
 
-Variables alone won't accomplish much. Aside from plugging variables into commands, conditions will check a variable and run some code based on the value inside. Let's refer to them as IF statements and you can think of them logically.&#x20;
+変数だけではあまり意味がありません。変数をコマンドに組み込む以外に、条件は変数をチェックし、内部の値に基づいてコードを実行します。これらをIF文と呼び、論理的に考えることができます。
 
-IF the variable is equal to 0, THEN do X.\
-IF the variable is equal to 1, THEN do Y.\
-IF the variable is equal to 2, THEN do Z.
+変数が0と等しい場合は、Xを実行します。\
+変数が1と等しい場合は、Yを実行します。\
+変数が2と等しい場合は、Zを実行します。
 
-You have the option to add an ELSE statement, which decides what happens when the IF part isn't true.&#x20;
+ELSEステートメントを追加して、IF部分が真でない場合にどうなるかを決定することもできます。
 
-IF the variable is greater than 0, THEN do X. ELSE, do Y.&#x20;
+変数が0より大きい場合は、Xを実行します。そうでない場合は、Yを実行します。
 
-If the value is 1 or more it will do one action, if it's less it will do something else. When to use ELSE will depend on what you are trying to accomplish. Usually you will only use ELSE when there are only 2 possible outcomes. If there are more than 2 outcomes, you might want to use multiple conditions with the ELSE part disabled. &#x20;
+値が1以上の場合は1つのアクションを実行し、それ以下の場合は別のことを実行します。ELSEをいつ使用するかは、何を達成しようとしているかによって異なります。通常、ELSEは結果が2つしかない場合にのみ使用します。結果が3つ以上ある場合は、ELSE部分を無効にした複数の条件を使用することをお勧めします。
 
-Check the box at the bottom of the condition window to enable ELSE.&#x20;
+条件ウィンドウの下部にあるチェックボックスをオンにして、ELSEを有効にします。
 
 <figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
-There will be many times where you only need the IF statement. It is good practice to disable the ELSE statement instead of leaving it empty.&#x20;
+IFステートメントのみが必要になる場合も多々あります。ELSEステートメントを空のままにするのではなく、無効にすることをお勧めします。
 
-When using Conditions you start by choosing a type of data to look at. Most of them have different criteria.&#x20;
+条件を使用する場合、最初に参照するデータのタイプを選択します。ほとんどのデータ型には、異なる基準があります。
 
-### Variables / Parameters / Properties
+### 変数/パラメータ/プロパティ
 
-This section will likely be the most commonly used. You will be using many variables to keep track of things in your game. Tracking hero actions, by increasing one as you swing a sword. Quest progress, by increasing one each time you talk to the next NPC or complete an action. All switches/messages are essentially variables.
+このセクションは、おそらく最も一般的に使用されます。ゲーム内のさまざまなことを追跡するために、多くの変数を使用します。剣を振るたびに1つずつ増やすことで、主人公のアクションを追跡します。次のNPCに話しかけたり、アクションを完了するたびに1つずつ増やすことで、クエストの進捗状況を追跡します。すべてのスイッチ/メッセージは、本質的に変数です。
 
-If you don't have any parameters or properties set up, you will only have the option to choose a variable.&#x20;
+パラメータまたはプロパティを設定していない場合は、変数を選択することしかできません。
 
 <figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
-Once they are added you will be able to select them from the drop down menu.&#x20;
+追加すると、ドロップダウンメニューから選択できるようになります。
 
 <figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
-When using these you will have the following standard mathematical options:
+これらを使用する場合、次の標準的な数学的オプションを使用できます。
 
-* Equal to
-* Not Equal to
-* Greater Than or Equal to
-* Less Than or Equal to
-* Greater Than
-* Less Than
+* 等しい
+* 等しくない
+* 以上
+* 以下
+* より大きい
+* より小さい
 
-The final field is what you are comparing to. Generally, it should match the type of data that is inside the var/param/prop. If you write Switch:ON into a variable, you might want to compare it to another Switch data type. Not all cross combinations of types might work.&#x20;
+最後のフィールドは、比較対象です。一般に、var/param/prop内のデータ型と一致する必要があります。変数にSwitch:ONを書き込んだ場合は、別のSwitchデータ型と比較することをお勧めします。タイプのすべてのクロスコンビネーションが機能するわけではありません。
 
-For simple IF statements you will mostly be using a static number, like 4. But for complex and dynamic systems you will start comparing it to another var/param/prop. This will be explored in more detail later on.&#x20;
+単純なIFステートメントの場合、ほとんどの場合、4などの静的な数値を使用します。ただし、複雑で動的なシステムの場合、別のvar/param/propとの比較を開始します。これについては、後で詳しく説明します。
 
-### Heroes
+### 主人公
 
-This section contains many types of data related to your heroes, each with different criteria to check against. Not just math options like greater than.&#x20;
+このセクションには、主人公に関連する多くのタイプのデータが含まれており、それぞれに異なる基準があります。より大きいなどの数学的オプションだけではありません。
 
-You start by choosing the target.
+最初にターゲットを選択します。
 
 <figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
-This will apply to all heroes, unless you check the optional box below that will choose which group of heroes to look at. You might want this to affect only your active party.&#x20;
+これは、すべての主人公に適用されます。ただし、下のオプションのチェックボックスをオンにすると、どの主人公のグループを参照するかを選択できます。アクティブなパーティだけに影響を与えたい場合があります。
 
-The rest of the commands are self explanatory.
+残りのコマンドは自明です。
 
 <figure><img src="../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
 
-### Possessions
+### 所有物
 
-This section is for checking what items the hero possesses, both in the inventory or equipped on the heroes. These only use math options like greater than and it's all self explanatory.&#x20;
+このセクションでは、主人公が所持しているアイテム（インベントリ内または主人公に装備されているアイテムの両方）を確認します。これらは、より大きいなどの数学的オプションのみを使用し、すべて自明です。
 
 <figure><img src="../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
 
-### Other
+### その他
 
-This section contains all other types of data that don't fit into the previous categories.
+このセクションには、前のカテゴリに分類されないその他すべてのタイプのデータが含まれています。
 
-* Keypress - Check if a key is or isn't being pressed. Set this to Switch:ON to know when the key is being pressed. The engine is always keeping track of these values automatically.
+* キー押下 - キーが押されているかどうかを確認します。キーが押されていることを知るには、これをSwitch:ONに設定します。エンジンは常にこれらの値を自動的に追跡しています。
 
 <figure><img src="../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
 
-* Object is looking at - Check which direction an object is facing. It's represented by a number starting at 0, counting up clockwise from south. The engine is always generating this value automatically.
+* オブジェクトの視線 - オブジェクトがどの方向を向いているかを確認します。これは、南から時計回りに0から始まる数値で表されます。エンジンは常にこの値を自動的に生成しています。
 
 <figure><img src="../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
 
-* Object is climbing - Check if an object is currently in it's climbing animation. Only works for tiles you enable climbing on in Data>Tileset.
+* オブジェクトが登っている - オブジェクトが現在登るアニメーション中かどうかを確認します。データ>タイルセットで登ることを有効にしたタイルでのみ機能します。
 
 <figure><img src="../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
 
-* Chronometer - Checks the value of an existing chronometer (timer). You must first use the Chronometer command to start one. Here you choose it's matching ID to monitor it and run code when it reaches a certain time.&#x20;
+* クロノメーター - 既存のクロノメーター（タイマー）の値を確認します。最初に「クロノメーター」コマンドを使用して開始する必要があります。ここで、一致するIDを選択して監視し、特定の時間に達したときにコードを実行します。
 
 <figure><img src="../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
 
-* Escaped last battle - An internal switch is turned ON if you escape your most recent battle and this will check if it's currently ON. You might disable the bonus of a new battle if you ran away from the last one.&#x20;
+* 前回の戦闘から逃げる - 直前の戦闘から逃げると、内部スイッチがオンになり、これが現在オンになっているかどうかを確認します。前回の戦闘から逃げた場合、新しい戦闘のボーナスを無効にすることがあります。
 
 <figure><img src="../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
 
-* Script - Check something using javacsript.&#x20;
+* スクリプト - javacsriptを使用して何かを確認します。
 
 <figure><img src="../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
-## Variable Substitution
+## 変数の置換
 
-In most of your commands you will have an option to pick a number or use a variable. By using a variable you can edit the variable elsewhere to change the outcome of it's usage.&#x20;
+ほとんどのコマンドでは、数値を選択するか、変数を使用するかを選択できます。変数を使用することにより、他の場所で変数を編集して、その使用結果を変更できます。
 
-Here are some examples.&#x20;
+いくつかの例を以下に示します。
 
-### Making a choice
+### 選択を行う
 
-You might give the player a choice of which hero to heal.&#x20;
+プレイヤーにどの主人公を回復するかを選択させることができます。
 
-Your team has 4 heroes with the IDs 1,2,3 and 4. You can use a show choice command with a variable set to a different value in each choice.&#x20;
+チームには、IDが1、2、3、4の4人の主人公がいます。選択肢ごとに異なる値に設定された変数を指定して、「選択肢の表示」コマンドを使用できます。
 
 <figure><img src="../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
 
-You can use that variable to refer to whichever hero was picked by the player.&#x20;
+その変数を使用して、プレイヤーが選択した主人公を参照できます。
 
 <figure><img src="../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
 
-### Which one to check?
+### どれをチェックするか？
 
-To check a single hero you could set a variable to a static number and reference the variable in the condition.&#x20;
+1人の主人公を確認するには、変数を静的な数値に設定し、条件内でその変数を参照します。
 
 <figure><img src="../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
 
-You might want to check all 4 heroes for that Battle Sword. You could make 4 conditions, 1 for each hero. Or you could increment the variable and loop the code. As long as your hero's IDs are in sequence.
+4人すべての主人公がバトルソードを持っているかどうかを確認したい場合があります。主人公ごとに1つずつ、合計4つの条件を作成できます。または、変数をインクリメントして、コードをループすることもできます。主人公のIDが順番になっている限り、これは可能です。
 
 <figure><img src="../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
 
-> Sets the variable to the first hero in the sequence.
+> 変数をシーケンスの最初の主人公に設定します。
 >
-> The condition checks the first hero for the sword.
+> 条件は、最初の主人公が剣を持っているかどうかを確認します。
 >
-> If it's found, a message indicates who had it, then it's replaced with Empty (same as unequipping).
+> 見つかった場合は、誰が持っていたかを示すメッセージが表示され、空に置き換えられます（装備解除と同じ）。
 >
-> It increments the variable, so that it now points to the second hero.
+> 変数をインクリメントするため、今度は2番目の主人公を指します。
 >
-> It increments another variable, so that we can keep track of how many times the loop runs.
+> 別の変数をインクリメントして、ループの実行回数を追跡できるようにします。
 >
-> We have to check 4 heroes, so if the count is below 4 it needs to keep looping. So it jumps to the TOP.
+> 4人の主人公をチェックする必要があるため、カウントが4未満の場合はループを続ける必要があります。そのため、先頭に戻ります。
 >
-> It runs the same condition a second time, this time with the variable set to 2. So it checks the second hero for the sword.
+> 2番目の主人公に対して、今回は変数が2に設定された状態で、同じ条件が2回目に実行されます。
 >
-> It repeats this for each hero and when the count reaches 4 it stops looping and finishes.
+> これは主人公ごとに繰り返され、カウントが4に達するとループが停止し、終了します。
 
-&#x20;
+可能性は無限大です。変数を置き換えるフィールドによって、その使用方法が決まることに注意してください。フィールドによっては、新しい数値、どの主人公を選択するか、どのスキルを忘れるかなどを求めるものがあります。変数の使用は、多くの場合、静的な数値/選択肢の入力と同じです。デフォルトの使用方法はさまざまです。
 
-The possibilities are endless. Keep in mind that the field a variable is replacing determines it's usage. Some fields ask for a new number value, which hero to choose, which skill to forget, etc. Using a variable is often the same as entering a static number/choice. Whatever the default usage is.&#x20;
+## -- 結論
 
-## -- Conclusion
+これらをどれだけ複雑に使用するかはあなた次第です。学習を始めたばかりの人は、シンプルに始めて、徐々に複雑なものに進めていきましょう。適切な外部メモを取っておくことで、特に長い時間が経過した後にコードを確認する必要があるときに、すべてを追跡するのに役立ちます。
 
-How complex you make use of these is up to you. For those just learning, start simple and slowly work your way up to complex. Good external note taking can help you keep track of everything, especially when you need to look at your code after a long time has passed. &#x20;
-
-
-
-
-
-
-
-&#x20;                                                 Written by KevinOfNine
+KevinOfNine著

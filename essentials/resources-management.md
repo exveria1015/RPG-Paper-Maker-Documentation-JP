@@ -1,437 +1,437 @@
-# Resource management
+<h1>リソース管理</h1>
 
 ##
 
-## -- Overview
+## -- 概要
 
-This section will explain how to create, import, and manage all your resource files.&#x20;
+このセクションでは、すべてのリソースファイルの作成、インポート、および管理方法について説明します。
 
-## -- Types of resources
+## -- リソースの種類
 
-There are many types of resource files used in RPM. You can see this by looking in the main resource folder for your project.&#x20;
+RPMでは、さまざまな種類のファイルがリソースとして使用されます。 これらはプロジェクトのメインリソースフォルダ内にあります。
 
-You can navigate there manually or press the FOLDER button on the main toolbar.&#x20;
+手動で移動するか、メインツールバーのフォルダボタンを押します。
 
 <figure><img src="../.gitbook/assets/resource_folder1.png" alt=""><figcaption></figcaption></figure>
 
-Then find your way to the Content folder.&#x20;
+次に、Contentフォルダに移動します。
 
 <figure><img src="../.gitbook/assets/resource_folder2.png" alt=""><figcaption></figcaption></figure>
 
-Don't use subfolders inside these default folders of your project, the editor will not see them.&#x20;
+プロジェクトのこれらのデフォルトフォルダ内にサブフォルダを使用しないでください。エディタはそれらを認識しません。
 
-### Datas&#x20;
+### データ
 
-This is for items that don't fit any other category and are mostly just data you won't normally touch.&#x20;
+これは、他のカテゴリに属さないアイテム用で、通常は触れることのないデータがほとんどです。
 
-The folder itself contains .json files that make up the database of your project. There are some ways to manipulate this stuff but it's for advanced users.&#x20;
+フォルダ自体には、プロジェクトのデータベースを構成する.jsonファイルが含まれています。 これらを操作する方法もありますが、上級ユーザー向けです。
 
-If something in your project gets corrupted you might be instructed to replace these files to fix it. It may allow transferring database info between projects, but it's unconfirmed territory. User beware and always make backup copies if you go messing around in here.
+プロジェクト内の何かが破損した場合、修正するためにこれらのファイルを置き換えるよう指示される場合があります。 これにより、プロジェクト間でデータベース情報を転送できる可能性がありますが、確認されていません。 注意して使用し、ここで作業する場合は、必ずバックアップコピーを作成してください。
 
-* Maps - This is where your maps are stored. A folder is created for each one starting with MAP0001. It seems that deleting a map in the editor does not delete it's folder here.&#x20;
-* Saves - This is where save games are stored from playing the game. While working on your project and using test play, they will appear here as normal. When you use the built-in export function the save games will NOT go with it.&#x20;
-* Scripts - This is for advanced programmers. If you don't know what it does, don't touch it.
+* マップ - マップが保存されている場所です。 MAP0001から始まる各マップのフォルダが作成されます。 エディタでマップを削除しても、ここのフォルダは削除されないようです。
+* セーブ - ゲームのプレイ中にセーブゲームが保存される場所です。 プロジェクトの作業中やテストプレイ中は、通常どおりここに表示されます。 組み込みのエクスポート機能を使用する場合、セーブゲームはエクスポートされません。
+* スクリプト - これは上級プログラマー向けです。 何をしているのかわからない場合は、触れないでください。
 
-### Fonts
+### フォント
 
-This is for your fonts. Place them here and set them up in the database.&#x20;
+これはフォント用です。 ここに配置し、データベースで設定します。
 
-### Images
+### 画像
 
-This is for all your graphics. It's separated into 2 categories:
+これはすべてのグラフィック用です。 2つのカテゴリに分けられます。
 
-* HUD - These are used for drawing things on screen.
-  * Animations - Battle effects like visual effects, weapons, and spells.
-  * Bars - HP bars, etc.&#x20;
-  * Facesets - Images to show alongside dialogue/messages.
-  * GameOver - Full screen images to display on game over.
-  * Icons - Small images to show inside messages or next to item names.&#x20;
-  * Pictures - Images of any size to be drawn and manipulated on screen.
-  * TitleScreen - Full screen images to display on the title screen.
-  * WindowSkins - Used to make up all the windows drawn.&#x20;
-* Textures2D - These are used for mapping and objects.
-  * Autotiles - Special tiles that change based on how they are drawn.&#x20;
-  * Battlers - Used for all characters/targets in battle.&#x20;
-  * Characters - Sprite sheets you attach to objects.&#x20;
-  * Mountains - Images that make up the squares/slopes of mountain tiles.&#x20;
-  * Objects3D - Pre-rendered models you attach to objects or place directly on maps.&#x20;
-  * Particles - Images used for particle based functions, like weather effects (rain/snow).
-  * SkyBoxes - Images used to make up the cube of SkyBoxes.&#x20;
-  * Tilesets - Images used to draw tiles and objects on your maps.
-  * Walls - Images that are used for the Wall draw type.&#x20;
+* HUD - これらは画面に物を描画するために使用されます。
+  * アニメーション - 戦闘エフェクト、武器、呪文などの視覚効果。
+  * バー - HPバーなど。
+  * 顔グラフィック - ダイアログ/メッセージと一緒に表示する画像。
+  * ゲームオーバー - ゲームオーバー時に表示するフルスクリーン画像。
+  * アイコン - メッセージ内またはアイテム名の横に表示する小さな画像。
+  * ピクチャ - 画面に描画して操作する任意のサイズの画像。
+  * タイトル画面 - タイトル画面に表示するフルスクリーン画像。
+  * ウィンドウスキン - 描画されるすべてのウィンドウを作成するために使用されます。
+* テクスチャ2D - これらはマッピングとオブジェクトに使用されます。
+  * オートタイル - 描画方法に基づいて変化する特殊なタイル。
+  * バトラー - 戦闘中のすべてのキャラクター/ターゲットに使用されます。
+  * キャラクター - オブジェクトにアタッチするスプライトシート。
+  * 山 - 山岳タイルの正方形/斜面を構成する画像。
+  * オブジェクト3D - オブジェクトにアタッチするか、マップに直接配置する、事前にレンダリングされたモデル。
+  * パーティクル - 天候効果（雨/雪）などのパーティクルベースの機能に使用される画像。
+  * スカイボックス - スカイボックスの立方体を構成するために使用される画像。
+  * タイルセット - マップにタイルとオブジェクトを描画するために使用される画像。
+  * 壁 - 壁の描画タイプに使用される画像。
 
-### Shapes
+### 形状
 
-Used for something, probably. Needs more data. There are 3 folders here:
+何かに使用されます。詳細情報が必要です。 ここには3つのフォルダがあります。
 
-* Collisions
+* コリジョン
 * MTL
 * OBJ
 
-### Songs
+### 音楽
 
-This is for all the audio of your game.&#x20;
+これはゲームのすべてのオーディオ用です。
 
-* BackgroundSounds - Repeating sound files.
-* MusicEffects - Non-repeating music files that pause the currently playing music.&#x20;
-* Musics - Repeating music files.&#x20;
-* Sounds - Non-repeating sound files.&#x20;
+* 背景音楽 - ループ再生されるサウンドファイル。
+* 効果音 - 現在再生中の音楽を一時停止する、ループ再生されない音楽ファイル。
+* 音楽 - ループ再生される音楽ファイル。
+* サウンド - ループ再生されないサウンドファイル。
 
-### Styles
+### スタイル
 
-Used for something, probably. Needs more data. By default it contains a .css file.
+何かに使用されます。詳細情報が必要です。 デフォルトでは、.cssファイルが含まれています。
 
-### Videos
+### 動画
 
-This is for video files you can play in your game.&#x20;
+これは、ゲーム内で再生できる動画ファイル用です。
 
-## -- How to import&#x20;
+## -- インポート方法
 
-There are a few different ways depending on the type of resource. Here's how to add them in the editor:
+リソースの種類によって、いくつかの方法があります。 エディタに追加する方法は次のとおりです。
 
 <figure><img src="../.gitbook/assets/resource_import2.png" alt=""><figcaption></figcaption></figure>
 
-There are individual windows for each type and they have 2 different appearances. You access them from this part of the main toolbar.
+種類ごとに個別のウィンドウがあり、2つの異なる外観があります。 メインツールバーのこの部分からアクセスします。
 
-### Pictures / Videos / Songs / Shapes / Fonts
+### ピクチャ / 動画 / 音楽 / 形状 / フォント
 
 <figure><img src="../.gitbook/assets/resource_import1.png" alt=""><figcaption></figcaption></figure>
 
-These windows have 3 columns. On the left is where you start by choosing the subtype to work on. Sometimes there is only one to choose from. The middle columns shows what resources are imported and ready to use. The right column shows what files are on your computer and available to import from the project resource folder. The check box at the top must be enabled to see the right column.
+これらのウィンドウには、3つの列があります。 左側では、作業するサブタイプを選択します。 選択肢が1つしかない場合もあります。 中央の列には、インポートされて使用できるようになったリソースが表示されます。 右側の列には、コンピューター上にあるファイルと、プロジェクトリソースフォルダからインポート可能なファイルが表示されます。 右側の列を表示するには、上部のチェックボックスをオンにする必要があります。
 
-If the item you want to import is not in the right column then you can press the + button to add a file from anywhere on your computer. The export button doesn't seem to work for me, so I'm not sure. I assume it's supposed to let you pull files out of the game.&#x20;
+インポートするアイテムが右側の列にない場合は、+ボタンを押して、コンピューター上の任意の場所からファイルを追加できます。 エクスポートボタンは機能しないため、わかりません。 ゲームからファイルをプルアウトできるようになっていると思います。
 
-There are 2 buttons between the middle and right columns.&#x20;
+中央と右の列の間に2つのボタンがあります。
 
-* The arrow moves an item from the right column into the middle column. You can also double click it for the same result.
-* The red X is to delete the highlighted item in the middle column. It has no effect on the right column. You can press the delete key to delete from either column. Deleting files from the right column will also delete them from project folder, so be careful.
+* 矢印は、アイテムを右側の列から中央の列に移動します。 同じ結果を得るには、ダブルクリックすることもできます。
+* 赤いXは、中央の列で強調表示されているアイテムを削除するためのものです。 右側の列には影響しません。 どちらの列からも削除するには、Deleteキーを押します。 右側の列からファイルを削除すると、プロジェクトフォルダからも削除されるため、注意してください。
 
-When you place a resource in the middle column it's assigned the next available ID number and put at the bottom of the list. You can safely rearrange these. The blue icons are the default graphics, and red icons are for your custom imported resources.&#x20;
+リソースを中央の列に配置すると、次に使用可能なID番号が割り当てられ、リストの一番下に配置されます。 これらは安全に並べ替えることができます。 青いアイコンはデフォルトのグラフィックで、赤いアイコンはインポートしたカスタムリソース用です。
 
-You can rename them if you want. That won't change the name of the actual file so it might be difficult to find the actual file later to match what you called it in the engine. Keep that in mind. This would be used if you change the file name, and want the engine to match. &#x20;
+必要に応じて、名前を変更することもできます。 これは実際のファイルの名前を変更するものではないため、エンジンで付けた名前と一致する実際のファイルを後で見つけるのは難しい場合があります。 それを覚えておいてください。 これは、ファイル名を変更し、エンジンに一致させたい場合に使用します。
 
-! IMPORTANT ! Make sure you remove a resource from the middle column if you plan to delete it from the project folder. Otherwise you will get an error when it tries to load it in game.&#x20;
+！ 重要 ！ プロジェクトフォルダからリソースを削除する場合は、中央の列から削除してください。 そうしないと、ゲームでロードしようとするとエラーが発生します。
 
-When you add new files to the project folder directly while the engine is open, you may need to close and reopen any windows for it to refresh and see them. Some windows have a REFRESH button for this purpose. If you make direct changes to a file in an external program you will need to refresh to see it. Often switching between maps, opening a menu like DATAS/SYSTEMS, or saving the project should do this.&#x20;
+エンジンが開いている状態でプロジェクトフォルダに新しいファイルを直接追加する場合は、ウィンドウを閉じてから再度開くことで、更新されて表示されるようにする必要があります。 一部のウィンドウには、この目的のための更新ボタンがあります。 外部プログラムでファイルに直接変更を加えた場合は、更新して表示する必要があります。 多くの場合、マップの切り替え、DATAS / SYSTEMSなどのメニューの開き、またはプロジェクトの保存によってこれを行う必要があります。
 
-Because there are multiple columns it's important to ensure you have the correct one highlighted when performing actions. You might go to pick an item and browse the right column, then press OK thinking that one is selected. But unless you select that item from the left column it won't be correct.&#x20;
+複数の列があるため、アクションを実行するときに正しい列が強調表示されていることを確認することが重要です。 アイテムを選択して右側の列を参照し、そのアイテムが選択されていると思ってOKを押す場合があります。 ただし、左側の列からそのアイテムを選択しない限り、正しくありません。
 
-### Autotiles / Walls / 3D Objects / Mountains
+### オートタイル / 壁 / 3Dオブジェクト / 山
 
 <figure><img src="../.gitbook/assets/resource_import3.png" alt=""><figcaption></figcaption></figure>
 
-These types have a more simplified window. It starts with the list on the left. Click the + or use SET MAX to increase the list and add more items.&#x20;
+これらのタイプには、より単純化されたウィンドウがあります。 左側のリストから始まります。 +をクリックするか、最大設定を使用してリストを増やし、アイテムを追加します。
 
-Give your new entry a name and use the TEXTURE field to choose the resource file. This window functions like above; move items from right to left then make sure you select the correct one from the left column.&#x20;
+新しいエントリに名前を付け、テクスチャフィールドを使用してリソースファイルを選択します。 このウィンドウは上記のように機能します。 アイテムを右から左に移動し、左側の列から正しいアイテムを選択していることを確認します。
 
-Each of these types use the same list concept, but have a few different options and will be explained later.
+これらのタイプはすべて同じリストの概念を使用しますが、いくつかの異なるオプションがあり、後で説明します。
 
-## -- Resource properties
+## -- リソースのプロパティ
 
-A common question about resources is: how do I arrange my graphics? Most programs use set values and templates for how they have to be arranged. While this is true for a few things in RPM, like the top line in a CHARACTER file is the object facing south, the size of the whole image is often up to you.&#x20;
+リソースに関するよくある質問は、「グラフィックをどのように配置しますか？」です。 ほとんどのプログラムでは、設定値とテンプレートを使用して配置方法を決定します。 これは、キャラクターファイルの最上の行が南を向いているオブジェクトであるなど、RPMのいくつかのものにも当てはまりますが、画像全体のサイズは多くの場合ユーザー次第です。
 
-Every resource is made up of frames.&#x20;
+すべてのリソースはフレームで構成されています。
 
 <figure><img src="../.gitbook/assets/resource_canvas1 (1).png" alt=""><figcaption></figcaption></figure>
 
-This is like a canvas where you paint your graphic. The player will only see 1 frame at a time. And you only have so much room. Is your sprite is too large to fit in the canvas? Make the canvas larger.
+これは、グラフィックを描くキャンバスのようなものです。 プレイヤーには、一度に1つのフレームしか表示されません。 そして、使えるスペースは限られています。 スプライトが大きすぎてキャンバスに収まりませんか？ キャンバスを大きくします。
 
 <figure><img src="../.gitbook/assets/resource_canvas2.png" alt=""><figcaption></figcaption></figure>
 
-When you stack these together you get a whole resource file - ready to be placed in your project folder. The engine takes that whole file and cuts it into equal pieces based on your settings.
+これらを積み重ねると、リソースファイル全体が完成し、プロジェクトフォルダに配置する準備が整います。 エンジンはそのファイル全体を取得し、設定に基づいて等しいサイズにカットします。
 
 <figure><img src="../.gitbook/assets/resource_canvas3.png" alt=""><figcaption></figcaption></figure>
 
-Generally the frames go from left to right. The leftmost one being what the player sees first and what is used when it's set to not animate. It also serves as the standing pose. When you stop moving it resets to frame 1.&#x20;
+一般的に、フレームは左から右に進みます。 一番左のものがプレイヤーに最初に表示されるものであり、アニメーションしないように設定されている場合に使用されます。 また、立ちポーズとしても機能します。 移動を停止すると、フレーム1にリセットされます。
 
-You can find most of the settings discussed in this chapter in SYSTEMS, on the SYSTEM tab.&#x20;
+この章で説明する設定のほとんどは、SYSTEMSのSYSTEMタブにあります。
 
 <figure><img src="../.gitbook/assets/resource_canvas4 (1).png" alt=""><figcaption></figcaption></figure>
 
-* Map frame duration - This determines the speed of all animations outside of battle. This affects anything you might use on a map except for anything that has it's own duration setting. Numbers for duration are in milliseconds, so only make small changes to it.&#x20;
-* Animation frames - This determines how many frames for the resource files: Characters, (needs more data)
-* Battlers frames - This determines how many frames for the sprites used in battle, characters/targets.&#x20;
-* Battlers rows - This determines how many poses for the battle sprites.&#x20;
-* Autotiles frames - This will determine how many frames, but only for autotiles.
-* Autotiles frame duration - This will set the speed, but only for autotiles.&#x20;
+* マップフレームの期間 - これは、戦闘外のすべてのアニメーションの速度を決定します。 独自の期間設定を持つものを除いて、マップ上で使用する可能性のあるすべてに影響します。 期間の数はミリ秒単位であるため、わずかに変更するだけです。
+* アニメーションフレーム - これは、リソースファイルのフレーム数を決定します：キャラクター、（詳細情報が必要）
+* バトラーフレーム - これは、戦闘で使用されるスプライト、キャラクター/ターゲットのフレーム数を決定します。
+* バトラーの行 - これは、バトルスプライトのポーズの数を決定します。
+* オートタイルフレーム - これはフレーム数を決定しますが、オートタイルの場合のみです。
+* オートタイルフレームの期間 - これは速度を設定しますが、オートタイルの場合のみです。
 
-So to create your resource - stack your variable sized canvas to a size that equals FRAMES x POSES. You decide the number of frames, but most of the resources don't let you choose how many poses. You will need to know the number for each type. You can look at the default resources(BR) as a reference, your other files already imported, or bookmark this page.
+したがって、リソースを作成するには、可変サイズのキャンバスをフレーム数xポーズ数に等しいサイズに積み重ねます。 フレーム数は自分で決めますが、ほとんどのリソースではポーズ数は選べません。 タイプごとに番号を知る必要があります。 デフォルトのリソース（BR）を参照として使用するか、他のインポート済みファイルを参照するか、このページをブックマークしてください。
 
-Let's look at the rules for each type:
+各タイプのルールを見てみましょう。
 
-### Fonts
+### フォント
 
-There are no real restrictions (that I've seen) but there are properties you should know about.&#x20;
+実際の制限はありませんが（私が見た限り）、知っておくべきプロパティがあります。
 
-The menus in and out of battle are drawn with fixed distances between words/numbers. So if your large font takes up all the space a lot of information will be cut off.&#x20;
+戦闘中および戦闘外のメニューは、単語/数字の間に固定の距離を置いて描画されます。 したがって、大きなフォントがすべてのスペースを占めると、多くの情報が途切れてしまいます。
 
-One example is the stats. If you give the stats long names it pushes the numbers out of sight. You can minimize this by keeping things brief that show up in menus. Or just switch to a smaller font.
+1つの例はステータスです。 ステータスに長い名前を付けると、数字が見えなくなります。 メニューに表示されるものを簡潔にすることで、これを最小限に抑えることができます。 または、単に小さいフォントに切り替えます。
 
-Certain fonts, like retro ones, don't look good below a certain size and it still leads to cut off information. Run your fonts through all the menus to test how they align. &#x20;
+レトロフォントなど、特定のフォントは、特定のサイズより小さくすると見栄えが悪くなり、情報が途切れてしまいます。 フォントをすべてのメニューで実行して、配置を確認します。
 
-### Animations
+### アニメーション
 
-* Frames - Fixed @ 5
-* Poses - Fixed @ 5
-* Canvas size - Infinite
+* フレーム - 5に固定
+* ポーズ - 5に固定
+* キャンバスサイズ - 無制限
 
 <figure><img src="../.gitbook/assets/emotes-status.png" alt=""><figcaption></figcaption></figure>
 
 
 
-This one doesn't have poses. Instead each frame is made available for the animation editor. You can use any size as long as it's in a 5x5 grid.&#x20;
+これはポーズがありません。 代わりに、各フレームをアニメーションエディタで使用できます。 5x5グリッドに入っていれば、任意のサイズを使用できます。
 
-If you need large and small images, set your canvas size to the larger one and use that for the small image. You might want to center small images in the frame.&#x20;
+大小の画像が必要な場合は、キャンバスサイズを大きい方に設定し、それを小さい画像に使用します。 フレーム内で小さな画像を中央に配置することができます。
 
-### Bars
+### バー
 
-This is new and needs more data
+これは新しく、詳細情報が必要です
 
 <figure><img src="../.gitbook/assets/hpBar.png" alt=""><figcaption></figcaption></figure>
 
-### Facesets
+### 顔グラフィック
 
-* Frames - Infinite
-* Poses - Infinite
-* Canvas size - User defined
+* フレーム - 無制限
+* ポーズ - 無制限
+* キャンバスサイズ - ユーザー定義
 
 <figure><img src="../.gitbook/assets/monsters.png" alt=""><figcaption></figcaption></figure>
 
-This one doesn't have poses. Instead each frame is made available when picking a faceset in the editor. You can add as many as you want, as long as they have the same canvas size. All facesets have to use the same size canvas, but you can put small images in and adjust it's position as needed.&#x20;
+これはポーズがありません。 エディタで顔グラフィックを選択すると、すべてのフレームを使用できます。 キャンバスサイズが同じであれば、いくつでも追加できます。 すべての顔グラフィックは同じサイズのキャンバスを使用する必要がありますが、小さな画像を入れて位置を調整することもできます。
 
-Or you can instead use the Show Picture command for facesets. That would allow animation. In fact, you can make the default message box transparent (with external image software) and use Show Picture for all messages, for maximum flexibility. (This can't be done for menus, just dialogue boxes)
+または、顔グラフィックにピクチャの表示コマンドを使用することもできます。 それにより、アニメーションが可能になります。 実際、デフォルトのメッセージボックスを（外部画像ソフトウェアを使用して）透明にし、すべてのメッセージにピクチャの表示を使用して、柔軟性を最大限に高めることができます。 （これはメニューでは実行できず、ダイアログボックスのみです）
 
-You have some settings in SYSTEMS:
+SYSTEMSにはいくつかの設定があります。
 
 <figure><img src="../.gitbook/assets/resource_faceset2.png" alt=""><figcaption></figcaption></figure>
 
-* Default Dialog box options - Opens a window with the settings shown in the next image.
-* Facesets size - This is the canvas size of your frames.&#x20;
-* Faceset scaling width - Needs more data
-* Faceset scaling height - Needs more data
+* デフォルトのダイアログボックスオプション - 次の画像に示す設定のウィンドウを開きます。
+* 顔グラフィックのサイズ - これは、フレームのキャンバスサイズです。
+* 顔グラフィックのスケーリング幅 - 詳細情報が必要
+* 顔グラフィックのスケーリング高さ - 詳細情報が必要
 
 <figure><img src="../.gitbook/assets/resource_faceset1.png" alt=""><figcaption></figcaption></figure>
 
-* Position - Above or Below, determines if it shows on top of the message box or below. This might be used for large busts that go behind the message box.&#x20;
-* X - Offset the image left/right from it's default position.
-* Y - Offset the image up/down from it's default position.
+* 位置 - 上または下。メッセージボックスの上または下に表示するかを決定します。 これは、メッセージボックスの背後にある大きなバストに使用される場合があります。
+* X - デフォルトの位置から画像を左右にオフセットします。
+* Y - デフォルトの位置から画像を上下にオフセットします。
 
-That default position is on the left side of the message box.&#x20;
+デフォルトの位置は、メッセージボックスの左側です。
 
-### GameOver
+### ゲームオーバー
 
-* Single file - No frames/poses
+* 単一ファイル - フレーム/ポーズなし
 
-Any image is stretched to fit the current game window.&#x20;
+任意の画像が現在のゲームウィンドウに合わせて拡大されます。
 
-The game runs at different resolutions between full screen and windowed mode, so this ensures the image always fits.&#x20;
+ゲームはフルスクリーンモードとウィンドウモードで異なる解像度で実行されるため、画像は常に収まるようになります。
 
-### Icons
+### アイコン
 
-* Frames - Infinite
-* Poses - Infinite
-* Canvas - User defined
+* フレーム - 無制限
+* ポーズ - 無制限
+* キャンバス - ユーザー定義
 
 <figure><img src="../.gitbook/assets/currencies.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/skills (1).png" alt=""><figcaption></figcaption></figure>
 
-There are no poses. All icons are available when entering text in a Show Message command or creating items in DATAS. You can do single icons per file, group similar ones across a few files, or jam everything into one. You can find the setting for canvas size in SYSTEMS.&#x20;
+ポーズはありません。 すべてのアイコンは、メッセージの表示コマンドでテキストを入力するか、DATASでアイテムを作成するときに使用できます。 ファイルごとに1つのアイコンを作成するか、いくつかのファイルに類似したアイコンをグループ化するか、すべてを1つにまとめることができます。 キャンバスサイズの設定はSYSTEMSにあります。
 
-### Pictures
+### ピクチャ
 
-* Single file - No frames/poses
+* 単一ファイル - フレーム/ポーズなし
 
-These are all single images of any shape and size. (Well technically they are either square or rectangle)
+これらはすべて、任意の形状とサイズの単一画像です。 （まあ、技術的には正方形または長方形のいずれかです）
 
-### TitleScreen
+### タイトル画面
 
-Single file - No frames/poses
+* 単一ファイル - フレーム/ポーズなし
 
-Works the same as GameOver. If you use a video for the title screen, it freezes on the last frame of the video. So you can put your title screen image there and it will remain on screen after the video is done.&#x20;
+ゲームオーバーと同じように機能します。 タイトル画面に動画を使用する場合、動画の最後のフレームでフリーズします。 したがって、そこにタイトル画面の画像を配置すると、動画の終了後も画面に表示されたままになります。
 
-### WindowSkins
+### ウィンドウスキン
 
-* Needs more data
+* 詳細情報が必要
 
 <figure><img src="../.gitbook/assets/blue.png" alt=""><figcaption></figcaption></figure>
 
-The idea is that you have a large file with all the menu elements, and then in the settings you choose the size (and placement?) of each individual element. So it takes some testing and coordination with the settings for this one.&#x20;
+すべてのメニュー要素を含む大きなファイルがあり、設定で各要素のサイズ（および配置？）を選択するという考え方です。 したがって、このためには、いくつかのテストと設定との調整が必要です。
 
-If you want to try, take a look at the default settings and tweak those values one by one to see the result.&#x20;
+試してみたい場合は、デフォルト設定を確認し、それらの値を1つずつ調整して結果を確認してください。
 
-### Autotiles
+### オートタイル
 
-* Needs more data
+* 詳細情報が必要
 
-There are 2 kinds of autotiles. Normal static ones look like this:
+オートタイルには2種類あります。 通常の静的なものは次のようになります。
 
 <figure><img src="../.gitbook/assets/general.png" alt=""><figcaption></figcaption></figure>
 
-Each color seen here (2x3 tiles each) will be displayed as a single tile in the editor. You can put more than one into a single file, but the specifics on sizes need more data.
+ここに表示されている各色（それぞれ2x3タイル）は、エディタでは単一のタイルとして表示されます。 1つのファイルに複数配置できますが、サイズの詳細は詳細情報が必要です。
 
-They contain all the possible shapes to auto create paths and edges based on how you draw the tiles. It's best to try drawing with some of these to better understand how they get assembled.&#x20;
+タイルの描画方法に基づいて、パスとエッジを自動作成するために考えられるすべての形状が含まれています。 これらのいくつかを使用して描画を試してみて、それらがどのように組み立てられるかを理解することをお勧めします。
 
-If you want to do animated tiles, arrange each file like this:
+アニメーションタイルを作成する場合は、各ファイルを次のように配置します。
 
 <figure><img src="../.gitbook/assets/water.png" alt=""><figcaption></figcaption></figure>
 
-Like most other animating resources you will add frames from left to right. The whole 2x3 block is your "frame". This will show up as a single vertical line of tiles in the editor.&#x20;
+他のほとんどのアニメーションリソースと同様に、フレームを左から右に追加します。 2x3ブロック全体が「フレーム」です。 これは、エディタでは単一の垂直タイルラインとして表示されます。
 
-In order for the animation to work you need to check the box for ANIMATE when picking it.&#x20;
+アニメーションを機能させるには、選択時にアニメーションのチェックボックスをオンにする必要があります。
 
-### Battlers
+### バトラー
 
-* Frames - User defined
-* Poses - User defined
-* Canvas size - Infinite
+* フレーム - ユーザー定義
+* ポーズ - ユーザー定義
+* キャンバスサイズ - 無制限
 
 <figure><img src="../.gitbook/assets/kate.png" alt=""><figcaption></figcaption></figure>
 
-You set the frames and number of poses in SYSTEMS, and canvas size is your choice.&#x20;
+フレームとポーズの数はSYSTEMSで設定し、キャンバスサイズは自由に選択できます。
 
-The editor calls the first pose number 0, and counts up from there. These default poses can't be changed but any new poses you add can be further defined in DATAS on the STATUS tab.
+エディタは、最初のポーズ番号を0と呼び、そこからカウントアップします。 これらのデフォルトのポーズは変更できませんが、追加した新しいポーズは、DATASのSTATUSタブでさらに定義できます。
 
-This one is for the Death status. What it does is change your sprite to pose 8 when inflicted with the Death status.&#x20;
+これはデスステータス用です。 これは、デスステータスが付与されると、スプライトをポーズ8に変化させます。
 
 <figure><img src="../.gitbook/assets/resource_battlers1.png" alt=""><figcaption></figcaption></figure>
 
-The other poses are hardwired into the battle system to trigger when you do the following:
+他のポーズはバトルシステムにハードコードされており、次のことを行うとトリガーされます。
 
-0 - Idle\
+0 - 待機\
 1 - \
-Need that data, it's around here somewhere. Stuff like attacking, using a skill, taking damage. \
-8 - Dead
+そのデータが必要です。 攻撃する、スキルを使う、ダメージを受けるなど、この辺にあります。\
+8 - 死亡
 
-We use 8 even though it's the 9th pose of the whole file, because we start counting at 0.&#x20;
+0からカウントを開始するため、ファイル全体の9番目のポーズですが、8を使用します。
 
-By creating a new status and assigning it a new pose(battle position), all you have to do is inflict the player with that status and the pose will change. However built in actions might override this.&#x20;
+新しいステータスを作成し、それに新しいポーズ（戦闘位置）を割り当てることにより、プレイヤーにそのステータスを付与するだけで、ポーズが変わります。 ただし、組み込みのアクションによってこれがオーバーライドされる場合があります。
 
-More data is needed on using extra poses.&#x20;
+追加のポーズの使用に関する詳細情報が必要です。
 
-### Characters
+### キャラクター
 
-* Frames - User defined
-* Poses - Locked @ 4 (Each direction)
-* Canvas - Infinite
+* フレーム - ユーザー定義
+* ポーズ - 4にロック（各方向）
+* キャンバス - 無制限
 
 <figure><img src="../.gitbook/assets/lucas.png" alt=""><figcaption></figcaption></figure>
 
-You can add more frames in SYSTEMS by increasing the Animation Frames. The first pose is always facing SOUTH, and each subsequent pose turns clockwise. D, L, U, R.
+アニメーションフレームを増やすことで、SYSTEMSでフレームを追加できます。 最初のポーズは常に南向きで、後続の各ポーズは時計回りに回転します。 下、左、上、右。
 
-The canvas size is up to you but you'll want to keep the sprites centered horizontally. The main body of the object should be in the center. If there is an uneven side, like holding a long sword, you should increase the canvas width on the opposite side to keep the body in the middle. This becomes important when working in 3D where you can turn the camera.
+キャンバスサイズは自由ですが、スプライトを水平方向の中央に配置することをお勧めします。 オブジェクトの本体は中央にある必要があります。 長い剣を持っているなど、不均一な側面がある場合は、反対側のキャンバスの幅を広げて、本体を中央に保つ必要があります。 これは、カメラを回転できる3Dで作業する場合に重要になります。
 
-For a sprite to appear to be touching the ground it's bottom will need to rest at the bottom of the canvas. Raising it up will bring it off the ground. This is used for flying things and even jumping animations.&#x20;
+スプライトが地面に触れているように見せるには、その下部がキャンバスの下部に接している必要があります。 上げると、地面から離れます。 これは、飛行物やジャンプアニメーションにも使用されます。
 
-You can use tileset tiles instead but they are limited. It can be helpful to take a tile from the tileset and make it into a character sheet.
+代わりにタイルセットタイルを使用することもできますが、それらは制限されています。 タイルセットからタイルを取得して、キャラクターシートにすることができます。
 
-### Mountains
+### 山
 
-* Unique file - No frames/poses
-* Canvas - Locked @ 48x48
+* 固有のファイル - フレーム/ポーズなし
+* キャンバス - 48x48にロック
 
-Like autotiles these contain all the graphics needed to make shapes. You chose what kind of shape to draw and the engine wraps this around it like a texture.
+オートタイルと同様に、これらには形状を作成するために必要なすべてのグラフィックが含まれています。 どのような形状を描画するかを選択し、エンジンはこの形状にテクスチャのように巻き付けます。
 
-There are 2 approaches to this:
+これには2つのアプローチがあります。
 
 <figure><img src="../.gitbook/assets/resource_mountain2.png" alt=""><figcaption></figcaption></figure>
 
-You can create a single large 3x3 tile and let the engine cut it to pieces to fill your shape.&#x20;
+1つの大きな3x3タイルを作成し、エンジンにカットさせて形状を埋めさせることができます。
 
 <figure><img src="../.gitbook/assets/resource_mountain1.png" alt=""><figcaption></figcaption></figure>
 
-Or you can copy a single tile 9 times to fill up the 3x3 tile. Now it will fill the shape only with that single tile. This is very useful for retro games. Slopes still create angles of overlap.&#x20;
+または、単一のタイルを9回コピーして、3x3タイルを埋めることができます。 これにより、その単一のタイルのみで形状が埋められます。 これは、レトロゲームに非常に役立ちます。 スロープは依然としてオーバーラップの角度を作成します。
 
-! IMPORTANT ! You can't have a single pixel of transparency on these files. If you do, the entire thing appears transparent. Not sure if this is a bug or intended, but it might change in the future.&#x20;
+！ 重要 ！ これらのファイルに単一ピクセルの透明部分を含めることはできません。 含めると、全体が透明に見えます。 これがバグなのか意図的なのかはわかりませんが、将来的に変更される可能性があります。
 
-### Objects3D
+### オブジェクト3D
 
-* Needs more data
+* 詳細情報が必要
 
-You can make these with an external program or you can make an image with all the textures flattened out and the engine will fold it into a 3D object.
+これらは外部プログラムで作成することも、すべてのテクスチャを平坦化した画像を作成してエンジンで3Dオブジェクトに折りたたむこともできます。
 
 <figure><img src="../.gitbook/assets/bookshelf.png" alt=""><figcaption></figcaption></figure>
 
-### Particles
+### パーティクル
 
-* Single file - No frames/poses
+* 単一ファイル - フレーム/ポーズなし
 
-An image of any size that is drawn on the screen in various ways. Right now this only applies to the weather affects. But you can add anything you want - like having it rain coins, comets, or cats and dogs.&#x20;
+画面にさまざまな方法で描画される、任意のサイズの画像。 現在、これは天候効果にのみ適用されます。 しかし、コイン、彗星、猫と犬の雨など、好きなものを追加できます。
 
-### SkyBoxes
+### スカイボックス
 
-* Unique file - No frames/poses
-* Canvas - Needs more data
+* 固有のファイル - フレーム/ポーズなし
+* キャンバス - 詳細情報が必要
 
 <figure><img src="../.gitbook/assets/clouds-back.png" alt=""><figcaption></figcaption></figure>
 
-The default ones are 256x256. You can make one image and use it for all 6 sides of the cube, or you can make the other images unique - even connected for full effect.&#x20;
+デフォルトのものは256x256です。 1つの画像を作成してキューブの6つの側面すべてに使用することも、他の画像を独自のものにすることもできます（完全な効果を得るために接続することもできます）。
 
-It appears pretty far away, using average fixed camera angles, and you rarely see much of it connecting. Especially the bottom half of the cube. Do some tests with the camera angles of your game before spending much time making these, for better results.&#x20;
+平均的な固定カメラアングルを使用すると、かなり遠くに見え、接続されている部分はほとんど見えません。 特にキューブの下半分。 これらの作成に多くの時間を費やす前に、ゲームのカメラアングルでテストを行い、より良い結果を得てください。
 
-(I recall doing some testing and I could use some different sizes, but large images didn't work right. Needs data)
+（いくつかのテストを行ったことを覚えていますが、さまざまなサイズを使用できましたが、大きな画像はうまく機能しませんでした。データが必要です）
 
-### Tilesets
+### タイルセット
 
-* Single file - No frames/poses
-* Canvas - Infinite
+* 単一ファイル - フレーム/ポーズなし
+* キャンバス - 無制限
 
-An important factor here is your square size, found in SYSTEMS. Square = Tile. So all of your tiles on the tileset need to match this number. It's best to have it match your other graphics if you want things to line up.&#x20;
+ここで重要な要素は、SYSTEMSにある正方形のサイズです。 正方形=タイル。 したがって、タイルセット上のすべてのタイルはこの数値と一致している必要があります。 物事を整列させたい場合は、他のグラフィックと一致させるのが最善です。
 
-It doesn't have to be the same number. If your characters are 64x64 you can still use 16 or 32 as the tile size, but you'll need to draw multiple tiles to fit under the character. It might have other side effects as well, like making things appear disproportionally sized. It's best to sort this out early, run some tests, and try to avoid changing it in the middle of development.&#x20;
+同じ番号である必要はありません。 キャラクターが64x64の場合でも、タイルサイズとして16または32を使用できますが、キャラクターの下に収まるように複数のタイルを描画する必要があります。 また、物体のサイズが不均衡に見えるなど、他の副作用が発生する可能性もあります。 開発の途中で変更することを避けるために、これを早期に解決し、いくつかのテストを実行することをお勧めします。
 
-### Walls
+### 壁
 
-* Unique file - No frames/poses
-* Canvas - Variable
+* 固有のファイル - フレーム/ポーズなし
+* キャンバス - 可変
 
 <figure><img src="../.gitbook/assets/brick.png" alt=""><figcaption></figcaption></figure>
 
-These work very similar to mountains. In fact, when I make a mountain resource I drop a copy of it in the Walls folder. They share the same size and are cut up in a similar way to fill the length of the wall. \
+これらは山と非常によく似ています。 実際、山のリソースを作成するときは、そのコピーを壁フォルダにドロップします。 それらは同じサイズを共有し、壁の長さに合わせて同様の方法でカットされます。\
 \
-The difference is that you can make these different sizes and they can have transparency.&#x20;
+違いは、これらを異なるサイズにでき、透明にすることができることです。
 
 <figure><img src="../.gitbook/assets/bridge-string.png" alt=""><figcaption></figcaption></figure>
 
-More data is needed on the canvas size limits. (I didn't know until I wrote this that walls could be a different size)
+キャンバスサイズの制限に関する詳細情報が必要です。 （壁が異なるサイズになる可能性があることを、これを書くまで知りませんでした）
 
-### Shapes
+### 形状
 
-* Needs more data
+* 詳細情報が必要
 
-Used in conjunction with 3D objects.&#x20;
+3Dオブジェクトと組み合わせて使用​​されます。
 
-### Songs
+### 音楽
 
-All sub types found in this folder seem fine using the common file types.&#x20;
+このフォルダにあるすべてのサブタイプは、一般的なファイルタイプを使用しても問題ないようです。
 
-Confirmed working:
+動作確認済み：
 
 * .wav
 * .mp3
 * .ogg
 
-### Videos
+### 動画
 
-The engine seems fine using the common file types. Videos are anchored in the upper left corner. If they are too small the rest of the screen is filled with black color. If it's too large it will be cut off.&#x20;
+エンジンは一般的なファイルタイプを使用しても問題ないようです。 動画は左上に固定されます。 小さすぎると、画面の残りの部分が黒で塗りつぶされます。 大きすぎると途切れてしまいます。
 
-Confirmed working:
+動作確認済み：
 
 * .mp4
-* Most others, but I'll need to check my data to list them. There's about 4-5 others.&#x20;
+* その他のほとんど。リストするにはデータを確認する必要があります。 他に4〜5個あります。
 
-The only hiccup is that not all file types will work in the preview box of the editor, but it still plays fine in the game. The only thing to note is that longer files take longer to load.&#x20;
+唯一の注意点は、すべてのファイルタイプがエディタのプレビューボックスで機能するわけではありませんが、ゲームでは問題なく再生されます。 唯一注意すべき点は、ファイルが長いほどロードに時間がかかることです。
 
-Based on my testing there is no noticeable difference in load times or quality between different file types of the same length. Use whatever works best for your needs. Maybe you want to ensure it works in preview mode. Maybe you want the best compression, or the highest quality.&#x20;
+テストに基づくと、同じ長さの異なるファイルタイプ間のロード時間や品質に顕著な違いはありません。 ニーズに最適なものを使用してください。 プレビューモードで機能することを確認したい場合があります。 最高の圧縮率または最高の品質が必要な場合もあります。
 
-## -- Conclusion
+## -- 結論
 
-That covers how to create and import all the types of resources currently available. One more reminder to always run tests on your resource sizes. Working in 3D adds a new layer of complexity on how things actually appear in the game that some users may not be used to. Your choice of camera angle will set the stage.&#x20;
+これで、現在利用可能なすべてのタイプのリソースを作成およびインポートする方法について説明しました。 リソースのサイズに関するテストを必ず実行してください。 3Dでの作業は、ゲームでの実際の表示方法に新しい複雑さを加えます。これは、一部のユーザーには慣れていない可能性があります。 カメラアングルの選択によってステージが決まります。
 
-The following chapters will go into more detail on configuring some of these resources.&#x20;
-
-
+次の章では、これらのリソースの一部を構成する方法について詳しく説明します。
 
 
 
-&#x20;                                                 Written by KevinOfNine
+
+
+作成者：KevinOfNine

@@ -1,15 +1,15 @@
 ---
-description: The JSON files handle.
+description: JSONファイルの取り扱い
 ---
 
-# Datas & System
+# データとシステム
 
-The `Datas` folder mainly contains every `System` lists associated to a JSON file. The `System` folder contains classes in Datas lists, so it always contains a `read` function with json as parameter. Example with `System.Animation`:
+`Datas`フォルダには、主にJSONファイルに関連付けられたすべての`System`リストが含まれています。 `System`フォルダには、Datasリスト内のクラスが含まれているため、常にパラメータとしてjsonを持つ`read`関数が含まれています。 `System.Animation`の例を以下に示します。
 
 ```javascript
 /**
- *  Read the JSON associated to the animation
- *  @param {Record<string, any>} json Json object describing the animation
+ * アニメーションに関連付けられたJSONを読み取る
+ * @param {Record<string, any>} json アニメーションを記述するJSONオブジェクト
  */
 read(json) {
     this.pictureID = Utils.defaultValue(json.pid, 1);
@@ -23,8 +23,7 @@ read(json) {
 ```
 
 {% hint style="info" %}
-In **MVC \(Model View Controler\)** pattern, you can see System and Datas classes as Model one.
+**MVC（Model View Controller）**パターンでは、SystemクラスとDatasクラスをModelと見なすことができます。
 {% endhint %}
 
-It will contain all the datas read from JSON files. Those files are generated thanks to RPG Paper Maker engine. The difference between `System` and `Core` classes is that System are always dependent to a JSON file.
-
+JSONファイルから読み込まれたすべてのデータが含まれます。これらのファイルは、RPG Paper Makerエンジンによって生成されます。 `System`クラスと`Core`クラスの違いは、Systemクラスは常にJSONファイルに依存していることです。 

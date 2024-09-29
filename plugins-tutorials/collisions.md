@@ -1,4 +1,3 @@
-# Collisions
+# 衝突
 
-Work in progress.
-
+作業中です。 

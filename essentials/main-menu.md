@@ -1,67 +1,67 @@
-# Main menu
+# メインメニュー
 
-You can customize your ingame main menu by going in `Systems manager > Main menu`:
+`システムマネージャ > メインメニュー` で、ゲーム内のメインメニューをカスタマイズできます。
 
 ![](../.gitbook/assets/main-menu.png)
 
-## Items types
+## アイテムタイプ
 
-Items types are a list of all the types that you will be able to select when editing an item.
+アイテムタイプは、アイテムを編集する際に選択できるすべてのタイプのリストです。
 
 ![](<../.gitbook/assets/main-menu-item-type (1).png>)
 
-## Inventory filters
+## インベントリフィルター
 
 ![](../.gitbook/assets/render-main-menu-inventory-filters.png)
 
-You can edit the tabs content filters when you are in the inventory.
+インベントリを開いているときに、タブのコンテンツフィルターを編集できます。
 
 ![](../.gitbook/assets/main-menu-inventory-filter.png)
 
-* `Name`: Select the name that you want to display ingame
-* `Kind`: The kind of filter
-  * `All`: No filter applied
-  * `Consumables`: All the consumables
-  * `Custom`: Select an associated item type ID
-  * `Weapons`: All the weapons
-  * `Armor`: All the armors
-  * `Weapons and armors`: All the weapons and armors
-  * `Script`: Use a custom script filter that should return `true` or `false` according to `item` given variable that is a `Core.Item` type. Example:
+* `名前`: ゲーム内で表示する名前を選択します
+* `種類`: フィルターの種類
+  * `すべて`: フィルターを適用しません
+  * `消耗品`: すべての消耗品
+  * `カスタム`: 関連付けられたアイテムタイプIDを選択します
+  * `武器`: すべての武器
+  * `防具`: すべての防具
+  * `武器と防具`: すべての武器と防具
+  * `スクリプト`: `Core.Item` タイプの変数 `item` に応じて `true` または `false` を返すカスタムスクリプトフィルターを使用します。 例：
 
 ```javascript
 return item.system.id === 1;
 ```
 
-## Main menu commands
+## メインメニューコマンド
 
 ![](../.gitbook/assets/render-main-menu-commands.png)
 
-The main menu commands are the commands choices box that are displayed on the top left when opening the main menu.
+メインメニューコマンドは、メインメニューを開いたときに左上に表示されるコマンド選択ボックスです。
 
 ![](../.gitbook/assets/main-menu-command.png)
 
-* `Name`: The name to display ingame
-* `Kind`: The kind of action to do when clicking on it:
-  * `Inventory`: Open inventory menu
-  * `Skills`: Open skills menu
-  * `Equip`: Open equip menu
-  * `States`: Open states menu
-  * `Order`: Select heroes list to reorder it
-  * `Save`: Open save menu
-  * `Quit`: Go back to title screen
-  * `Script`: Call a special script. Should return `true` for success and `false` for impossible. You can use the `menu` variable that is a `Scene.Menu` type. Example:
+* `名前`: ゲーム内で表示する名前
+* `種類`: クリックしたときに行うアクションの種類:
+  * `インベントリ`: インベントリメニューを開きます
+  * `スキル`: スキルメニューを開きます
+  * `装備`: 装備メニューを開きます
+  * `ステート`: ステートメニューを開きます
+  * `順序`: 並べ替えたいヒーローリストを選択します
+  * `セーブ`: セーブメニューを開きます
+  * `終了`: タイトル画面に戻ります
+  * `スクリプト`: 特殊なスクリプトを呼び出します。 成功の場合は `true`、不可能な場合は `false` を返します。 `Scene.Menu` タイプの変数 `menu` を使用できます。 例：
 
 ```javascript
 menu.windowChoicesTeam.select(0);
 return true;
 ```
 
-## Heroes statistics to display
+## 表示するヒーロー統計
 
 ![](../.gitbook/assets/render-main-menu-statistic.png)
 
-You can customize the statistics to display on the right side of the hero description.
+ヒーローの説明の右側に表示する統計をカスタマイズできます。
 
 ![](../.gitbook/assets/main-menu-statistic.png)
 
-* `Statistic ID`: The statistic ID to display
+* `統計ID`: 表示する統計ID

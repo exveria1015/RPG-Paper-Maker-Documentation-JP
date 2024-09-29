@@ -1,37 +1,37 @@
-# Table of contents
+# 目次
 
-* [Getting started](README.md)
+* [はじめに](README.md)
 
-## Essentials
+## 基本
 
-* [Map editor](essentials/map-editor.md)
-* [Resource management](essentials/resources-management.md)
-* [Tilesets & Collisions](essentials/tilesets-and-collisions.md)
-* [Variables & Conditions](essentials/variables-overview.md)
-* [Objects & Events](essentials/objects-and-events.md)
-* [3D Objects](essentials/3d-objects.md)
-* [Event commands list](essentials/event-commands.md)
-* [Camera control](essentials/camera-control.md)
-* [Battle system](essentials/battle-system.md)
-* [Windows skins](essentials/windows-skins.md)
-* [Title screen & Game Over](essentials/title-and-game-over.md)
-* [Main menu](essentials/main-menu.md)
-* [Multi languages](essentials/multi-languages.md)
+* [マップエディタ](essentials/map-editor.md)
+* [リソース管理](essentials/resources-management.md)
+* [タイルセットと衝突判定](essentials/tilesets-and-collisions.md)
+* [変数と条件分岐](essentials/variables-overview.md)
+* [オブジェクトとイベント](essentials/objects-and-events.md)
+* [3Dオブジェクト](essentials/3d-objects.md)
+* [イベントコマンド一覧](essentials/event-commands.md)
+* [カメラ操作](essentials/camera-control.md)
+* [戦闘システム](essentials/battle-system.md)
+* [ウィンドウスキン](essentials/windows-skins.md)
+* [タイトル画面とゲームオーバー](essentials/title-and-game-over.md)
+* [メインメニュー](essentials/main-menu.md)
+* [多言語対応](essentials/multi-languages.md)
 
-## Advanced
+## 上級
 
-* [Action battle system](advanced/action-battle-system.md)
+* [アクション戦闘システム](advanced/action-battle-system.md)
 
-## Plugins tutorials
+## プラグインチュートリアル
 
-* [Getting started](plugins-tutorials/work-in-progress.md)
-* [Scripts organization](plugins-tutorials/scripts-organization.md)
-* [Stack and scenes](plugins-tutorials/stack-and-scenes.md)
-* [WindowBox & WindowChoices](plugins-tutorials/windowbox-and-windowchoices.md)
-* [Datas & System](plugins-tutorials/datas-and-system.md)
-* [Common classes](plugins-tutorials/common-classes.md)
-* [Event commands](plugins-tutorials/event-commands.md)
-* [How to create a plugin](plugins-tutorials/how-to-make-a-new-plugin.md)
+* [はじめに](plugins-tutorials/work-in-progress.md)
+* [スクリプト構成](plugins-tutorials/scripts-organization.md)
+* [スタックとシーン](plugins-tutorials/stack-and-scenes.md)
+* [WindowBoxとWindowChoices](plugins-tutorials/windowbox-and-windowchoices.md)
+* [データとシステム](plugins-tutorials/datas-and-system.md)
+* [共通クラス](plugins-tutorials/common-classes.md)
+* [イベントコマンド](plugins-tutorials/event-commands.md)
+* [プラグインの作成方法](plugins-tutorials/how-to-make-a-new-plugin.md)
 
 ***
 

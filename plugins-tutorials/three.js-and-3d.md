@@ -1,4 +1,3 @@
-# Three.js & 3D
+# Three.js と 3D
 
-Work in progress.
-
+作業中です。 

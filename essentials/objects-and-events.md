@@ -1,238 +1,239 @@
-# Objects & Events
+# オブジェクトとイベント
 
-You know how to create beautiful maps, but you want to make it be alive by adding NPCs, treasures, etc. These elements are called `objects`. These objects will also react to `events` (hero action, chronometer, attack, etc.). Objects and events are here to galvanize your maps and create your game stories!
+あなたは美しいマップの作成方法を知っていますが、NPC、宝物などを追加してマップを生き生きとしたものにしたいと思うでしょう。これらの要素は`オブジェクト`と呼ばれます。これらのオブジェクトは、`イベント`（主人公の行動、クロノメーター、攻撃など）にも反応します。オブジェクトとイベントは、マップを活性化し、ゲームのストーリーを作成するためのものです！
 
-## Events <a href="#events" id="events"></a>
+## イベント <a href="#events" id="events"></a>
 
-**/! Events in RPG Paper Maker are a different notion than in RM classic series.**
+**/! RPG Paper Maker のイベントは、RM クラシックシリーズのイベントとは異なる概念です。**
 
-You can access to events in `Systems manager > Events / States`.
+`システムマネージャー > イベント/ステート`でイベントにアクセスできます。
 
 ![](../.gitbook/assets/systems-manager-events-states.png)
 
-Events represent the fact that something important just happened and the objects in the map can react or not to it. An event can be for example the fact that your hero pressed the action button, or even the fact that a rain tempest just started. These events are sent to objects by other objects. There are two types of events:
+イベントは、重要なことが起こったことを表し、マップ内のオブジェクトはそれに反応したり、しなかったりします。イベントとは、たとえば、主人公がアクションボタンを押したことや、雨が降り始めたことなどです。これらのイベントは、他のオブジェクトによってオブジェクトに送信されます。イベントには2つのタイプがあります。
 
-* **System events** (time, keyboard pressure, etc.) that are not sent by objects in the map, but by the game system itself.
-* **User events** (quest completed, sword hit) that you can be created by yourself and sent thanks to local objects.
+* **システムイベント**（時間、キーボードの押下など）。マップ内のオブジェクトではなく、ゲームシステム自体によって送信されます。
+* **ユーザーイベント**（クエストの完了、剣のヒットなど）。自分で作成し、ローカルオブジェクトを介して送信できます。
 
-An event also takes some `parameters`. For example, if you want to play a sound each three seconds in the background, you can use the time event with the parameter time = 3000 (milliseconds) and repeat = ON. Imagine such amazing things you can do with parameters (a sword hit event taking a power parameter for example). You can choose the default value of a parameter when editing parameters of an event.
+イベントには`パラメータ`も含まれます。たとえば、バックグラウンドで3秒ごとにサウンドを再生する場合は、パラメータtime = 3000（ミリ秒）、repeat = ONを使用して時間イベントを使用できます。パラメータを使用してできるすばらしいことを想像してみてください（たとえば、パワーパラメータを取る剣のヒットイベント）。イベントのパラメータを編集するときは、パラメータのデフォルト値を選択できます。
 
-**/! Don't confuse physics and events. You should not use events for wind animations or gravity, etc.**
+**/! 物理現象とイベントを混同しないでください。風のアニメーションや重力などにイベントを使用しないでください。**
 
-## Reactions <a href="#reactions" id="reactions"></a>
+## リアクション <a href="#reactions" id="reactions"></a>
 
-Reactions are a tree of commands that will be executed one by one. For example a command can be to display text on screen or to move specific objects in the map. Here is an example of reaction:
+リアクションは、順番に実行されるコマンドのツリーです。たとえば、コマンドは、画面にテキストを表示したり、マップ内の特定のオブジェクトを移動したりすることができます。リアクションの例を次に示します。
 
 ![](../.gitbook/assets/example-reaction.png)
 
-This reaction will check if the variable myValue is equal to 2. If it's OK, this will display the message "It's OK!". If not, this will display the message "Go back later.".
+このリアクションは、変数 myValue が2と等しいかどうかをチェックします。OKの場合、「OKです！」というメッセージが表示されます。そうでない場合は、「後でもう一度やり直してください。」というメッセージが表示されます。
 
-To edit / add a new command in a reaction, `Double click` on a corresponding node. This will open this window containing a large list of commands:
+リアクションに新しいコマンドを編集/追加するには、対応するノードを`ダブルクリック`します。これにより、コマンドの大きなリストを含むこのウィンドウが開きます。
 
 ![](../.gitbook/assets/event-commands.png)
 
-We will see later all these commands details one by one.
+これらのコマンドの詳細については、後で1つずつ説明します。
 
-There is also a way to find your commands faster with keyboard search:
+キーボード検索を使用してコマンドをすばやく検索する方法もあります。
 
 ![](../.gitbook/assets/commands-keyboard.png)
 
-You can also copy / paste / delete by `Right-clicking` on the corresponding command node.
+対応するコマンドノードを`右クリック`して、コピー/貼り付け/削除することもできます。
 
-## Common reactions <a href="#common-reactions" id="common-reactions"></a>
+## 共通リアクション <a href="#common-reactions" id="common-reactions"></a>
 
-If you see that you are often copying the same set of commands a lot of time maybe you should consider creating a common reaction. You can access to these in `Systems manager > Common reactions`.
+同じコマンドセットを何度もコピーしていることに気付いた場合は、共通リアクションの作成を検討する必要があります。 `システムマネージャー > 共通リアクション`でこれらにアクセスできます。
 
 ![](../.gitbook/assets/common-reactions.png)
 
-This way you will be able to call this common reaction instead of always copying it. It's even taking parameters if you have some variations in your reaction.
+この方法では、常にコピーする代わりに、この共通リアクションを呼び出すことができます。リアクションにバリエーションがある場合は、パラメータも取ります。
 
-* `Block hero when reaction`: If checked, the hero will not be able to move until the reaction is finished.
+* `リアクション時に主人公をブロックする`: チェックを入れると、リアクションが終了するまで主人公は移動できなくなります。
 
-## Objects <a href="#objects" id="objects"></a>
+## オブジェクト <a href="#objects" id="objects"></a>
 
-An object is something that can move or/and react to some events in a map. So basically a tree is not an object (except if you can cut it so it would have a reaction to an axe hit) but only a static element. It can be a NPC, a monster, or anything else. Note that your hero is an object itself so you can perfectly program its reactions.
+オブジェクトとは、マップ内で移動したり、イベントに反応したりできるものです。したがって、基本的に木はオブジェクトではありません（切ることができ、斧のヒットに反応する場合を除く）。静的な要素にすぎません。 NPC、モンスターなど、何でもかまいません。主人公はオブジェクト自体であるため、リアクションを完全にプログラムできます。
 
-To add an object in a map, select the `Object` map editor section. Point on a map square and `Double click` or press `Enter` after clicking on the square. This will open a new window.
+マップにオブジェクトを追加するには、`オブジェクト`マップエディターセクションを選択します。マップの正方形をポイントし、`ダブルクリック`するか、正方形をクリックした後`Enter`キーを押します。これにより、新しいウィンドウが開きます。
 
 ![](<../.gitbook/assets/object-map (1).png>)
 
-* `Name`: Choose a name for your objects. This can help later if you want to execute actions on this object externally.
-* `Only one event per frame`: We will see what are events, if checked the object will have only one reaction per frame and not several in the same time.
-* `Model`: Choose a model for this object. We will see later how to configure models.
+* `名前`: オブジェクトの名前を選択します。これは、後でこのオブジェクトに対して外部からアクションを実行する場合に役立ちます。
+* `フレームごとに1つのイベントのみ`: イベントについては後ほど説明しますが、チェックを入れると、オブジェクトはフレームごとに1つのリアクションしか持たず、同時に複数持つことはありません。
+* `モデル`: このオブジェクトのモデルを選択します。モデルの構成方法については、後で説明します。
 
-### Events <a href="#events_1" id="events_1"></a>
+### イベント <a href="#events_1" id="events_1"></a>
 
-You can configure which event the object can react to in the `Events` section. `Double click` on a node:
+`イベント`セクションで、オブジェクトが反応できるイベントを構成できます。ノードを`ダブルクリック`します。
 
 ![](../.gitbook/assets/event.png)
 
-You can select if you want a user or system event and change parameters value:
+ユーザーイベントとシステムイベントのどちらにするかを選択し、パラメータ値を変更できます。
 
 ![](../.gitbook/assets/event-parameters.png)
 
-System events are the following:
+システムイベントは次のとおりです。
 
-* `Time`: Event sent when time interval is cleared.
-  * **Interval** (default: 0): Time to wait in milliseconds.
-  * **Repeat** (default: ON): Send the event after each interval or once.
-* `Chronometer`: _Not available yet._
-* `KeyPress`: Event sent when pressing a key on keyboard.
-  * **ID** (default: anything): The ID of the key.
-  * **Repeat** (default: OFF): If ON, this event will be sent as long as you press the key with a small offset at the first pressure.
-  * **Immediate repeat** (default: OFF): If ON, this event will be sent as long as you press the key without any offset.
-* `KeyRelease`: Event sent when releasing a key on keyboard.
-  * **ID** (default: anything): The ID of the key.
-* `MouseDown`: Event sent when the mouse is pressed down.
-  * **X** (default: 0) : Mouse X position when event is triggered.
-  * **Y** (default: 0) : Mouse Y position when event is triggered.
-  * **Left** (default: ON): If ON, this event will be sent only if it's from mouse left click.
-* `MouseUp`: Event sent when the mouse is up.
-  * **X** (default: 0) : Mouse X position when event is triggered.
-  * **Y** (default: 0) : Mouse Y position when event is triggered.
-  * **Left** (default: ON): If ON, this event will be sent only if it's from mouse left click.
-* `MouseMove`: Event sent when the mouse is moved.
-  * **X** (default: 0) : Mouse X position when event is triggered.
-  * **Y** (default: 0) : Mouse Y position when event is triggered
+* `時間`: 時間間隔がクリアされると送信されるイベント。
+  * **間隔**（デフォルト：0）：待機時間（ミリ秒）。
+  * **繰り返し**（デフォルト：オン）：各間隔の後または1回イベントを送信します。
+* `クロノメーター`: _まだ利用できません。_
+* `キー押下`: キーボードのキーを押すと送信されるイベント。
+  * **ID**（デフォルト：任意）：キーのID。
+  * **繰り返し**（デフォルト：オフ）：オンの場合、このイベントは、最初に押したときにわずかにオフセットしてキーを押している限り送信されます。
+  * **即時繰り返し**（デフォルト：オフ）：オンの場合、このイベントは、オフセットなしでキーを押している限り送信されます。
+* `キー解放`: キーボードのキーを離すと送信されるイベント。
+  * **ID**（デフォルト：任意）：キーのID。
+* `マウスダウン`: マウスボタンを押すと送信されるイベント。
+  * **X**（デフォルト：0）：イベントがトリガーされたときのマウスのX位置。
+  * **Y**（デフォルト：0）：イベントがトリガーされたときのマウスのY位置。
+  * **左**（デフォルト：オン）：オンの場合、このイベントはマウスの左クリックからのみ送信されます。
+* `マウスアップ`: マウスボタンを離すと送信されるイベント。
+  * **X**（デフォルト：0）：イベントがトリガーされたときのマウスのX位置。
+  * **Y**（デフォルト：0）：イベントがトリガーされたときのマウスのY位置。
+  * **左**（デフォルト：オン）：オンの場合、このイベントはマウスの左クリックからのみ送信されます。
+* `マウス移動`: マウスを動かすと送信されるイベント。
+  * **X**（デフォルト：0）：イベントがトリガーされたときのマウスのX位置。
+  * **Y**（デフォルト：0）：イベントがトリガーされたときのマウスのY位置。
 
-### States <a href="#states" id="states"></a>
+### ステート <a href="#states" id="states"></a>
 
-An object has a set of `States`. For exampleero can be in a normal state, or poisoned / vulnerable. Note that an object can be in several states at the same time.
+オブジェクトには、一連の`ステート`があります。たとえば、主人公は、通常のステート、または毒/脆弱なステートにすることができます。オブジェクトは同時に複数のステートになる可能性があることに注意してください。
 
-You can add a new state on this list. There also is a `Update complete list...` button if you want to create new common states.
+このリストに新しいステートを追加できます。新しい共通ステートを作成する場合は、`完全なリストを更新...`ボタンもあります。
 
 ![](../.gitbook/assets/object-state-second.png)
 
-For each state, you have to choose different reactions to specific events. You can copy / paste reactions through states by using `Copy reaction` and `Paste reaction` buttons. These different options are also available for each state:
+ステートごとに、特定のイベントに対するさまざまなリアクションを選択する必要があります。 `リアクションのコピー`ボタンと`リアクションの貼り付け`ボタンを使用して、ステート間でリアクションをコピー/貼り付けできます。これらのさまざまなオプションは、各ステートでも使用できます。
 
 ![](<../.gitbook/assets/state-options (1).png>)
 
-* `Graphics`: Select the object graphics here (character picture). Choose below the kind of element (Sprite etc.).
-*   `Moving`: Options linked to the object moves when there is no reaction.
+* `グラフィック`: ここでオブジェクトグラフィック（キャラクター画像）を選択します。以下で要素の種類（スプライトなど）を選択します。
+*   `移動`: リアクションがない場合のオブジェクトの移動にリンクされたオプション。
 
-    * `Type`: The type of moving.
-      * `Fix`: The object will not move at all.
-      * `Random`: The object will move randomly in the map.
-      * `Route`: The object will loop on a route that you can edit with the `Edit route...` button. Check out move object command documentation [here](event-commands.md#move-object) that is exactly the same.
+    * `タイプ`: 移動のタイプ。
+      * `固定`: オブジェクトはまったく移動しません。
+      * `ランダム`: オブジェクトはマップ内をランダムに移動します。
+      * `ルート`: オブジェクトは、`ルートの編集...`ボタンで編集できるルートをループします。まったく同じオブジェクト移動コマンドのドキュメント[こちら](event-commands.md#move-object)をご覧ください。
 
 
 
-    NOTE: You can edit speed and frequency list in `Systems manager > System`:
-* `Speed`: The speed value when the object is moving. This value is multiplied with the traveled distance with equal time. This also is multiplying the frame duration. Default value is 1.
-* `Freq`: The frequency value when the object is moving. This value is changing the time in second(s) to wait before executing the next move. Default value is 0 (second(s)).
+    注意：`システムマネージャー > システム`で速度と頻度のリストを編集できます。
+* `速度`: オブジェクトの移動時の速度値。この値には、同じ時間で移動した距離が乗算されます。これは、フレーム期間も乗算します。デフォルト値は1です。
+* `頻度`: オブジェクトの移動時の頻度値。この値は、次の移動を実行する前に待機する時間を秒単位で変更します。デフォルト値は0（秒）です。
 
 ![](../.gitbook/assets/speeds.png)
 
 ![](../.gitbook/assets/frequencies.png)
 
-* `Name`: The name of the speed / frequency.
-* `Value`: The value of the speed / frequency (can only be a number).
+* `名前`: 速度/頻度の名前。
+* `値`: 速度/頻度の値（数値のみ）。
 
 
 
-* `Move animation`: If checked, all the frames of the character will be drawn for move animation. If not, this will only draw the first frame of the character animation.
-* `Stop animation`: If checked, all the frames of the character will be drawn for stopped animation. If not, this will only draw the first frame of the character animation.
-* `Climb animation`: _(not available yet)_ If checked, all the frames of the character will be drawn for climbing animation. If not, this will only draw the first frame of the character animation.
-* `Direction fix`: If checked, the graphics will not change direction to look at the hero. If not, it will look at the hero.
-* `Set with camera`: If checked, the graphics will update orientation according to the camera orientation. If not, the camera orientation changes nothing.
-* `Pixel offset`: If checked, the move animation will go 1px down after two frames. This adds an interesting effect.
-* `Keep position`: If checked, the object always keep its position after moving, even after loading save or changing map. If not, the object position is reinitialized after loading save or changing map.
-* `Detection`: A detection to select for sending an event each frames.
+* `移動アニメーション`: チェックを入れると、移動アニメーションのすべてのフレームが描画されます。そうでない場合、キャラクターアニメーションの最初のフレームのみが描画されます。
+* `停止アニメーション`: チェックを入れると、停止アニメーションのすべてのフレームが描画されます。そうでない場合、キャラクターアニメーションの最初のフレームのみが描画されます。
+* `登るアニメーション`: _（まだ利用できません）_チェックを入れると、登るアニメーションのすべてのフレームが描画されます。そうでない場合、キャラクターアニメーションの最初のフレームのみが描画されます。
+* `方向の修正`: チェックを入れると、主人公を見てもグラフィックの方向は変わりません。そうでない場合、主人公の方を向きます。
+* `カメラと一緒に設定`: チェックを入れると、カメラの向きに応じてグラフィックの向きが更新されます。そうでない場合、カメラの向きは何も変更しません。
+* `ピクセルオフセット`: チェックを入れると、移動アニメーションは2フレーム後に1ピクセル下に移動します。これは興味深い効果を追加します。
+* `位置を維持する`: チェックを入れると、オブジェクトは、セーブのロード後やマップの変更後も、常にその位置を維持します。そうでない場合、オブジェクトの位置は、セーブのロード後またはマップの変更後に再初期化されます。
+* `検出`: フレームごとにイベントを送信するために選択する検出。
 
-### Properties <a href="#properties" id="properties"></a>
+### プロパティ <a href="#properties" id="properties"></a>
 
-The object also has a set of properties. It can be HPs, age, gender, etc. It all depends on what you need and your type of game.
+オブジェクトには、一連のプロパティもあります。HP、年齢、性別などです。それはすべて、あなたのニーズとゲームの種類によって異なります。
 
 ![](../.gitbook/assets/object-properties.png)
 
-* `Name`: The property name.
-* `Initial value`: The initial value of the property when the object is loaded for the first time.
+* `名前`: プロパティ名。
+* `初期値`: オブジェクトが最初にロードされたときのプロパティの初期値。
 
-## Example: create a chest <a href="#example-create-a-chest" id="example-create-a-chest"></a>
+## 例：宝箱を作成する <a href="#example-create-a-chest" id="example-create-a-chest"></a>
 
-Here is a simple way to produce a chest:
+宝箱を作成する簡単な方法を次に示します。
 
-* Be sure to have a state for the chest in the systems manager when it is opened:
+* システムマネージャーで、宝箱が開かれたときのステートがあることを確認してください。
 
 ![](../.gitbook/assets/states-opened.png)
 
-* Complete reactions for each state and don't forget to replace state at the end of the normal state:
+* 各ステートのリアクションを完了し、通常のステートの最後にステートを置き換えることを忘れないでください。
 
 ![](../.gitbook/assets/state-1.png)
 
 ![](../.gitbook/assets/state-2.png)
 
-## Edit / Copy / Paste / Delete an existing object <a href="#edit-copy-paste-delete-an-existing-object" id="edit-copy-paste-delete-an-existing-object"></a>
+## 既存のオブジェクトの編集/コピー/貼り付け/削除 <a href="#edit-copy-paste-delete-an-existing-object" id="edit-copy-paste-delete-an-existing-object"></a>
 
-You can open a context menu by `Right clicking` on an object:
+オブジェクトを`右クリック`すると、コンテキストメニューを開くことができます。
 
 ![](../.gitbook/assets/object-context-menu.png)
 
-## Models <a href="#models" id="models"></a>
+## モデル <a href="#models" id="models"></a>
 
-Models are objects that can be commonly used. You can have models list in `Systems manager > Models`.
+モデルは、一般的に使用できるオブジェクトです。 `システムマネージャー > モデル`でモデルリストを表示できます。
 
 ![](../.gitbook/assets/object-hero.png)
 
-For example, if you want to add flowers that can be picked in your maps, you can create a model "Flower", and use this model for an empty object in your map:
+たとえば、マップで摘むことができる花を追加する場合は、モデル「花」を作成し、マップ内の空のオブジェクトにこのモデルを使用できます。
 
-* Create model:
+* モデルを作成する：
 
 ![](../.gitbook/assets/model-flower.png)
 
-* Use model flower for a map object:
+* マップオブジェクトにモデルフラワーを使用する：
 
 ![](../.gitbook/assets/object-model-flower.png)
 
-### Default model <a href="#default-model" id="default-model"></a>
+### デフォルトモデル <a href="#default-model" id="default-model"></a>
 
-The model with ID 1 is the default model when you create a new object. You can change here the default information to have in an object creation.
+ID 1のモデルは、新しいオブジェクトを作成するときのデフォルトモデルです。ここで、オブジェクトの作成時に含めるデフォルトの情報を変更できます。
 
-### Hero model <a href="#hero-model" id="hero-model"></a>
+### 主人公モデル <a href="#hero-model" id="hero-model"></a>
 
-The hero is also an object and reacts to a lot of systems events:
+主人公もオブジェクトであり、多くのシステムイベントに反応します。
 
-* `KeyPress > Up, Down, Left, Right Hero`: Move the object hero to the pressed directions thanks to move object command.
-* `KeyPress > Left, Right Camera`: Change the camera orientation thanks to move camera command.
-* `KeyPress > Action`: Send the custom event `HeroAction` to the facing square objects thanks to the send event command.
-* `KeyPress > MainMenu`: Open the main menu thanks to the open main menu command.
+* `キー押下 > 上、下、左、右主人公`: オブジェクト移動コマンドを使用して、押された方向にオブジェクト主人公を移動します。
+* `キー押下 > 左、右カメラ`: カメラ移動コマンドを使用して、カメラの向きを変更します。
+* `キー押下 > アクション`: イベント送信コマンドを使用して、カスタムイベント`HeroAction`を向いている正方形のオブジェクトに送信します。
+* `キー押下 > メインメニュー`: メインメニューを開くコマンドを使用して、メインメニューを開きます。
 
-### Inheritance <a href="#inheritance" id="inheritance"></a>
+### 継承 <a href="#inheritance" id="inheritance"></a>
 
-If an object uses a model but also has content, this new content will replace some of the model content. Models themselves can have models.
+オブジェクトがモデルを使用しているが、コンテンツも含まれている場合、この新しいコンテンツはモデルコンテンツの一部を置き換えます。モデル自体がモデルを持つことができます。
 
-* **State**: If there is a state with the same ID, the model reactions for this state ID will be replaced by the current content.
-* **Property**: If there is a property with the same name, the model reactions for this property name will be replaced by the current content.
-* **Event**: This has no influence.
+* **ステート**: 同じIDのステートがある場合、このステートIDのモデルリアクションは現在のコンテンツに置き換えられます。
+* **プロパティ**: 同じ名前のプロパティがある場合、このプロパティ名のモデルリアクションは現在のコンテンツに置き換えられます。
+* **イベント**: これは影響しません。
 
-## Map startup reactions <a href="#map-startup-reactions" id="map-startup-reactions"></a>
+## マップスタートアップリアクション <a href="#map-startup-reactions" id="map-startup-reactions"></a>
 
-In map properties, you can see this section:
+マッププロパティでは、次のセクションが表示されます。
 
 ![](../.gitbook/assets/map-startup-reactions.png)
 
-This simply is an invisible object that will be useful for kinematics when entering a new map, for example. This is invisible, so there are no state graphics. By default, it is reacting to the event `Time` with 0 for interval parameter and OFF for repeat parameter. That means that these reactions will be executed in high priority when entering the map. This can be used for kinematics and some other stuff.
+これは単に、たとえば新しいマップに入るときのキネマティクスに役立つ見えないオブジェクトです。これは見えないため、ステートグラフィックはありません。デフォルトでは、間隔パラメータに0、繰り返しパラメータにOFFを指定して、イベント`時間`に反応します。つまり、これらのリアクションは、マップに入るときに高い優先度で実行されます。これは、キネマティクスやその他のことに使用できます。
 
-## Detections <a href="#detections" id="detections"></a>
+## 検出 <a href="#detections" id="detections"></a>
 
-It is important to use detection with objects. In fact, you are already using it when you react to `Hero Action` event. `Hero Action` event is an event that is sent by the hero itself to the objects that are in front of him. In order to determine where the events are sent, we use what we call `detection`.
+オブジェクトで検出を使用することが重要です。実際、`主人公のアクション`イベントに反応するときには、すでに使用しています。 `主人公のアクション`イベントは、主人公自身から目の前のオブジェクトに送信されるイベントです。イベントの送信先を決定するために、`検出`と呼ばれるものを使用します。
 
-You can access to detection list in `Systems manager > System`:
+`システムマネージャー > システム`の検出リストにアクセスできます。
 
 ![](<../.gitbook/assets/detections (1).png>)
 
-And here is the front detection! You clearly see here that your event can be sent in front. There is an arrow indicating the square position of the object sending the event, and also the orientation. You can add detection boxes by using `left click` and `right click` to delete existing detection boxes.
+そして、これが正面の検出です！ここでは、イベントを正面に送信できることがはっきりとわかります。イベントを送信するオブジェクトの正方形の位置と向きを示す矢印があります。 `左クリック`を使用して検出ボックスを追加し、`右クリック`を使用して既存の検出ボックスを削除できます。
 
-* `Name`: The detection name.
-* `Field`: The detection field that you can increase/decrease.
-  * `Left`: Number of squares on the left side of the object sending the event.
-  * `Right`: Number of squares on the right side of the object sending the event.
-  * `Top`: Number of squares on the top side of the object sending the event.
-  * `Bot`: Number of squares on the bot side of the object sending the event.
-* `New box length/width/height`: The height that will be applied on the next boxes.
-  * `Square(s)`: Number of squares for detection box length/width/height.
-  * `Pixel(s)`: Number of pixels in addition for detection box length/width/height.
-* `Automatic`: A way to automatically generate detection boxes adding.
-  * `Circle`: Draw a circle with given `radius`.
-  * `Rectangle`: Draw a rectangle with given `length` and `width`.
-  * `Generate`: Clicking on this button will generate the selected form and options.
+* `名前`: 検出名。
+* `フィールド`: 増減できる検出フィールド。
+  * `左`: イベントを送信するオブジェクトの左側にある正方形の数。
+  * `右`: イベントを送信するオブジェクトの右側にある正方形の数。
+  * `上`: イベントを送信するオブジェクトの上側にある正方形の数。
+  * `下`: イベントを送信するオブジェクトの下側にある正方形の数。
+* `新しいボックスの長さ/幅/高さ`: 次のボックスに適用される高さ。
+  * `正方形`: 検出ボックスの長さ/幅/高さの正方形の数。
+  * `ピクセル`: 検出ボックスの長さ/幅/高さに追加されるピクセルの数。
+* `自動`: 検出ボックスの追加を自動的に生成する方法。
+  * `円`: 指定された`半径`の円を描画します。
+  * `長方形`: 指定された`長さ`と`幅`の長方形を描画します。
+  * `生成`: このボタンをクリックすると、選択したフォームとオプションが生成されます。
+

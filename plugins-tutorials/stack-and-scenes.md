@@ -1,20 +1,20 @@
 ---
-description: Let's see how is handled the stack manager.
+description: スタックマネージャーの処理方法を見ていきましょう。
 ---
 
-# Stack and scenes
+# スタックとシーン
 
-## The stack
+## スタック
 
-We've seen that the `main.js` was using a class named `Manager.Stack`. First, what's a stack? It's a simple array containing scenes.
+`main.js` で `Manager.Stack` というクラスが使われていたのを見ましたね。まず、スタックとは何でしょうか？それはシーンを含む単純な配列です。
 
 ![](../.gitbook/assets/stack.png)
 
-The top of stack is the current scene that will be drawn. You can add a new scene on top of the stack by using `push` and remove the top scene by using `pop`. You can check the `Manager/Stack.js`.
+スタックの一番上は、描画される現在のシーンです。`push` を使用してスタックの一番上に新しいシーンを追加し、`pop` を使用して一番上のシーンを削除できます。`Manager/Stack.js` を確認してください。
 
-## A base scene
+## ベースシーン
 
-Now open the `Scene/Base.js`. Every Scene class will extend this base. This will handle the reactions interpretation \(objects reactions in maps, common reactions\). Every scene will contain these functions:
+それでは `Scene/Base.js` を開いてみましょう。すべてのシーンクラスはこのベースを拡張します。これは、反応の解釈（マップ内のオブジェクトの反応、一般的な反応）を処理します。すべてのシーンには、次の関数が含まれます。
 
 ```javascript
 update() {
@@ -22,7 +22,7 @@ update() {
 }
 ```
 
-The `update` is for making every data update before drawing the scene.
+`update` は、シーンを描画する前にすべてのデータ更新を行うためのものです。
 
 ```javascript
 onKeyPressed(key) {
@@ -42,7 +42,7 @@ onKeyPressedAndRepeat(key) {
 }
 ```
 
-Every input handle. `onKeyPressed` is for when a key is pressed. `onKeyReleased` is for when a key is released. `onKeyPressedRepeat` is when a key is pressed repeatedly. `onKeyPressedAndRepeat` is when a key is pressed repeatedly but with a small wait after the first pressure \(generally used for menus\).
+すべての入力処理。`onKeyPressed` はキーが押されたときに、`onKeyReleased` はキーが離されたときに、`onKeyPressedRepeat` はキーが繰り返し押されたときに、`onKeyPressedAndRepeat` は最初の押下後わずかな間隔を置いてキーが繰り返し押されたとき（一般的にはメニューに使用されます）に呼び出されます。
 
 ```javascript
 draw3D() {
@@ -54,7 +54,7 @@ drawHUD() {
 }
 ```
 
-After updating datas, the draw functions are called. `draw3D` is for drawing 3D stuff, and `drawHUD` is for 2D one.
+データの更新後、描画関数が呼び出されます。`draw3D` は 3D のものを描画するためのもので、`drawHUD` は 2D のものを描画するためのものです。
 
 ```javascript
 close() {
@@ -62,5 +62,4 @@ close() {
 }
 ```
 
-And finally the `close` function contains all the things to do when the scene is removed from the stack.
-
+そして最後に、`close` 関数には、シーンがスタックから削除されるときに実行するすべてのものが含まれています。

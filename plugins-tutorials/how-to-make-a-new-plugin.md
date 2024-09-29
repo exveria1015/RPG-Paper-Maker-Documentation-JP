@@ -1,55 +1,55 @@
 ---
-description: Here are the steps to make a new plugin
+description: 新しいプラグインを作成する手順を紹介します。
 ---
 
-# How to create a plugin
+# プラグインの作成方法
 
-Now that you have all the keys to start your own plugins, let's do it!
+独自のプラグインを作成するための準備が整いましたので、早速始めましょう！
 
-Open the scripts manager:
+スクリプトマネージャーを開きます。
 
 ![](../.gitbook/assets/script-manager.png)
 
 {% hint style="info" %}
-You can also check the System, Libs and Shaders folder files in the different tabs.
+別のタブで、System、Libs、Shadersフォルダー内のファイルを確認することもできます。
 {% endhint %}
 
-Let's create our first plugin now. Double click on an empty plugin and create an empty one.
+それでは、最初のプラグインを作成してみましょう。空のプラグインをダブルクリックして、空のプラグインを作成します。
 
 ![](../.gitbook/assets/create-plugin.png)
 
-You'll have an access to several options with the `Edit` tab:
+`Edit`タブでは、いくつかのオプションにアクセスできます。
 
 ![](../.gitbook/assets/plugin-edit.png)
 
-* `Name`: The plugin name. It should be unique in your project.
-* `Author`: You can put your name here.
-* `Description`: Describe what is doing your plugin.
-* `Version`: The plugin version. It should have the following format: `X.X.X`.
-* `Website`: A website url related to your plugins.
-* `Tutorial`: A tutorial url related to this specific plugin.
-* `Category`: The plugin category. It can be:
+* `Name`：プラグイン名。プロジェクト内で一意である必要があります。
+* `Author`：ここに自分の名前を入力できます。
+* `Description`：プラグインの機能を記述します。
+* `Version`：プラグインのバージョン。`X.X.X` の形式である必要があります。
+* `Website`：プラグインに関連するウェブサイトのURL。
+* `Tutorial`：この特定のプラグインに関連するチュートリアルのURL。
+* `Category`：プラグインのカテゴリ。次のいずれかになります。
   * `Battle`
   * `Menus`
   * `Map`
   * `Others`
-* `Parameters`: The plugin parameters. We'll see more how it works below.
-* `Commands`: The plugin commands. We'll see more how it works below.
+* `Parameters`：プラグインのパラメータ。これについては、以下で詳しく説明します。
+* `Commands`：プラグインのコマンド。これについては、以下で詳しく説明します。
 
-You also have access to `Code` tab if you want to directly edit the plugin code inside the engine instead of Visual Studio Code.
+Visual Studio Codeの代わりにエンジン内で直接プラグインコードを編集したい場合は、`Code`タブにアクセスすることもできます。
 
 ![](../.gitbook/assets/plugin-code.png)
 
-If you check in Visual Studio Code, you will see that a new folder was created in the `Plugins` folder.
+Visual Studio Codeで確認すると、`Plugins`フォルダー内に新しいフォルダーが作成されていることがわかります。
 
 ![](../.gitbook/assets/plugins-folder.png)
 
-Everytime you create a new plugin, a folder with the plugin name is created. This folder will contain:
+新しいプラグインを作成するたびに、プラグイン名と同じ名前のフォルダーが作成されます。このフォルダーには、次のものが含まれます。
 
-* `code.js`: The JS file containing your plugin code.
-* `details.json`: All the details of the plugin (like author, description, parameters, etc...).
+* `code.js`：プラグインコードを含むJSファイル。
+* `details.json`：プラグインのすべての詳細（作成者、説明、パラメータなど）。
 
-Let's try to just create a plugin displaying "Hello world" in the console!
+それでは、コンソールに「Hello world」と表示するだけのプラグインを作成してみましょう。
 
 ```javascript
 import { RPM } from "../path.js"
@@ -60,17 +60,17 @@ const inject = RPM.Manager.Plugins.inject;
 console.log("Hello world!");
 ```
 
-Now you can play test. To display the console, press `CTRL + ALT + I`.
+これでプレイテストができます。コンソールを表示するには、`CTRL + ALT + I`キーを押します。
 
 ![](../.gitbook/assets/console-hello-world.png)
 
-You can also access to RPG Paper Maker datas thanks to `RPM` module import:
+`RPM`モジュールをインポートすることで、RPG Paper Makerのデータにアクセスすることもできます。
 
 ```javascript
 import { RPM } from "../path.js"
 ```
 
-So you'll have to use `RPM` module before any other `System` module. For example:
+そのため、他の`System`モジュールの前に`RPM`モジュールを使用する必要があります。例：
 
 ```javascript
 import { RPM } from "../path.js"
@@ -83,21 +83,21 @@ console.log("Hello world: " + RPM.Core.MapObject.SPEED_NORMAL);
 
 ![](../.gitbook/assets/console-rpm.png)
 
-Great! It works!
+素晴らしい！うまくいきました！
 
-## Inject code in the app
+## アプリへのコードの挿入
 
-Let's see how to extend the System app. We can use the `inject` function imported by default when you create a new plugin (line 4):
+Systemアプリを拡張する方法を見ていきましょう。新しいプラグインを作成する際にデフォルトでインポートされる`inject`関数を使用できます（4行目）。
 
 ```javascript
 const inject = RPM.Manager.Plugins.inject;
 ```
 
-### Inject function syntax
+### Inject関数の構文
 
-The Inject function is designed to replace the prototyping that'd normally be required to alter existing classes, inject is more streamlined and doesn't require you to alias as it does this for you.
+Inject関数は、既存のクラスを変更するために通常必要となるプロトタイピングを置き換えるように設計されています。injectはより合理化されており、エイリアスを作成する必要がありません。
 
-Here is how it would look like to inject an existing method without the `inject` function:
+`inject`関数を使用せずに既存のメソッドを挿入する方法の例を以下に示します。
 
 ```javascript
 let alias_load = RPM.Scene.TitleScreen.prototype.load;
@@ -107,9 +107,9 @@ RPM.Scene.TitleScreen.prototype.load = async function() {
 }
 ```
 
-This will create an alias `alias_load`, then we'll rewrite the prototype of `load` method from `RPM.Scene.TitleScreen`. We use `apply` to call the alias, which is the default RPM behaviour when loading title screen, and then we add our own code after that, so it will display `"Title screen loaded!"` when title screen finished loading.
+これにより、`alias_load`というエイリアスが作成され、`RPM.Scene.TitleScreen`から`load`メソッドのプロトタイプを書き換えます。`apply`を使用してエイリアスを呼び出します。これは、タイトル画面の読み込み時にデフォルトで実行されるRPMの動作です。その後ろに独自のコードを追加することで、タイトル画面の読み込みが完了したときに`"Title screen loaded!"`と表示されます。
 
-Now, here is how it looks like when using inject function:
+次に、inject関数を使用する場合の例を以下に示します。
 
 ```javascript
 inject(RPM.Scene.TitleScreen, "load", async function() {
@@ -117,84 +117,84 @@ inject(RPM.Scene.TitleScreen, "load", async function() {
 }, false, false, true);
 ```
 
-It looks more simple and clear!
+よりシンプルでわかりやすくなりました！
 
-Here are the details of each arguments in comments:
+各引数の詳細をコメントで説明します。
 
 ```javascript
 inject(
-    RPM.Scene.TitleScreen, // The class that you want to inject/overwrite code into.
-    "load", // The variable/function name you want to inject/overwrite code into.
-    async function() { console.log("Title screen loaded!");}, // The new variable/function you want to inject/overwrite.
-    false, // Indicate here if the variable/function is static (NOTE: Both a static and non static variable/function can exist at the same time with the same name). (DEFAULT: false)
-    false, // (FUNCTIONS ONLY) If true, overwrite the code (no original code will be called). If false, inject the code. (DEFAULT: false)
-    true); // (FUNCTIONS ONLY) Excecute original function's code before your code if true. (DEFAULT: true)
+    RPM.Scene.TitleScreen, // コードを挿入/上書きするクラス。
+    "load", // コードを挿入/上書きする変数/関数名。
+    async function() { console.log("Title screen loaded!");}, // 挿入/上書きする新しい変数/関数。
+    false, // 変数/関数が静的かどうかをここで指定します（注：静的変数/関数と非静的変数/関数は、同じ名前で同時に存在できます）。（デフォルト：false）
+    false, // （関数のみ）trueの場合、コードを上書きします（元のコードは呼び出されません）。falseの場合、コードを挿入します。（デフォルト：false）
+    true); // （関数のみ）trueの場合、独自のコードの前に元の関数のコードを実行します。（デフォルト：true）
 ```
 
 {% hint style="info" %}
-**Do not use arrow function syntax (() => {}), arrow functions do not have "this" and therefore will not work when injecting, use function instead (function() {}) as in the examples.**&#x20;
+**アロー関数構文（() => {}）を使用しないでください。アロー関数には「this」がないため、挿入時に機能しません。例のように、代わりにfunction（function（）{}）を使用してください。**&#x20;
 {% endhint %}
 
-### Extension of 'this'
+### thisの拡張
 
-Due to the nature of inject there are two new values added to it's `this`:
+injectの性質上、`this`には2つの新しい値が追加されます。
 
-* `callResult`: if `loadBefore` is set to true and the function is a return function this will give the result of the first function, this way you could alter/pass through it's value.
-* `super`:  If you want the alias call to be conditional, or happen in the middle of your code, it's recommended you only call super if overwrite is set to true or you will call the alias twice
+* `callResult`：`loadBefore`がtrueに設定されており、関数が戻り値を返す関数の場合、最初の関数の結果が返されます。これにより、値を変更/通過させることができます。
+* `super`：エイリアスコールを条件付きにする場合、またはコードの途中で発生させる場合は、overwriteがtrueに設定されている場合にのみsuperを呼び出すことをお勧めします。そうしないと、エイリアスが2回呼び出されます。
 
-Example of use:
+使用例：
 
 ```javascript
 inject(MyClass, "myFunction", function() {
     if (this.isOk()) {
         console.log("this is my class :)");
     } else {
-        this.super(); // Will not overwrite in some condition
+        this.super(); // 一部の条件では上書きされません
     }    
-}, false, true, false); // Overwrite use
- 
+}, false, true, false); // 上書きを使用
+
 inject(MyClass, "myFunction2", function() {
     if(this.callResult === 2) {
         return 4;
     } else {
-        return this.callResult; // Return the original code return
+        return this.callResult; // 元のコードの戻り値を返します
     }
-}, false, false, true); // No overwrite, loadBefore
+}, false, false, true); // 上書きなし、loadBefore
 ```
 
-### Let's try an example of use!
+### 使用例を試してみましょう！
 
-Now, let's try to edit an existing function prototype in RPM code. As an example, let's try to display an icon in the title screen. What we will need to do is extend two functions:
+それでは、RPMコード内の既存の関数プロトタイプを編集してみましょう。例として、タイトル画面にアイコンを表示してみましょう。これを行うには、次の2つの関数を拡張する必要があります。
 
-* `load`: To load the icon to display
-* `drawHUD`: To draw the icon loaded
+* `load`：表示するアイコンを読み込む
+* `drawHUD`：読み込んだアイコンを描画する
 
 ```javascript
 import { Datas } from "../../System/index.js";
 import { RPM } from "../path.js"
 
-const pluginName = "MyFirstPlugin"; // Change the plugin name here
+const pluginName = "MyFirstPlugin"; // ここでプラグイン名を変更します
 const inject = RPM.Manager.Plugins.inject;
 
-// Load the icon
+// アイコンを読み込む
 inject(RPM.Scene.TitleScreen, "load", async function() {
     this.pictureIcon = RPM.Datas.Pictures.getPictureCopy(RPM.Common.Enum.PictureKind.Icons, 1);
 }, false, false, true);
 
-// Draw the icon
+// アイコンを描画する
 inject(RPM.Scene.TitleScreen,"drawHUD", function() {
     this.pictureIcon.draw(200, 200);
 }, false, false, true);
 
 ```
 
-And it works!
+これでうまくいきました！
 
 ![](../.gitbook/assets/plugin-icon.png)
 
-## Static functions / variables
+## 静的関数/変数
 
-Not every variable / function is part of the class instance, some are statically assigned to the class and can therefore be accessed without the need for a instance of that class.
+すべての変数/関数がクラスインスタンスの一部であるわけではありません。一部はクラスに静的に割り当てられており、そのため、そのクラスのインスタンスなしでアクセスできます。
 
 ```javascript
 const inject = RPM.Manager.Plugins.inject;
@@ -210,13 +210,13 @@ inject(myClass,"myStaticFunctions", function() {
 }, true, true, false);
 ```
 
-## Parameters
+## パラメータ
 
-Let's go back to our previous example with icon diplayed on title screen. Imagine that we would like the user (people that would use this plugin) to be able to choose the icon ID to display. Here the parameters can be used!
+タイトル画面にアイコンを表示する前の例に戻りましょう。ユーザー（このプラグインを使用する人）が表示するアイコンIDを選択できるようにしたいとします。ここでパラメータを使用できます！
 
 ![](../.gitbook/assets/plugin-parameter.png)
 
-In the code side, you'll need to edit the load function to get the iconID parameter. To get a parameter value, use `getParameter(pluginName, parameterName)`.
+コード側では、iconIDパラメータを取得するようにload関数を編集する必要があります。パラメータ値を取得するには、`getParameter(pluginName, parameterName)`を使用します。
 
 ```javascript
 inject(RPM.Scene.TitleScreen, "load", async function() {
@@ -224,17 +224,17 @@ inject(RPM.Scene.TitleScreen, "load", async function() {
 }, false, false, true);
 ```
 
-So now, the plugin users can change the parameter value like this:
+これで、プラグインユーザーは次のようにパラメータ値を変更できます。
 
 ![](../.gitbook/assets/plugin-parameter-user.png)
 
-## Commands
+## コマンド
 
-You can also associate your plugin to a custom event command! Awesome! Let's create a very simple example. We'll create a command named `print` that will print the wanted text in console. Here we create on the editor side:
+プラグインをカスタムイベントコマンドに関連付けることもできます！素晴らしい！非常に簡単な例を作成してみましょう。`print`という名前のコマンドを作成し、コンソールに必要なテキストを出力します。ここでは、エディター側で作成します。
 
 ![](../.gitbook/assets/plugin-create-command.png)
 
-Now that it's created, let's edit the plugin code again to register the command action. We need to define it thanks to `registerCommand(pluginName, commandName, commandFunction)`.
+作成したので、コマンドアクションを登録するためにプラグインコードを再度編集しましょう。`registerCommand(pluginName, commandName, commandFunction)`を使用して定義する必要があります。
 
 ```javascript
 RPM.Manager.Plugins.registerCommand(pluginName, "console", (text) => {
@@ -242,34 +242,36 @@ RPM.Manager.Plugins.registerCommand(pluginName, "console", (text) => {
 });
 ```
 
-To use this command, create an event command `Plugin...` and select your plugin and your command.
+このコマンドを使用するには、イベントコマンド`Plugin...`を作成し、プラグインとコマンドを選択します。
 
 ![](../.gitbook/assets/plugin-command.png)
 
-When triggering it, this will print your text to the console!
+トリガーすると、コンソールにテキストが出力されます！
 
 ![](../.gitbook/assets/plugin-command-render.png)
 
-## Complex parameters
+## 複雑なパラメータ
 
-You can choose to specify more complex values for parameters. The first one is `Custom structure`, this is similar to an `Object` in JavaScript.
+パラメータに、より複雑な値を指定することもできます。1つ目は`Custom structure`で、JavaScriptの`Object`に似ています。
 
 ![](../.gitbook/assets/plugin-parameter-custom-structure.png)
 
 {% hint style="warning" %}
-Don't forget that the returned parameters are `System.DynamicValue` after deep parameter searching. So if you want to get the `x` value, you'll need to do `RPM.Manager.Plugins.getParameter(pluginName, "Size").x.getValue()`.
+返されるパラメータは、深いパラメータ検索の後、`System.DynamicValue`になることに注意してください。そのため、`x`の値を取得する場合は、`RPM.Manager.Plugins.getParameter(pluginName, "Size").x.getValue()`を実行する必要があります。
 {% endhint %}
 
-The other one is `Custom list`. It's similar to an `Array` in JavaScript.
+もう1つは`Custom list`です。JavaScriptの`Array`に似ています。
 
 ![](../.gitbook/assets/plugin-parameter-custom-list.png)
 
 {% hint style="warning" %}
-Same thing for custom lists, don't forget to get the dynamic value! In this example you can get the first list value with`RPM.Manager.Plugins.getParameter(pluginName, "Size")[0].getValue()`.
+カスタムリストについても、動的な値を取得することを忘れないでください！この例では、`RPM.Manager.Plugins.getParameter(pluginName, "Size")[0].getValue()`を使用して、最初のリスト値を取得できます。
 {% endhint %}
 
-All the other values like `Hero`, `Monster`, `Weapon` will simply return the ID value.
+`Hero`、`Monster`、`Weapon`などの他のすべての値は、ID値を返します。
 
-## Export a plugin (online submission)
+## プラグインのエクスポート（オンライン提出）
 
-To submit an online plugin, please follow this github wiki guide: [https://github.com/RPG-Paper-Maker/RPG-Paper-Maker/wiki/Online-plugins-submission](https://github.com/RPG-Paper-Maker/RPG-Paper-Maker/wiki/Online-plugins-submission).
+オンラインプラグインを提出するには、GitHub wikiの次のガイドに従ってください。[https://github.com/RPG-Paper-Maker/RPG-Paper-Maker/wiki/Online-plugins-submission](https://github.com/RPG-Paper-Maker/RPG-Paper-Maker/wiki/Online-plugins-submission).
+
+

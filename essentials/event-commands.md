@@ -1,861 +1,678 @@
 ---
-description: An overview about event command
+description: イベントコマンドの概要
 ---
 
-# Event commands list
+# イベントコマンド一覧
 
-Now that you are a pro for objects and event, you can have here a description of ALL the possible event commands. If there's a command or an option that you don't understand, you can go back here and search for a description.
+オブジェクトとイベントのプロになったところで、ここでは、使用可能なすべてのイベントコマンドの説明を確認できます。理解できないコマンドやオプションがある場合は、ここに戻って説明を検索できます。
 
-## Show text <a href="#show-text" id="show-text"></a>
+## テキストを表示 <a href="#show-text" id="show-text"></a>
 
 ![](<../.gitbook/assets/command-show-text (1).png>)
 
-Displays a text in a dialog box with the current dialog box options.
+現在のダイアログボックスオプションを使用して、ダイアログボックスにテキストを表示します。
 
-* `Interlocutor`: This will display a text inside a small box on top of the text box for indicating the interlocutor's name. If empty, this will not show the box.
-* `Faceset`: The faceset to display inside the dialog box on the left.
-* `Message`:
-  * <img src="../.gitbook/assets/bold.png" alt="" data-size="line"> : Apply bold effect on the selected text.
-  * <img src="../.gitbook/assets/italic.png" alt="" data-size="line"> : Apply italic effect on the selected text.
-  * <img src="../.gitbook/assets/text-left.png" alt="" data-size="line"> : Apply left align effect on the selected text.
-  * <img src="../.gitbook/assets/text-center.png" alt="" data-size="line"> : Apply center align effect on the selected text.
-  * <img src="../.gitbook/assets/text-right.png" alt="" data-size="line"> : Apply right align effect on the selected text.
-  * `Font size`: Apply the selected font size on the selected text.
-  * `Font name`: Apply the selected font name on the selected text.
-  * `Text color`: Apply the selected text color on the selected text.
-  * `Back color`: Apply the selected back color on the selected text.
-  * `Outline color`: Apply the selected outline color on the selected text.
-  * `Variable`: Display the value of the current selected variable.
-  * `Parameter`: Display the value of the current selected parameter.
-  * `Property`: Display the value of the current selected property.
-  * `Hero name`: Display the name of the selected hero instance ID.
-  * `Icon`: Display the selected icon.
+* `発言者`: テキストボックスの上に小さなボックスを表示し、発言者の名前を示します。空の場合、このボックスは表示されません。
+* `顔グラフィック`: ダイアログボックスの左側に表示する顔グラフィック。
+* `メッセージ`:
+  * <img src="../.gitbook/assets/bold.png" alt="" data-size="line"> : 選択したテキストに太字効果を適用します。
+  * <img src="../.gitbook/assets/italic.png" alt="" data-size="line"> : 選択したテキストに斜体効果を適用します。
+  * <img src="../.gitbook/assets/text-left.png" alt="" data-size="line"> : 選択したテキストに左揃え効果を適用します。
+  * <img src="../.gitbook/assets/text-center.png" alt="" data-size="line"> : 選択したテキストに中央揃え効果を適用します。
+  * <img src="../.gitbook/assets/text-right.png" alt="" data-size="line"> : 選択したテキストに右揃え効果を適用します。
+  * `フォントサイズ`: 選択したテキストに選択したフォントサイズを適用します。
+  * `フォント名`: 選択したテキストに選択したフォント名を適用します。
+  * `テキストの色`: 選択したテキストに選択したテキストの色を適用します。
+  * `背景色`: 選択したテキストに選択した背景色を適用します。
+  * `アウトラインの色`: 選択したテキストに選択したアウトラインの色を適用します。
+  * `変数`: 現在選択されている変数の値を表示します。
+  * `パラメータ`: 現在選択されているパラメータの値を表示します。
+  * `プロパティ`: 現在選択されているプロパティの値を表示します。
+  * `ヒーロー名`: 選択したヒーローインスタンスIDの名前を表示します。
+  * `アイコン`: 選択したアイコンを表示します。
 
-Render in game:
+ゲームでのレンダリング：
 
 ![](../.gitbook/assets/render-hello-world.png)
 
-## Display a choice <a href="#display-a-choice" id="display-a-choice"></a>
+## 選択肢を表示 <a href="#display-a-choice" id="display-a-choice"></a>
 
 ![](../.gitbook/assets/command-display-choice.png)
 
-* `Choices`: The list of choices texts.
-* `Options`:
-  * `Cancel auto index`: The choice index to select when pressing cancel button.
+* `選択肢`: 選択肢のテキストのリスト。
+* `オプション`:
+  * `自動インデックスのキャンセル`: キャンセルボタンを押したときに選択する選択肢のインデックス。
 
-Using adapted show text command:
+適合したテキスト表示コマンドを使用：
 
 ![](../.gitbook/assets/commands-display-choice.png)
 
 ![](../.gitbook/assets/render-command-display-choice.png)
 
-Using without show text command before:
+テキスト表示コマンドを前に使用せずに使用：
 
 ![](../.gitbook/assets/commands-display-choice-without-text.png)
 
 ![](../.gitbook/assets/render-command-display-choice-without-text.png)
 
-## Input number <a href="#input-number" id="input-number"></a>
+## 数字を入力 <a href="#input-number" id="input-number"></a>
 
 ![](../.gitbook/assets/event-command-input-number.png)
 
-Display spinboxes so the player can choose a number. Like Display a choice command, you can have a Show Text command before it so you have the text box and input number in the same time.
+プレイヤーが数字を選択できるように、スピンボックスを表示します。選択肢の表示コマンドと同様に、前にテキスト表示コマンドを配置して、テキストボックスと数字入力を同時に行うことができます。
 
-* `Stock value in variable ID`: The variable ID where the entered number will be stocked
-* `Digits`: The number of digits for the number
+* `変数IDに値を格納`: 入力された数値が格納される変数ID
+* `桁数`: 数字の桁数
 
-Render in game:
+ゲームでのレンダリング：
 
 ![](../.gitbook/assets/render-input-number.png)
 
-## Set dialog box options <a href="#set-dialog-box-options" id="set-dialog-box-options"></a>
+## ダイアログボックスのオプションを設定 <a href="#set-dialog-box-options" id="set-dialog-box-options"></a>
 
 ![](../.gitbook/assets/command-dialog-box-options.png)
 
-Set all the dialog box options.
+すべてのダイアログボックスのオプションを設定します。
 
-* `Window skin ID`: The window skin ID to display.
-* `Transform`:
-  * `X`: The x position of the window.
-  * `Y`: The y position of the window.
-  * `Width`: The width of the window.
-  * `Height`: The height of the window.
-* `Padding`:
-  * `Left`: The left padding of the window.
-  * `Top`: The top padding of the window.
-  * `Right`: The right padding of the window.
-  * `Bottom`: The bottom padding of the window.
-* `Faceset`:
-  * `Position`: The position of the faceset. You can choose if it's behind or above the window.
-  * `X`: The additional x position of the faceset.
-  * `Y`: The additional y position of the faceset.
-* `Text`:
-  * `Outline`: Select if texts should have outlines.
-  * `Color ID`:
-    * `Text`: The color ID to use for texts.
-    * `Outline`: The color ID to use for outlines.
-    * `Background`: The color ID to use for backgrounds.
-  * `Size ID`: The size ID to use for texts.
-  * `Font ID`: The font ID to use for texts.
+* `ウィンドウスキンID`: 表示するウィンドウスキンID。
+* `変形`:
+  * `X`: ウィンドウのx位置。
+  * `Y`: ウィンドウのy位置。
+  * `幅`: ウィンドウの幅。
+  * `高さ`: ウィンドウの高さ。
+* `パディング`:
+  * `左`: ウィンドウの左側の余白。
+  * `上`: ウィンドウの上部の余白。
+  * `右`: ウィンドウの右側の余白。
+  * `下`: ウィンドウの下部の余白。
+* `顔グラフィック`:
+  * `位置`: 顔グラフィックの位置。ウィンドウの背後または上に配置するかを選択できます。
+  * `X`: 顔グラフィックの追加のx位置。
+  * `Y`: 顔グラフィックの追加のy位置。
+* `テキスト`:
+  * `アウトライン`: テキストにアウトラインを付けるかどうかを選択します。
+  * `カラーID`:
+    * `テキスト`: テキストに使用するカラーID。
+    * `アウトライン`: アウトラインに使用するカラーID。
+    * `背景`: 背景に使用するカラーID。
+  * `サイズID`: テキストに使用するサイズID。
+  * `フォントID`: テキストに使用するフォントID。
 
-## Change screen tone <a href="#change-screen-tone" id="change-screen-tone"></a>
+## 画面の色調を変更 <a href="#change-screen-tone" id="change-screen-tone"></a>
 
 ![](../.gitbook/assets/command-change-screen-tone.png)
 
-Change the screen tone (dominant color). The RGB color (0, 0, 0) changes nothing on the screen tone.
+画面の色調（支配的な色）を変更します。RGBカラー（0、0、0）は、画面の色調に何も変更を加えません。
 
-* `Red`: The red dominant color.
-* `Green`: The green dominant color.
-* `Blue`: The blue dominant color.
-* `Grey`: The grey dominant color (saturation). If grey = 0, then no changes. If grey = 100, then the screen will only have grey colors.
-* `Adding color ID`: You can combine the previous color with an existing color.
-* `Wait the end of the change before the next command`: If checked, the command will end only after `Time` number.
-* `Time`: Time to wait for changing the screen tone.
+* `赤`: 赤の支配的な色。
+* `緑`: 緑の支配的な色。
+* `青`: 青の支配的な色。
+* `灰色`: 灰色の支配的な色（彩度）。灰色= 0の場合、変更はありません。灰色= 100の場合、画面には灰色の色のみが表示されます。
+* `カラーIDの追加`: 前述の色を既存の色と組み合わせることができます。
+* `次のコマンドの前に変更が完了するまで待つ`: チェックを入れると、コマンドは`時間`の数値が経過した後にのみ終了します。
+* `時間`: 画面の色調を変更するのを待つ時間。
 
-## Shake screen <a href="#shake-screen" id="shake-screen"></a>
+## 画面を揺らす <a href="#shake-screen" id="shake-screen"></a>
 
 ![](../.gitbook/assets/command-shake-screen.png)
 
-This is useful for staging your cinematics by simulating earthquakes, for example.
+これは、たとえば地震をシミュレートして、シネマティックスを演出するのに役立ちます。
 
-* `Offset`: The number of pixel offset for each shake.
-* `Shake number`: The number of shakes per second.
-* `Wait the end of the move before the next command`: If checked, the next command will be executed when the shakes ends.
-* `Time`: Duration of the total shakes.
+* `オフセット`: 各シェイクのピクセルオフセットの数。
+* `シェイク数`: 1秒あたりのシェイクの数。
+* `次のコマンドの前に移動が完了するまで待つ`: チェックを入れると、シェイクが終了したときに次のコマンドが実行されます。
+* `時間`: 合計シェイク時間。
 
-## Flash screen <a href="#flash-screen" id="flash-screen"></a>
+## 画面をフラッシュ <a href="#flash-screen" id="flash-screen"></a>
 
 ![](../.gitbook/assets/command-flash-screen.png)
 
-This will simply fill your screen with a color and linearly go back to normal screen color.
+これは、画面を色で塗りつぶし、線形に通常の画面の色に戻すだけです。
 
-* `Color ID`: The color ID to display on screen.
-* `Wait the end of the move before the next command`: If checked, the next command will be executed when the flash ends.
-* `Time`: Duration of the flash.
+* `カラーID`: 画面に表示するカラーID。
+* `次のコマンドの前に移動が完了するまで待つ`: チェックを入れると、フラッシュが終了したときに次のコマンドが実行されます。
+* `時間`: フラッシュ時間。
 
-## Change weather <a href="#change-meteo" id="change-meteo"></a>
+## 天気を変更 <a href="#change-meteo" id="change-meteo"></a>
 
 ![](../.gitbook/assets/command-change-weather.png)
 
-Change the current map weather by adding particles.
+パーティクルを追加して、現在のマップの天気を変更します。
 
-* `None`: Remove current map weather.
-* `Custom`: Add a custom map weater.
-* **Options**:
-  * `Texture`: The weather particle texture.
-    * `Color ID`
-    * `Image`
-  * `Number per portion`: Number of particles in each portion (16x16 squares)
-  * `Ray portions`: Number of portions (16x16 squares) ray around the camera to display particles.
-  * `Size`: The particles size (texture).
-  * `dephTest`: [https://threejs.org/docs/#api/en/materials/Material.depthTest](https://threejs.org/docs/#api/en/materials/Material.depthTest)
-  * `depthWrite`: [https://threejs.org/docs/#api/en/materials/Material.depthWrite](https://threejs.org/docs/#api/en/materials/Material.depthWrite)
-  * `Initial velcity`: The initial velocity of the particle when it's created.
-  * `Velocity addition`: Velocity addition after each frame.
-  * `Initial Y rotation`: The initial Y rotation around the portion.
-  * `Y rotation addition`: Y rotation addition after each frame.
-* `Wait the end of the move before next comand`: Wait the end of the time before running next command if checked.
-  * `Time`: Time (in seconds) to make the weather transition. There will be more and more particles appearing.
+* `なし`: 現在のマップの天気を削除します。
+* `カスタム`: カスタムマップの天気を追加します。
+* **オプション**:
+  * `テクスチャ`: 天気パーティクルのテクスチャ。
+    * `カラーID`
+    * `画像`
+  * `部分あたりの数`: 各部分（16x16平方）のパーティクルの数。
+  * `レイ部分`: パーティクルを表示するためにカメラの周りにレイアウトされた部分（16x16平方）の数。
+  * `サイズ`: パーティクルのサイズ（テクスチャ）。
+  * `デプステスト`: [https://threejs.org/docs/#api/en/materials/Material.depthTest](https://threejs.org/docs/#api/en/materials/Material.depthTest)
+  * `デプスライト`: [https://threejs.org/docs/#api/en/materials/Material.depthWrite](https://threejs.org/docs/#api/en/materials/Material.depthWrite)
+  * `初期速度`: パーティクルが作成されたときの初期速度。
+  * `速度の加算`: 各フレーム後の速度の加算。
+  * `初期Y回転`: 部分を中心とした初期Y回転。
+  * `Y回転の加算`: 各フレーム後のY回転の加算。
+* `次のコマンドの前に移動が完了するまで待つ`: チェックを入れると、時間切れになるまで次のコマンドは実行されません。
+  * `時間`: 天気の移行を行う時間（秒単位）。ますます多くのパーティクルが表示されます。
 
-## Change map properties <a href="#change-map-properties" id="change-map-properties"></a>
+## マップのプロパティを変更 <a href="#change-map-properties" id="change-map-properties"></a>
 
 ![](../.gitbook/assets/command-change-map-properties.png)
 
-Change some of a map properties.
+マップのプロパティの一部を変更します。
 
-* `Map ID`: The map ID that you want to change
-* **Properties**:
-  * `Tileset ID`
-  * `Music`
+* `マップID`: 変更するマップID
+* **プロパティ**:
+  * `タイルセットID`
+  * `音楽`
   *
-  * `Background sound`
-  * `Camera properties ID`
-  * `Sky`
-    * `Color ID`
-    * `Skybox ID`
+  * `環境音`
+  * `カメラプロパティID`
+  * `空`
+    * `カラーID`
+    * `スカイボックスID`
 
-## Wait <a href="#wait" id="wait"></a>
+## 待機 <a href="#wait" id="wait"></a>
 
 ![](../.gitbook/assets/command-wait.png)
 
-Wait during a specific time.
+特定の時間だけ待機します。
 
-* `Time`: Time to wait in seconds.
+* `時間`: 待機時間（秒単位）。
 
-## Change chronometer <a href="#change-chronometer" id="change-chronometer"></a>
+## クロノメーターを変更 <a href="#change-chronometer" id="change-chronometer"></a>
 
 ![](../.gitbook/assets/command-change-chronometer1.png)
 
 ![](../.gitbook/assets/command-change-chronometer2.png)
 
-Start, pause, continue, or stop a chronometer.&#x20;
+クロノメーターを開始、一時停止、続行、または停止します。
 
-If you choose to `start` a new chronometer:
+新しいクロノメーターを`開始`する場合：
 
-* `Stock chronometer ID in variable ID`: The variable ID where you want to stock this new chronometer ID
-* `Time`: The time count for this new chronometer
-* `Display on screen`: If checked, display the chronometer on screen
+* `変数IDにクロノメーターIDを格納`: この新しいクロノメーターIDを格納する変数ID
+* `時間`: この新しいクロノメーターのカウント時間
+* `画面に表示`: チェックを入れると、クロノメーターが画面に表示されます
 
-If you choose to `pause`, `continue`, or `stop` an existing chronometer:
+既存のクロノメーターを`一時停止`、`続行`、または`停止`する場合：
 
-* `Chronometer ID`: The existing chronometer ID to edit
-* `Stock current chronometer value in variable ID`: Stock the current value (in seconds) in the variable ID.
+* `クロノメーターID`: 編集する既存のクロノメーターID
+* `現在のクロノメーターの値を変数IDに格納`: 現在の値（秒単位）を変数IDに格納します。
 
-## Teleport object <a href="#teleport-object" id="teleport-object"></a>
+## オブジェクトをテレポート <a href="#teleport-object" id="teleport-object"></a>
 
 ![](<../.gitbook/assets/command-teleport-object (1).png>)
 
-This will teleport an object on an existing map with a new position.
+これは、新しい位置を使用して、既存のマップ上のオブジェクトをテレポートします。
 
-* `Object ID`: The object ID to teleport.
-* **Position**:
-  * `Select...`: Choose map and position thanks to a map previewer.
-  * `ID map`, `X`, `Y`, `Y plus`, `Z`: Choose map ID an position to go manually.
-  * `Object (ID)`: Choose an object to teleport on.
-* **Transition**:
-  * `Direction`: Select the direction of the object after teleportation
-  * `Start / End`: Start / End type of transition:
-    * `None`: Immediate transition.
-    * `Fade in / out`: Transition on a color.
-    * `Zoom in / out`: Transition by zooming in / out.
+* `オブジェクトID`: テレポートするオブジェクトID。
+* **位置**:
+  * `選択...`: マッププレビューアを使用して、マップと位置を選択します。
+  * `IDマップ`、`X`、`Y`、`Yプラス`、`Z`: 移動先のマップIDと位置を手動で選択します。
+  * `オブジェクト（ID）`: テレポート先のオブジェクトを選択します。
+* **トランジション**:
+  * `方向`: テレポート後のオブジェクトの方向を選択します
+  * `開始/終了`: トランジションの開始/終了タイプ：
+    * `なし`: 即時トランジション。
+    * `フェードイン/アウト`: 色によるトランジション。
+    * `ズームイン/アウト`: ズームイン/アウトによるトランジション。
 
-## Move object <a href="#move-object" id="move-object"></a>
+## オブジェクトを移動 <a href="#move-object" id="move-object"></a>
 
 ![](<../.gitbook/assets/command-move-object (1).png>)
 
-This will move an object in the current map with a specific route. You can also temporary change some properties linked to the object state.
+これは、特定のルートを使用して、現在のマップ内のオブジェクトを移動します。また、オブジェクトの状態に関連付けられている一部のプロパティを一時的に変更することもできます。
 
-* `Object ID`: The object ID to move.
-* `Ignore if impossible`: If checked, the moves that can't be executed (example: a wall blocking the route) would be ignored. If not checked, this will try the impossible move as long as it become possible (example: use for NPCs moving).
-* `Wait the end of moves`: If checked, the command would end only when all the moves are executed. If not, the command would end immediately (moves executed in parallel).
-* `With camera orientation`: If checked, the direction moves (north, south, west, east) would take account of the camera orientation. If not, the direction moves would not take account of the camera orientation.
-* **Step / square moves**:
-  * `Square`: Change all the direction moves unit to square.
-  * `Step`: Change all the direction moves unit to step.
-  * `1 to North / South / West / East / North-West / North-East / South-West / South-East`: Move the object to 1 square / step in the selected direction.
-  * `1 to random`: Move the object to 1 square / step in a random direction.
-  * `1 to the hero`: Move the object to 1 square / step in the hero direction.
-  * `1 opposite to the hero`: Move the object to 1 square / step in the opposite of the hero direction.
-  * `1 in front`: Move the object to 1 square / step in front.
-  * `1 back`: Move the object to 1 square / step back.
-  * `Jump...`: Make the object jump:
-    * **Final position offset**: The final position offset in the end of the jump
-    * **Peak**: The peak Y values (offset)
-    * `Time`: The time execution of the move
-* **Change direction**:
-  * `Turn North / South / West / East`: Turn the object in the selected direction
-  * `Turn 90° left / right`: Turn the object 90° in the left or right
-  * `Look at the hero`: Turn in the hero direction
-  * `Look at hero opposite`: Turn in the opposite of the hero direction
-* **Change object options**:
-  * `ON / OFF`: For some options, you can use the option ON or OFF
-  * `Permanent`: If checked, the object option will be conserved even after saving
-  * `Change speed / frequency`: Change the speed or frequency value
-  * `Move animation`: Change the move animation to ON or OFF
-  * `Stop animation`: Change the stop animation to ON or OFF
-  * `Climb animation`: Change the climb animation to ON or OFF
-  * `Direction fix`: Change the direction fix to ON or OFF
-  * `Through`: Change the through to ON or OFF
-  * `Set with camera`: Change the set with camera to ON or OFF
-  * `Pixel offset`: Change the pixel offset to ON or OFF
-  * `Keep position`: Change the keep position to ON or OFF
-  * `Change graphics`: Change the obejct graphics
-  * `Wait / Play sound / Script`: Use the following commands
+* `オブジェクトID`: 移動するオブジェクトID。
+* `不可能な場合は無視`: チェックを入れると、実行できない移動（例：ルートをブロックする壁）は無視されます。チェックを入れないと、不可能な移動が可能になるまで（例：NPCの移動に使用）試行されます。
+* `移動の終了を待つ`: チェックを入れると、すべての移動が実行されたときにのみコマンドが終了します。チェックを入れないと、コマンドはすぐに終了します（移動は並行して実行されます）。
+* `カメラの向きに合わせる`: チェックを入れると、方向移動（北、南、西、東）はカメラの向きを考慮します。チェックを入れないと、方向移動はカメラの向きを考慮しません。
+* **ステップ/マス目移動**:
+  * `マス目`: すべての方向移動単位をマス目に変更します。
+  * `ステップ`: すべての方向移動単位をステップに変更します。
+  * `1マス北/南/西/東/北西/北東/南西/南東に移動`: 選択した方向にオブジェクトを1マス/ステップ移動します。
+  * `1マスランダムに移動`: ランダムな方向にオブジェクトを1マス/ステップ移動します。
+  * `ヒーローに向かって1マス移動`: ヒーローの方向にオブジェクトを1マス/ステップ移動します。
+  * `ヒーローの反対側に1マス移動`: ヒーローの反対方向にオブジェクトを1マス/ステップ移動します。
+  * `1マス前に移動`: オブジェクトを1マス/ステップ前に移動します。
+  * `1マス後ろに移動`: オブジェクトを1マス/ステップ後ろに移動します。
+  * `ジャンプ...`: オブジェクトをジャンプさせます：
+    * **最終位置オフセット**: ジャンプの終わりの最終位置オフセット
+    * **頂点**: 頂点のY値（オフセット）
+    * `時間`: 移動の実行時間
+* **方向を変える**:
+  * `北/南/西/東を向く`: オブジェクトを選択した方向に向けます
+  * `左/右に90度回転`: オブジェクトを左または右に90度回転させます
+  * `ヒーローを見る`: ヒーローの方向に向けます
+  * `ヒーローの反対を見る`: ヒーローの反対方向に向けます
+* **オブジェクトオプションを変更**:
+  * `オン/オフ`: 一部のオプションでは、オンまたはオフのオプションを使用できます
+  * `永続的`: チェックを入れると、オブジェクトオプションは保存後も保持されます
+  * `速度/頻度を変更`: 速度または頻度の値を変更します
+  * `移動アニメーション`: 移動アニメーションをオンまたはオフに変更します
+  * `停止アニメーション`: 停止アニメーションをオンまたはオフに変更します
+  * `登るアニメーション`: 登るアニメーションをオンまたはオフに変更します
+  * `方向固定`: 方向固定をオンまたはオフに変更します
+  * `すり抜け`: すり抜けをオンまたはオフに変更します
+  * `カメラに合わせて設定`: カメラに合わせて設定をオンまたはオフに変更します
+  * `ピクセルオフセット`: ピクセルオフセットをオンまたはオフに変更します
+  * `位置を維持`: 位置を維持をオンまたはオフに変更します
+  * `グラフィックを変更`: オブジェクトのグラフィックを変更します
+  * `待機/サウンドの再生/スクリプト`: 以下のコマンドを使用します
 
-## Display an animation <a href="#display-an-animation" id="display-an-animation"></a>
+## アニメーションを表示 <a href="#display-an-animation" id="display-an-animation"></a>
 
 ![](../.gitbook/assets/command-display-an-animation.png)
 
-Display an animation in the current map.
+現在のマップにアニメーションを表示します。
 
-* `Object ID`: The object ID where the animation will be played.
-* `Animation ID`: The animation ID to play.
-* `Wait the end of the animation before next command`: If checked, the next command will be executed only after the animation end.
+* `オブジェクトID`: アニメーションが再生されるオブジェクトID。
+* `アニメーションID`: 再生するアニメーションID。
+* `次のコマンドの前にアニメーションが完了するまで待つ`: チェックを入れると、アニメーションの終了後にのみ次のコマンドが実行されます。
 
-## Move camera <a href="#move-camera" id="move-camera"></a>
+## カメラを移動 <a href="#move-camera" id="move-camera"></a>
 
-Check out the camera guide [here](camera-control.md).
+カメラガイドをご覧ください [ここ](camera-control.md).
 
-## Reset camera <a href="#reset-camera" id="reset-camera"></a>
+## カメラをリセット <a href="#reset-camera" id="reset-camera"></a>
 
-This command will simply reset the camera properties after using move camera command, but it won't change the current camera target.
+このコマンドは、カメラの移動コマンドを使用した後にカメラのプロパティをリセットするだけですが、現在のカメラのターゲットは変更しません。
 
-## Create object in map <a href="#create-object-in-map" id="create-object-in-map"></a>
+## マップにオブジェクトを作成 <a href="#create-object-in-map" id="create-object-in-map"></a>
 
 ![](../.gitbook/assets/event-command-create-object-in-map.png)
 
-Create an object in the map. Note that this object will be removed after changing map or quitting the game.
+マップにオブジェクトを作成します。このオブジェクトは、マップの変更後またはゲームの終了後に削除されることに注意してください。
 
-* `New object model ID`: The model ID for the object that will be created
-* **Position**: Select the position of the new object
-* `Stock ID in variable ID`: The variable ID where you will stock the new object generated ID
+* `新しいオブジェクトモデルID`: 作成されるオブジェクトのモデルID
+* **位置**: 新しいオブジェクトの位置を選択します
+* `変数IDにIDを格納`: 新しく生成されたオブジェクトIDを格納する変数ID
 
-## Remove object from map <a href="#remove-object-from-map" id="remove-object-from-map"></a>
+## マップからオブジェクトを削除 <a href="#remove-object-from-map" id="remove-object-from-map"></a>
 
 ![](../.gitbook/assets/command-remove-object-from-map.png)
 
-Remove an object from the map. This removing is effective as long as you don't change map or load the game in saves.
+マップからオブジェクトを削除します。この削除は、マップを変更したり、ゲームをセーブからロードしたりしない限り有効です。
 
-* `Object ID`: The object ID to remove in the map.
+* `オブジェクトID`: マップから削除するオブジェクトID。
 
-## Display a picture <a href="#display-a-picture" id="display-a-picture"></a>
+## 画像を表示 <a href="#display-a-picture" id="display-a-picture"></a>
 
 ![](../.gitbook/assets/command-display-picture.png)
 
-Display a picture on top of the screen.
+画面の上部に画像を表示します。
 
-* `Image ID`: The image ID to display.
-* `Index`: The index of the image to display. You can display several images in the same time if they have different index. The more the index is high, the more the image is displayed on top. If two images have the same index, then the ancient image will be removed.
-* `Origin`:
-  * `Top / Left`: The origin position will be (0, 0) (= top left of the screen).
-  * `Center`: The origin position will be the center of the screen.
-* `Coordinates`:
-  * `X`: The x position according to the origin.
-  * `Y`: The y position according to the origin.
-* `Effects`:
-  * `Zoom`: The % zooming of the image.
-  * `Opacity`: The % opacity of the image.
-  * `Angle`: The ° angle of the image.
+* `画像ID`: 表示する画像ID。
+* `インデックス`: 表示する画像のインデックス。インデックスが異なれば、同時に複数の画像を表示できます。インデックスが高いほど、画像は上に表示されます。2つの画像のインデックスが同じ場合は、古い画像が削除されます。
+* `起点`:
+  * `左上`: 起点の位置は（0、0）（=画面の左上）になります。
+  * `中央`: 起点の位置は画面の中央になります。
+* `座標`:
+  * `X`: 起点に応じたx位置。
+  * `Y`: 起点に応じたy位置。
+* `効果`:
+  * `ズーム`: 画像のズーム率（％）。
+  * `不透明度`: 画像の不透明度（％）。
+  * `角度`: 画像の角度（°）。
 
-## Set / Move / Turn a picture <a href="#set-move-turn-a-picture" id="set-move-turn-a-picture"></a>
+## 画像を設定/移動/回転 <a href="#set-move-turn-a-picture" id="set-move-turn-a-picture"></a>
 
 ![](../.gitbook/assets/command-set-move-turn-picture.png)
 
-Set / Move / Turn a picture that is already displayed on top of the screen.
+画面の上部にすでに表示されている画像を設定/移動/回転します。
 
-* `Image index`: Select the index of the image to set / move / turn.
-* `Set`:
-  * `Image ID`: Change the image ID to display.
-  * `Zoom`: Change the % zooming of the image.
-  * `Opacity`: Change the % zooming of the image.
-* `Move`:
-  * `X`: Change the x position according to the origin.
-  * `Y`: CHange the y position according to the origin.
-* `Turn`:
-  * `Angle`: Change the ° angle of the image.
-* `Wait the end of the actions before the next command`: If checked, the command will end only after `Time` number.
-* `Time`: Time to wait for updating the picture.
+* `画像インデックス`: 設定/移動/回転する画像のインデックスを選択します。
+* `設定`:
+  * `画像ID`: 表示する画像IDを変更します。
+  * `ズーム`: 画像のズーム率（％）を変更します。
+  * `不透明度`: 画像の不透明度（％）を変更します。
+* `移動`:
+  * `X`: 起点に応じたx位置を変更します。
+  * `Y`: 起点に応じたy位置を変更します。
+* `回転`:
+  * `角度`: 画像の角度（°）を変更します。
+* `次のコマンドの前にアクションが完了するまで待つ`: チェックを入れると、コマンドは`時間`の数値が経過した後にのみ終了します。
+* `時間`: 画像の更新を待つ時間。
 
-## Remove a picture <a href="#remove-a-picture" id="remove-a-picture"></a>
+## 画像を削除 <a href="#remove-a-picture" id="remove-a-picture"></a>
 
 ![](../.gitbook/assets/command-remove-picture.png)
 
-Remove a picture that is displayed on top of the screen.
+画面に表示されている画像を削除します。
 
-* `Image index`: Select the index of the image to remove.
+* `画像インデックス`: 削除する画像のインデックスを選択します。
 
-## Play a video <a href="#play-a-video" id="play-a-video"></a>
+## 動画を再生 <a href="#play-a-video" id="play-a-video"></a>
 
 ![](../.gitbook/assets/command-play-a-video.png)
 
 
 
-Play, pause, or stop a video. The video will be displayed on top of the screen.
+動画を再生、一時停止、または停止します。動画は画面の上部に表示されます。
 
-* `Video`: The video ID to play.
-* **Operation**: The kind of operation to do: `Play`, `Pause`, or `Stop`.
-* `Start`: If checked and using `Play` operation, the video will be played at the indicated value (in seconds).
-* `Wait the end of the change before next command`: If checked, the next command will be executed only when the video is finished/paused/stopped.
+* `動画`: 再生する動画ID。
+* **操作**: 実行する操作の種類：`再生`、`一時停止`、または`停止`。
+* `開始`: チェックを入れて`再生`操作を使用している場合、動画は指定された値（秒単位）で再生されます。
+* `次のコマンドの前に変更が完了するまで待つ`: チェックを入れると、動画が終了/一時停止/停止されたときにのみ、次のコマンドが実行されます。
 
-## Start shop menu <a href="#start-shop" id="start-shop"></a>
+## ショップメニューを開始 <a href="#start-shop" id="start-shop"></a>
 
 ![](../.gitbook/assets/event-command-shop-menu.png)
 
-This will open a menu for a shop where the player can buy or sell items.
+これは、プレイヤーがアイテムを売買できるショップのメニューを開きます。
 
-* `Buy only`: Indicate if you want to enable selling items or not
-* `Shop ID`: Indicate the shop ID. This will be used only if you want to use command `Restock shop` later.
-* `Items / Price / Stock`: Select the items to sell with their price and stock
+* `購入のみ`: アイテムの販売を有効にするかどうかを示します
+* `ショップID`: ショップIDを示します。これは、後でコマンド`ショップの在庫を補充`を使用する場合にのみ使用されます。
+* `アイテム/価格/在庫`: 販売するアイテムを価格と在庫とともに選択します
 
 ![](../.gitbook/assets/event-command-shop-menu-item-price-stock.png)
 
-* **Item**:
-  * `Item ID`
-  * `Weapon ID`
-  * `Armor ID`
-* **Price**:
-  * `Default`: The default price indicated in the item datas
-  * `Specific`: A specific price that you can indicate here
-* **Stock**:
-  * `Unlimited`: An unlimited stock
-  * `Specific`: A spercific stock that can indicate here
+* **アイテム**:
+  * `アイテムID`
+  * `武器ID`
+  * `防具ID`
+* **価格**:
+  * `デフォルト`: アイテムデータに示されているデフォルトの価格
+  * `特定`: ここで指定できる特定の価格
+* **在庫**:
+  * `無制限`: 無制限の在庫
+  * `特定`: ここで指定できる特定の在庫
 
-Render in game:
+ゲームでのレンダリング：
 
 ![](../.gitbook/assets/event-command-shop-menu-render.png)
 
-## _Restock_ shop <a href="#start-shop" id="start-shop"></a>
+## ショップの在庫を補充 <a href="#start-shop" id="start-shop"></a>
 
-Mostly the same options than [Start shop menu command](event-commands.md#start-shop), but you can use this command to update the stock of a shop thanks to `shop ID`.
+ほとんど[ショップメニューの開始コマンド](event-commands.md#start-shop)と同じオプションですが、`ショップID`を使用してショップの在庫を更新できます。
 
-## Enter a name menu <a href="#enter-a-name" id="enter-a-name"></a>
+## 名前入力メニューに入る <a href="#enter-a-name" id="enter-a-name"></a>
 
 ![](../.gitbook/assets/event-command-enter-a-name-menu.png)
 
-This will open a menu in order to change the name of a specific player.
+これは、特定のプレイヤーの名前を変更するためのメニューを開きます。
 
-* `The hero with instance ID`: Select the variable containing the player instance ID
-* `Max characters`: The max number of characters that you can edit
+* `インスタンスIDを持つヒーロー`: プレイヤーインスタンスIDを含む変数を選択します
+* `最大文字数`: 編集できる最大文字数
 
-Render in game:
+ゲームでのレンダリング：
 
 ![](../.gitbook/assets/render-enter-a-name-menu.png)
 
-## Open main menu <a href="#open-main-menu" id="open-main-menu"></a>
+## メインメニューを開く <a href="#open-main-menu" id="open-main-menu"></a>
 
-This will open the main menu.
+これは、メインメニューを開きます。
 
-Render in game:
+ゲームでのレンダリング：
 
 ![](../.gitbook/assets/render-main-menu.png)
 
-## Open saves menu <a href="#open-saves-menu" id="open-saves-menu"></a>
+## セーブメニューを開く <a href="#open-saves-menu" id="open-saves-menu"></a>
 
-This will open the saves menu.
+これは、セーブメニューを開きます。
 
-Render in game:
+ゲームでのレンダリング：
 
 ![](../.gitbook/assets/render-saves-menu.png)
 
-## Title screen <a href="#title-screen" id="title-screen"></a>
+## タイトル画面 <a href="#title-screen" id="title-screen"></a>
 
-Go to the title screen.
+タイトル画面に移動します。
 
-## Game over <a href="#game-over" id="game-over"></a>
+## ゲームオーバー <a href="#game-over" id="game-over"></a>
 
-Go to the game over screen.
+ゲームオーバー画面に移動します。
 
-## Play a music <a href="#play-a-music" id="play-a-music"></a>
+## 音楽を再生 <a href="#play-a-music" id="play-a-music"></a>
 
 ![](../.gitbook/assets/command-play-music.png)
 
-This will play a music on the current map.
+これは、現在のマップで音楽を再生します。
 
-* `Select song by ID`: Instead of using the left list, you can select by ID values.
-* **Options**:
-  * `Volume`: The music volume (in %).
-  * `Start`: The beginning time of the music in seconds.
-  * `End`: The end time of the music in seconds.
+* `IDで曲を選択`: 左側のリストを使用する代わりに、ID値で選択できます。
+* **オプション**:
+  * `音量`: 音楽の音量（％）。
+  * `開始`: 音楽の開始時間（秒単位）。
+  * `終了`: 音楽の終了時間（秒単位）。
 
-## Stop music <a href="#stop-music" id="stop-music"></a>
+## 音楽を停止 <a href="#stop-music" id="stop-music"></a>
 
 ![](../.gitbook/assets/command-stop-music.png)
 
-This will stop the music played in the current map.
+これは、現在のマップで再生されている音楽を停止します。
 
-* `Disappear with time`: Number of seconds for music played for disappearing.
+* `時間とともに消える`: 再生されている音楽が消えるまでの秒数。
 
-## Play a background sound <a href="#play-a-background-sound" id="play-a-background-sound"></a>
+## 環境音を再生 <a href="#play-a-background-sound" id="play-a-background-sound"></a>
 
-This will play a background sound on top of the current music.
+これは、現在の音楽の上に環境音を再生します。
 
-Check out the play music command [here](event-commands.md#play-a-music) that is similar.
+同様の音楽再生コマンドについては、[ここ](event-commands.md#play-a-music)をご覧ください。
 
-## Stop background sound <a href="#stop-background-sound" id="stop-background-sound"></a>
+## 環境音を停止 <a href="#stop-background-sound" id="stop-background-sound"></a>
 
-This will stop the background sound played in the current map.
+これは、現在のマップで再生されている環境音を停止します。
 
-Check out the stop music command [here](event-commands.md#stop-music) that is similar.
+同様の音楽停止コマンドについては、[ここ](event-commands.md#stop-music)をご覧ください。
 
-## Play a sound <a href="#play-a-sound" id="play-a-sound"></a>
+## 効果音を再生 <a href="#play-a-sound" id="play-a-sound"></a>
 
-This will play a sound on top of all the songs.
+これは、すべての曲の上に効果音を再生します。
 
-Check out the play music command [here](event-commands.md#stop-music) that is similar.
+同様の音楽停止コマンドについては、[ここ](event-commands.md#stop-music)をご覧ください。
 
-## Play a music effect <a href="#play-a-music-effect" id="play-a-music-effect"></a>
+## 音楽効果を再生 <a href="#play-a-music-effect" id="play-a-music-effect"></a>
 
-This will play a music by pausing the current played music. When the music effect is finished the previously played music is unpaused.
+これは、現在再生されている音楽を一時停止して音楽を再生します。音楽効果が終了すると、一時停止されていた音楽の再生が再開されます。
 
-Check out the play music command [here](event-commands.md#play-a-music) that is similar.
+同様の音楽再生コマンドについては、[ここ](event-commands.md#play-a-music)をご覧ください。
 
-## Change battle music <a href="#change-battle-music" id="change-battle-music"></a>
+## 戦闘音楽を変更 <a href="#change-battle-music" id="change-battle-music"></a>
 
-Select a music to change the battle music for every next coming battles.
+今後のすべての戦闘の戦闘音楽を変更する音楽を選択します。
 
-## Change victory music <a href="#change-victory-music" id="change-victory-music"></a>
+## 勝利音楽を変更 <a href="#change-victory-music" id="change-victory-music"></a>
 
-Select a music to change the battle victory music for every next coming battles.
+今後のすべての戦闘の戦闘勝利音楽を変更する音楽を選択します。
 
-## Send event <a href="#send-event" id="send-event"></a>
+## イベントを送信 <a href="#send-event" id="send-event"></a>
 
 ![](<../.gitbook/assets/command-send-event (1).png>)
 
-This will send an event to the selected target.
+これは、選択したターゲットにイベントを送信します。
 
-* **Target**:
-  * `All`: Send the event to all the objects visible in the map
-  * `Detection`: Send the event to a specific detection.
-    * `Sender can't receive`: The detection is not applied to the sender.
-    * `Only the closest`: If checked, this will only send event to the closest object detected. If not, this will send event to all the objects detected.
-  * `Object`: Send the event to a specific object.
-* **Event**:
-  * `Event system`: Select a system event (events sent by the game system itself).
-  * `Event user`: Select a user event (custom events sent by the map objects).
-  * `Parameters values`: Select the event parameters values. You can keep the default value.
+* **ターゲット**:
+  * `すべて`: マップに表示されているすべてのオブジェクトにイベントを送信します
+  * `検出`: 特定の検出にイベントを送信します。
+    * `送信者は受信できません`: 検出は送信者には適用されません。
+    * `最も近いもののみ`: チェックを入れると、検出された最も近いオブジェクトにのみイベントが送信されます。チェックを入れないと、検出されたすべてのオブジェクトにイベントが送信されます。
+  * `オブジェクト`: 特定のオブジェクトにイベントを送信します。
+* **イベント**:
+  * `システムイベント`: システムイベント（ゲームシステム自体によって送信されるイベント）を選択します。
+  * `ユーザイベント`: ユーザイベント（マップオブジェクトによって送信されるカスタムイベント）を選択します。
+  * `パラメータ値`: イベントパラメータ値を選択します。デフォルト値を保持できます。
 
-## Change state <a href="#change-state" id="change-state"></a>
+## 状態を変更 <a href="#change-state" id="change-state"></a>
 
 ![](../.gitbook/assets/command-change-state.png)
 
-This will change the state of the current object. An object can have several states at the same time.
+これは、現在のオブジェクトの状態を変更します。オブジェクトは、同時に複数の状態を持つことができます。
 
-* **Object**:
-  * `Map ID`: The map ID to change state.
-  * `Object ID`: The object ID to change state.
-* **Selection**:
-  * `State ID`: The new state ID.
-* **Operation**:
-  * `Replace`: Remove all the current states of the object and add the new state.
-  * `Add`: Only add the new state.
-  * `Remove`: Remove the object state having this ID.
+* **オブジェクト**:
+  * `マップID`: 状態を変更するマップID。
+  * `オブジェクトID`: 状態を変更するオブジェクトID。
+* **選択**:
+  * `状態ID`: 新しい状態ID。
+* **操作**:
+  * `置換`: オブジェクトの現在の状態をすべて削除し、新しい状態を追加します。
+  * `追加`: 新しい状態のみを追加します。
+  * `削除`: このIDを持つオブジェクトの状態を削除します。
 
-## Change property <a href="#change-property" id="change-property"></a>
+## プロパティを変更 <a href="#change-property" id="change-property"></a>
 
 ![](../.gitbook/assets/command-change-property.png)
 
-This will change a property value of the current object.
+これは、現在のオブジェクトのプロパティ値を変更します。
 
-* **Selection**:
-  * `property ID`: The property ID to change.
-* **Operation**: The operation to use according to the current property value.
-* **Value**:
-  * `New value`: The new value to apply to the property with the corresponding operation.
+* **選択**:
+  * `プロパティID`: 変更するプロパティID。
+* **操作**: 現在のプロパティ値に応じて使用する操作。
+* **値**:
+  * `新しい値`: 対応する操作でプロパティに適用する新しい値。
 
-## Modify currency <a href="#change-money" id="change-money"></a>
+## 通貨を変更 <a href="#change-money" id="change-money"></a>
 
 ![](../.gitbook/assets/command-modify-currency.png)
 
-Change the currency value.
+通貨の値を変更します。
 
-* **Selection**:
-  * `Currency ID`: The currency ID to change value.
-* **Operation**: The operation to apply to the currency value.
-* **Number**: The number value to apply to the currency.
+* **選択**:
+  * `通貨ID`: 値を変更する通貨ID。
+* **操作**: 通貨値に適用する操作。
+* **数値**: 通貨に適用する数値。
 
-## Modify inventory <a href="#modify-inventory" id="modify-inventory"></a>
+## インベントリを変更 <a href="#modify-inventory" id="modify-inventory"></a>
 
 ![](../.gitbook/assets/command-modify-inventory.png)
 
-This will update inventory containing. You can for example add items to it.
+これは、インベントリの内容を更新します。たとえば、アイテムを追加できます。
 
-* **Selection**:
-  * `Item ID`: An item to select.
-  * `Weapon ID`: A weapon to select.
-  * `Armor ID`: An armor to select.
-* **Operation**: The operation to use according to the current number of the selection in the inventory.
-* **Number**: The value to use for updating the selection number.
+* **選択**:
+  * `アイテムID`: 選択するアイテム。
+  * `武器ID`: 選択する武器。
+  * `防具ID`: 選択する防具。
+* **操作**: インベントリ内の選択の現在の数に応じて使用する操作。
+* **数値**: 選択の数値の更新に使用する値。
 
-## Modify team <a href="#modify-team" id="modify-team"></a>
+## チームを変更 <a href="#modify-team" id="modify-team"></a>
 
 ![](<../.gitbook/assets/command-modify-team (1).png>)
 
-This will update team organization.
+これは、チーム編成を更新します。
 
-* `Create new instance with level ... in team / reserve / hidden of`: Create a new instance of a hero or monster in team, reserve, or hidden.
-  * `Stock instance ID in`: Choose a variable where you want to stock the instance ID. This can be useful to move or remove characters in team.
-* `Add enemy with instance ID ... in team / reserve / hidden`: Add an enemy that is in a current battle in team, reserve, or hidden
-* `Modify`: Move or remove a character with instance ID
+* `レベル...の新しいインスタンスをチーム/控え/非表示に作成`: チーム、控え、または非表示にヒーローまたはモンスターの新しいインスタンスを作成します。
+  * `インスタンスIDをに格納`: インスタンスIDを格納する変数を選択します。これは、チーム内のキャラクターを移動または削除する場合に役立ちます。
+* `インスタンスID...の敵をチーム/控え/非表示に追加`: 現在の戦闘中の敵をチーム、控え、または非表示に追加します
+* `変更`: インスタンスIDを使用してキャラクターを移動または削除します
 
-## Allow / Forbid saves <a href="#allow-forbid-saves" id="allow-forbid-saves"></a>
+## セーブを許可/禁止 <a href="#allow-forbid-saves" id="allow-forbid-saves"></a>
 
 ![](../.gitbook/assets/command-allow-forbid-saves.png)
 
-* `Allow`: If checked, the saves menu will be allowed.
+* `許可`: チェックを入れると、セーブメニューが許可されます。
 
-## Allow / Forbid main menu <a href="#allow-forbid-main-menu" id="allow-forbid-main-menu"></a>
+## メインメニューを許可/禁止 <a href="#allow-forbid-main-menu" id="allow-forbid-main-menu"></a>
 
 ![](../.gitbook/assets/command-allow-forbid-main-menu.png)
 
-* `Allow`: If checked, the main menu will be allowed.
+* `許可`: チェックを入れると、メインメニューが許可されます。
 
-## Change general options <a href="#change-general-options" id="change-general-options"></a>
+## 全般オプションを変更 <a href="#change-general-options" id="change-general-options"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Start a battle <a href="#start-a-battle" id="start-a-battle"></a>
+## 戦闘を開始 <a href="#start-a-battle" id="start-a-battle"></a>
 
 ![](../.gitbook/assets/command-start-battle.png)
 
-This will start a battle with your team against a troop (group of monsters).
+これは、あなたのチームと部隊（モンスターのグループ）との戦闘を開始します。
 
-* **Troop's ID**:
-  * `ID`: Fix troop ID.
-  * `Random (in map property)`: Random ID indicated in map property window.
-* **Battle map**:
-  * `ID`: Fix battle map ID.
-  * `Select...`: Choose battle map and position thanks to a map previewer.
-  * `ID map`, `X`, `Y`, `Y plus`, `Z`: Choose battle map ID and position to go manually.
-* **Options**:
-  * `Allow escape`: If checked, it would be possible to use battle command `Escape` in this battle.
-  * `Defeat causes Game Over`: If checked, losing in this battle will automatically direct to game over. If not checked, there will be two commands container : one for the winning state, and the second for the losing state.
-* **Transition**:
-  * `Start / End`: Start / End type of transition:
-    * `None`: Immediate transition.
-    * `Fade in / out`: Transition on a color.
-    * `Zoom in / out`: Transition by zooming in / out.
+* **部隊のID**:
+  * `ID`: 部隊IDを修正します。
+  * `ランダム（マッププロパティ内）`: マッププロパティウィンドウに示されているランダムID。
+* **戦闘マップ**:
+  * `ID`: 戦闘マップIDを修正します。
+  * `選択...`: マッププレビューアを使用して、戦闘マップと位置を選択します。
+  * `IDマップ`、`X`、`Y`、`Yプラス`、`Z`: 移動先の戦闘マップIDと位置を手動で選択します。
+* **オプション**:
+  * `逃走を許可`: チェックを入れると、この戦闘で戦闘コマンド`逃げる`を使用できるようになります。
+  * `敗北でゲームオーバー`: チェックを入れると、この戦闘で負けると自動的にゲームオーバーになります。チェックを入れないと、2つのコマンドコンテナが表示されます。1つは勝利状態用、もう1つは敗北状態用です。
+* **トランジション**:
+  * `開始/終了`: トランジションの開始/終了タイプ：
+    * `なし`: 即時トランジション。
+    * `フェードイン/アウト`: 色によるトランジション。
+    * `ズームイン/アウト`: ズームイン/アウトによるトランジション。
 
-## Display / Hide enemy <a href="#display-hide-enemy" id="display-hide-enemy"></a>
+## 敵を表示/非表示 <a href="#display-hide-enemy" id="display-hide-enemy"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Force an action <a href="#force-an-action" id="force-an-action"></a>
+## アクションを強制 <a href="#force-an-action" id="force-an-action"></a>
 
 ![](../.gitbook/assets/command-force-an-action.png)
 
-During a battle, this will force an hero or enemy to execute an action on a target.
+戦闘中、これはヒーローまたは敵にターゲットにアクションを実行するように強制します。
 
-* **Battler**: The battler that should execute the action
-  * `Enemy`: Select an enemy of the current troop
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable
-* **Action**: The action to execute
-  * `Use skill ID:` Select a skill with a specific ID
-  * `Use item ID:` Select an item with a specific ID
-  * `Do nothing`
-* **Target**:
-  * `Random`: A random target
-  * `Last target`: The last target that the battler selected
-  * `Custom`:
-    * `Enemy`: Select an enemy of the current troop
-    * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable
+* **戦闘員**: アクションを実行する戦闘員
+  * `敵`: 現在の部隊の敵を選択します
+  * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。それらは主に変数に格納されます
+* **アクション**: 実行するアクション
+  * `スキルIDを使用:` 特定のIDのスキルを選択します
+  * `アイテムIDを使用:` 特定のIDのアイテムを選択します
+  * `何もしない`
+* **ターゲット**:
+  * `ランダム`: ランダムなターゲット
+  * `最後のターゲット`: 戦闘員が最後に選択したターゲット
+  * `カスタム`:
+    * `敵`: 現在の部隊の敵を選択します
+    * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。それらは主に変数に格納されます
 
-## End battle <a href="#end-battle" id="end-battle"></a>
+## 戦闘を終了 <a href="#end-battle" id="end-battle"></a>
 
-You can use the end battle command in troops reactions to force a defeat.
+部隊のリアクションで戦闘終了コマンドを使用して、敗北を強制できます。
 
-## Change battle music <a href="#change-battle-music_1" id="change-battle-music_1"></a>
+## 戦闘音楽を変更 <a href="#change-battle-music_1" id="change-battle-music_1"></a>
 
-You can select a battle music for the next battles.
+次の戦闘の戦闘音楽を選択できます。
 
-## Change victory music <a href="#change-victory-music_1" id="change-victory-music_1"></a>
+## 勝利音楽を変更 <a href="#change-victory-music_1" id="change-victory-music_1"></a>
 
-You can select a victory music for the next battles.
+次の戦闘の勝利音楽を選択できます。
 
-## Change a statistic <a href="#change-a-statistic" id="change-a-statistic"></a>
+## 統計を変更 <a href="#change-a-statistic" id="change-a-statistic"></a>
 
 ![](../.gitbook/assets/command-change-a-statistic.png)
 
-You can here change a statistic value to one or several characters (heroes or enemies).
+ここでは、1人または複数のキャラクター（ヒーローまたは敵）の統計値を変更できます。
 
-* `Statistic ID`: The statistic ID to change value.
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable.
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`.
-* **Operation**: Select the operation to apply to the current statistic value.
-* **Value**:
-  * `Number`: Choose a dynamic number value.
-  * `Formula`: Enter a formula as a value.
-  * `Maximum statistic value`: Take the maximum value of a statistic (used to heal maximum HP, for example)
-  * `Can go above maximum value`: If checked, the given value can be superior to maximum value of the statistic.
+* `統計ID`: 値を変更する統計ID。
+* **選択**:
+  * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。それらは主に変数に格納されます。
+  * `全体`: グループを選択します。これは、`チーム`、`控え`、または`非表示`にすることができます。
+* **操作**: 現在の統計値に適用する操作を選択します。
+* **値**:
+  * `数値`: 動的な数値を選択します。
+  * `計算式`: 値として計算式を入力します。
+  * `最大統計値`: 統計の最大値を取得します（たとえば、最大HPを回復するために使用されます）
+  * `最大値を超えることができる`: チェックを入れると、指定された値は統計の最大値を超えることができます。
 
-## Change experience curve <a href="#change-experience-curve" id="change-experience-curve"></a>
+## 経験値曲線を変更 <a href="#change-experience-curve" id="change-experience-curve"></a>
 
 ![](../.gitbook/assets/command-change-experience-curve.png)
 
-Change the experience curve table of one or several players.
+1人または複数のプレイヤーの経験値曲線テーブルを変更します。
 
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`
-* **Level**:
-  * `Range`: The level range to apply the experience curve changes
-* **Operation**: The operation to use according to the current experience value
-* `Total experience`:  The total experience to change in the table
+* **選択**:
+  * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。それらは主に変数に格納されます
+  * `全体`: グループを選択します。これは、`チーム`、`控え`、または`非表示`にすることができます
+* **レベル**:
+  * `範囲`: 経験値曲線の変更を適用するレベル範囲
+* **操作**: 現在の経験値に応じて使用する操作
+* `合計経験値`: テーブルで変更する合計経験値
 
-## Change status <a href="#change-status" id="change-status"></a>
+## ステータスを変更 <a href="#change-status" id="change-status"></a>
 
 ![](../.gitbook/assets/event-command-change-status.png)
 
-Add or remove a player status.
+プレイヤーステータスを追加または削除します。
 
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable.
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`.
-* **Operation**: Choose to add or remove the status
-* **Status**:
-  * `Status ID`: The status ID
+* **選択**:
+  * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。それらは主に変数に格納されます。
+  * `全体`: グループを選択します。これは、`チーム`、`控え`、または`非表示`にすることができます。
+* **操作**: ステータスを追加するか削除するかを選択します
+* **ステータス**:
+  * `ステータスID`: ステータスID
 
-## Change a skill <a href="#change-a-skill" id="change-a-skill"></a>
-
-![](../.gitbook/assets/command-change-a-skill.png)
-
-Choose if you want a character to learn or forget a specific skill.
-
-* `Skill ID`: The skill ID to learn or forget.
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable.
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`.
-* **Operation**: Choose here if you want to learn or forget the selected skill.
-
-## Change name <a href="#change-name" id="change-name"></a>
-
-![](../.gitbook/assets/command-change-name.png)
-
-Choose a character you want to change the name. This isn't like the command enter hero name, this doesn't open any HUD so the player can enter a name.
-
-* `Name`: The new character name.
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`
-
-## Change class <a href="#change-class" id="change-class"></a>
-
-![](../.gitbook/assets/command-change-class.png)
-
-Change one or several players class. This will apply changes on statistics and learned skills.
-
-* `Class ID`: The new class ID to apply
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`
-
-## Change equipment <a href="#change-equipment" id="change-equipment"></a>
-
-![](../.gitbook/assets/command-change-equipment.png)
-
-You can force a character to equip a weapon or an armor.
-
-* `Equipment ID`: The equipment slot ID to force equip.
-* `with Weapon ID / Armor ID`: The weapon or armor ID to force equip (according to equipment ID).
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable.
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`.
-* `Apply only if in inventory`: If checked, the equipment is not equiped if not in inventory. If not checked, the item will be added to inventory and then equiped.
-
-## Condition <a href="#condition" id="condition"></a>
-
-Create a container for commands that will be executed only if the indicated condition is true.
-
-* `Add "else" when conditions do not apply`: Create another container for commands that will be executed only if the indicated condition is false.
-* **Variables / Param / Prop**:
-
-![](../.gitbook/assets/command-conditions.png)
-
-* `This`: Compare a variable or a parameter or a property with any other type of value.
-* **Heroes**:
-
-![](../.gitbook/assets/command-condition-heroes.png)
-
-* `Hero(es)`: Select `all the heroes` or `none of the heroes` or `at least one hero` or `the hero with instance ID`. in `team` or `reserve` or `hidden`.
-  * `Are named`: Check if the selection have this name.
-  * `Are in`: Check if the selection is in the `team` or `reserve` or `hidden`.
-  * `Are able to use the skill ID`: Check if the selection is able to use the selected skill ID.
-  * `Are equiped with`:
-    * `weapon ID`: Check if the selection is equipped with the selected weapon ID.
-    * `armor ID`: Check if the selection is equipped with the selected armor ID.
-  * `Are under effect of status ID`: _Not available yet._
-  * `Have the statistic ID`: Compare a selected statistic of the selection with any other type of value.
-* **Possessions**:
-
-![](../.gitbook/assets/command-condition-possessions.png)
-
-* `Currency ID`: Compare a selected currency number with any other type of value.
-* `Item ID`: Compare a selected item number in inventory with any other type of value.
-* `Weapon ID`: Compare a selected weapon number in inventory with any other type of value.
-  * `Check weapons equiped too`: If checked, the equipped weapons will be included in the number of weapons.
-* `Armor ID`: Compare a selected armor number in inventory with any other type of value.
-  * `Check armors equiped too`: If checked, the equipped armors will be included in the number of armors.
-* **Others**:
-
-![](../.gitbook/assets/command-condition-others.png)
-
-* `Key ID`: Check if selected key is ON or OFF.
-* `Escaped last battle`: Check if the player escaped last battle (using escape battle command).
-* `Script`: Check according to the script return value (for programmers).
-
-## Loop <a href="#loop" id="loop"></a>
-
-Create a container for commands that will be executed on a loop.
-
-## Break loop <a href="#break-loop" id="break-loop"></a>
-
-If inside a loop container, this will go out of the loop and go to the next command after the loop.
-
-## Label <a href="#label" id="label"></a>
-
-![](../.gitbook/assets/command-label.png)
-
-Add label to your reaction, you will combine it with jump to label command. You can choose any name you want.
-
-## Jump to label <a href="#jump-to-label" id="jump-to-label"></a>
-
-![](../.gitbook/assets/command-jump-label.png)
-
-Combined with label command, you can choose to move to the named label. Here is a nexample that will create a loop:
-
-![](../.gitbook/assets/example-label.png)
-
-The commands will be executed like this:
-
-Condition ? > No > End if >Jump to label loop > Label loop > End if > Jump to label loop > Label loop > ...
-
-## Stop the reaction <a href="#stop-the-reaction" id="stop-the-reaction"></a>
-
-Stop the current reaction.
-
-## Comment <a href="#comment" id="comment"></a>
-
-![](../.gitbook/assets/command-comment.png)
-
-Comments won't be interpreted in game, it's only here for you. You can leave a comment in specific places to remember why you used specific commands.
-
-![](../.gitbook/assets/example-command-comment.png)
-
-## Call a common reaction <a href="#call-a-common-reaction" id="call-a-common-reaction"></a>
-
-![](../.gitbook/assets/command-call-common-reaction.png)
-
-This will call a common reaction with the corresponding parameters.
-
-* `Common reaction`: The common reaction to call.
-* **Parameters values**: The parameters to apply with the common reaction.
-
-## Change variables <a href="#change-variables" id="change-variables"></a>
-
-![](<../.gitbook/assets/command-change-variables (1).png>)
-
-This will change one or several variable(s) value.
-
-* **Selection**:
-  * `One variable`: The unique variable to change
-  * `Range`: The range of variables IDs to change
-* **Operation**: The operation to use according to the current variable(s) value
-* **Value**:
-  * `Number`: A simple number
-  * `Random`: A random number between two selected values
-  * `Message`: A simple message
-  * `Switch`: A simple switch
-  * `Number of ... in inventory`: The number of item / weapon / armor that are currently in the inventory
-  * `Total currency ... with ID`: The total number of a specific currency (owned, earned, or used)
-  * `Hero / Enemy instance ID ... statistic ID`: Get a statistic value according to a player instance ID
-  * `An object in the map ... characteristic`: The selected object characteristic:
-    * `X square position`: The x square position of the selected object.
-    * `Y square position`: The y square position of the selected object.
-    * `Z square position`: The z square position of the selected object.
-    * `X square position`: The x pixel position of the selected object.
-    * `Y square position`: The y pixel position of the selected object.
-    * `Z square position`: The z pixel position of the selected object.
-    * `Orientation`: The orientation of the selected object.
-  * `Enemy ... instance ID`: The selected enemy instance ID
-  * `Other characteristics`:
-    * `Current map ID`: The current map ID
-    * `Number in team`: Number of players in team
-    * `Number in hidden`: Number of hidden players
-    * `Number in reserve`: Number of players in reserve
-    * `Total number of steps`: Number of steps made by the hero
-    * `Total number of seconds`: Number of seconds playtime
-    * `Total number of saves done`: Number of saves done since starting the game
-    * `Total number of battles`: Number of started battles
-    * `Camera X position`: The camera X position
-    * `Camera Y position`: The camera Y position
-    * `Camera Z position`: The camera Z position
-    * `Total seconds played of the current music`: The total number of seconds played of the current music
-    * `Total seconds played of the current background music`: The total number of seconds played of the current background music
-
-## Script <a href="#script" id="script"></a>
-
-![](<../.gitbook/assets/command-script (1).png>)
-
-Execute a script code (for advanced programmers). Note that you can use `$object` local variable to get the Core.MapObject current object!&#x20;
-
-* `Use dynamic`: Non-static code (in variable, or parameter, or property).
+## スキルを変更 <a href="#change-a-skill"

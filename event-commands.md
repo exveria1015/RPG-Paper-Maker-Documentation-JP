@@ -1,675 +1,674 @@
 ---
-description: An overview about event commands
+description: イベントコマンドの概要
 ---
 
-# Event commands
+# イベントコマンド
 
-Now that you are a pro for objects and event, let's see all the event commands that are possible to use.
+オブジェクトとイベントのプロになったところで、使用可能なすべてのイベントコマンドを見ていきましょう。
 
-## Show text <a id="show-text"></a>
+## テキストを表示 <a id="show-text"></a>
 
-![Show text Command editor](https://rpg-paper-maker.github.io/basics/img/command-show-text.png)
+![テキスト表示コマンドエディタ](https://rpg-paper-maker.github.io/basics/img/command-show-text.png)
 
-Displays a text in a dialog box with the current dialog box options.
+現在のダイアログボックスオプションを使用して、ダイアログボックスにテキストを表示します。
 
-* `Interlocutor`: This will display a text inside a small box on top of the text box for indicating the interlocutor's name. If empty, this will not show the box.
-* `Faceset`: The faceset to display inside the dialog box on the left.
-* `Message`:
-  * ![Screenshot](https://rpg-paper-maker.github.io/basics/img/bold.png) : Apply bold effect on the selected text.
-  * ![Screenshot](https://rpg-paper-maker.github.io/basics/img/italic.png) : Apply italic effect on the selected text.
-  * ![Screenshot](https://rpg-paper-maker.github.io/basics/img/text-left.png) : Apply left align effect on the selected text.
-  * ![Screenshot](https://rpg-paper-maker.github.io/basics/img/text-center.png) : Apply center align effect on the selected text.
-  * ![Screenshot](https://rpg-paper-maker.github.io/basics/img/text-right.png) : Apply right align effect on the selected text.
-  * `Font size`: Apply the selected font size on the selected text.
-  * `Font name`: Apply the selected font name on the selected text.
-  * `Text color`: Apply the selected text color on the selected text.
-  * `Back color`: Apply the selected back color on the selected text.
-  * `Outline color`: Apply the selected outline color on the selected text.
-  * `Variable`: Display the value of the current selected variable.
-  * `Parameter`: Display the value of the current selected parameter.
-  * `Property`: Display the value of the current selected property.
-  * `Hero name`: Display the name of the selected hero instance ID.
-  * `Icon`: Display the selected icon.
+* `話者`: テキストボックスの上部に小さなボックスが表示され、話者の名前が表示されます。空の場合、このボックスは表示されません。
+* `顔グラフィック`: ダイアログボックスの左側に表示する顔グラフィック。
+* `メッセージ`:
+  * ![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/bold.png) : 選択したテキストに太字効果を適用します。
+  * ![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/italic.png) : 選択したテキストに斜体効果を適用します。
+  * ![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/text-left.png) : 選択したテキストに左揃え効果を適用します。
+  * ![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/text-center.png) : 選択したテキストに中央揃え効果を適用します。
+  * ![スクリーンショット](https://rpg-paper-maker.github.io/basics/img/text-right.png) : 選択したテキストに右揃え効果を適用します。
+  * `フォントサイズ`: 選択したテキストに選択したフォントサイズを適用します。
+  * `フォント名`: 選択したテキストに選択したフォント名を適用します。
+  * `テキストの色`: 選択したテキストに選択したテキストの色を適用します。
+  * `背景色`: 選択したテキストに選択した背景色を適用します。
+  * `アウトラインの色`: 選択したテキストに選択したアウトラインの色を適用します。
+  * `変数`: 現在選択されている変数の値を表示します。
+  * `パラメータ`: 現在選択されているパラメータの値を表示します。
+  * `プロパティ`: 現在選択されているプロパティの値を表示します。
+  * `ヒーロー名`: 選択したヒーローインスタンスIDの名前を表示します。
+  * `アイコン`: 選択したアイコンを表示します。
 
-Render in game:
+ゲームでのレンダリング:
 
-![Show text Command sample](https://rpg-paper-maker.github.io/basics/img/render-hello-world.png)
+![テキスト表示コマンドのサンプル](https://rpg-paper-maker.github.io/basics/img/render-hello-world.png)
 
-## Display a choice <a id="display-a-choice"></a>
+## 選択肢を表示 <a id="display-a-choice"></a>
 
-![Display choice command](https://rpg-paper-maker.github.io/basics/img/command-display-choice.png)
+![選択肢表示コマンド](https://rpg-paper-maker.github.io/basics/img/command-display-choice.png)
 
-* `Choices`: The list of choices texts.
-* `Options`:
-  * `Cancel auto index`: The choice index to select when pressing cancel button.
+* `選択肢`: 選択肢のテキストのリスト。
+* `オプション`:
+  * `自動インデックスのキャンセル`: キャンセルボタンを押したときに選択する選択肢のインデックス。
 
-Using adapted show text command:
+テキスト表示コマンドを適用して使用:
 
-![Setting Display choice Command.](https://rpg-paper-maker.github.io/basics/img/commands-display-choice.png)
+![選択肢表示コマンドの設定](https://rpg-paper-maker.github.io/basics/img/commands-display-choice.png)
 
-![Display choice Command](https://rpg-paper-maker.github.io/basics/img/render-command-display-choice.png)
+![選択肢表示コマンド](https://rpg-paper-maker.github.io/basics/img/render-command-display-choice.png)
 
-Using without show text command before:
+テキスト表示コマンドを前に使用せずに使用:
 
-![Without Show text Command](https://rpg-paper-maker.github.io/basics/img/commands-display-choice-without-text.png)
+![テキスト表示コマンドなし](https://rpg-paper-maker.github.io/basics/img/commands-display-choice-without-text.png)
 
-![Sample without Show text Command](https://rpg-paper-maker.github.io/basics/img/render-command-display-choice-without-text.png)
+![テキスト表示コマンドなしのサンプル](https://rpg-paper-maker.github.io/basics/img/render-command-display-choice-without-text.png)
 
-## Input number <a id="input-number"></a>
+## 数字を入力 <a id="input-number"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Set dialog box options <a id="set-dialog-box-options"></a>
+## ダイアログボックスのオプションを設定 <a id="set-dialog-box-options"></a>
 
-![Dialog box options](https://rpg-paper-maker.github.io/basics/img/command-dialog-box-options.png)
+![ダイアログボックスのオプション](https://rpg-paper-maker.github.io/basics/img/command-dialog-box-options.png)
 
-Set all the dialog box options.
+すべてのダイアログボックスのオプションを設定します。
 
-* `Window skin ID`: The window skin ID to display.
-* `Transform`:
-  * `X`: The x position of the window.
-  * `Y`: The y position of the window.
-  * `Width`: The width of the window.
-  * `Height`: The height of the window.
-* `Padding`:
-  * `Left`: The left padding of the window.
-  * `Top`: The top padding of the window.
-  * `Right`: The right padding of the window.
-  * `Bottom`: The bottom padding of the window.
-* `Faceset`:
-  * `Position`: The position of the faceset. You can choose if it's behind or above the window.
-  * `X`: The additional x position of the faceset.
-  * `Y`: The additional y position of the faceset.
-* `Text`:
-  * `Outline`: Select if texts should have outlines.
-  * `Color ID`:
-    * `Text`: The color ID to use for texts.
-    * `Outline`: The color ID to use for outlines.
-    * `Background`: The color ID to use for backgrounds.
-  * `Size ID`: The size ID to use for texts.
-  * `Font ID`: The font ID to use for texts.
+* `ウィンドウスキンID`: 表示するウィンドウスキンID。
+* `変形`:
+  * `X`: ウィンドウのX座標。
+  * `Y`: ウィンドウのY座標。
+  * `幅`: ウィンドウの幅。
+  * `高さ`: ウィンドウの高さ。
+* `パディング`:
+  * `左`: ウィンドウの左側の余白。
+  * `上`: ウィンドウの上部の余白。
+  * `右`: ウィンドウの右側の余白。
+  * `下`: ウィンドウの下部の余白。
+* `顔グラフィック`:
+  * `位置`: 顔グラフィックの位置。ウィンドウの後ろか上に配置するかを選択できます。
+  * `X`: 顔グラフィックの追加のX座標。
+  * `Y`: 顔グラフィックの追加のY座標。
+* `テキスト`:
+  * `アウトライン`: テキストにアウトラインを付けるかどうかを選択します。
+  * `カラーID`:
+    * `テキスト`: テキストに使用するカラーID。
+    * `アウトライン`: アウトラインに使用するカラーID。
+    * `背景`: 背景に使用するカラーID。
+  * `サイズID`: テキストに使用するサイズID。
+  * `フォントID`: テキストに使用するフォントID。
 
-## Change screen tone <a id="change-screen-tone"></a>
+## 画面の色調を変更 <a id="change-screen-tone"></a>
 
-![Change screen tone](https://rpg-paper-maker.github.io/basics/img/command-change-screen-tone.png)
+![画面の色調を変更](https://rpg-paper-maker.github.io/basics/img/command-change-screen-tone.png)
 
-Change the screen tone \(dominant color\). The RGB color \(0, 0, 0\) changes nothing on the screen tone.
+画面の色調（支配的な色）を変更します。RGBカラー（0、0、0）は、画面の色調に何も変更を加えません。
 
-* `Red`: The red dominant color.
-* `Green`: The green dominant color.
-* `Blue`: The blue dominant color.
-* `Grey`: The grey dominant color \(saturation\). If grey = 0, then no changes. If grey = 100, then the screen will only have grey colors.
-* `Adding color ID`: You can combine the previous color with an existing color.
-* `Wait the end of the change before the next command`: If checked, the command will end only after `Time` number.
-* `Time`: Time to wait for changing the screen tone.
+* `赤`: 赤の支配的な色。
+* `緑`: 緑の支配的な色。
+* `青`: 青の支配的な色。
+* `灰色`: 灰色の支配的な色（彩度）。灰色= 0の場合、変更はありません。灰色= 100の場合、画面は灰色の色のみになります。
+* `カラーIDの追加`: 前述の色を既存の色と組み合わせることができます。
+* `次のコマンドの前に変更が完了するまで待つ`: チェックを入れると、コマンドは`時間`番号の後のみ終了します。
+* `時間`: 画面の色調の変更を待つ時間。
 
-## Shake screen <a id="shake-screen"></a>
+## 画面を揺らす <a id="shake-screen"></a>
 
 ![](.gitbook/assets/command-shake-screen.png)
 
-This is useful for staging your cinematics by simulating earthquakes, for example.
+これは、たとえば地震をシミュレートして、シネマティックスを演出するのに役立ちます。
 
-* `Offset`: The number of pixel offset for each shake.
-* `Shake number`: The number of shakes per second.
-* `Wait the end of the move before the next command`: If checked, the next command will be executed when the shakes ends.
-* `Time`: Duration of the total shakes.
+* `オフセット`: 揺れごとにオフセットするピクセル数。
+* `揺れの回数`: 1秒あたりの揺れの回数。
+* `移動が完了するまで次のコマンドを待つ`: チェックを入れると、揺れが終了したときに次のコマンドが実行されます。
+* `時間`: 全体の揺れの時間。
 
-## Flash screen <a id="flash-screen"></a>
+## 画面をフラッシュ <a id="flash-screen"></a>
 
 ![](.gitbook/assets/command-flash-screen.png)
 
-This will simply fill your screen with a color and linearly go back to normal screen color.
+これは、画面を色で塗りつぶし、線形に通常の画面の色に戻すだけです。
 
-* `Color ID`: The color ID to display on screen.
-* `Wait the end of the move before the next command`: If checked, the next command will be executed when the flash ends.
-* `Time`: Duration of the flash.
+* `カラーID`: 画面に表示するカラーID。
+* `移動が完了するまで次のコマンドを待つ`: チェックを入れると、フラッシュが終了したときに次のコマンドが実行されます。
+* `時間`: フラッシュの時間。
 
-## Change meteo <a id="change-meteo"></a>
+## 天気を変更 <a id="change-meteo"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Change map properties <a id="change-map-properties"></a>
+## マップのプロパティを変更 <a id="change-map-properties"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Wait <a id="wait"></a>
+## 待機 <a id="wait"></a>
 
-![Setting Wait Command](https://rpg-paper-maker.github.io/basics/img/command-wait.png)
+![待機コマンドの設定](https://rpg-paper-maker.github.io/basics/img/command-wait.png)
 
-Wait during a specific time.
+特定の時間待機します。
 
-* `Time`: Time to wait in seconds.
+* `時間`: 待機する時間（秒単位）。
 
-## Change chronometer <a id="change-chronometer"></a>
+## クロノメーターを変更 <a id="change-chronometer"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Teleport object <a id="teleport-object"></a>
+## オブジェクトをテレポート <a id="teleport-object"></a>
 
-![Teleportation of an object](https://rpg-paper-maker.github.io/basics/img/command-teleport-object.png)
+![オブジェクトのテレポート](https://rpg-paper-maker.github.io/basics/img/command-teleport-object.png)
 
-This will teleport an object on an existing map with a new position.
+これにより、オブジェクトが新しい位置にある既存のマップにテレポートされます。
 
-* `Object ID`: The object ID to teleport.
-* **Position**:
-  * `Select...`: Choose map and position thanks to a map previewer.
-  * `ID map`, `X`, `Y`, `Y plus`, `Z`: Choose map ID an position to go manually.
-  * `Object (ID)`: Choose an object to teleport on.
-* **Options**: _Not available yet._
+* `オブジェクトID`: テレポートするオブジェクトID。
+* **位置**:
+  * `選択...`: マッププレビューアを使用して、マップと位置を選択します。
+  * `IDマップ`, `X`, `Y`, `Yプラス`, `Z`: 移動先のマップIDと位置を手動で選択します。
+  * `オブジェクト（ID）`: テレポート先のオブジェクトを選択します。
+* **オプション**: _まだ利用できません。_
 
-## Move object <a id="move-object"></a>
+## オブジェクトを移動 <a id="move-object"></a>
 
 ![](.gitbook/assets/command-move-object.png)
 
-This will move an object in the current map with a specific route. You can also temporary change some properties linked to the object state.
+これにより、特定のルートを使用して、現在のマップ内のオブジェクトが移動されます。また、オブジェクトの状態にリンクされている一部のプロパティを一時的に変更することもできます。
 
-* `Object ID`: The object ID to move.
-* `Ignore if impossible`: If checked, the moves that can't be executed \(example: a wall blocking the route\) would be ignored. If not checked, this will try the impossible move as long as it become possible \(example: use for NPCs moving\).
-* `Wait the end of moves`: If checked, the command would end only when all the moves are executed. If not, the command would end immediately \(moves executed in parallel\).
-* `With camera orientation`: If checked, the direction moves \(north, south, west, east\) would take account of the camera orientation. If not, the direction moves would not take account of the camera orientation.
-* **Step / square moves**:
-  * `Square`: Change all the direction moves unit to square.
-  * `Step`: Change all the direction moves unit to step.
-  * `1 to North / South / West / East / North-West / North-East / South-West / South-East`: Move the object to 1 square / step in the selected direction.
-  * `1 to random`: Move the object to 1 square / step in a random direction.
-  * `1 to the hero`: Move the object to 1 square / step in the hero direction.
-  * `1 opposite to the hero`: Move the object to 1 square / step in the opposite of the hero direction.
-  * `1 in front`: Move the object to 1 square / step in front.
-  * `1 back`: Move the object to 1 square / step back.
-* **Change direction**: _Not available yet._
-* **Change object options**:
-  * ON / OFF: For some options, you can use the option ON or OFF.
-  * Permanent: If checked, the object option will be conserved even after saving.
-  * Change graphics: Change the obejct graphics.
+* `オブジェクトID`: 移動するオブジェクトID。
+* `不可能な場合は無視`: チェックを入れると、実行できない移動（例：ルートをブロックする壁）は無視されます。チェックを外すと、不可能な移動が可能になるまで（例：NPCの移動に使用）、その移動が試行されます。
+* `移動の終了を待つ`: チェックを入れると、すべての移動が実行されたときにのみコマンドが終了します。チェックを外すと、コマンドはすぐに終了します（移動は並行して実行されます）。
+* `カメラの向きに合わせて`: チェックを入れると、方向の移動（北、南、西、東）はカメラの向きを考慮します。チェックを外すと、方向の移動はカメラの向きを考慮しません。
+* **ステップ/スクエア移動**:
+  * `スクエア`: すべての方向の移動単位をスクエアに変更します。
+  * `ステップ`: すべての方向の移動単位をステップに変更します。
+  * `1を北/南/西/東/北西/北東/南西/南東に`: オブジェクトを選択した方向に1スクエア/ステップ移動します。
+  * `1をランダムに`: オブジェクトをランダムな方向に1スクエア/ステップ移動します。
+  * `1をヒーローに`: オブジェクトをヒーローの方向に1スクエア/ステップ移動します。
+  * `1をヒーローの反対側に`: オブジェクトをヒーローの反対方向に1スクエア/ステップ移動します。
+  * `1つ前`: オブジェクトを1スクエア/ステップ前に移動します。
+  * `1つ後`: オブジェクトを1スクエア/ステップ後ろに移動します。
+* **方向を変える**: _まだ利用できません。_
+* **オブジェクトのオプションを変更**:
+  * ON / OFF: 一部のオプションでは、オプションONまたはOFFを使用できます。
+  * 永続的: チェックを入れると、オブジェクトのオプションは保存後も保持されます。
+  * グラフィックを変更: オブジェクトのグラフィックを変更します。
 
-## Display an animation <a id="display-an-animation"></a>
+## アニメーションを表示 <a id="display-an-animation"></a>
 
 ![](.gitbook/assets/command-display-an-animation.png)
 
-Display an animation in the current map.
+現在のマップにアニメーションを表示します。
 
-* `Object ID`: The object ID where the animation will be played.
-* `Animation ID`: The animation ID to play.
-* `Wait the end of the animation before next command`: If checked, the next command will be executed only after the animation end.
+* `オブジェクトID`: アニメーションが再生されるオブジェクトID。
+* `アニメーションID`: 再生するアニメーションID。
+* `次のコマンドの前にアニメーションの終了を待つ`: チェックを入れると、アニメーションの終了後にのみ次のコマンドが実行されます。
 
-## Move camera <a id="move-camera"></a>
+## カメラを移動 <a id="move-camera"></a>
 
-Check out the camera guide [here](camera-control.md).
+カメラガイドについては、[こちら](camera-control.md)をご覧ください。
 
-## Reset camera <a id="reset-camera"></a>
+## カメラをリセット <a id="reset-camera"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Create object in map <a id="create-object-in-map"></a>
+## マップにオブジェクトを作成 <a id="create-object-in-map"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Remove object from map <a id="remove-object-from-map"></a>
+## マップからオブジェクトを削除 <a id="remove-object-from-map"></a>
 
-![Removing object from map](https://rpg-paper-maker.github.io/basics/img/command-remove-object-from-map.png)
+![マップからオブジェクトを削除](https://rpg-paper-maker.github.io/basics/img/command-remove-object-from-map.png)
 
-Remove an object from the map. This removing is effective as long as you don't change map or load the game in saves.
+マップからオブジェクトを削除します。この削除は、マップを変更したり、保存したゲームをロードしたりしない限り有効です。
 
-* `Object ID`: The object ID to remove in the map.
+* `オブジェクトID`: マップで削除するオブジェクトID。
 
-## Display a picture <a id="display-a-picture"></a>
+## 画像を表示 <a id="display-a-picture"></a>
 
-![Display a picture](https://rpg-paper-maker.github.io/basics/img/command-display-picture.png)
+![画像を表示](https://rpg-paper-maker.github.io/basics/img/command-display-picture.png)
 
-Display a picture on top of the screen.
+画面の上部に画像を表示します。
 
-* `Image ID`: The image ID to display.
-* `Index`: The index of the image to display. You can display several images in the same time if they have different index. The more the index is high, the more the image is displayed on top. If two images have the same index, then the ancient image will be removed.
-* `Origin`:
-  * `Top / Left`: The origin position will be \(0, 0\) \(= top left of the screen\).
-  * `Center`: The origin position will be the center of the screen.
-* `Coordinates`:
-  * `X`: The x position according to the origin.
-  * `Y`: The y position according to the origin.
-* `Effects`:
-  * `Zoom`: The % zooming of the image.
-  * `Opacity`: The % opacity of the image.
-  * `Angle`: The ° angle of the image.
+* `画像ID`: 表示する画像ID。
+* `インデックス`: 表示する画像のインデックス。インデックスが異なれば、同時に複数の画像を表示できます。インデックスが高いほど、画像は上に表示されます。2つの画像のインデックスが同じ場合、古い画像は削除されます。
+* `起点`:
+  * `上/左`: 起点の位置は（0、0）（=画面の左上）になります。
+  * `中央`: 起点の位置は画面の中央になります。
+* `座標`:
+  * `X`: 起点に応じたX座標。
+  * `Y`: 起点に応じたY座標。
+* `効果`:
+  * `ズーム`: 画像のズーム率（％）。
+  * `不透明度`: 画像の不透明度（％）。
+  * `角度`: 画像の角度（°）。
 
-## Set / Move / Turn a picture <a id="set-move-turn-a-picture"></a>
+## 画像を設定/移動/回転 <a id="set-move-turn-a-picture"></a>
 
-![Manage a picture](https://rpg-paper-maker.github.io/basics/img/command-set-move-turn-picture.png)
+![画像を管理](https://rpg-paper-maker.github.io/basics/img/command-set-move-turn-picture.png)
 
-Set / Move / Turn a picture that is already displayed on top of the screen.
+画面の上部にすでに表示されている画像を設定/移動/回転します。
 
-* `Image index`: Select the index of the image to set / move / turn.
-* `Set`:
-  * `Image ID`: Change the image ID to display.
-  * `Zoom`: Change the % zooming of the image.
-  * `Opacity`: Change the % zooming of the image.
-* `Move`:
-  * `X`: Change the x position according to the origin.
-  * `Y`: CHange the y position according to the origin.
-* `Turn`:
-  * `Angle`: Change the ° angle of the image.
-* `Wait the end of the actions before the next command`: If checked, the command will end only after `Time` number.
-* `Time`: Time to wait for updating the picture.
+* `画像インデックス`: 設定/移動/回転する画像のインデックスを選択します。
+* `設定`:
+  * `画像ID`: 表示する画像IDを変更します。
+  * `ズーム`: 画像のズーム率（％）を変更します。
+  * `不透明度`: 画像のズーム率（％）を変更します。
+* `移動`:
+  * `X`: 起点に応じたX座標を変更します。
+  * `Y`: 起点に応じたY座標を変更します。
+* `回転`:
+  * `角度`: 画像の角度（°）を変更します。
+* `次のコマンドの前にアクションが完了するまで待つ`: チェックを入れると、コマンドは`時間`番号の後のみ終了します。
+* `時間`: 画像の更新を待つ時間。
 
-## Remove a picture <a id="remove-a-picture"></a>
+## 画像を削除 <a id="remove-a-picture"></a>
 
-![Remove a picture](https://rpg-paper-maker.github.io/basics/img/command-remove-picture.png)
+![画像を削除](https://rpg-paper-maker.github.io/basics/img/command-remove-picture.png)
 
-Remove a picture that is displayed on top of the screen.
+画面に表示されている画像を削除します。
 
-* `Image index`: Select the index of the image to remove.
+* `画像インデックス`: 削除する画像のインデックスを選択します。
 
-## Play a video <a id="play-a-video"></a>
+## 動画を再生 <a id="play-a-video"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Start shop <a id="start-shop"></a>
+## ショップを開始 <a id="start-shop"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Enter a name <a id="enter-a-name"></a>
+## 名前を入力 <a id="enter-a-name"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Open main menu <a id="open-main-menu"></a>
+## メインメニューを開く <a id="open-main-menu"></a>
 
-This will open the main menu.
+これにより、メインメニューが開きます。
 
-Render in game:
+ゲームでのレンダリング:
 
-![Open Main Menu Command](https://rpg-paper-maker.github.io/basics/img/render-main-menu.png)
+![メインメニューを開くコマンド](https://rpg-paper-maker.github.io/basics/img/render-main-menu.png)
 
-## Open saves menu <a id="open-saves-menu"></a>
+## セーブメニューを開く <a id="open-saves-menu"></a>
 
-This will open the saves menu.
+これにより、セーブメニューが開きます。
 
-Render in game:
+ゲームでのレンダリング:
 
-![Open Save Menu Command](https://rpg-paper-maker.github.io/basics/img/render-saves-menu.png)
+![セーブメニューを開くコマンド](https://rpg-paper-maker.github.io/basics/img/render-saves-menu.png)
 
-## Title screen <a id="title-screen"></a>
+## タイトル画面 <a id="title-screen"></a>
 
-Go to the title screen.
+タイトル画面に移動します。
 
-## Game over <a id="game-over"></a>
+## ゲームオーバー <a id="game-over"></a>
 
-This will go to the game over screen.
+これにより、ゲームオーバー画面に移動します。
 
-_**/! Today, there is no game over screen, it's only closing the game window.**_
+_**/！現在、ゲームオーバー画面はありません。ゲームウィンドウが閉じるだけです。**_
 
-## Play a music <a id="play-a-music"></a>
+## 音楽を再生 <a id="play-a-music"></a>
 
-![Play music Command](https://rpg-paper-maker.github.io/basics/img/command-play-music.png)
+![音楽再生コマンド](https://rpg-paper-maker.github.io/basics/img/command-play-music.png)
 
-This will play a music on the current map.
+これにより、現在のマップで音楽が再生されます。
 
-* `Select song by ID`: Instead of using the left list, you can select by ID values.
-* **Options**:
-  * `Volume`: The music volume \(in %\).
-  * `Start`: The beginning time of the music in seconds.
-  * `End`: The end time of the music in seconds.
+* `IDで曲を選択`: 左側のリストを使用する代わりに、ID値で選択できます。
+* **オプション**:
+  * `音量`: 音楽の音量（％）。
+  * `開始`: 音楽の開始時間（秒単位）。
+  * `終了`: 音楽の終了時間（秒単位）。
 
-## Stop music <a id="stop-music"></a>
+## 音楽を停止 <a id="stop-music"></a>
 
-![Stop music Command](https://rpg-paper-maker.github.io/basics/img/command-stop-music.png)
+![音楽停止コマンド](https://rpg-paper-maker.github.io/basics/img/command-stop-music.png)
 
-This will stop the music played in the current map.
+これにより、現在のマップで再生されている音楽が停止します。
 
-* `Disappear with time`: Number of seconds for music played for disappearing.
+* `時間とともに消える`: 再生された音楽が消えるまでの秒数。
 
-## Play a background sound <a id="play-a-background-sound"></a>
+## BGMを再生 <a id="play-a-background-sound"></a>
 
-This will play a background sound on top of the current music.
+これにより、現在の音楽の上にBGMが再生されます。
 
-Check out the play music command [here](event-commands.md#play-a-music) that is similar.
+同様の音楽再生コマンドについては、[こちら](event-commands.md#play-a-music)をご覧ください。
 
-## Stop background sound <a id="stop-background-sound"></a>
+## BGMを停止 <a id="stop-background-sound"></a>
 
-This will stop the background sound played in the current map.
+これにより、現在のマップで再生されているBGMが停止します。
 
-Check out the stop music command [here](event-commands.md#stop-music) that is similar.
+同様の音楽停止コマンドについては、[こちら](event-commands.md#stop-music)をご覧ください。
 
-## Play a sound <a id="play-a-sound"></a>
+## 効果音を再生 <a id="play-a-sound"></a>
 
-This will play a sound on top of all the songs.
+これにより、すべての曲の上に効果音が再生されます。
 
-Check out the play music command [here](event-commands.md#stop-music) that is similar.
+同様の音楽再生コマンドについては、[こちら](event-commands.md#stop-music)をご覧ください。
 
-## Play a music effect <a id="play-a-music-effect"></a>
+## 音楽効果を再生 <a id="play-a-music-effect"></a>
 
-This will play a music by pausing the current played music. When the music effect is finished the previously played music is unpaused.
+これにより、現在再生されている音楽を一時停止して、音楽が再生されます。音楽効果が終了すると、一時停止されていた音楽が再開されます。
 
-Check out the play music command [here](event-commands.md#play-a-music) that is similar.
+同様の音楽再生コマンドについては、[こちら](event-commands.md#play-a-music)をご覧ください。
 
-## Change battle music <a id="change-battle-music"></a>
+## 戦闘音楽を変更 <a id="change-battle-music"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Change victory music <a id="change-victory-music"></a>
+## 勝利音楽を変更 <a id="change-victory-music"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Send event <a id="send-event"></a>
+## イベントを送信 <a id="send-event"></a>
 
-![Send event Command](https://rpg-paper-maker.github.io/basics/img/command-send-event.png)
+![イベント送信コマンド](https://rpg-paper-maker.github.io/basics/img/command-send-event.png)
 
-This will send an event to the selected target.
+これにより、選択したターゲットにイベントが送信されます。
 
-* **Target**:
-  * `All`: _Not available yet._
-  * `Detection`: Send the event to a specific detection.
-    * `Sender can't receive`: The detection is not applied to the sender.
-  * `Object`: Send the event to a specific object.
-* **Event**:
-  * `Event system`: Select a system event \(events sent by the game system itself\).
-  * `Event user`: Select a user event \(custom events sent by the map objects\).
-  * `Parameters values`: Select the event parameters values. You can keep the default value.
+* **ターゲット**:
+  * `すべて`: _まだ利用できません。_
+  * `検出`: 特定の検出にイベントを送信します。
+    * `送信者は受信できません`: 検出は送信者には適用されません。
+  * `オブジェクト`: 特定のオブジェクトにイベントを送信します。
+* **イベント**:
+  * `イベントシステム`: システムイベント（ゲームシステム自体によって送信されるイベント）を選択します。
+  * `ユーザイベント`: ユーザイベント（マップオブジェクトによって送信されるカスタムイベント）を選択します。
+  * `パラメータ値`: イベントパラメータ値を選択します。デフォルト値を保持できます。
 
-## Change state <a id="change-state"></a>
+## 状態を変更 <a id="change-state"></a>
 
 ![](.gitbook/assets/command-change-state.png)
 
-This will change the state of the current object. An object can have several states at the same time.
+これにより、現在のオブジェクトの状態が変更されます。オブジェクトは、同時に複数の状態を持つことができます。
 
-* **Object**:
-  * `Map ID`: The map ID to change state.
-  * `Object ID`: The object ID to change state.
-* **Selection**:
-  * `State ID`: The new state ID.
-* **Operation**:
-  * `Replace`: Remove all the current states of the object and add the new state.
-  * `Add`: Only add the new state.
-  * `Remove`: Remove the object state having this ID.
+* **オブジェクト**:
+  * `マップID`: 状態を変更するマップID。
+  * `オブジェクトID`: 状態を変更するオブジェクトID。
+* **選択**:
+  * `状態ID`: 新しい状態ID。
+* **操作**:
+  * `置換`: オブジェクトの現在の状態をすべて削除し、新しい状態を追加します。
+  * `追加`: 新しい状態のみを追加します。
+  * `削除`: このIDを持つオブジェクトの状態を削除します。
 
-## Change property <a id="change-property"></a>
+## プロパティを変更 <a id="change-property"></a>
 
-![Change property Command](https://rpg-paper-maker.github.io/basics/img/command-change-property.png)
+![プロパティ変更コマンド](https://rpg-paper-maker.github.io/basics/img/command-change-property.png)
 
-This will change a property value of the current object.
+これにより、現在のオブジェクトのプロパティ値が変更されます。
 
-* **Selection**:
-  * `property ID`: The property ID to change.
-* **Operation**: The operation to use according to the current property value.
-* **Value**:
-  * `New value`: The new value to apply to the property with the corresponding operation.
+* **選択**:
+  * `プロパティID`: 変更するプロパティID。
+* **操作**: 現在のプロパティ値に応じて使用する操作。
+* **値**:
+  * `新しい値`: 対応する操作でプロパティに適用する新しい値。
 
-## Modify currency <a id="change-money"></a>
+## 通貨を変更 <a id="change-money"></a>
 
 ![](.gitbook/assets/command-modify-currency.png)
 
-Change the currency value.
+通貨の値を変更します。
 
-* **Selection**:
-  * `Currency ID`: The currency ID to change value.
-* **Operation**: The operation to apply to the currency value.
-* **Number**: The number value to apply to the currency.
+* **選択**:
+  * `通貨ID`: 値を変更する通貨ID。
+* **操作**: 通貨の値に適用する操作。
+* **番号**: 通貨に適用する数値。
 
-## Modify inventory <a id="modify-inventory"></a>
+## インベントリを変更 <a id="modify-inventory"></a>
 
 ![](.gitbook/assets/command-modify-inventory.png)
 
-This will update inventory containing. You can for example add items to it.
+これにより、インベントリの内容が更新されます。たとえば、アイテムを追加できます。
 
-* **Selection**:
-  * `Item ID`: An item to select.
-  * `Weapon ID`: A weapon to select.
-  * `Armor ID`: An armor to select.
-* **Operation**: The operation to use according to the current number of the selection in the inventory.
-* **Number**: The value to use for updating the selection number.
+* **選択**:
+  * `アイテムID`: 選択するアイテム。
+  * `武器ID`: 選択する武器。
+  * `防具ID`: 選択する防具。
+* **操作**: インベントリ内の選択の現在の数に応じて使用する操作。
+* **番号**: 選択の数を更新するために使用する値。
 
-## Modify team <a id="modify-team"></a>
+## チームを変更 <a id="modify-team"></a>
 
-![Modify team Command](https://rpg-paper-maker.github.io/basics/img/command-modify-team.png)
+![チーム変更コマンド](https://rpg-paper-maker.github.io/basics/img/command-modify-team.png)
 
-This will update team organization.
+これにより、チーム編成が更新されます。
 
-* `Create new instance with level ... in team / reserve / hidden of`: Create a new instance of a hero or monster in team, reserve, or hidden.
-  * `Stock instance ID in`: Choose a variable where you want to stock the instance ID. This can be useful to move or remove characters in team.
-* `Move / Remove the character with ID ... in team / reserve / hidden`: _Not available yet._
+* `レベル...の新しいインスタンスをチーム/控え/非表示に作成`: チーム、控え、または非表示にヒーローまたはモンスターの新しいインスタンスを作成します。
+  * `インスタンスIDを...に保存`: インスタンスIDを保存する変数を​​選択します。これは、チーム内のキャラクターを移動または削除する場合に役立ちます。
+* `ID...のキャラクターをチーム/控え/非表示に移動/削除`: _まだ利用できません。_
 
-## Allow / Forbid saves <a id="allow-forbid-saves"></a>
+## セーブを許可/禁止 <a id="allow-forbid-saves"></a>
 
-![Allow/Forbid saves Command](https://rpg-paper-maker.github.io/basics/img/command-allow-forbid-saves.png)
+![セーブを許可/禁止するコマンド](https://rpg-paper-maker.github.io/basics/img/command-allow-forbid-saves.png)
 
-* `Allow`: If checked, the saves menu will be allowed.
+* `許可`: チェックを入れると、セーブメニューが許可されます。
 
-## Allow / Forbid main menu <a id="allow-forbid-main-menu"></a>
+## メインメニューを許可/禁止 <a id="allow-forbid-main-menu"></a>
 
-![Allow/Forbid main menu Command](https://rpg-paper-maker.github.io/basics/img/command-allow-forbid-main-menu.png)
+![メインメニューを許可/禁止するコマンド](https://rpg-paper-maker.github.io/basics/img/command-allow-forbid-main-menu.png)
 
-* `Allow`: If checked, the main menu will be allowed.
+* `許可`: チェックを入れると、メインメニューが許可されます。
 
-## Change general options <a id="change-general-options"></a>
+## 全般オプションを変更 <a id="change-general-options"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Start a battle <a id="start-a-battle"></a>
+## 戦闘を開始 <a id="start-a-battle"></a>
 
-![Start a battle Command](https://rpg-paper-maker.github.io/basics/img/command-start-battle.png)
+![戦闘開始コマンド](https://rpg-paper-maker.github.io/basics/img/command-start-battle.png)
 
-This will start a battle with your team against a troop \(group of monsters\).
+これにより、あなたのチームと軍隊（モンスターのグループ）との戦いが始まります。
 
-* **Troop's ID**:
-  * `ID`: Fix troop ID.
-  * `Random (in map property)`: Random ID indicated in map property window.
-* **Battle map**:
-  * `ID`: Fix battle map ID.
-  * `Select...`: Choose battle map and position thanks to a map previewer.
-  * `ID map`, `X`, `Y`, `Y plus`, `Z`: Choose battle map ID and position to go manually.
-* **Options**:
-  * `Allow escape`: If checked, it would be possible to use battle command `Escape` in this battle.
-  * `Defeat causes Game Over`: If checked, losing in this battle will automatically direct to game over. If not checked, there will be two commands container : one for the winning state, and the second for the losing state.
-* **Transition**:
-  * `Start / End`: Start / End type of transition:
-    * `None`: Immediate transition.
-    * `Fade in / out`: Transition on a color.
-    * `Zoom in / out`: Transition by zooming in / out.
+* **軍隊のID**:
+  * `ID`: 軍隊IDを修正します。
+  * `ランダム（マッププロパティ内）`: マッププロパティウィンドウに示されているランダムID。
+* **戦闘マップ**:
+  * `ID`: 戦闘マップIDを修正します。
+  * `選択...`: マッププレビューアを使用して、戦闘マップと位置を選択します。
+  * `IDマップ`, `X`, `Y`, `Yプラス`, `Z`: 移動先の戦闘マップIDと位置を手動で選択します。
+* **オプション**:
+  * `逃走を許可`: チェックを入れると、この戦闘で戦闘コマンド`逃げる`を使用できます。
+  * `敗北でゲームオーバー`: チェックを入れると、この戦闘で負けると自動的にゲームオーバーになります。チェックを外すと、2つのコマンドコンテナが表示されます。1つは勝利状態用、もう1つは敗北状態用です。
+* **トランジション**:
+  * `開始/終了`: トランジションの開始/終了タイプ：
+    * `なし`: すぐにトランジションします。
+    * `フェードイン/アウト`: 色でトランジションします。
+    * `ズームイン/アウト`: ズームイン/アウトでトランジションします。
 
-## Display / Hide enemy <a id="display-hide-enemy"></a>
+## 敵を表示/非表示 <a id="display-hide-enemy"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Force an action <a id="force-an-action"></a>
+## 行動を強制 <a id="force-an-action"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## End battle <a id="end-battle"></a>
+## 戦闘を終了 <a id="end-battle"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Change battle music <a id="change-battle-music_1"></a>
+## 戦闘音楽を変更 <a id="change-battle-music_1"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Change victory music <a id="change-victory-music_1"></a>
+## 勝利音楽を変更 <a id="change-victory-music_1"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Change a statistic <a id="change-a-statistic"></a>
+## 統計を変更 <a id="change-a-statistic"></a>
 
 ![](.gitbook/assets/command-change-a-statistic.png)
 
-You can here change a statistic value to one or several characters \(heroes or enemies\).
+ここでは、1人または複数のキャラクター（ヒーローまたは敵）の統計値を変更できます。
 
-* `Statistic ID`: The statistic ID to change value.
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable.
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`.
-* **Operation**: Select the operation to apply to the current statistic value.
-* **Value**:
-  * `Number`: Choose a dynamic number value.
-  * `Formula`: Enter a formula as a value.
-  * `Maximum statistic value`: Take the maximum value of a statistic \(used to heal maximum HP, for example\)
-  * `Can go above maximum value`: If checked, the given value can be superior to maximum value of the statistic.
+* `統計ID`: 値を変更する統計ID。
+* **選択**:
+  * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。これらは主に変数に格納されます。
+  * `全体`: グループを選択します。これは、`チーム`、`控え`、または`非表示`の場合があります。
+* **操作**: 現在の統計値に適用する操作を選択します。
+* **値**:
+  * `番号`: 動的な数値を選択します。
+  * `計算式`: 値として計算式を入力します。
+  * `最大統計値`: 統計の最大値を取得します（たとえば、HPを最大まで回復するために使用されます）
+  * `最大値を超えることができます`: チェックを入れると、指定された値が統計の最大値を超える可能性があります。
 
-## Change experience curve <a id="change-experience-curve"></a>
+## 経験値曲線を変更 <a id="change-experience-curve"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Change status <a id="change-status"></a>
+## ステータスを変更 <a id="change-status"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Change a skill <a id="change-a-skill"></a>
+## スキルを変更 <a id="change-a-skill"></a>
 
 ![](.gitbook/assets/command-change-a-skill.png)
 
-Choose if you want a character to learn or forget a specific skill.
+キャラクターに特定のスキルを習得させるか、忘れさせるかを選択します。
 
-* `Skill ID`: The skill ID to learn or forget.
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable.
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`.
-* **Operation**: Choose here if you want to learn or forget the selected skill.
+* `スキルID`: 習得または忘却するスキルID。
+* **選択**:
+  * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。これらは主に変数に格納されます。
+  * `全体`: グループを選択します。これは、`チーム`、`控え`、または`非表示`の場合があります。
+* **操作**: 選択したスキルを習得させるか、忘れさせるかを選択します。
 
-## Change name <a id="change-name"></a>
+## 名前を変更 <a id="change-name"></a>
 
 ![](.gitbook/assets/command-change-name.png)
 
-Choose a character you want to change the name. This isn't like the command enter hero name, this doesn't open any HUD so the player can enter a name.
+名前を変更するキャラクターを選択します。これは、ヒーロー名を入力するコマンドとは異なり、HUDが開かないため、プレイヤーは名前を入力できません。
 
-* `Name`: The new character name.
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable.
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`.
+* `名前`: 新しいキャラクター名。
+* **選択**:
+  * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。これらは主に変数に格納されます。
+  * `全体`: グループを選択します。これは、`チーム`、`控え`、または`非表示`の場合があります。
 
-## Change class <a id="change-class"></a>
+## クラスを変更 <a id="change-class"></a>
 
-_Not available yet._
+_まだ利用できません。_
 
-## Change equipment <a id="change-equipment"></a>
+## 装備を変更 <a id="change-equipment"></a>
 
 ![](.gitbook/assets/command-change-equipment.png)
 
-You can force a character to equip a weapon or an armor.
+キャラクターに武器または防具を強制的に装備させることができます。
 
-* `Equipment ID`: The equipment slot ID to force equip.
-* `with Weapon ID / Armor ID`: The weapon or armor ID to force equip \(according to equipment ID\).
-* **Selection**:
-  * `Hero / Enemy instance ID`: Select the instance ID of a character. They are mainly stocked into a variable.
-  * `The entire`: Select a group, this can be the `team`, `reserve`, or `hidden`.
-* `Apply only if in inventory`: If checked, the equipment is not equiped if not in inventory. If not checked, the item will be added to inventory and then equiped.
+* `装備ID`: 強制的に装備させる装備スロットID。
+* `武器ID/防具IDを使用`: 強制的に装備させる武器または防具ID（装備IDによる）。
+* **選択**:
+  * `ヒーロー/敵インスタンスID`: キャラクターのインスタンスIDを選択します。これらは主に変数に格納されます。
+  * `全体`: グループを選択します。これは、`チーム`、`控え`、または`非表示`の場合があります。
+* `インベントリにある場合にのみ適用`: チェックを入れると、インベントリにない場合は装備は装備されません。チェックを外すと、アイテムはインベントリに追加されてから装備されます。
 
-## Condition <a id="condition"></a>
+## 条件 <a id="condition"></a>
 
-Create a container for commands that will be executed only if the indicated condition is true.
+指定された条件が真の場合にのみ実行されるコマンドのコンテナを作成します。
 
-* `Add "else" when conditions do not apply`: Create another container for commands that will be executed only if the indicated condition is false.
-* **Variables / Param / Prop**:
+* `条件が適用されない場合は「else」を追加`: 指定された条件が偽の場合にのみ実行されるコマンドの別のコンテナを作成します。
+* **変数/パラメータ/プロパティ**:
 
-![Condition editor](https://rpg-paper-maker.github.io/basics/img/command-condition-variables-param-prop.png)
+![条件エディタ](https://rpg-paper-maker.github.io/basics/img/command-condition-variables-param-prop.png)
 
-* `This`: Compare a variable or a parameter or a property with any other type of value.
-* **Heroes**:
+* `これ`: 変数、パラメータ、またはプロパティを他のタイプの値と比較します。
+* **ヒーロー**:
 
-![Condition Editor](https://rpg-paper-maker.github.io/basics/img/command-condition-heroes.png)
+![条件エディタ](https://rpg-paper-maker.github.io/basics/img/command-condition-heroes.png)
 
-* `Hero(es)`: Select `all the heroes` or `none of the heroes` or `at least one hero` or `the hero with instance ID`. in `team` or `reserve` or `hidden`.
-  * `Are named`: Check if the selection have this name.
-  * `Are in`: Check if the selection is in the `team` or `reserve` or `hidden`.
-  * `Are able to use the skill ID`: Check if the selection is able to use the selected skill ID.
-  * `Are equiped with`:
-    * `weapon ID`: Check if the selection is equipped with the selected weapon ID.
-    * `armor ID`: Check if the selection is equipped with the selected armor ID.
-  * `Are under effect of status ID`: _Not available yet._
-  * `Have the statistic ID`: Compare a selected statistic of the selection with any other type of value.
-* **Possessions**:
+* `ヒーロー`: `チーム`、`控え`、または`非表示`の`すべてのヒーロー`、`ヒーローなし`、`少なくとも1人のヒーロー`、または`インスタンスIDを持つヒーロー`を選択します。
+  * `名前が付けられています`: 選択範囲にこの名前があるかどうかを確認します。
+  * `所属しています`: 選択範囲が`チーム`、`控え`、または`非表示`のいずれにあるかを確認します。
+  * `スキルIDを使用できます`: 選択範囲が選択したスキルIDを使用できるかどうかを確認します。
+  * `装備しています`:
+    * `武器ID`: 選択範囲が選択した武器IDを装備しているかどうかを確認します。
+    * `防具ID`: 選択範囲が選択した防具IDを装備しているかどうかを確認します。
+  * `ステータスIDの影響を受けています`: _まだ利用できません。_
+  * `統計IDを持っています`: 選択範囲の選択した統計を他のタイプの値と比較します。
+* **所持品**:
 
-![Condition editor](https://rpg-paper-maker.github.io/basics/img/command-condition-possessions.png)
+![条件エディタ](https://rpg-paper-maker.github.io/basics/img/command-condition-possessions.png)
 
-* `Currency ID`: Compare a selected currency number with any other type of value.
-* `Item ID`: Compare a selected item number in inventory with any other type of value.
-* `Weapon ID`: Compare a selected weapon number in inventory with any other type of value.
-  * `Check weapons equiped too`: If checked, the equipped weapons will be included in the number of weapons.
-* `Armor ID`: Compare a selected armor number in inventory with any other type of value.
-  * `Check armors equiped too`: If checked, the equipped armors will be included in the number of armors.
-* **Others**:
+* `通貨ID`: 選択した通貨の数を他のタイプの値と比較します。
+* `アイテムID`: インベントリ内の選択したアイテムの数を他のタイプの値と比較します。
+* `武器ID`: インベントリ内の選択した武器の数を他のタイプの値と比較します。
+  * `装備している武器もチェック`: チェックを入れると、装備している武器が武器の数に含まれます。
+* `防具ID`: インベントリ内の選択した防具の数を他のタイプの値と比較します。
+  * `装備している防具もチェック`: チェックを入れると、装備している防具が防具の数に含まれます。
+* **その他**:
 
 ![](.gitbook/assets/command-condition-others.png)
 
-* `Key ID`: Check if selected key is ON or OFF.
-* `Escaped last battle`: Check if the player escaped last battle \(using escape battle command\).
-* `Script`: Check according to the script return value \(for programmers\).
+* `キーID`: 選択したキーがオンかオフかを確認します。
+* `最後の戦いで逃げた`: プレイヤーが最後の戦いで逃げたかどうかを確認します（戦闘コマンドのエスケープを使用）。
+* `スクリプト`: スクリプトの戻り値に応じて確認します（プログラマー向け）。
 
-## Loop <a id="loop"></a>
+## ループ <a id="loop"></a>
 
-Create a container for commands that will be executed on a loop.
+ループで実行されるコマンドのコンテナを作成します。
 
-## Break loop <a id="break-loop"></a>
+## ループを中断 <a id="break-loop"></a>
 
-If inside a loop container, this will go out of the loop and go to the next command after the loop.
+ループコンテナ内にある場合、ループを抜け出して、ループの後の次のコマンドに進みます。
 
-## Label <a id="label"></a>
+## ラベル <a id="label"></a>
 
 ![](.gitbook/assets/command-label.png)
 
-Add label to your reaction, you will combine it with jump to label command. You can choose any name you want.
+反応にラベルを追加します。これは、ラベルにジャンプコマンドと組み合わせて使用​​します。任意の名前を選択できます。
 
-## Jump to label <a id="jump-to-label"></a>
+## ラベルにジャンプ <a id="jump-to-label"></a>
 
 ![](.gitbook/assets/command-jump-label.png)
 
-Combined with label command, you can choose to move to the named label. Here is a nexample that will create a loop:
+ラベルコマンドと組み合わせることで、指定したラベルに移動することを選択できます。ループを作成する例を次に示します。
 
 ![](.gitbook/assets/example-label.png)
 
-The commands will be executed like this:
+コマンドは次のように実行されます。
 
-Condition ? &gt; No &gt; End if &gt;Jump to label loop &gt; Label loop &gt; End if &gt; Jump to label loop &gt; Label loop &gt; ...
+条件？>いいえ> ifの終わり>ラベルループにジャンプ>ラベルループ> ifの終わり>ラベルループにジャンプ>ラベルループ> ...
 
-## Stop the reaction <a id="stop-the-reaction"></a>
+## 反応を停止 <a id="stop-the-reaction"></a>
 
-Stop the current reaction.
+現在の反応を停止します。
 
-## Comment <a id="comment"></a>
+## コメント <a id="comment"></a>
 
 ![](.gitbook/assets/command-comment.png)
 
-Comments won't be interpreted in game, it's only here for you. You can leave a comment in specific places to remember why you used specific commands.
+コメントはゲーム内で解釈されません。これはあなたのためだけのものです。特定の場所でコメントを残して、特定のコマンドを使用した理由を覚えておくことができます。
 
 ![](.gitbook/assets/example-command-comment.png)
 
-## Call a common reaction <a id="call-a-common-reaction"></a>
+## 共通反応を呼び出す <a id="call-a-common-reaction"></a>
 
 ![](https://rpg-paper-maker.github.io/basics/img/command-call-common-reaction.png)
 
-This will call a common reaction with the corresponding parameters.
+これにより、対応するパラメータを使用して共通反応が呼び出されます。
 
-* `Common reaction`: The common reaction to call.
-* **Parameters values**: The parameters to apply with the common reaction.
+* `共通反応`: 呼び出す共通反応。
+* **パラメータ値**: 共通反応に適用するパラメータ。
 
-## Change variables <a id="change-variables"></a>
+## 変数を変更 <a id="change-variables"></a>
 
 ![](https://rpg-paper-maker.github.io/basics/img/command-change-variables.png)
 
-This will change one or several variable\(s\) value.
+これにより、1つまたは複数の変数の値が変更されます。
 
-* **Selection**:
-  * `One variable`: The unique variable to change.
-  * `Range`: The range of variables IDs to change.
-* **Operation**: The operation to use according to the current variable\(s\) value.
-* **Value**:
-  * `Number`: A simple number.
-  * `Random`: A random number between two selected values.
-  * `Message`: A simple message.
-  * `Switch`: A simple switch.
-  * `Number of ... in inventory`: _Not available yet._
-  * `Total currency ... with ID`: _Not available yet._
-  * `An ... with instance ID ... statistic ID`: _Not available yet._
-  * `An object in the map ... characteristic`: The selected object characteristic:
-    * `X square position`: The x square position of the selected object.
-    * `Y square position`: The y square position of the selected object.
-    * `Z square position`: The z square position of the selected object.
-    * `X square position`: The x pixel position of the selected object.
-    * `Y square position`: The y pixel position of the selected object.
-    * `Z square position`: The z pixel position of the selected object.
-    * `Orientation`: The orientation of the selected object.
-  * `Other characteristics`: _Not available yet._
+* **選択**:
+  * `1つの変数`: 変更する一意の変数。
+  * `範囲`: 変更する変数IDの範囲。
+* **操作**: 現在の変数の値に応じて使用する操作。
+* **値**:
+  * `番号`: 単純な数値。
+  * `ランダム`: 選択した2つの値の間の乱数。
+  * `メッセージ`: 単純なメッセージ。
+  * `スイッチ`: 単純なスイッチ。
+  * `インベントリ内の...の数`: _まだ利用できません。_
+  * `ID...の合計通貨`: _まだ利用できません。_
+  * `インスタンスID...統計IDを持つ...`: _まだ利用できません。_
+  * `マップ内のオブジェクト...特性`: 選択したオブジェクトの特性：
+    * `Xスクエア位置`: 選択したオブジェクトのXスクエア位置。
+    * `Yスクエア位置`: 選択したオブジェクトのYスクエア位置。
+    * `Zスクエア位置`: 選択したオブジェクトのZスクエア位置。
+    * `Xピクセル位置`: 選択したオブジェクトのXピクセル位置。
+    * `Yピクセル位置`: 選択したオブジェクトのYピクセル位置。
+    * `Zピクセル位置`: 選択したオブジェクトのZピクセル位置。
+    * `向き`: 選択したオブジェクトの向き。
+  * `その他の特性`: _まだ利用できません。_
 
-## Script <a id="script"></a>
+## スクリプト <a id="script"></a>
 
 ![](https://rpg-paper-maker.github.io/basics/img/command-script.png)
 
-Execute a script code \(for advanced programmers\).
+スクリプトコードを実行します（上級プログラマー向け）。
 
-* `Use dynamic`: Non-static code \(in variable, or parameter, or property\).
-
+* `動的を使用`: 静的でないコード（変数、パラメータ、またはプロパティ内）。
